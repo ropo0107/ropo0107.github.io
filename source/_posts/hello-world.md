@@ -1,39 +1,88 @@
 ---
-title: Hello World
+title: 搭建自己的博客
+categories:
+  - 杂记
+tags: blog
+copyright: false
+reward: false
+rating: false
+related_posts: false
+date: 2020-03-03 06:51:55
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start222
+自己瞎折腾的博客
+
+## 本地安装Hexo出现的一些问题
 
 
-### Create a new post
+### 安装nodejs
 
-``` bash
-$ hexo new "My New Post"
+安装了node后，执行npm run xxx的命令的时候，报错，提示如下：
+
+```
+/usr/bin/env: node: No such file or directory
 ```
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+创建一个软连接，如下：
 
-### Run server
-
-``` bash
-$ hexo server
+```
+ln -s /usr/bin/nodejs /usr/bin/node
 ```
 
-More info: [Server](https://hexo.io/docs/server.html)
+运行'hexo s' 时出现问题：
 
-### Generate static files
+```
+SyntaxError: Unexpected token =
 
-``` bash
-$ hexo generate
+    at exports.runInThisContext (vm.js:53:16)
+    at Module._compile (module.js:374:25)
+    at Object.Module._extensions..js (module.js:417:10)
+    at Module.load (module.js:344:32)
+    at Function.Module._load (module.js:301:12)
+    at Function.Module.runMain (module.js:442:10)
+    at startup (node.js:136:18)
+
+    at node.js:966:3
 ```
 
-More info: [Generating](https://hexo.io/docs/generating.html)
+把nodejs升级一下就可以了，这里我们通过安装n模块来升级
 
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
+```
+sudo npm install -g n
+sudo n stable
 ```
 
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+
+
+### Hexo
+
+安装
+
+```
+npm install -g hexo-cli
+```
+本地预览
+``` bash
+hexo server
+```
+
+
+生成静态文件
+``` bash
+hexo generate
+```
+
+部署到远程
+``` bash
+hexo deploy
+```
+更多: [Server](https://hexo.io/docs/server.html), [Generating](https://hexo.io/docs/generating.html),  [Deployment](https://hexo.io/docs/one-command-deployment.html)
+
+### 插件
+
+
+```
+npm install hexo-admin --save 
+```
+该插件可以通过访问localhost:4000/admin来管理你的文章。
+并且在可视化界面中修改文章内容
