@@ -52,6 +52,20 @@ sudo npm install -g n
 sudo n stable
 ```
 
+安装
+```
+npm install hexo-renderer-pug --save
+npm install hexo-renderer-sass --save
+```
+时 error:
+```
+../src/sass_context_wrapper.h:8:26: fatal error: sass/context.h: No such file or directory
+```
+solve:
+```
+LIBSASS_EXT="no" npm install
+```
+
 
 
 ### Hexo
@@ -80,9 +94,13 @@ hexo deploy
 
 ### 插件
 
-
 ```
 npm install hexo-admin --save 
 ```
 该插件可以通过访问localhost:4000/admin来管理你的文章。
 并且在可视化界面中修改文章内容
+
+
+```python
+import torch
+```

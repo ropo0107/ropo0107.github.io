@@ -4,3 +4,4 @@
 #cache use "hexo g " generate the cache
 public/
 db.json
+node_modules
