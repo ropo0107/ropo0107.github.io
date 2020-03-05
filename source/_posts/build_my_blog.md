@@ -6,7 +6,7 @@ tags: blog
 copyright: false
 reward: false
 rating: false
-related_posts: false
+related_posts: true
 date: 2020-03-03 06:51:55
 ---
 
@@ -99,8 +99,3 @@ npm install hexo-admin --save
 ```
 该插件可以通过访问localhost:4000/admin来管理你的文章。
 并且在可视化界面中修改文章内容
-
-
-```python
-import torch
-```
