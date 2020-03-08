@@ -1,5 +1,5 @@
 ---
-title: 搭建自己的博客
+title: 搭建我的博客
 categories:
   - 杂记
 tags: blog
@@ -10,7 +10,7 @@ related_posts: true
 date: 2020-03-03 06:51:55
 ---
 
-# 自己瞎折腾的博客
+ 自己瞎折腾的博客
 
 ## 本地安装Hexo出现的一些问题
 

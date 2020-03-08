@@ -2,14 +2,15 @@
 title:  Go语言
 categories: [杂记]
 tags:   [Go, Note]
-copyright: false
+copyright: false``
 reward: false
 rating: false
 related_posts: false
 date: 2020-03-3 04:51:55
 ---
 
-go语言知识点
+go语言知识点   
+看到一个比较好的在线教程网站[地址](https://tour.go-zh.org/basics)
 
 ## go语言结构
 Go 语言的基础组成有以下几个部分：
@@ -65,20 +66,24 @@ fmt.Println("Google" + "Runoob")
 ```
 ### 关键字
  25 个关键字或保留字
- 
-    break	    default	    func	interface	select
-    case	    defer	    go	    map 	    struct
-    chan	    else	    goto	package	    switch
-    const	    fallthrough	if	    range	    type
-    continue	for	        import	return	    var
+
+||||||    
+|:------|:------|:-----|:-------|:-----|        
+|break|default|func|interface|select|   
+|case|defer|go|map|struct|
+|chan|else|goto|package|switch
+|const|fallthrough|if|range|type
+|continue|for|import|return|var
 
 
 除了以上介绍的这些关键字，Go 语言还有 36 个预定义标识符：
 
-    append	bool	byte	cap	        close	complex	complex64	complex128	uint16
-    copy	false	float32	float64	    imag	int	    int8	    int16	    uint32
-    int32	int64	iota	len	        make	new	    nil	        panic	    uint64
-    print	println	real	recover	    string	true	uint	    uint8	    uintptr
+|||||||||
+|:------|:------|:------|:------|:------|:------|:------|:------|   
+|append|bool|byte|cap|close|complex|complex64|complex128|uint16
+|copy|false|float32|float64|imag|int|int8|int16|uint32
+|int32|int64|iota|len|make|new|nil|panic|uint64
+|print|println|real|recover|string|true|uint|uint8|uintptr
 
 ### 空格
 Go 语言中变量的声明必须使用空格隔开
@@ -200,6 +205,7 @@ Go 语言按类别有以下几种数据类型：
     如果 r1 的值被改变了，那么这个值的所有引用都会指向被修改后的内容，在这个例子中，r2 也会受到影响。
 
 ## Go语言常量
+### const
 常量是一个简单值的标识符，在程序运行时，不会被修改的量。
 
 常量中的数据类型只可以是布尔型、数字型（整数型、浮点型和复数）和字符串型。
@@ -210,6 +216,211 @@ const b string = "abc" //显式类型定义
 const b = "abc" //隐式类型定义
 //可以省略类型说明符 [type]
 ```
+常量可以用len(), cap(), unsafe.Sizeof()函数计算表达式的值。常量表达式中，函数必须是内置函数，否则编译不过。
+iota
+iota，特殊常量，可以认为是一个可以被编译器修改的常量。
 
+### iota 
+在 const关键字出现时将被重置为 0(const 内部的第一行之前)，const 中每新增一行常量声明将使 iota 计数一次(iota 可理解为 const 语句块中的行索引)。
+
+iota 可以被用作枚举值：
+```go
+const (
+    a = iota
+    b = iota
+    c = iota
+)
+```
+第一个 iota 等于 0，每当 iota 在新的一行被使用时，它的值都会自动加 1；所以 a=0, b=1, c=2 可以简写为如下形式：
+```go
+package main
+
+import "fmt"
+
+func main() {
+    const (
+            a = iota   //0
+            b          //1
+            c          //2
+            d = "ha"   //独立值，iota += 1
+            e          //"ha"   iota += 1
+            f = 100    //iota +=1
+            g          //100  iota +=1
+            h = iota   //7,恢复计数
+            i          //8
+    )
+    fmt.Println(a,b,c,d,e,f,g,h,i)
+}
+```
+以上运行结果为：
+
+    0 1 2 ha ha 100 100 7 8
+
+再看个有趣的的 iota 实例：
+```go
+package main
+
+import "fmt"
+const (
+    i=1<<iota
+    j=3<<iota
+    k
+    l
+)
+
+func main() {
+    fmt.Println("i=",i)
+    fmt.Println("j=",j)
+    fmt.Println("k=",k)
+    fmt.Println("l=",l)
+}
+```
+以上运行结果为：
+
+    i= 1
+    j= 6
+    k= 12
+    l= 24
+iota 表示从 0 开始自动加 1，所以 i=1<<0, j=3<<1（<< 表示左移的意思），即：i=1, j=6，这没问题，关键在 k 和 l，从输出结果看 k=3<<2，l=3<<3。
+
+简单表述:
+
+    i=1：左移 0 位,不变仍为 1;
+    j=3：左移 1 位,变为二进制 110, 即 6;
+    k=3：左移 2 位,变为二进制 1100, 即 12;
+    l=3：左移 3 位,变为二进制 11000,即 24。
+
+## Go语言运算符
+
+|||||||||      
+|:------|:------|:-----|:-------|:-----|:-----|:-----|:------|     
+|算数运算符|+|-|*|/|%|++|--|  
+|关系运算符|==|!=|>|<|>|>=|<=   
+|逻辑运算符|&&|\|\||!|    
+|为运算符|&|\||^(异或)|<<(左移)|>>(右移)
+|其他运算符|&(取地址)|*(指针)
+
+
+|优先级|运算符|      
+|:------|:------|
+|5|	* / % << >> & &^
+|4|	+ - \| ^
+|3|	== != < <= > >=
+|2|	&&
+|1|	\|\||
+
+
+## go语言条件语句
+### if
+### switch
+
+- switch 语句用于基于不同条件执行不同动作，每一个 case 分支都是唯一的，从上至下逐一测试，直到匹配为止。
+
+ - switch 语句执行的过程从上至下，直到找到匹配项，匹配项后面也不需要再加 break。
+
+ - switch 默认情况下 case 最后自带 break 语句，匹配成功后就不会执行其他 case，如果我们需要执行后面的 case，可以使用 fallthrough 。
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+   /* 定义局部变量 */
+   var grade string = "B"
+   var marks int = 90
+
+   switch marks {
+      case 90: grade = "A"
+      case 80: grade = "B"
+      case 50,60,70 : grade = "C"
+      default: grade = "D"  
+   }
+
+   switch {
+      case grade == "A" :
+         fmt.Printf("优秀!\n" )    
+      case grade == "B", grade == "C" :
+         fmt.Printf("良好\n" )      
+      case grade == "D" :
+         fmt.Printf("及格\n" )      
+      case grade == "F":
+         fmt.Printf("不及格\n" )
+      default:
+         fmt.Printf("差\n" );
+   }
+   fmt.Printf("你的等级是 %s\n", grade );      
+}
+```
+
+## go语言循环语句
+集中for循环写法:
+
+- 
+        for i := 0; i <= 10; i++ {
+                sum += i
+        }
+
+- 
+         for (i := 0; i <= 10; i++) {
+                sum += i
+        }
+-         
+        for sum <= 10{
+                sum += sum
+        }
+        # 类似 while
+       
+- for 循环的 range 格式可以对 slice、map、数组、字符串等进行迭代循环。格式如下：
+
+        for key, value := range oldMap {
+            newMap[key] = value
+        }
+
+循环关键字:
+
+
+|关键字|描述|      
+|:------|:------|
+| break|经常用于中断当前 for 循环或跳出 switch 语句
+| continue|跳过当前循环的剩余语句，然后继续进行下一轮循环。
+| goto|将控制转移到被标记的语句。
+
+tips:  
+goto 语句可以无条件地转移到过程中指定的行。   
+goto 语句通常与条件语句配合使用。可用来实现条件转移， 构成循环，跳出循环体等功能。
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+   /* 定义局部变量 */
+   var a int = 10
+
+   /* 循环 */
+   LOOP: for a < 20 {
+      if a == 15 {
+         /* 跳过迭代 */
+         a = a + 1
+         goto LOOP
+      }
+      fmt.Printf("a的值为 : %d\n", a)
+      a++    
+   }  
+}
+```
+输出:   
+
+    a的值为 : 10
+    a的值为 : 11
+    a的值为 : 12
+    a的值为 : 13
+    a的值为 : 14
+    a的值为 : 16
+    a的值为 : 17
+    a的值为 : 18
+    a的值为 : 19
 
 
