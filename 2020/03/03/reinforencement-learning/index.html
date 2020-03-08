@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Note,RL," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="无恙" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="本文用来记录自己关于强化学习的note 和tips 简介该部分参考侯博士的文章 链接 目前ＤＲＬ的坑 样本利用率非常低 最终表现不够好，model free 经常比不过model base的方法 奖励函数难以设计 难以平衡“探索”和“利用”, 以致算法陷入局部最优解 对环境的过拟合 安全性以及不稳定性  Model-Based 和Model-Free是否基于model Model-based主要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reinforencement Learning">
+<meta property="og:url" content="http://yoursite.com/2020/03/03/reinforencement-learning/index.html">
+<meta property="og:site_name" content="无恙">
+<meta property="og:description" content="本文用来记录自己关于强化学习的note 和tips 简介该部分参考侯博士的文章 链接 目前ＤＲＬ的坑 样本利用率非常低 最终表现不够好，model free 经常比不过model base的方法 奖励函数难以设计 难以平衡“探索”和“利用”, 以致算法陷入局部最优解 对环境的过拟合 安全性以及不稳定性  Model-Based 和Model-Free是否基于model Model-based主要">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-03T08:51:55.000Z">
+<meta property="article:modified_time" content="2020-03-05T18:20:14.724Z">
+<meta property="article:author" content="无恙">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="RL">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/03/reinforencement-learning/"/>
+
+
+
+
+
+  <title>Reinforencement Learning | 无恙</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">无恙</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Nothing can replace hard work!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/reinforencement-learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="无恙">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="无恙">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Reinforencement Learning</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-03T16:51:55+08:00">
+                2020-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E6%9C%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">学术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<p>本文用来记录自己关于强化学习的<strong>note</strong> 和<strong>tips</strong></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>该部分参考侯博士的文章 <a href="https://zhuanlan.zhihu.com/p/41369224" target="_blank" rel="noopener">链接</a></p>
+<h2 id="目前DRL的坑"><a href="#目前DRL的坑" class="headerlink" title="目前ＤＲＬ的坑"></a>目前ＤＲＬ的坑</h2><ul>
+<li>样本利用率非常低</li>
+<li>最终表现不够好，model free 经常比不过model base的方法</li>
+<li>奖励函数难以设计</li>
+<li>难以平衡“探索”和“利用”, 以致算法陷入局部最优解</li>
+<li>对环境的过拟合</li>
+<li>安全性以及不稳定性</li>
+</ul>
+<h2 id="Model-Based-和Model-Free"><a href="#Model-Based-和Model-Free" class="headerlink" title="Model-Based 和Model-Free"></a>Model-Based 和Model-Free</h2><h3 id="是否基于model"><a href="#是否基于model" class="headerlink" title="是否基于model"></a>是否基于model</h3><ul>
+<li>Model-based主要发展自最优控制领域。通常先通过高斯过程（GP）或贝叶斯网络（BN）等工具针对具体问题建立模型，然后再通过机器学习的方法或最优控制的方法，如模型预测控制（MPC）、线性二次调节器（LQR）、线性二次高斯（LQG）、迭代学习控制（ICL）等进行求解。</li>
+<li>后者更多地发展自机器学习领域，属于数据驱动的方法。算法通过大量采样，估计代理的状态、动作的值函数或回报函数，从而优化动作策略。</li>
+</ul>
+<h3 id="Model-Free"><a href="#Model-Free" class="headerlink" title="Model-Free"></a>Model-Free</h3><ul>
+<li>方法无法从不带反馈信号的样本中学习，而反馈本身就是稀疏的，因此免模型方向样本利用率很低，而数据驱动的方法则需要大量采样</li>
+<li>基于模型的方法针对问题建立动力学模型，这个模型具有解释性。而免模型方法因为没有模型，解释性不强，调试困难</li>
+<li>相比基于模型的方法，尤其是基于简单线性模型的方法，免模型方法不够稳定，在训练中极易发散。</li>
+</ul>
+<h3 id="model-based"><a href="#model-based" class="headerlink" title="model-based"></a>model-based</h3><ul>
+<li>针对无法建模的问题束手无策。有些领域，比如 NLP，存在大量难以归纳成模型的任务。在这种场景下，只能通过诸如 R-max 算法这样的方法先与环境交互，计算出一个模型为后续使用。但是这种方法的复杂度一般很高。近期有一些工作结合预测学习建立模型，部分地解决了建模难的问题，这一思路逐渐成为了研究热点。</li>
+<li>建模会带来误差，而且误差往往随着算法与环境的迭代交互越来越大，使得算法难以保证收敛到最优解。</li>
+<li>模型缺乏通用性，每次换一个问题，就要重新建模。</li>
+</ul>
+<h1 id="RL主要研究点"><a href="#RL主要研究点" class="headerlink" title="RL主要研究点"></a>RL主要研究点</h1><ul>
+<li><p>基于模型的方法。基于模型的方法不仅能大幅降低采样需求，还可以通过学习任务的动力学模型，为预测学习做铺垫。</p>
+</li>
+<li><p>提高免模型方法的数据利用率和扩展性。这是免模型学习的两处硬伤，Rich Sutton 的终极研究目标。这个领域很艰难，但是任何有意义的突破也将带来极大价值。</p>
+</li>
+<li><p>更高效的探索策略（Exploration Strategies）。平衡“探索”与“利用”是 RL 的本质问题，这需要我们设计更加高效的探索策略。除了若干经典的算法如 Softmax、ϵ-Greedy 和 Thompson Sampling 等，近期学界陆续提出了大批新算法，如 Intrinsic Motivation 、Curiosity-driven Exploration、Count-based Exploration  等。其实这些“新”算法的思想不少早在 80 年代就已出现 ，而与 DL 的有机结合使它们重新得到重视。此外，OpenAI 与 DeepMind 先后提出通过在策略参数 和 神经网络权重 上引入噪声来提升探索策略, 开辟了一个新方向。</p>
+</li>
+<li><p>模仿学习（Imitation Learning, IL）结合。机器学习与自动驾驶领域最早的成功案例 ALVINN 就是基于 IL；当前 RL 领域最顶级的学者 Pieter Abbeel 在跟随 Andrew Ng 读博士时候, 设计的通过 IL 控制直升机的算法 成为 IL 领域的代表性工作。2016 年，英伟达提出的端到端自动驾驶系统也是通过 IL 进行学习 。而 AlphaGo 的学习方式也是 IL。IL 介于 RL 与监督学习之间，兼具两者的优势，既能更快地得到反馈、更快地收敛，又有推理能力，很有研究价值。</p>
+</li>
+<li><p>奖赏塑形（Reward Shaping）。奖赏即反馈，其对 RL 算法性能的影响是巨大的。Alexirpan 的博文中已经展示了没有精心设计的反馈信号会让 RL 算法产生多么差的结果。设计好的反馈信号一直是 RL 领域的研究热点。近年来涌现出很多基于“好奇心”的 RL 算法和层级 RL 算法，这两类算法的思路都是在模型训练的过程中插入反馈信号，从而部分地克服了反馈过于稀疏的问题。另一种思路是学习反馈函数，这是逆强化学习（Inverse RL, IRL）的主要方式之一。近些年大火的 GAN 也是基于这个思路来解决生成建模问题, GAN 的提出者 Ian Goodfellow 也认为 GAN 就是 RL 的一种方式 。而将 GAN 于传统 IRL 结合的 GAIL 已经吸引了很多学者的注意。</p>
+</li>
+<li><p>RL 中的迁移学习与多任务学习。当前 RL 的采样效率极低，而且学到的知识不通用。迁移学习与多任务学习可以有效解决这些问题。通过将从原任务中学习的策略迁移至新任务中，避免了针对新任务从头开始学习，这样可以大大降低数据需求，同时也提升了算法的自适应能力。在真实环境中使用 RL 的一大困难在于 RL 的不稳定性，一个自然的思路是通过迁移学习将在模拟器中训练好的稳定策略迁移到真实环境中，策略在新环境中仅通过少量探索即可满足要求。然而，这一研究领域面临的一大问题就是现实鸿沟（Reality Gap），即模拟器的仿真环境与真实环境差异过大。好的模拟器不仅可以有效填补现实鸿沟，还同时满足 RL 算法大量采样的需求，因此可以极大促进 RL 的研究与开发，如上文提到的 Sim-to-Real。同时，这也是 RL 与 VR 技术的一个结合点。近期学术界和工业界纷纷在这一领域发力。在自动驾驶领域，Gazebo、EuroTruck Simulator、TORCS、Unity、Apollo、Prescan、Panosim 和 Carsim 等模拟器各具特色，而英特尔研究院开发的 CARLA 模拟器逐渐成为业界研究的标准。其他领域的模拟器开发也呈现百花齐放之势：在家庭环境模拟领域， MIT 和多伦多大学合力开发了功能丰富的 VirturalHome 模拟器；在无人机模拟训练领域，MIT 也开发了 Flight Goggles 模拟器。</p>
+</li>
+<li><p>提升 RL 的的泛化能力。机器学习最重要的目标就是泛化能力, 而现有的 RL 方法大多在这一指标上表现糟糕 Jacob Andreas 会批评 RL 的成功是来自“train&gt;</p>
+</li>
+<li><p>分层 RL（Hierarchical RL, HRL）。周志华教授总结 DL 成功的三个条件为：有逐层处理、有特征的内部变化和有足够的模型复杂度 。而 HRL 不仅满足这三个条件，而且具备更强的推理能力，是一个非常潜力的研究领域。目前 HRL 已经在一些需要复杂推理的任务（如 Atari 平台上的《Montezuma’s Revenge》游戏）中展示了强大的学习能力 。</p>
+</li>
+<li><p>与序列预测（Sequence Prediction）结合。Sequence Prediction 与 RL、IL 解决的问题相似又不相同。三者间有很多思想可以互相借鉴。当前已有一些基于 RL 和 IL 的方法在 Sequence Prediction 任务上取得了很好的结果 。这一方向的突破对 Video Prediction 和 NLP 中的很多任务都会产生广泛影响。</p>
+</li>
+<li><p>（免模型）方法探索行为的安全性（Safe RL）。相比于基于模型的方法，免模型方法缺乏预测能力，这使得其探索行为带有更多不稳定性。一种研究思路是结合贝叶斯方法为 RL 代理行为的不确定性建模，从而避免过于危险的探索行为。此外，为了安全地将 RL 应用于现实环境中，可以在模拟器中借助混合现实技术划定危险区域，通过限制代理的活动空间约束代理的行为。</p>
+</li>
+<li><p>关系 RL。近期学习客体间关系从而进行推理与预测的“关系学习”受到了学界的广泛关注。关系学习往往在训练中构建的状态链，而中间状态与最终的反馈是脱节的。RL 可以将最终的反馈回传给中间状态，实现有效学习，因而成为实现关系学习的最佳方式。2017 年 DeepMind 提出的 VIN 和 Pridictron 均是这方面的代表作。2018 年 6 月，DeepMind 又接连发表了多篇关系学习方向的工作如关系归纳偏置 、关系 RL、关系 RNN、图网络  和已经在《科学》杂志发表的生成查询网络（Generative Query Network，GQN）。这一系列引人注目的工作将引领关系 RL 的热潮。</p>
+</li>
+<li><p>对抗样本 RL。RL 被广泛应用于机械控制等领域，这些领域相比于图像识别语音识别等等，对鲁棒性和安全性的要求更高。因此针对 RL 的对抗攻击是一个非常重要的问题。近期有研究表明，会被对抗样本操控，很多经典模型如 DQN 等算法都经不住对抗攻击的扰动 。</p>
+</li>
+<li><p>处理其他模态的输入。在 NLP 领域，学界已经将 RL 应用于处理很多模态的数据上，如句子、篇章、知识库等等。但是在计算机视觉领域，RL 算法主要还是通过神经网络提取图像和视频的特征，对其他模态的数据很少涉及。我们可以探索将 RL 应用于其他模态的数据的方法，比如处理 RGB-D 数据和激光雷达数据等。一旦某一种数据的特征提取难度大大降低，将其与 RL 有机结合后都可能取得 AlphaGo 级别的突破。英特尔研究院已经基于 CARLA 模拟器在这方面开展了一系列的工作。</p>
+</li>
+</ul>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+      
+    </div>
+    
+    
+    
+  <div style="text-align:center;color: #ccc;font-size:14px;">
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
+          
+            <a href="/tags/RL/" rel="tag"><i class="fa fa-tag"></i> RL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/03/build_my_blog/" rel="next" title="搭建我的博客">
+                <i class="fa fa-chevron-left"></i> 搭建我的博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/04/ubuntu/" rel="prev" title="使用ubuntu的小tips">
+                使用ubuntu的小tips <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">无恙</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ropo0107" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wangzongtao123@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="/soup/darksoup/" title="毒鸡汤" target="_blank">毒鸡汤</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="/soup/rainbow/" title="彩虹屁" target="_blank">彩虹屁</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目前DRL的坑"><span class="nav-number">1.1.</span> <span class="nav-text">目前ＤＲＬ的坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-Based-和Model-Free"><span class="nav-number">1.2.</span> <span class="nav-text">Model-Based 和Model-Free</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#是否基于model"><span class="nav-number">1.2.1.</span> <span class="nav-text">是否基于model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Free"><span class="nav-number">1.2.2.</span> <span class="nav-text">Model-Free</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#model-based"><span class="nav-number">1.2.3.</span> <span class="nav-text">model-based</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RL主要研究点"><span class="nav-number">2.</span> <span class="nav-text">RL主要研究点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text"></span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">无恙</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">9k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
