@@ -92,20 +92,20 @@ index_with_subtitle: false
 # Value before `||` delimeter is the target link.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
-  # home: /|| home
-  # tags: /tags/|| tags
-  # categories: /categories/|| th
-  # archives: /archives/|| archive
-  # about: /about/|| user
+  home: /|| home
+  tags: /tags/|| tags
+  categories: /categories/|| th
+  archives: /archives/|| archive
+  about: /about/|| user
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
 
-  home: /
-  tags: /tags
-  categories: /categories
-  archives: /archives
-  about: /about
+  # home: /
+  # tags: /tags
+  # categories: /categories
+  # archives: /archives
+  # about: /about
   # soup: /soup
 
 # Enable/Disable menu icons.
@@ -159,7 +159,8 @@ links_layout: block
 # links_layout: inline
 links:
   # Title: http://example.com/
-  每日一句: /soup
+  毒鸡汤: /soup/darksoup/
+  彩虹屁: /soup/rainbow/
 
 
 # Sidebar Avatar
