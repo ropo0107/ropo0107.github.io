@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/03/10/vps_hexo/</loc>
+    
+    <lastmod>2020-03-09T23:48:48.730Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/03/04/ubuntu/</loc>
     
     <lastmod>2020-03-09T16:54:28.712Z</lastmod>
