@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Note,Go," />
+  <meta name="keywords" content="Go,Note," />
 
 
 
@@ -91,10 +91,10 @@
 <meta property="og:description" content="go语言知识点看到一个比较好的在线教程网站地址 go语言结构Go 语言的基础组成有以下几个部分：  包声明 引入包 函数 变量 语句 &amp; 表达式 注释  接下来让我们来看下简单的代码，该代码输出了”Hello World!”: 实例 12345678package mainimport &quot;fmt&quot;func main() &amp;#123;   &#x2F;* 这是我的第一个简单的程序 *&#x2F;   fmt.P">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-02T20:51:55.000Z">
-<meta property="article:modified_time" content="2020-03-07T12:21:23.950Z">
+<meta property="article:modified_time" content="2020-03-09T14:55:29.344Z">
 <meta property="article:author" content="无恙">
-<meta property="article:tag" content="Note">
 <meta property="article:tag" content="Go">
+<meta property="article:tag" content="Note">
 <meta name="twitter:card" content="summary">
 
 
@@ -378,7 +378,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2.6k
+                  2.8k
                 </span>
               
 
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  10
+                  11
                 </span>
               
             </div>
@@ -884,7 +884,16 @@ a的值为 : 14
 a的值为 : 16
 a的值为 : 17
 a的值为 : 18
-a的值为 : 19</code></pre>
+a的值为 : 19</code></pre><h2 id="go语言函数"><a href="#go语言函数" class="headerlink" title="go语言函数"></a>go语言函数</h2><p>Go 语言函数定义格式如下：</p>
+<pre><code>func function_name( [parameter list] ) [return_types] {
+函数体
+}</code></pre><hr>
+<p>Go 语言使用的是值传递</p>
+<hr>
+<p>函数定义后可作为另外一个函数的实参数传入</p>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>同一个函数与不同引用环境组合，可以形成不同的实例。</p>
+<p>一个函数类型就像结构体一样，可以被实例化，函数本身不存储任何信息，只有与引用环境结合后形成的闭包才具有“记忆性”，函数是编译期静态的概念，而闭包是运行期动态的概念</p>
+
       
     </div>
     
@@ -901,9 +910,9 @@ a的值为 : 19</code></pre>
       
         <div class="post-tags">
           
-            <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
-          
             <a href="/tags/Go/" rel="tag"><i class="fa fa-tag"></i> Go</a>
+          
+            <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
           
         </div>
       
@@ -1003,7 +1012,7 @@ a的值为 : 19</code></pre>
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1025,7 +1034,7 @@ a的值为 : 19</code></pre>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1065,10 +1074,10 @@ a的值为 : 19</code></pre>
 
           
           
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-globe"></i>
-                Links
+                
               </div>
               <ul class="links-of-blogroll-list">
                 
@@ -1099,7 +1108,7 @@ a的值为 : 19</code></pre>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#go语言结构"><span class="nav-number">1.</span> <span class="nav-text">go语言结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#go基本语法"><span class="nav-number">2.</span> <span class="nav-text">go基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标记"><span class="nav-number">2.1.</span> <span class="nav-text">标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行分隔符"><span class="nav-number">2.2.</span> <span class="nav-text">行分隔符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">2.3.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标识符"><span class="nav-number">2.4.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串连接"><span class="nav-number">2.5.</span> <span class="nav-text">字符串连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键字"><span class="nav-number">2.6.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空格"><span class="nav-number">2.7.</span> <span class="nav-text">空格</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#go语言数据类型"><span class="nav-number">3.</span> <span class="nav-text">go语言数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#go语言变量"><span class="nav-number">4.</span> <span class="nav-text">go语言变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明"><span class="nav-number">4.1.</span> <span class="nav-text">变量声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值类型和引用类型"><span class="nav-number">4.2.</span> <span class="nav-text">值类型和引用类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Go语言常量"><span class="nav-number">5.</span> <span class="nav-text">Go语言常量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#const"><span class="nav-number">5.1.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iota"><span class="nav-number">5.2.</span> <span class="nav-text">iota</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Go语言运算符"><span class="nav-number">6.</span> <span class="nav-text">Go语言运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#go语言条件语句"><span class="nav-number">7.</span> <span class="nav-text">go语言条件语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if"><span class="nav-number">7.1.</span> <span class="nav-text">if</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch"><span class="nav-number">7.2.</span> <span class="nav-text">switch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#go语言循环语句"><span class="nav-number">8.</span> <span class="nav-text">go语言循环语句</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类似-while"><span class="nav-number"></span> <span class="nav-text">类似 while</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#go语言结构"><span class="nav-number">1.</span> <span class="nav-text">go语言结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#go基本语法"><span class="nav-number">2.</span> <span class="nav-text">go基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标记"><span class="nav-number">2.1.</span> <span class="nav-text">标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行分隔符"><span class="nav-number">2.2.</span> <span class="nav-text">行分隔符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">2.3.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标识符"><span class="nav-number">2.4.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串连接"><span class="nav-number">2.5.</span> <span class="nav-text">字符串连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键字"><span class="nav-number">2.6.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空格"><span class="nav-number">2.7.</span> <span class="nav-text">空格</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#go语言数据类型"><span class="nav-number">3.</span> <span class="nav-text">go语言数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#go语言变量"><span class="nav-number">4.</span> <span class="nav-text">go语言变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明"><span class="nav-number">4.1.</span> <span class="nav-text">变量声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值类型和引用类型"><span class="nav-number">4.2.</span> <span class="nav-text">值类型和引用类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Go语言常量"><span class="nav-number">5.</span> <span class="nav-text">Go语言常量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#const"><span class="nav-number">5.1.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iota"><span class="nav-number">5.2.</span> <span class="nav-text">iota</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Go语言运算符"><span class="nav-number">6.</span> <span class="nav-text">Go语言运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#go语言条件语句"><span class="nav-number">7.</span> <span class="nav-text">go语言条件语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if"><span class="nav-number">7.1.</span> <span class="nav-text">if</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch"><span class="nav-number">7.2.</span> <span class="nav-text">switch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#go语言循环语句"><span class="nav-number">8.</span> <span class="nav-text">go语言循环语句</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类似-while"><span class="nav-number"></span> <span class="nav-text">类似 while</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#go语言函数"><span class="nav-number">1.</span> <span class="nav-text">go语言函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包"><span class="nav-number">1.1.</span> <span class="nav-text">闭包</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1133,7 +1142,7 @@ a的值为 : 19</code></pre>
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9k</span>
+    <span title="Site words total count">9.7k</span>
   
 </div>
 

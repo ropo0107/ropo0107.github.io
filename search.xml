@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>trojan做点不一样的事</title>
+    <url>/2020/03/09/trojan/</url>
+    <content><![CDATA[<h1 id="trojan-安装和使用"><a href="#trojan-安装和使用" class="headerlink" title="trojan 安装和使用"></a>trojan 安装和使用</h1><p>最近墙越来越高了,开始的ssr,在后来的V2ray,没办法,干就完事了</p>
+<p>折腾了好久终于搞好了,记录一下</p>
+<h2 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h2><h3 id="搭建vps"><a href="#搭建vps" class="headerlink" title="搭建vps"></a>搭建vps</h3><p>个人用的 <strong>digitalocean</strong>
+　</p>
+<h3 id="获取域名"><a href="#获取域名" class="headerlink" title="获取域名"></a>获取域名</h3><p>用的 <strong>namecheap</strong></p>
+<h3 id="开干"><a href="#开干" class="headerlink" title="开干"></a>开干</h3><p>这里使用了脚本,参考一下链接</p>
+<p><a href="https://www.johnrosen1.com/trojan/" target="_blank" rel="noopener">一键脚本</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo bash -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/johnrosen1/trojan-gfw-script/master/vps.sh)</span>"</span></span><br></pre></td></tr></table></figure>
+<p>一路默认即可</p>
+<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>如果是ubuntu18.04可以用这个</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository ppa:greaterfire/trojan</span><br><span class="line">sudo apt-get install trojan -y</span><br><span class="line">sudo nano /etc/trojan/config.json</span><br></pre></td></tr></table></figure>
+
+<p>我个人时候用的ubuntu16.04,客户端使用有点狗</p>
+<p>要下两个东西</p>
+<p>trojan-cli</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://github.com/atrandys/trojan/raw/master/trojan-cli.zip</span><br></pre></td></tr></table></figure>
+
+<p>trojan-1.14.1-linux-amd64.tar.xz</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz</span><br></pre></td></tr></table></figure>
+<p>将trojan-1.14.1-linux-amd64.tar.xz里面的克制向文件 <strong>trojan</strong> 放到trojan-cli文件下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./trojan -c config.json</span><br></pre></td></tr></table></figure>
+
+<p>本人运行时一直有个错误</p>
+<pre><code>fatal: bind: Address already in use</code></pre><p>说端口被占用．<br>一直以为是服务端的问题，最后试了下 iso 端是可以用的，说明是客户端的问题，默认 1080　端口</p>
+<pre><code>lsof -i:1080</code></pre><p>查看发现并没有问题</p>
+<p>最后解决方法是　cofig.jaon 文件中将本地端口换了一个，就可以了</p>
+<p>神奇</p>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>trojan，ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>添加自定义HTML静态网页</title>
     <url>/2020/03/08/add_custom_html/</url>
     <content><![CDATA[<h2 id="添加自定义HTML静态网页"><a href="#添加自定义HTML静态网页" class="headerlink" title="添加自定义HTML静态网页"></a>添加自定义HTML静态网页</h2><p>今天发现一个好玩的毒鸡汤界面,打开了新世界的大门.</p>
@@ -58,6 +97,17 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode动态规划</title>
+    <url>/2020/03/05/leetcode_dp/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode排序</title>
     <url>/2020/03/05/leetcode_sort/</url>
     <content><![CDATA[<p>leetcode中的排序问题</p>
@@ -107,17 +157,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode动态规划</title>
-    <url>/2020/03/05/leetcode_dp/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode的笔记</title>
     <url>/2020/03/04/leetcode/</url>
     <content><![CDATA[<h1 id="菜鸡刷leetcode"><a href="#菜鸡刷leetcode" class="headerlink" title="菜鸡刷leetcode"></a>菜鸡刷leetcode</h1><p>用来记录一些好的点子</p>
@@ -153,14 +192,23 @@
         <category>杂记</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
         <tag>Note</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
     <title>使用ubuntu的小tips</title>
     <url>/2020/03/04/ubuntu/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="常用的-linux-配置"><a href="#常用的-linux-配置" class="headerlink" title="常用的 linux 配置"></a>常用的 linux 配置</h1><h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><h2 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h2><h1 id="常用的-linux-命令"><a href="#常用的-linux-命令" class="headerlink" title="常用的 linux 命令"></a>常用的 linux 命令</h1><h2 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h2><ul>
+<li><p>第一种 &amp;</p>
+<p> 关闭终端停止运行   </p>
+<pre><code>command &amp;</code></pre></li>
+<li><p>第二中 nohup<br> 关闭终端停止运行,如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用nohup命令。该命令可以在你退出帐户之后继续运行相应的进程。nohup就是不挂起的意思( no hang up)。 该命令的一般形式为：</p>
+<pre><code>nohup conmmand &amp;</code></pre><p> 如果使用nohup命令提交作业，那么在缺省情况下该作业的所有输出都被重定向到一个名为nohup.out的文件中，除非另外指定了输出文件：</p>
+<pre><code>nohup command &gt; myout.file 2&gt;&amp;1</code></pre><p> 在上面的例子中，输出被重定向到myout.file文件中。</p>
+</li>
+</ul>
+]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -753,13 +801,22 @@ a的值为 : 14
 a的值为 : 16
 a的值为 : 17
 a的值为 : 18
-a的值为 : 19</code></pre>]]></content>
+a的值为 : 19</code></pre><h2 id="go语言函数"><a href="#go语言函数" class="headerlink" title="go语言函数"></a>go语言函数</h2><p>Go 语言函数定义格式如下：</p>
+<pre><code>func function_name( [parameter list] ) [return_types] {
+函数体
+}</code></pre><hr>
+<p>Go 语言使用的是值传递</p>
+<hr>
+<p>函数定义后可作为另外一个函数的实参数传入</p>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>同一个函数与不同引用环境组合，可以形成不同的实例。</p>
+<p>一个函数类型就像结构体一样，可以被实例化，函数本身不存储任何信息，只有与引用环境结合后形成的闭包才具有“记忆性”，函数是编译期静态的概念，而闭包是运行期动态的概念</p>
+]]></content>
       <categories>
         <category>杂记</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>Go</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
 </search>
