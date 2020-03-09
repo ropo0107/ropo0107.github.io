@@ -162,9 +162,9 @@
       <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
-    
       <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
   </entry>
   
@@ -276,9 +276,9 @@
       <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="Go" scheme="http://yoursite.com/tags/Go/"/>
-    
       <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+    
+      <category term="Go" scheme="http://yoursite.com/tags/Go/"/>
     
   </entry>
   
