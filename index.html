@@ -370,7 +370,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  572
+                  613
                 </span>
               
 
@@ -411,8 +411,10 @@
           
           搭建完 trojan 后把域名和 vps 绑定后想把 blog 迁移到 vps 上
 安装必要工具
-首先需要将文件上传，我们选择 git ，然后对于网页展示我们使用久负盛名的 nginx。 在root目录下安装
- 1234mkdir hexo.gitcd hexo.gitgit init --bare
+配置SSH 避免每次登录都需要密码
+
+本地密钥获取  1cat ~&#x2F;.ssh&#x2F;id_rsa.pub
+服务端将密钥复制进去即可  12cd .sshvim authorized_key
           ...
           <!--noindex-->
           <div class="post-button text-center">
