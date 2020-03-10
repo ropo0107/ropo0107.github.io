@@ -101,10 +101,16 @@ theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+# deploy:
+#   type: git
+#   repository: git@github.com:ropo0107/ropo0107.github.io.git
+#   branch: master
+
+
 deploy:
-  type: git
-  repository: git@github.com:ropo0107/ropo0107.github.io.git
-  branch: master
+  type: git                      # 设置上传模块为 Git
+  repo: root@104.248.145.133:hexo.git  # 连接到服务器
+  branch: master  
 
 # web search
 search:
