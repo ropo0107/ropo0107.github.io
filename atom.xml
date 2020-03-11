@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-10T00:23:49.420Z</updated>
+  <updated>2020-03-10T18:32:06.929Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2020/03/10/vps_hexo/"/>
     <id>http://yoursite.com/2020/03/10/vps_hexo/</id>
     <published>2020-03-09T23:23:55.000Z</published>
-    <updated>2020-03-10T00:23:49.420Z</updated>
+    <updated>2020-03-10T18:32:06.929Z</updated>
     
-    <content type="html"><![CDATA[<p>搭建完 <strong>trojan</strong> 后把域名和 <strong>vps</strong> 绑定后想把 <strong>blog</strong> 迁移到 <strong>vps</strong> 上</p><h2 id="安装必要工具"><a href="#安装必要工具" class="headerlink" title="安装必要工具"></a>安装必要工具</h2><ul><li><p>配置SSH<br> 避免每次登录都需要密码</p><ul><li>本地密钥获取  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure></li><li>服务端将密钥复制进去即可  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd .ssh</span><br><span class="line">vim authorized_keys</span><br></pre></td></tr></table></figure></li></ul></li><li><p>首先需要将文件上传，我们选择 git ，然后对于网页展示我们使用久负盛名的 nginx。<br> 在root目录下安装</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo.git</span><br><span class="line"><span class="built_in">cd</span> hexo.git</span><br><span class="line">git init --bare </span><br><span class="line"><span class="comment">#  --bare是建立裸仓库</span></span><br></pre></td></tr></table></figure></li><li><p>然后来到/var/www文件夹下，我们的网页就会存放在这里的某一个文件夹下，这里我们创建一个文件夹hexo，然后赋予它操作权限，同时赋予自己权限来操作它。</p> <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo</span><br><span class="line">chmod 0755 hexo</span><br><span class="line">chown root:root -R /var/www/hexo</span><br></pre></td></tr></table></figure></li></ul><h2 id="githook。"><a href="#githook。" class="headerlink" title="githook。"></a>githook。</h2><p>当我们将本地网页文件传上来之后，我们可能还要到服务器端操作一番，以能够将网页文件放到/var/www/hexo下展示。git自带一个功能，那就是只要有文件传输它就会执行某个脚本。那么我们怎么做呢？写个脚本就好了！</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim hexo.git/hooks/post-receive</span><br></pre></td></tr></table></figure><p>将下面内容贴进去</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">GIT_REPO=~/hexo.git                      <span class="comment"># 触发 hook</span></span><br><span class="line">TMP_GIT_CLONE=/tmp/hexo                  <span class="comment"># 存在 /tmp 下</span></span><br><span class="line">PUBLIC_WWW=/var/www/hexo                 <span class="comment"># 展示网站的目录</span></span><br><span class="line">rm -rf <span class="variable">$&#123;TMP_GIT_CLONE&#125;</span>                  <span class="comment"># 删除之前内容</span></span><br><span class="line">git <span class="built_in">clone</span> <span class="variable">$GIT_REPO</span> <span class="variable">$TMP_GIT_CLONE</span>       <span class="comment"># 将 Git 仓库上传的内容复制到/tmp</span></span><br><span class="line">rm -rf <span class="variable">$&#123;PUBLIC_WWW&#125;</span>/*                   <span class="comment"># 删除展示网站的目录的全部内容</span></span><br><span class="line">cp -rf <span class="variable">$&#123;TMP_GIT_CLONE&#125;</span>/* <span class="variable">$&#123;PUBLIC_WWW&#125;</span>  <span class="comment"># 将/tmp所有内容复制到网站目录</span></span><br></pre></td></tr></table></figure><h2 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h2><p>正常应该是：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;nginx&#x2F;sites-available</span><br><span class="line">vim default</span><br></pre></td></tr></table></figure><p>因为之前安装过 <strong>trojan</strong> 用到了 <strong>nginx</strong> 所以我的</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;trojan.conf</span><br><span class="line">vim trojan.conf</span><br></pre></td></tr></table></figure><p>我的只需要修改下面内容即可</p><pre><code>location / {        root /usr/share/nginx/html/;                index index.html;        }</code></pre><p>将上面的内容替换</p><pre><code>location / {        root  /var/www/hexo/;        index  index.html index.htm;}</code></pre><ul><li>这儿有个坑，看别的博主 <strong>root  /var/www/hexo/;</strong> 的博主，这句都没有最后的 <strong>/</strong> ,我这儿是有问题的</li></ul><p>完整的config文件</p><pre><code>server {        listen 80;        listen [::]:80;        root /var/www/hexo; #坑的我好苦        index index.html index.htm index.nginx-debian.html;        server_name 你的域名;#如果没有的话就别填了QwQ        location ~* ^.+\.(ico|gif|jpg|jpeg|png)$ {                root /var/www/hexo;                access_log   off;                expires      1d;        }        location ~* ^.+\.(css|js|txt|xml|swf|wav)$ {                root /var/www/hexo;                access_log   off;                expires      10m;        }        location / {                root /var/www/hexo;                if (-f $request_filename) {                        rewrite ^/(.*)$  /$1 break;                }        }}</code></pre><p>重启nginx即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service nginx restart</span><br></pre></td></tr></table></figure><p>在浏览器输入自己域名就ok了！！！</p>]]></content>
+    <content type="html"><![CDATA[<p>搭建完 <strong>trojan</strong> 后把域名和 <strong>vps</strong> 绑定后想把 <strong>blog</strong> 迁移到 <strong>vps</strong> 上</p><h2 id="安装必要工具"><a href="#安装必要工具" class="headerlink" title="安装必要工具"></a>安装必要工具</h2><ul><li><p>配置SSH<br> 避免每次登录都需要密码</p><ul><li>本地密钥获取  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure></li><li>服务端将密钥复制进去即可  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd .ssh</span><br><span class="line">vim authorized_keys</span><br></pre></td></tr></table></figure></li></ul></li><li><p>首先需要将文件上传，我们选择 git ，然后对于网页展示我们使用久负盛名的 nginx。<br> 在root目录下安装</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo.git</span><br><span class="line"><span class="built_in">cd</span> hexo.git</span><br><span class="line">git init --bare </span><br><span class="line"><span class="comment">#  --bare是建立裸仓库</span></span><br></pre></td></tr></table></figure></li><li><p>然后来到/var/www文件夹下，我们的网页就会存放在这里的某一个文件夹下，这里我们创建一个文件夹hexo，然后赋予它操作权限，同时赋予自己权限来操作它。</p> <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo</span><br><span class="line">chmod 0755 hexo</span><br><span class="line">chown root:root -R /var/www/hexo</span><br></pre></td></tr></table></figure></li></ul><h2 id="githook。"><a href="#githook。" class="headerlink" title="githook。"></a>githook。</h2><p>当我们将本地网页文件传上来之后，我们可能还要到服务器端操作一番，以能够将网页文件放到/var/www/hexo下展示。git自带一个功能，那就是只要有文件传输它就会执行某个脚本。那么我们怎么做呢？写个脚本就好了！</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim hexo.git/hooks/post-receive</span><br></pre></td></tr></table></figure><p>将下面内容贴进去</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">GIT_REPO=~/hexo.git                      <span class="comment"># 触发 hook</span></span><br><span class="line">TMP_GIT_CLONE=/tmp/hexo                  <span class="comment"># 存在 /tmp 下</span></span><br><span class="line">PUBLIC_WWW=/var/www/hexo                 <span class="comment"># 展示网站的目录</span></span><br><span class="line">rm -rf <span class="variable">$&#123;TMP_GIT_CLONE&#125;</span>                  <span class="comment"># 删除之前内容</span></span><br><span class="line">git <span class="built_in">clone</span> <span class="variable">$GIT_REPO</span> <span class="variable">$TMP_GIT_CLONE</span>       <span class="comment"># 将 Git 仓库上传的内容复制到/tmp</span></span><br><span class="line">rm -rf <span class="variable">$&#123;PUBLIC_WWW&#125;</span>/*                   <span class="comment"># 删除展示网站的目录的全部内容</span></span><br><span class="line">cp -rf <span class="variable">$&#123;TMP_GIT_CLONE&#125;</span>/* <span class="variable">$&#123;PUBLIC_WWW&#125;</span>  <span class="comment"># 将/tmp所有内容复制到网站目录</span></span><br></pre></td></tr></table></figure><h2 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h2><p>正常应该是：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;nginx&#x2F;sites-available</span><br><span class="line">vim default</span><br></pre></td></tr></table></figure><p>因为之前安装过 <strong>trojan</strong> 用到了 <strong>nginx</strong> 所以我的</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;trojan.conf</span><br><span class="line">vim trojan.conf</span><br></pre></td></tr></table></figure><p>我的只需要修改下面内容即可</p><pre><code>location / {        root /usr/share/nginx/html/;                index index.html;        }</code></pre><p>将上面的内容替换</p><pre><code>location / {        root  /var/www/hexo/;        index  index.html index.htm;}</code></pre><ul><li>这儿有个坑，看别的博主 <strong>root  /var/www/hexo/;</strong> 的博主，这句都没有最后的 <strong>/</strong> ,我这儿是有问题的</li></ul><p>完整的config文件</p><pre><code>server {        listen 80;        listen [::]:80;        root /var/www/hexo; #坑的我好苦        index index.html index.htm index.nginx-debian.html;        server_name 你的域名;#如果没有的话就别填了QwQ        location ~* ^.+\.(ico|gif|jpg|jpeg|png)$ {                root /var/www/hexo/;                access_log   off;                expires      1d;        }        location ~* ^.+\.(css|js|txt|xml|swf|wav)$ {                root /var/www/hexo;                access_log   off;                expires      10m;        }        location / {                root /var/www/hexo;                if (-f $request_filename) {                        rewrite ^/(.*)$  /$1 break;                }        }}</code></pre><p>重启nginx即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service nginx restart</span><br></pre></td></tr></table></figure><p>在浏览器输入自己域名就ok了！！！</p><h2 id="同时部署到多个仓库"><a href="#同时部署到多个仓库" class="headerlink" title="同时部署到多个仓库"></a>同时部署到多个仓库</h2><p>在 <strong>_config.yaml</strong> 添加要部署的地址即可，前面的名字无所谓，冒号后面要空格.</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> </span><br><span class="line">        <span class="attr">vps:</span> <span class="string">vpa_user@vps_ip:hexo.git</span> </span><br><span class="line">        <span class="attr">epository:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -41,9 +41,9 @@
     
       <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
     
-      <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
-    
       <category term="ubuntu" scheme="http://yoursite.com/tags/ubuntu/"/>
+    
+      <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
     
   </entry>
   
@@ -125,13 +125,117 @@
   </entry>
   
   <entry>
+    <title>LeetCode回溯</title>
+    <link href="http://yoursite.com/2020/03/05/leetcode_Backtracking/"/>
+    <id>http://yoursite.com/2020/03/05/leetcode_Backtracking/</id>
+    <published>2020-03-05T09:51:55.000Z</published>
+    <updated>2020-03-10T21:44:00.285Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode分支限界法</title>
+    <link href="http://yoursite.com/2020/03/05/leetcode_Branch_and_bound/"/>
+    <id>http://yoursite.com/2020/03/05/leetcode_Branch_and_bound/</id>
+    <published>2020-03-05T09:51:55.000Z</published>
+    <updated>2020-03-10T21:46:50.791Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>LeetCode动态规划</title>
     <link href="http://yoursite.com/2020/03/05/leetcode_dp/"/>
     <id>http://yoursite.com/2020/03/05/leetcode_dp/</id>
     <published>2020-03-05T09:51:55.000Z</published>
-    <updated>2020-03-07T13:46:32.252Z</updated>
+    <updated>2020-03-10T19:00:30.556Z</updated>
+    
+    <content type="html"><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p><ul><li>原问题与子问题</li><li>动态规划状态</li><li>边界状态的值</li><li>状态转移方差</li></ul>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原问题与子问题&lt;/li&gt;
+&lt;li&gt;动态规划状态&lt;/li&gt;
+&lt;li&gt;边界状态的值&lt;/li&gt;
+&lt;li&gt;状态转移方差&lt;/li&gt;
+&lt;/ul&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode分治</title>
+    <link href="http://yoursite.com/2020/03/05/leetcode_Divide_and_Conquer/"/>
+    <id>http://yoursite.com/2020/03/05/leetcode_Divide_and_Conquer/</id>
+    <published>2020-03-05T09:51:55.000Z</published>
+    <updated>2020-03-10T21:42:07.262Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode动态规划</title>
+    <link href="http://yoursite.com/2020/03/05/leetcode_greedy/"/>
+    <id>http://yoursite.com/2020/03/05/leetcode_greedy/</id>
+    <published>2020-03-05T09:51:55.000Z</published>
+    <updated>2020-03-10T21:44:28.240Z</updated>
+    
+    <content type="html"><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p><ul><li>原问题与子问题</li><li>动态规划状态</li><li>边界状态的值</li><li>状态转移方差</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原问题与子问题&lt;/li&gt;
+&lt;li&gt;动态规划状态&lt;/li&gt;
+&lt;li&gt;边界状态的值&lt;/li&gt;
+&lt;li&gt;状态转移方差&lt;/li&gt;
+&lt;/ul&gt;
+
+      
     
     </summary>
     
@@ -204,9 +308,9 @@
     <link href="http://yoursite.com/2020/03/04/ubuntu/"/>
     <id>http://yoursite.com/2020/03/04/ubuntu/</id>
     <published>2020-03-03T18:51:55.000Z</published>
-    <updated>2020-03-09T16:54:28.712Z</updated>
+    <updated>2020-03-10T20:33:40.198Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="常用的-linux-配置"><a href="#常用的-linux-配置" class="headerlink" title="常用的 linux 配置"></a>常用的 linux 配置</h1><h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><h2 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h2><h1 id="常用的-linux-命令"><a href="#常用的-linux-命令" class="headerlink" title="常用的 linux 命令"></a>常用的 linux 命令</h1><h2 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h2><ul><li><p>第一种 &amp;</p><p> 关闭终端停止运行   </p><pre><code>command &amp;</code></pre></li><li><p>第二中 nohup<br> 关闭终端停止运行,如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用nohup命令。该命令可以在你退出帐户之后继续运行相应的进程。nohup就是不挂起的意思( no hang up)。 该命令的一般形式为：</p><pre><code>nohup conmmand &amp;</code></pre><p> 如果使用nohup命令提交作业，那么在缺省情况下该作业的所有输出都被重定向到一个名为nohup.out的文件中，除非另外指定了输出文件：</p><pre><code>nohup command &gt; myout.file 2&gt;&amp;1</code></pre><p> 在上面的例子中，输出被重定向到myout.file文件中。</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="常用的-linux-配置"><a href="#常用的-linux-配置" class="headerlink" title="常用的 linux 配置"></a>常用的 linux 配置</h1><h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><h2 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h2><h1 id="常用的-linux-命令"><a href="#常用的-linux-命令" class="headerlink" title="常用的 linux 命令"></a>常用的 linux 命令</h1><h2 id="后台运行命令"><a href="#后台运行命令" class="headerlink" title="后台运行命令"></a>后台运行命令</h2><ul><li><p>第一种 &amp;</p><p> 关闭终端停止运行   </p><pre><code>command &amp;</code></pre></li><li><p>第二中 nohup<br> 关闭终端停止运行,如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用nohup命令。该命令可以在你退出帐户之后继续运行相应的进程。nohup就是不挂起的意思( no hang up)。 该命令的一般形式为：</p><pre><code>nohup conmmand &amp;</code></pre><p> 如果使用nohup命令提交作业，那么在缺省情况下该作业的所有输出都被重定向到一个名为nohup.out的文件中，除非另外指定了输出文件：</p><pre><code>nohup command &gt; myout.file 2&gt;&amp;1</code></pre><p> 在上面的例子中，输出被重定向到myout.file文件中。</p></li></ul><h3 id="安装有道词典"><a href="#安装有道词典" class="headerlink" title="安装有道词典"></a>安装有道词典</h3><p>一直出现：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ModuleNotFoundError: No module named &#39;PyQt5.QtWebKitWidgets</span><br></pre></td></tr></table></figure><p>找了好多方法并没有解决。</p><pre><code>1) 检查有用 APT 安装上 PyQt5----------------------------------------$ apt search python3-pyqt5 | grep installedpython3-pyqt5/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]python3-pyqt5.qtmultimedia/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]python3-pyqt5.qtquick/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]python3-pyqt5.qtwebkit/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]确保 PyQt5 以上安装在 /usr/lib/python3/dist-packages/PyQt51) PIP3 上卸载 PyQt5 (目前最新是 5.12.1)------------------------------------------------------$ su$ apt install python3-pip$ pip3 list | grep PyQt5如有列出 PyQt5, 再查一查这个 PyQt5 是否安装在 /usr/local/lib/python3.6/dist-packages$ pip3 show PyQt5如是, 撤除 PyQt5 和 PyQt5-sip.$ pip3 uninstall PyQt5 PyQt5-sip1) 打开新的 terminal, 运行 (不用 $PYTHONPATH)----------------------------------------------------------------$ youdao-dict</code></pre>]]></content>
     
     <summary type="html">
     

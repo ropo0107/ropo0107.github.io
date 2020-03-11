@@ -83,15 +83,15 @@
 
 
 
-<meta name="description" content="常用的 linux 配置zshtmux常用的 linux 命令后台运行 第一种 &amp;  关闭终端停止运行    command &amp; 第二中 nohup 关闭终端停止运行,如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用nohup命令。该命令可以在你退出帐户之后继续运行相应的进程。nohup就是不挂起的意思( no hang up)。 该命令的一般形式为：">
+<meta name="description" content="常用的 linux 配置zshtmux常用的 linux 命令后台运行命令 第一种 &amp;  关闭终端停止运行    command &amp; 第二中 nohup 关闭终端停止运行,如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用nohup命令。该命令可以在你退出帐户之后继续运行相应的进程。nohup就是不挂起的意思( no hang up)。 该命令的一般形式为">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用ubuntu的小tips">
 <meta property="og:url" content="http://yoursite.com/2020/03/04/ubuntu/index.html">
 <meta property="og:site_name" content="无恙">
-<meta property="og:description" content="常用的 linux 配置zshtmux常用的 linux 命令后台运行 第一种 &amp;  关闭终端停止运行    command &amp; 第二中 nohup 关闭终端停止运行,如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用nohup命令。该命令可以在你退出帐户之后继续运行相应的进程。nohup就是不挂起的意思( no hang up)。 该命令的一般形式为：">
+<meta property="og:description" content="常用的 linux 配置zshtmux常用的 linux 命令后台运行命令 第一种 &amp;  关闭终端停止运行    command &amp; 第二中 nohup 关闭终端停止运行,如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用nohup命令。该命令可以在你退出帐户之后继续运行相应的进程。nohup就是不挂起的意思( no hang up)。 该命令的一般形式为">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-03T18:51:55.000Z">
-<meta property="article:modified_time" content="2020-03-09T16:54:28.712Z">
+<meta property="article:modified_time" content="2020-03-10T20:33:40.198Z">
 <meta property="article:author" content="无恙">
 <meta property="article:tag" content="ubuntu">
 <meta property="article:tag" content="linux">
@@ -378,7 +378,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  210
+                  393
                 </span>
               
 
@@ -415,7 +415,7 @@
       
 
       
-        <h1 id="常用的-linux-配置"><a href="#常用的-linux-配置" class="headerlink" title="常用的 linux 配置"></a>常用的 linux 配置</h1><h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><h2 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h2><h1 id="常用的-linux-命令"><a href="#常用的-linux-命令" class="headerlink" title="常用的 linux 命令"></a>常用的 linux 命令</h1><h2 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h2><ul>
+        <h1 id="常用的-linux-配置"><a href="#常用的-linux-配置" class="headerlink" title="常用的 linux 配置"></a>常用的 linux 配置</h1><h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><h2 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h2><h1 id="常用的-linux-命令"><a href="#常用的-linux-命令" class="headerlink" title="常用的 linux 命令"></a>常用的 linux 命令</h1><h2 id="后台运行命令"><a href="#后台运行命令" class="headerlink" title="后台运行命令"></a>后台运行命令</h2><ul>
 <li><p>第一种 &amp;</p>
 <p> 关闭终端停止运行   </p>
 <pre><code>command &amp;</code></pre></li>
@@ -424,7 +424,35 @@
 <pre><code>nohup command &gt; myout.file 2&gt;&amp;1</code></pre><p> 在上面的例子中，输出被重定向到myout.file文件中。</p>
 </li>
 </ul>
+<h3 id="安装有道词典"><a href="#安装有道词典" class="headerlink" title="安装有道词典"></a>安装有道词典</h3><p>一直出现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ModuleNotFoundError: No module named &#39;PyQt5.QtWebKitWidgets</span><br></pre></td></tr></table></figure>
+<p>找了好多方法并没有解决。</p>
+<pre><code>1) 检查有用 APT 安装上 PyQt5
+----------------------------------------
+$ apt search python3-pyqt5 | grep installed
+python3-pyqt5/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]
+python3-pyqt5.qtmultimedia/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]
+python3-pyqt5.qtquick/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]
+python3-pyqt5.qtwebkit/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]
 
+确保 PyQt5 以上安装在 /usr/lib/python3/dist-packages/PyQt5
+
+1) PIP3 上卸载 PyQt5 (目前最新是 5.12.1)
+------------------------------------------------------
+$ su
+$ apt install python3-pip
+$ pip3 list | grep PyQt5
+
+如有列出 PyQt5, 
+再查一查这个 PyQt5 是否安装在 /usr/local/lib/python3.6/dist-packages
+$ pip3 show PyQt5
+
+如是, 撤除 PyQt5 和 PyQt5-sip.
+$ pip3 uninstall PyQt5 PyQt5-sip
+
+1) 打开新的 terminal, 运行 (不用 $PYTHONPATH)
+----------------------------------------------------------------
+$ youdao-dict</code></pre>
       
     </div>
     
@@ -547,7 +575,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -643,7 +671,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用的-linux-配置"><span class="nav-number">1.</span> <span class="nav-text">常用的 linux 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#zsh"><span class="nav-number">1.1.</span> <span class="nav-text">zsh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tmux"><span class="nav-number">1.2.</span> <span class="nav-text">tmux</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用的-linux-命令"><span class="nav-number">2.</span> <span class="nav-text">常用的 linux 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#后台运行"><span class="nav-number">2.1.</span> <span class="nav-text">后台运行</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用的-linux-配置"><span class="nav-number">1.</span> <span class="nav-text">常用的 linux 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#zsh"><span class="nav-number">1.1.</span> <span class="nav-text">zsh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tmux"><span class="nav-number">1.2.</span> <span class="nav-text">tmux</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用的-linux-命令"><span class="nav-number">2.</span> <span class="nav-text">常用的 linux 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#后台运行命令"><span class="nav-number">2.1.</span> <span class="nav-text">后台运行命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装有道词典"><span class="nav-number">2.1.1.</span> <span class="nav-text">安装有道词典</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -653,6 +681,11 @@
 
       
 
+    </div>
+
+    <div id='music163player'>
+      // 网易云歌单
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=29095462&auto=1&height=66"></iframe>
     </div>
   </aside>
 
@@ -677,7 +710,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.3k</span>
+    <span title="Site words total count">10.7k</span>
   
 </div>
 
