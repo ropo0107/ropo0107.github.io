@@ -199,6 +199,9 @@ sidebar:
   #display: hide
   #display: remove
 
+  # # width
+  # width: 100
+
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
   offset: 12
 

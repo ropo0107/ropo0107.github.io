@@ -108,8 +108,10 @@ theme: next
 
 
 deploy:
-  type: git                      # 设置上传模块为 Git
-  repo: root@104.248.145.133:hexo.git  # 连接到服务器
+  type: git
+  repo: 
+        vps: root@104.248.145.133:hexo.git
+        epository: git@github.com:ropo0107/ropo0107.github.io.git
   branch: master  
 
 # web search

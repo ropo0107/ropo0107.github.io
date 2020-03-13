@@ -104,7 +104,7 @@ vim trojan.conf
             server_name 你的域名;#如果没有的话就别填了QwQ
         
             location ~* ^.+\.(ico|gif|jpg|jpeg|png)$ {
-                    root /var/www/hexo;
+                    root /var/www/hexo/;
                     access_log   off;
                     expires      1d;
             }
@@ -130,3 +130,15 @@ service nginx restart
 在浏览器输入自己域名就ok了！！！
 
 
+## 同时部署到多个仓库
+
+在 **_config.yaml** 添加要部署的地址即可，前面的名字无所谓，冒号后面要空格.
+
+```yaml
+deploy:
+  type: git
+  repo: 
+        vps: vpa_user@vps_ip:hexo.git 
+        epository: git@github.com:username/username.github.io.git
+  branch: master  
+```
