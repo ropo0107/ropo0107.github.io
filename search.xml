@@ -266,9 +266,16 @@ margin-bottom: 45px;
       </tags>
   </entry>
   <entry>
-    <title>LeetCode分支限界法</title>
-    <url>/2020/03/05/leetcode_Branch_and_bound/</url>
-    <content><![CDATA[]]></content>
+    <title>LeetCode动态规划</title>
+    <url>/2020/03/05/leetcode_greedy/</url>
+    <content><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p>
+<ul>
+<li>原问题与子问题</li>
+<li>动态规划状态</li>
+<li>边界状态的值</li>
+<li>状态转移方差</li>
+</ul>
+]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -287,6 +294,17 @@ margin-bottom: 45px;
 <li>状态转移方差</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode分支限界法</title>
+    <url>/2020/03/05/leetcode_Branch_and_bound/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -347,24 +365,6 @@ margin-bottom: 45px;
     <title>LeetCode分治</title>
     <url>/2020/03/05/leetcode_Divide_and_Conquer/</url>
     <content><![CDATA[]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode动态规划</title>
-    <url>/2020/03/05/leetcode_greedy/</url>
-    <content><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p>
-<ul>
-<li>原问题与子问题</li>
-<li>动态规划状态</li>
-<li>边界状态的值</li>
-<li>状态转移方差</li>
-</ul>
-]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -474,8 +474,8 @@ $ youdao-dict</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>强化学习_DQN</title>
-    <url>/2020/03/03/DQN/</url>
+    <title>强化学习_A2CvsGAN</title>
+    <url>/2020/03/03/A2CvsGAN/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学术</category>
@@ -486,8 +486,8 @@ $ youdao-dict</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>强化学习_A2CvsGAN</title>
-    <url>/2020/03/03/A2CvsGAN/</url>
+    <title>强化学习_DQN</title>
+    <url>/2020/03/03/DQN/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学术</category>

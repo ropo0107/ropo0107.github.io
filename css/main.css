@@ -1946,7 +1946,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c26ec4;
+  background: #ff9fa1;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3090,7 +3090,7 @@ body .main {
   color: #ffb6c1;
 }
 #sidebar {
-  background: url("../images/sidebar_bc.jpg");
+  background: url("/images/sidebar_bc.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
