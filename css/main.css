@@ -1946,7 +1946,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff3722;
+  background: #ff6ccd;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2757,7 +2757,7 @@ hr {
   margin-top: 80px;
 }
 .header {
-  background: url("../images/header_bc.jpg");
+  background: rgba(255,255,255,0.3);
 }
 .header-inner {
   padding: 25px 0 20px;
@@ -3051,16 +3051,38 @@ hr {
     text-align: center;
   }
 }
-@media screen and (min-width: 1200px) {
-  body {
-    background-image: url("/images/bc.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 50% 50%;
-  }
-  #footer a {
-    color: #eee;
-  }
+body {
+  background-image: url("/images/bc.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body ；,
+body .main-inner {
+  background: #fff;
+  padding: 25px;
+  opacity: 0.75;
+  border-radius: 10px;
+}
+body #header {
+  padding: 5px 25px;
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 700px;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+body #footer {
+  padding: 5px 25px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  width: 700px;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+body .main {
+  margin-bottom: 45px;
 }
 #sidebar p,
 #sidebar span,
