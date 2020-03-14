@@ -1,19 +1,48 @@
 // Custom styles.
 
-
-@media screen and (min-width:1200px) {
-
-    body {
-    background-image:url(/images/bc.jpg);
+body { 
+    background-image: url(/images/bc.jpg);
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    background-attachment:fixed;
-    background-position:50% 50%; 
+    background-size: cover；
+    
+    
+    //改变背景色和透明度
+    .main-inner {
+        background: #fff;
+        padding: 25px;
+        opacity: 0.75;
+        border-radius: 10px;
     }
-
-    #footer a {
-        color:#eee;
+    
+    #header {
+        padding: 5px 25px;
+        margin: 0 auto;
+        margin-top:15px;
+        width: 700px;
+        opacity: 0.8;
+        border-radius: 10px;
+        
+    }
+    
+    #footer {
+        padding: 5px 25px;
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        width: 700px;
+        opacity: 0.8;
+        border-radius: 10px;
     }
 }
+
+body .main {
+  margin-bottom: 45px;
+}
+
+
+
+
 
 #sidebar {
            p,span,a {color: #ffb6c1;}
