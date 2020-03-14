@@ -116,8 +116,8 @@
       </categories>
       <tags>
         <tag>blog</tag>
-        <tag>trojan</tag>
         <tag>ubuntu</tag>
+        <tag>trojan</tag>
       </tags>
   </entry>
   <entry>
@@ -198,6 +198,17 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode分治</title>
+    <url>/2020/03/05/leetcode_Divide_and_Conquer/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode动态规划</title>
     <url>/2020/03/05/leetcode_dp/</url>
     <content><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p>
@@ -216,9 +227,16 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode分治</title>
-    <url>/2020/03/05/leetcode_Divide_and_Conquer/</url>
-    <content><![CDATA[]]></content>
+    <title>LeetCode动态规划</title>
+    <url>/2020/03/05/leetcode_greedy/</url>
+    <content><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p>
+<ul>
+<li>原问题与子问题</li>
+<li>动态规划状态</li>
+<li>边界状态的值</li>
+<li>状态转移方差</li>
+</ul>
+]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -276,24 +294,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode动态规划</title>
-    <url>/2020/03/05/leetcode_greedy/</url>
-    <content><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p>
-<ul>
-<li>原问题与子问题</li>
-<li>动态规划状态</li>
-<li>边界状态的值</li>
-<li>状态转移方差</li>
-</ul>
-]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode的笔记</title>
     <url>/2020/03/04/leetcode/</url>
     <content><![CDATA[<h1 id="菜鸡刷leetcode"><a href="#菜鸡刷leetcode" class="headerlink" title="菜鸡刷leetcode"></a>菜鸡刷leetcode</h1><p>用来记录一些好的点子</p>
@@ -329,8 +329,8 @@
         <category>杂记</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>leetcode</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -980,8 +980,8 @@ a的值为 : 19</code></pre><h2 id="go语言函数"><a href="#go语言函数" cl
         <category>杂记</category>
       </categories>
       <tags>
-        <tag>Go</tag>
         <tag>Note</tag>
+        <tag>Go</tag>
       </tags>
   </entry>
 </search>
