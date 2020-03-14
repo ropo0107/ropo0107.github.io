@@ -2,7 +2,7 @@
 title: trojan做点不一样的事
 categories:
   - 杂记
-tags: [blog,trojan，ubuntu]
+tags: [blog,trojan,ubuntu]
 copyright: false
 reward: false
 rating: false
