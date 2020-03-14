@@ -53,16 +53,16 @@
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.jpeg?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.jpeg?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.jpeg?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="mask-icon" href="/images/logo.jpeg?v=5.1.4" color="#222">
 
 
 
@@ -73,10 +73,6 @@
 
 
 
-  
-
-
-  <link rel="alternate" href="/atom.xml" title="无恙" type="application/atom+xml" />
 
 
 
@@ -105,7 +101,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -138,10 +134,21 @@
 
 
 
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?3740b075e17748c0bde2d912b5d8f093";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="无恙" type="application/atom+xml">
+</head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
@@ -295,7 +302,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="无恙">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -453,6 +460,35 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpeg" alt="无恙 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpeg" alt="无恙 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -485,8 +521,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/03/05/leetcode_sort/" rel="prev" title="LeetCode排序">
-                LeetCode排序 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/05/leetcode_greedy/" rel="prev" title="LeetCode动态规划">
+                LeetCode动态规划 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -555,6 +591,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpeg"
+                alt="无恙" />
+            
               <p class="site-author-name" itemprop="name">无恙</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -597,13 +637,6 @@
           </nav>
 
           
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
 
           
             <div class="links-of-author motion-element">
@@ -628,10 +661,10 @@
 
           
           
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
               <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-globe"></i>
-                
+                <i class="fa  fa-fw fa-link"></i>
+                Links
               </div>
               <ul class="links-of-blogroll-list">
                 
@@ -673,11 +706,25 @@
       
 
     </div>
-
+    
+    <!--
     <div id='music163player'>
-      // 网易云歌单
+    -->
+      <!-- 网易云歌单-->
+      <!-- 好久不见-->
+      <!-- 
       <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=29095462&auto=1&height=66"></iframe>
+      -->
+      <!-- 我很快乐-->
+      <!--
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=255294&auto=1&height=66"></iframe>
+      -->
+      <!-- 爸爸妈妈-->
+    <!--
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1418319771&auto=1&height=66"></iframe>    
     </div>
+    -->
+    
   </aside>
 
 

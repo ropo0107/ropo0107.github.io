@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/404.html</loc>
+    
+    <lastmod>2020-03-14T09:12:19.652Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/08/music/</loc>
+    
+    <lastmod>2020-03-14T08:58:41.788Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/09/trojan/</loc>
+    
+    <lastmod>2020-03-14T08:27:57.843Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/03/05/leetcode_Branch_and_bound/</loc>
     
     <lastmod>2020-03-10T21:46:50.791Z</lastmod>
@@ -51,23 +72,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/09/trojan/</loc>
-    
-    <lastmod>2020-03-09T16:17:42.222Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2020/03/03/go/</loc>
     
     <lastmod>2020-03-09T14:55:29.344Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/08/music/</loc>
-    
-    <lastmod>2020-03-08T01:30:50.841Z</lastmod>
     
   </url>
   
@@ -110,13 +117,6 @@
     <loc>http://yoursite.com/2020/03/03/reinforencement-learning/</loc>
     
     <lastmod>2020-03-05T18:20:14.724Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/404.html</loc>
-    
-    <lastmod>2020-03-04T22:53:54.995Z</lastmod>
     
   </url>
   
