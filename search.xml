@@ -255,9 +255,38 @@ margin-bottom: 45px;
       </tags>
   </entry>
   <entry>
+    <title>LeetCode分支限界法</title>
+    <url>/2020/03/05/leetcode_Branch_and_bound/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode回溯</title>
     <url>/2020/03/05/leetcode_Backtracking/</url>
     <content><![CDATA[]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode动态规划</title>
+    <url>/2020/03/05/leetcode_greedy/</url>
+    <content><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p>
+<ul>
+<li>原问题与子问题</li>
+<li>动态规划状态</li>
+<li>边界状态的值</li>
+<li>状态转移方差</li>
+</ul>
+]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -276,17 +305,6 @@ margin-bottom: 45px;
 <li>状态转移方差</li>
 </ul>
 ]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode分支限界法</title>
-    <url>/2020/03/05/leetcode_Branch_and_bound/</url>
-    <content><![CDATA[]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -335,24 +353,6 @@ margin-bottom: 45px;
 <h2 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__quickSort</span><span class="params">(alist, l, r)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#当数列的大小比较小的时候，数列近乎有序的概率较大</span></span><br><span class="line">    <span class="comment"># if (r - l &lt;= 15):</span></span><br><span class="line">    <span class="comment">#     insertionSortHelp(alist, l, r)</span></span><br><span class="line">    <span class="comment">#     return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> l &gt;= r:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="comment"># p = partition(alist, l, r)</span></span><br><span class="line">    p = partitionQS(alist, l, r)</span><br><span class="line"></span><br><span class="line">    __quickSort(alist, l, p<span class="number">-1</span>)</span><br><span class="line">    __quickSort(alist, p+<span class="number">1</span>, r)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在alist[l...r]中寻找j,使得alist[l...j] &lt;= alist[l], alist[j+1...r] &gt;alist[l]</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(alist, l, r)</span>:</span></span><br><span class="line">    pos = randint(l, r)</span><br><span class="line">    alist[pos], alist[l] = alist[l], alist[pos]</span><br><span class="line">    v = alist[l]</span><br><span class="line">    <span class="comment"># v = alist[l]</span></span><br><span class="line">    j = l</span><br><span class="line">    i = l + <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i &lt;= r:</span><br><span class="line">        <span class="keyword">if</span> alist[i] &lt;= v:</span><br><span class="line">            alist[j+<span class="number">1</span>],alist[i] = alist[i],alist[j+<span class="number">1</span>]</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    alist[l], alist[j] = alist[j], alist[l]</span><br><span class="line">    <span class="keyword">return</span> j</span><br></pre></td></tr></table></figure>
 <p>快速排序一些可以优化的点</p>
 <p>当数列近乎有序的时，由于每次选取的都是第一个数，所以造成数列分割的极其不等，此时快排蜕化成 [公式] 的算法， 此时只要随机选取基准点即可<br>当数列中包含大量的重复元素的时候，这一版的代码也会造成”分割不等“的问题，此时需要将重复元素均匀的分散的自数列旁<br>使用三路快排</p>
-]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode动态规划</title>
-    <url>/2020/03/05/leetcode_greedy/</url>
-    <content><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p>
-<ul>
-<li>原问题与子问题</li>
-<li>动态规划状态</li>
-<li>边界状态的值</li>
-<li>状态转移方差</li>
-</ul>
 ]]></content>
       <categories>
         <category>杂记</category>
