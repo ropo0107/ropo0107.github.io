@@ -53,7 +53,8 @@ body {
         opacity: 0.8;
         border-radius: 10px;
     }
-}</code></pre><p>修改完上面的配置可能会发现首页博客主体部分的下方与底部展示信息的间隙过大，我们加入以下配置进行调整，需要注意的是，此时添加的配置与上方添加位置不同，需要在body{}下方添加；</p>
+}</code></pre><h2 id="大坑"><a href="#大坑" class="headerlink" title="大坑"></a>大坑</h2><p>上面代码会使Mist主题下的站内搜索无法跳转，具体原因是因为  <strong>opacity: 0.8;</strong> 这条参数，透明化的同时会让搜索栏透明化，导致无法站内搜索。<br>            #header {<br>            padding: 5px 25px;<br>            margin: 0 auto;<br>            margin-top:15px;<br>            width: 700px;<br>            //Notice<br>            //opacity: 0.8;<br>            border-radius: 10px;</p>
+<pre><code>}</code></pre><p>修改完上面的配置可能会发现首页博客主体部分的下方与底部展示信息的间隙过大，我们加入以下配置进行调整，需要注意的是，此时添加的配置与上方添加位置不同，需要在body{}下方添加；</p>
 <pre><code>body .main {
 margin-bottom: 45px;
 }</code></pre><h1 id="侧边栏背景的更改"><a href="#侧边栏背景的更改" class="headerlink" title="侧边栏背景的更改"></a>侧边栏背景的更改</h1><p>同样在配置文件 Blog\themes\next\source\css_custom\custom.styl 中添加：</p>
@@ -313,17 +314,6 @@ margin-bottom: 45px;
       </tags>
   </entry>
   <entry>
-    <title>LeetCode分治</title>
-    <url>/2020/03/05/leetcode_Divide_and_Conquer/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode排序</title>
     <url>/2020/03/05/leetcode_sort/</url>
     <content><![CDATA[<p>leetcode中的排序问题</p>
@@ -365,6 +355,17 @@ margin-bottom: 45px;
 <p>快速排序一些可以优化的点</p>
 <p>当数列近乎有序的时，由于每次选取的都是第一个数，所以造成数列分割的极其不等，此时快排蜕化成 [公式] 的算法， 此时只要随机选取基准点即可<br>当数列中包含大量的重复元素的时候，这一版的代码也会造成”分割不等“的问题，此时需要将重复元素均匀的分散的自数列旁<br>使用三路快排</p>
 ]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode分治</title>
+    <url>/2020/03/05/leetcode_Divide_and_Conquer/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -462,8 +463,8 @@ $ youdao-dict</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>强化学习_A2CvsGAN</title>
-    <url>/2020/03/03/A2CvsGAN/</url>
+    <title>强化学习_A2C</title>
+    <url>/2020/03/03/A2C/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学术</category>
@@ -474,8 +475,8 @@ $ youdao-dict</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>强化学习_A2C</title>
-    <url>/2020/03/03/A2C/</url>
+    <title>强化学习_A2CvsGAN</title>
+    <url>/2020/03/03/A2CvsGAN/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学术</category>
