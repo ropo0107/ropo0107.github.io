@@ -255,8 +255,8 @@ margin-bottom: 45px;
       </tags>
   </entry>
   <entry>
-    <title>LeetCode分支限界法</title>
-    <url>/2020/03/05/leetcode_Branch_and_bound/</url>
+    <title>LeetCode回溯</title>
+    <url>/2020/03/05/leetcode_Backtracking/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>杂记</category>
@@ -266,8 +266,8 @@ margin-bottom: 45px;
       </tags>
   </entry>
   <entry>
-    <title>LeetCode回溯</title>
-    <url>/2020/03/05/leetcode_Backtracking/</url>
+    <title>LeetCode分支限界法</title>
+    <url>/2020/03/05/leetcode_Branch_and_bound/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>杂记</category>
@@ -305,6 +305,17 @@ margin-bottom: 45px;
 <li>状态转移方差</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode分治</title>
+    <url>/2020/03/05/leetcode_Divide_and_Conquer/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -354,17 +365,6 @@ margin-bottom: 45px;
 <p>快速排序一些可以优化的点</p>
 <p>当数列近乎有序的时，由于每次选取的都是第一个数，所以造成数列分割的极其不等，此时快排蜕化成 [公式] 的算法， 此时只要随机选取基准点即可<br>当数列中包含大量的重复元素的时候，这一版的代码也会造成”分割不等“的问题，此时需要将重复元素均匀的分散的自数列旁<br>使用三路快排</p>
 ]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode分治</title>
-    <url>/2020/03/05/leetcode_Divide_and_Conquer/</url>
-    <content><![CDATA[]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -462,8 +462,8 @@ $ youdao-dict</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>强化学习_A2C</title>
-    <url>/2020/03/03/A2C/</url>
+    <title>强化学习_A2CvsGAN</title>
+    <url>/2020/03/03/A2CvsGAN/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学术</category>
@@ -474,8 +474,8 @@ $ youdao-dict</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>强化学习_A2CvsGAN</title>
-    <url>/2020/03/03/A2CvsGAN/</url>
+    <title>强化学习_A2C</title>
+    <url>/2020/03/03/A2C/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学术</category>
