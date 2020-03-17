@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/03/03/go/</loc>
+    
+    <lastmod>2020-03-17T04:08:53.283Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/08/add_custom_html/</loc>
+    
+    <lastmod>2020-03-17T04:02:47.130Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/03/dl_tips/</loc>
+    
+    <lastmod>2020-03-17T01:33:13.662Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/04/ubuntu/</loc>
+    
+    <lastmod>2020-03-17T01:32:41.005Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/03/15/background/</loc>
     
     <lastmod>2020-03-15T01:16:15.427Z</lastmod>
@@ -79,13 +107,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/04/ubuntu/</loc>
-    
-    <lastmod>2020-03-10T20:33:40.198Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2020/03/05/leetcode_dp/</loc>
     
     <lastmod>2020-03-10T19:00:30.556Z</lastmod>
@@ -100,23 +121,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/03/go/</loc>
-    
-    <lastmod>2020-03-09T14:55:29.344Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2020/03/03/build_my_blog/</loc>
     
     <lastmod>2020-03-08T00:31:39.175Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/08/add_custom_html/</loc>
-    
-    <lastmod>2020-03-08T00:29:10.551Z</lastmod>
     
   </url>
   

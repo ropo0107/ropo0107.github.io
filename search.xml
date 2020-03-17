@@ -205,12 +205,12 @@ margin-bottom: 45px;
       </categories>
       <tags>
         <tag>blog</tag>
-        <tag>trojan</tag>
         <tag>ubuntu</tag>
+        <tag>trojan</tag>
       </tags>
   </entry>
   <entry>
-    <title>添加自定义HTML静态网页</title>
+    <title>HEXO添加自定义HTML静态网页</title>
     <url>/2020/03/08/add_custom_html/</url>
     <content><![CDATA[<h2 id="添加自定义HTML静态网页"><a href="#添加自定义HTML静态网页" class="headerlink" title="添加自定义HTML静态网页"></a>添加自定义HTML静态网页</h2><p>今天发现一个好玩的毒鸡汤界面,打开了新世界的大门.</p>
 <h2 id="新建个page"><a href="#新建个page" class="headerlink" title="新建个page"></a>新建个page</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page soup</span><br></pre></td></tr></table></figure>
@@ -265,17 +265,6 @@ margin-bottom: 45px;
       </tags>
   </entry>
   <entry>
-    <title>LeetCode回溯</title>
-    <url>/2020/03/05/leetcode_Backtracking/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode分支限界法</title>
     <url>/2020/03/05/leetcode_Branch_and_bound/</url>
     <content><![CDATA[]]></content>
@@ -287,8 +276,30 @@ margin-bottom: 45px;
       </tags>
   </entry>
   <entry>
+    <title>LeetCode回溯</title>
+    <url>/2020/03/05/leetcode_Backtracking/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode分治</title>
+    <url>/2020/03/05/leetcode_Divide_and_Conquer/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode动态规划</title>
-    <url>/2020/03/05/leetcode_greedy/</url>
+    <url>/2020/03/05/leetcode_dp/</url>
     <content><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p>
 <ul>
 <li>原问题与子问题</li>
@@ -306,7 +317,7 @@ margin-bottom: 45px;
   </entry>
   <entry>
     <title>LeetCode动态规划</title>
-    <url>/2020/03/05/leetcode_dp/</url>
+    <url>/2020/03/05/leetcode_greedy/</url>
     <content><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p>
 <ul>
 <li>原问题与子问题</li>
@@ -364,17 +375,6 @@ margin-bottom: 45px;
 <p>快速排序一些可以优化的点</p>
 <p>当数列近乎有序的时，由于每次选取的都是第一个数，所以造成数列分割的极其不等，此时快排蜕化成 [公式] 的算法， 此时只要随机选取基准点即可<br>当数列中包含大量的重复元素的时候，这一版的代码也会造成”分割不等“的问题，此时需要将重复元素均匀的分散的自数列旁<br>使用三路快排</p>
 ]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode分治</title>
-    <url>/2020/03/05/leetcode_Divide_and_Conquer/</url>
-    <content><![CDATA[]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -484,6 +484,18 @@ $ youdao-dict</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>强化学习_DQN</title>
+    <url>/2020/03/03/DQN/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学术</category>
+      </categories>
+      <tags>
+        <tag>RL</tag>
+        <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>强化学习_A2CvsGAN</title>
     <url>/2020/03/03/A2CvsGAN/</url>
     <content><![CDATA[]]></content>
@@ -496,9 +508,28 @@ $ youdao-dict</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>强化学习_DQN</title>
-    <url>/2020/03/03/DQN/</url>
-    <content><![CDATA[]]></content>
+    <title>深度学习_Tips</title>
+    <url>/2020/03/03/dl_tips/</url>
+    <content><![CDATA[<h2 id="归纳偏置-Inductive-bias"><a href="#归纳偏置-Inductive-bias" class="headerlink" title="归纳偏置(Inductive bias)"></a>归纳偏置(Inductive bias)</h2><p><a href="https://www.zhihu.com/question/264264203/answer/830077823" target="_blank" rel="noopener">转载</a></p>
+<p>归纳偏置在机器学习中是一种很微妙的概念：在机器学习中，很多学习算法经常会对学习的问题做一些假设，这些假设就称为归纳偏置(Inductive Bias)。归纳偏置这个译名可能不能很好地帮助理解，不妨拆解开来看：归纳(Induction)是自然科学中常用的两大方法之一(归纳与演绎, induction and deduction)，指的是从一些例子中寻找共性、泛化，形成一个比较通用的规则的过程；偏置(Bias)是指我们对模型的偏好。</p>
+<p>因此，归纳偏置可以理解为，从现实生活中观察到的现象中归纳出一定的规则(heuristics)，然后对模型做一定的约束，从而可以起到“模型选择”的作用，即从假设空间中选择出更符合现实规则的模型。其实，贝叶斯学习中的“先验(Prior)”这个叫法，可能比“归纳偏置”更直观一些。</p>
+<p>归纳偏置在机器学习中几乎无处不可见。老生常谈的“奥卡姆剃刀”原理，即希望学习到的模型复杂度更低，就是一种归纳偏置。另外，还可以看见一些更强的一些假设：KNN中假设特征空间中相邻的样本倾向于属于同一类；SVM中假设好的分类器应该最大化类别边界距离；等等。</p>
+<p>在深度学习方面也是一样。以神经网络为例，各式各样的网络结构/组件/机制往往就来源于归纳偏置。在卷积神经网络中，我们假设特征具有局部性(Locality)的特性，即当我们把相邻的一些特征放在一起，会更容易得到“解”；在循环神经网络中，我们假设每一时刻的计算依赖于历史计算结果；还有注意力机制，也是基于从人的直觉、生活经验归纳得到的规则。</p>
+<p>在自然语言处理领域赫赫有名的word2vec，以及一些基于共现窗口的词嵌入方法，都是基于分布式假设：A word’s meaning is given by the words that frequently appear close-by. 这当然也可以看作是一种归纳偏置；一些自然语言理解的模型中加入解析树，也可以类似地理解。都是为了选择“更好”的模型。</p>
+<h2 id="正则项"><a href="#正则项" class="headerlink" title="正则项"></a>正则项</h2><p>正则化以及类似处理方法的本质（个人认为）是：这是一种对对象进行限制以满足某一特定目的的处理方法。</p>
+<p>正则项的加入使原来的非适定问题变为适定问题。</p>
+<pre><code>一个例子是，图像去噪的目标函数，如果只考虑一项（去噪后的图像的像素平均值和原图像一致），问题就有无穷多组解。但是，加上正则项（一般的是BV范数）以后，问题的解就变成唯一的了。</code></pre><p>剩下的问题就是什么是适定问题？什么是不适定问题？</p>
+<p>定解问题是适定的，是指它具备如下三个条件：</p>
+<ul>
+<li><p>问题的解存在；</p>
+</li>
+<li><p>问题的解唯一；</p>
+</li>
+<li><p>解连续依赖于定解条件，即定解条件（数据）改变很小时，相应的解也改变很小，也就是解具有稳定性。</p>
+<p>不满足上述三个条件之一的问题称为不适定(ill-posed)问题。特别地，对不满足第三个条件的定解问题，称为Hadamard意义下的不适定问题。</p>
+</li>
+</ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
       <categories>
         <category>学术</category>
       </categories>
@@ -620,7 +651,7 @@ $ youdao-dict</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>Go语言</title>
+    <title>Go语言基础</title>
     <url>/2020/03/03/go/</url>
     <content><![CDATA[<p>go语言知识点<br>看到一个比较好的在线教程网站<a href="https://tour.go-zh.org/basics" target="_blank" rel="noopener">地址</a></p>
 <h2 id="go语言结构"><a href="#go语言结构" class="headerlink" title="go语言结构"></a>go语言结构</h2><p>Go 语言的基础组成有以下几个部分：</p>
@@ -1098,9 +1129,87 @@ a的值为 : 19</code></pre><h2 id="go语言函数"><a href="#go语言函数" cl
 <p>Go 语言使用的是值传递</p>
 <hr>
 <p>函数定义后可作为另外一个函数的实参数传入</p>
-<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>同一个函数与不同引用环境组合，可以形成不同的实例。</p>
-<p>一个函数类型就像结构体一样，可以被实例化，函数本身不存储任何信息，只有与引用环境结合后形成的闭包才具有“记忆性”，函数是编译期静态的概念，而闭包是运行期动态的概念</p>
-]]></content>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p><strong>闭包的概念:</strong> 是可以包含自由（未绑定到特定对象）变量的代码块，这些变量不在这个代码块内或者任何全局上下文中定义，而是在定义代码块的环境中定义。要执行的代码块（由于自由变量包含在代码块中，所以这些自由变量以及它们引用的对象没有被释放）为自由变量提供绑定的计算环境（作用域）。</p>
+<p><strong>闭包的价值:</strong> 闭包的价值在于可以作为函数对象或者匿名函数，对于类型系统而言，这意味着不仅要表示数据还要表示代码。支持闭包的多数语言都将函数作为第一级对象，就是说这些函数可以存储到变量中作为参数传递给其他函数，最重要的是能够被函数动态创建和返回。</p>
+<p>Go语言中的闭包同样也会引用到函数外的变量。闭包的实现确保只要闭包还被使用，那么被闭包引用的变量会一直存在。</p>
+<p><strong>总结:</strong> 闭包并不是一门编程语言不可缺少的功能，但闭包的表现形式一般是以匿名函数的方式出现，就象上面说到的，能够动态灵活的创建以及传递，体现出函数式编程的特点。所以在一些场合，我们就多了一种编码方式的选择，适当的使用闭包可以使得我们的代码简洁高效。</p>
+<p><strong>闭包的注意点:</strong> </p>
+<ul>
+<li><p>由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包</p>
+</li>
+<li><p>闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。</p>
+</li>
+</ul>
+<p>以下实例中，我们创建了函数 getSequence() ，返回另外一个函数。该函数的目的是在闭包中递增 i 变量，代码如下：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getSequence</span><span class="params">()</span> <span class="title">func</span><span class="params">()</span> <span class="title">int</span></span> &#123;</span><br><span class="line">   i:=<span class="number">0</span></span><br><span class="line">   <span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">()</span> <span class="title">int</span></span> &#123;</span><br><span class="line">      i+=<span class="number">1</span></span><br><span class="line">     <span class="keyword">return</span> i  </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="comment">/* nextNumber 为一个函数，函数 i 为 0 */</span></span><br><span class="line">   nextNumber := getSequence()  </span><br><span class="line"></span><br><span class="line">   <span class="comment">/* 调用 nextNumber 函数，i 变量自增 1 并返回 */</span></span><br><span class="line">   fmt.Println(nextNumber())</span><br><span class="line">   fmt.Println(nextNumber())</span><br><span class="line">   fmt.Println(nextNumber())</span><br><span class="line">   </span><br><span class="line">   <span class="comment">/* 创建新的函数 nextNumber1，并查看结果 */</span></span><br><span class="line">   nextNumber1 := getSequence()  </span><br><span class="line">   fmt.Println(nextNumber1())</span><br><span class="line">   fmt.Println(nextNumber1())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<pre><code>1
+2
+3
+1
+2</code></pre><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>方法在func关键字后是接收者而不是函数名，接收者可以是自己定义的一个类型，这个类型可以是struct，interface，甚至我们可以重定义基本数据类型。</p>
+<pre><code>func (variable_name variable_data_type) function_name() [return_type]{
+/* 函数体*/
+}</code></pre><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">"fmt"</span>  </span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 定义结构体 */</span></span><br><span class="line"><span class="keyword">type</span> Circle <span class="keyword">struct</span> &#123;</span><br><span class="line">  radius <span class="keyword">float64</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="keyword">var</span> c1 Circle</span><br><span class="line">  c1.radius = <span class="number">10.00</span></span><br><span class="line">  fmt.Println(<span class="string">"Area of Circle(c1) = "</span>, c1.getArea())</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//该 method 属于 Circle 类型对象中的方法</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c Circle)</span> <span class="title">getArea</span><span class="params">()</span> <span class="title">float64</span></span> &#123;</span><br><span class="line">  <span class="comment">//c.radius 即为 Circle 类型对象中的属性</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">3.14</span> * c.radius * c.radius</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="go语言变量作用域"><a href="#go语言变量作用域" class="headerlink" title="go语言变量作用域"></a>go语言变量作用域</h2><p>Go 语言中变量可以在三个地方声明：</p>
+<ul>
+<li>函数内定义的变量称为局部变量</li>
+<li>函数外定义的变量称为全局变量</li>
+<li>函数定义中的变量称为形式参数</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> a <span class="keyword">int</span> = <span class="number">10</span></span><br><span class="line">	fmt.Println(a)</span><br><span class="line">	&#123;</span><br><span class="line">		a := <span class="number">9</span></span><br><span class="line">		fmt.Println(a)</span><br><span class="line">		a = <span class="number">8</span></span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(a)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<pre><code>10
+9
+10</code></pre><h2 id="go语言数组"><a href="#go语言数组" class="headerlink" title="go语言数组"></a>go语言数组</h2><h3 id="声明数组"><a href="#声明数组" class="headerlink" title="声明数组"></a>声明数组</h3><p>Go 语言数组声明需要指定元素类型及元素个数，语法格式如下：</p>
+<pre><code>var variable_name [SIZE] variable_type
+//多维
+var variable_name [SIZE1][SIZE2]...[SIZEN] variable_type</code></pre><h3 id="初始化数组"><a href="#初始化数组" class="headerlink" title="初始化数组"></a>初始化数组</h3><p>初始化数组中 {} 中的元素个数不能大于 [] 中的数字。</p>
+<p>如果忽略 [] 中的数字不设置数组大小，Go 语言会根据元素的个数来设置数组的大小：</p>
+<pre><code>var balance = [5]float32{1000.0, 2.0, 3.4, 7.0, 50.0}
+//多维
+a = [3][4]int{  
+{0, 1, 2, 3} ,   /*  第一行索引为 0 */
+{4, 5, 6, 7} ,   /*  第二行索引为 1 */
+{8, 9, 10, 11},   /* 第三行索引为 2 */
+}</code></pre><h3 id="访问数组"><a href="#访问数组" class="headerlink" title="访问数组"></a>访问数组</h3><p>数组元素可以通过索引（位置）来读取。格式为数组名后加中括号，中括号中为索引的值。例如：</p>
+<pre><code>var salary float32 = balance[9]</code></pre><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   <span class="keyword">var</span> n [<span class="number">10</span>]<span class="keyword">int</span> <span class="comment">/* n 是一个长度为 10 的数组 */</span></span><br><span class="line">   <span class="keyword">var</span> i,j <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">/* 为数组 n 初始化元素 */</span>        </span><br><span class="line">   <span class="keyword">for</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ &#123;</span><br><span class="line">      n[i] = i + <span class="number">100</span> <span class="comment">/* 设置元素为 i + 100 */</span></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/* 输出每个数组元素的值 */</span></span><br><span class="line">   <span class="keyword">for</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++ &#123;</span><br><span class="line">      fmt.Printf(<span class="string">"Element[%d] = %d\n"</span>, j, n[j] )</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="go语言指针"><a href="#go语言指针" class="headerlink" title="go语言指针"></a>go语言指针</h2><p>Go 语言的取地址符是 &amp;，放到一个变量前使用就会返回相应变量的内存地址。</p>
+<pre><code>var ip *int        /* 指向整型*/
+var fp *float32    /* 指向浮点型 */</code></pre><h3 id="空指针"><a href="#空指针" class="headerlink" title="空指针"></a>空指针</h3><p>当一个指针被定义后没有分配到任何变量时，它的值为 nil。</p>
+<p>nil 指针也称为空指针。</p>
+<p>nil在概念上和其它语言的null、None、nil、NULL一样，都指代零值或空值。</p>
+<p>一个指针变量通常缩写为 ptr。</p>
+<h3 id="指针数组"><a href="#指针数组" class="headerlink" title="指针数组"></a>指针数组</h3><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> MAX <span class="keyword">int</span> = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   a := []<span class="keyword">int</span>&#123;<span class="number">10</span>,<span class="number">100</span>,<span class="number">200</span>&#125;</span><br><span class="line">   <span class="keyword">var</span> i <span class="keyword">int</span></span><br><span class="line">   <span class="keyword">var</span> ptr [MAX]*<span class="keyword">int</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span>  i = <span class="number">0</span>; i &lt; MAX; i++ &#123;</span><br><span class="line">      ptr[i] = &amp;a[i] <span class="comment">/* 整数地址赋值给指针数组 */</span></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span>  i = <span class="number">0</span>; i &lt; MAX; i++ &#123;</span><br><span class="line">      fmt.Printf(<span class="string">"a[%d] = %d\n"</span>, i,*ptr[i] )</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>指针可以指向指针</p>
+<pre><code>var ptr **int;</code></pre></li>
+<li><p>指针可以当做函数变量</p>
+  <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"><span class="comment">/* 定义局部变量 */</span></span><br><span class="line"><span class="keyword">var</span> a <span class="keyword">int</span> = <span class="number">100</span></span><br><span class="line"><span class="keyword">var</span> b <span class="keyword">int</span>= <span class="number">200</span></span><br><span class="line"></span><br><span class="line">fmt.Printf(<span class="string">"交换前 a 的值 : %d\n"</span>, a )</span><br><span class="line">fmt.Printf(<span class="string">"交换前 b 的值 : %d\n"</span>, b )</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 调用函数用于交换值</span></span><br><span class="line"><span class="comment">* &amp;a 指向 a 变量的地址</span></span><br><span class="line"><span class="comment">* &amp;b 指向 b 变量的地址</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">swap(&amp;a, &amp;b);</span><br><span class="line"></span><br><span class="line">fmt.Printf(<span class="string">"交换后 a 的值 : %d\n"</span>, a )</span><br><span class="line">fmt.Printf(<span class="string">"交换后 b 的值 : %d\n"</span>, b )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">swap</span><span class="params">(x *<span class="keyword">int</span>, y *<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line"><span class="keyword">var</span> temp <span class="keyword">int</span></span><br><span class="line">temp = *x    <span class="comment">/* 保存 x 地址的值 */</span></span><br><span class="line">*x = *y      <span class="comment">/* 将 y 赋值给 x */</span></span><br><span class="line">*y = temp    <span class="comment">/* 将 temp 赋值给 y */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="go语言结构体"><a href="#go语言结构体" class="headerlink" title="go语言结构体"></a>go语言结构体</h2><h3 id="定义和声明"><a href="#定义和声明" class="headerlink" title="定义和声明"></a>定义和声明</h3><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Member <span class="keyword">struct</span> &#123;</span><br><span class="line">	name <span class="keyword">string</span></span><br><span class="line">	age  <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 创建一个新的结构体</span></span><br><span class="line">	fmt.Println(Member&#123;<span class="string">"Go 语言"</span>, <span class="number">10</span>&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 也可以使用 key =&gt; value 格式</span></span><br><span class="line">	fmt.Println(Member&#123;name: <span class="string">"Go 语言"</span>, age: <span class="number">10</span>&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 忽略的字段为 0 或 空</span></span><br><span class="line">	fmt.Println(Member&#123;name: <span class="string">"Go 语言"</span>&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<pre><code>{Go 语言 10}
+{Go 语言 10}
+{Go 语言 0}</code></pre><h3 id="访问结构体"><a href="#访问结构体" class="headerlink" title="访问结构体"></a>访问结构体</h3><p>如果要访问结构体成员，需要使用点号 . 操作符</p>
+<h3 id="结构体作为函数参数"><a href="#结构体作为函数参数" class="headerlink" title="结构体作为函数参数"></a>结构体作为函数参数</h3><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Member <span class="keyword">struct</span> &#123;</span><br><span class="line">	name <span class="keyword">string</span></span><br><span class="line">	age  <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 创建一个新的结构体</span></span><br><span class="line">	one := Member&#123;<span class="string">"Go"</span>, <span class="number">10</span>&#125;</span><br><span class="line">    two := Member&#123;<span class="string">"python"</span>, <span class="number">20</span>&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> three Member</span><br><span class="line">    three.name = <span class="string">"c++"</span></span><br><span class="line">    three.age = <span class="number">30</span></span><br><span class="line"></span><br><span class="line">    printMember(one)</span><br><span class="line"></span><br><span class="line">    printMember(two)</span><br><span class="line"></span><br><span class="line">    printMember(three)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printMember</span><span class="params">( member Member )</span></span> &#123;</span><br><span class="line">   fmt.Printf( <span class="string">"name : %s\n"</span>, member.name)</span><br><span class="line">   fmt.Printf( <span class="string">"age : %d\n"</span>, member.age)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<pre><code>name : Go
+age : 10
+name : python
+age : 20
+name : c++
+age : 30</code></pre><h3 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h3><p>在Go语言中，直接砍掉了最复杂的指针运算的部分，只留下了获取指针（&amp;运算符）和获取对象（*运算符）的运算。</p>
+<p>对于一些复杂类型的指针， 如果要访问成员变量的话，需要写成类似(*p).field的形式，Go提供了隐式解引用特性，我们只需要p.field即可访问相应的成员。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Member <span class="keyword">struct</span> &#123;</span><br><span class="line">	name <span class="keyword">string</span></span><br><span class="line">	age  <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> three Member</span><br><span class="line">	three.name = <span class="string">"c++"</span></span><br><span class="line">	three.age = <span class="number">30</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> struct_pointer *Member</span><br><span class="line">	struct_pointer = &amp;three</span><br><span class="line">	fmt.Printf(<span class="string">"name : %s\n"</span>, struct_pointer.name)</span><br><span class="line">	fmt.Printf(<span class="string">"name : %s\n"</span>, (*struct_pointer).name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<pre><code>name : c++
+name : c++</code></pre>]]></content>
       <categories>
         <category>杂记</category>
       </categories>
