@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/03/03/A2CvsGAN/</loc>
+    
+    <lastmod>2020-03-24T05:09:25.270Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/04/ubuntu/</loc>
+    
+    <lastmod>2020-03-20T14:05:42.997Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/19/python_tips/</loc>
+    
+    <lastmod>2020-03-19T09:35:16.249Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/03/03/go/</loc>
     
-    <lastmod>2020-03-17T09:49:17.315Z</lastmod>
+    <lastmod>2020-03-18T02:27:51.778Z</lastmod>
     
   </url>
   
@@ -23,13 +44,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/04/ubuntu/</loc>
-    
-    <lastmod>2020-03-17T01:32:41.005Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2020/03/15/background/</loc>
     
     <lastmod>2020-03-15T01:16:15.427Z</lastmod>
@@ -40,13 +54,6 @@
     <loc>http://yoursite.com/2020/03/03/A2C/</loc>
     
     <lastmod>2020-03-14T21:55:52.207Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/03/A2CvsGAN/</loc>
-    
-    <lastmod>2020-03-14T21:55:11.078Z</lastmod>
     
   </url>
   
