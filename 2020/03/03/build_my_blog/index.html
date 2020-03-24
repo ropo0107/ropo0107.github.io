@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="自己瞎折腾的博客 本地安装Hexo出现的一些问题安装nodejs安装了node后，执行npm run xxx的命令的时候，报错，提示如下： 1&#x2F;usr&#x2F;bin&#x2F;env: node: No such file or directory  创建一个软连接，如下： 1ln -s &#x2F;usr&#x2F;bin&#x2F;nodejs &#x2F;usr&#x2F;b">
+<meta name="description" content="自己瞎折腾的博客 本地安装Hexo出现的一些问题安装nodejs安装了node后，执行npm run xxx的命令的时候，报错，提示如下： 1&#x2F;usr&#x2F;bin&#x2F;env: node: No such file or directory 创建一个软连接，如下： 1ln -s &#x2F;usr&#x2F;bin&#x2F;nodejs &#x2F;usr&#x2F;bi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建我的博客">
 <meta property="og:url" content="http://yoursite.com/2020/03/03/build_my_blog/index.html">
 <meta property="og:site_name" content="无恙の博客">
-<meta property="og:description" content="自己瞎折腾的博客 本地安装Hexo出现的一些问题安装nodejs安装了node后，执行npm run xxx的命令的时候，报错，提示如下： 1&#x2F;usr&#x2F;bin&#x2F;env: node: No such file or directory  创建一个软连接，如下： 1ln -s &#x2F;usr&#x2F;bin&#x2F;nodejs &#x2F;usr&#x2F;b">
+<meta property="og:description" content="自己瞎折腾的博客 本地安装Hexo出现的一些问题安装nodejs安装了node后，执行npm run xxx的命令的时候，报错，提示如下： 1&#x2F;usr&#x2F;bin&#x2F;env: node: No such file or directory 创建一个软连接，如下： 1ln -s &#x2F;usr&#x2F;bin&#x2F;nodejs &#x2F;usr&#x2F;bi">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-02T22:51:55.000Z">
 <meta property="article:modified_time" content="2020-03-08T00:31:39.175Z">
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  297
+                  296
                 </span>
               
 
@@ -424,37 +424,18 @@
         <p> 自己瞎折腾的博客</p>
 <h2 id="本地安装Hexo出现的一些问题"><a href="#本地安装Hexo出现的一些问题" class="headerlink" title="本地安装Hexo出现的一些问题"></a>本地安装Hexo出现的一些问题</h2><h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><p>安装了node后，执行npm run xxx的命令的时候，报错，提示如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;bin&#x2F;env: node: No such file or directory</span><br></pre></td></tr></table></figure>
-
 <p>创建一个软连接，如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s &#x2F;usr&#x2F;bin&#x2F;nodejs &#x2F;usr&#x2F;bin&#x2F;node</span><br></pre></td></tr></table></figure>
-
 <p>运行’hexo s’ 时出现问题：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SyntaxError: Unexpected token &#x3D;</span><br><span class="line"></span><br><span class="line">    at exports.runInThisContext (vm.js:53:16)</span><br><span class="line">    at Module._compile (module.js:374:25)</span><br><span class="line">    at Object.Module._extensions..js (module.js:417:10)</span><br><span class="line">    at Module.load (module.js:344:32)</span><br><span class="line">    at Function.Module._load (module.js:301:12)</span><br><span class="line">    at Function.Module.runMain (module.js:442:10)</span><br><span class="line">    at startup (node.js:136:18)</span><br><span class="line"></span><br><span class="line">    at node.js:966:3</span><br></pre></td></tr></table></figure>
-
 <p>把nodejs升级一下就可以了，这里我们通过安装n模块来升级</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g n</span><br><span class="line">sudo n stable</span><br></pre></td></tr></table></figure>
-
-<p>安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pug --save</span><br><span class="line">npm install hexo-renderer-sass --save</span><br></pre></td></tr></table></figure>
-<p>时 error:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">..&#x2F;src&#x2F;sass_context_wrapper.h:8:26: fatal error: sass&#x2F;context.h: No such file or directory</span><br></pre></td></tr></table></figure>
-<p>solve:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LIBSASS_EXT&#x3D;&quot;no&quot; npm install</span><br></pre></td></tr></table></figure>
-
-
-
+<p>安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pug --save</span><br><span class="line">npm install hexo-renderer-sass --save</span><br></pre></td></tr></table></figure><br>时 error:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">..&#x2F;src&#x2F;sass_context_wrapper.h:8:26: fatal error: sass&#x2F;context.h: No such file or directory</span><br></pre></td></tr></table></figure><br>solve:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LIBSASS_EXT&#x3D;&quot;no&quot; npm install</span><br></pre></td></tr></table></figure></p>
 <h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><p>安装</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>本地预览</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-
-<p>生成静态文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>部署到远程</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p>更多: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a>, <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a>,  <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>本地预览<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
+<p>生成静态文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure></p>
+<p>部署到远程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><br>更多: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a>, <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a>,  <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 <h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-admin --save</span><br></pre></td></tr></table></figure>
 <p>该插件可以通过访问localhost:4000/admin来管理你的文章。<br>并且在可视化界面中修改文章内容</p>
 
@@ -1260,6 +1241,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="添加自定义HTML静态网页今天发现一个好玩的毒鸡汤界面,打开了新世界的大门. 新建个page1hexo new page soup  在source 会生成一个 soup&#x2F;index.md修改index.md为 ---     layout : false ---在主配置文件_config.yml下修改,该过程不会渲染soup文件夹下内容,直接将soup文件夹下内容copy到publi文件夹下.">
+<meta name="description" content="添加自定义HTML静态网页今天发现一个好玩的毒鸡汤界面,打开了新世界的大门. 新建个page1hexo new page soup 在source 会生成一个 soup&#x2F;index.md 修改index.md为 ---     layout : false --- 在主配置文件_config.yml下修改,该过程不会渲染soup文件夹下内容,直接将soup文件夹下内容copy到publi文件夹下.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HEXO添加自定义HTML静态网页">
 <meta property="og:url" content="http://yoursite.com/2020/03/08/add_custom_html/index.html">
 <meta property="og:site_name" content="无恙の博客">
-<meta property="og:description" content="添加自定义HTML静态网页今天发现一个好玩的毒鸡汤界面,打开了新世界的大门. 新建个page1hexo new page soup  在source 会生成一个 soup&#x2F;index.md修改index.md为 ---     layout : false ---在主配置文件_config.yml下修改,该过程不会渲染soup文件夹下内容,直接将soup文件夹下内容copy到publi文件夹下.">
+<meta property="og:description" content="添加自定义HTML静态网页今天发现一个好玩的毒鸡汤界面,打开了新世界的大门. 新建个page1hexo new page soup 在source 会生成一个 soup&#x2F;index.md 修改index.md为 ---     layout : false --- 在主配置文件_config.yml下修改,该过程不会渲染soup文件夹下内容,直接将soup文件夹下内容copy到publi文件夹下.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-08T00:23:55.000Z">
 <meta property="article:modified_time" content="2020-03-17T04:02:47.130Z">
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  181
+                  183
                 </span>
               
 
@@ -423,20 +423,23 @@
       
         <h2 id="添加自定义HTML静态网页"><a href="#添加自定义HTML静态网页" class="headerlink" title="添加自定义HTML静态网页"></a>添加自定义HTML静态网页</h2><p>今天发现一个好玩的毒鸡汤界面,打开了新世界的大门.</p>
 <h2 id="新建个page"><a href="#新建个page" class="headerlink" title="新建个page"></a>新建个page</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page soup</span><br></pre></td></tr></table></figure>
-
 <p>在source 会生成一个</p>
-<pre><code>soup/index.md</code></pre><p>修改index.md为</p>
+<pre><code>soup/index.md
+</code></pre><p>修改index.md为</p>
 <pre><code>---
     layout : false
----</code></pre><p>在主配置文件_config.yml下修改,该过程不会渲染soup文件夹下内容,直接将soup文件夹下内容copy到publi文件夹下.</p>
-<pre><code>skip_render: soup/**  </code></pre><p>在theme/next/_config.yml文件添加page</p>
+---
+</code></pre><p>在主配置文件_config.yml下修改,该过程不会渲染soup文件夹下内容,直接将soup文件夹下内容copy到publi文件夹下.</p>
+<pre><code>skip_render: soup/**  
+</code></pre><p>在theme/next/_config.yml文件添加page</p>
 <pre><code>menu:
   home: /
   tags: /tags
   categories: /categories
   archives: /archives
   about: /about
-  soup: /soup</code></pre><h2 id="静态html文件"><a href="#静态html文件" class="headerlink" title="静态html文件"></a>静态html文件</h2><p>将html文件放在/source/soup/目录下</p>
+  soup: /soup
+</code></pre><h2 id="静态html文件"><a href="#静态html文件" class="headerlink" title="静态html文件"></a>静态html文件</h2><p>将html文件放在/source/soup/目录下</p>
 <h2 id="Done"><a href="#Done" class="headerlink" title="Done!"></a>Done!</h2><p>如果有好玩的网页,可以通过搞到网页index.html加到自己博客中.</p>
 <p>html文件与之前写的 <strong>urdf</strong> 和 <strong>xacro</strong> 文件.风格和 <strong>css</strong> <strong>html</strong> 及其类似.</p>
 
@@ -1242,6 +1245,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

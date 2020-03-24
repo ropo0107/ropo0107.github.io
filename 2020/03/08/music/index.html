@@ -421,10 +421,7 @@
       
 
       
-        <span>
-<a id="more"></a>
-效果图：   
-
+        <p><span><br><a id="more"></a><br>效果图：   </p>
 <p><img src="https://yfzhou.oss-cn-beijing.aliyuncs.com/blog/img/music01.png" alt=""></p>
 <h1 id="download"><a href="#download" class="headerlink" title="download"></a><a href="#download" title="download"></a>download</h1><p>点击访问Aplayer源码：<a href="https://github.com/MoePlayer/APlayer" target="_blank" rel="noopener">GitHub Aplayer</a>。下载到本地，解压后将<code>dist</code>文件夹复制到<code>themes\next\source</code>文件夹下。</p>
 <h1 id="music-js"><a href="#music-js" class="headerlink" title="music.js"></a><a href="#music-js" title="music.js"></a>music.js</h1><p>新建<code>themes\next\source\dist\music.js</code>文件，添加内容：  </p>
@@ -432,9 +429,7 @@
 <p>源码中对应的参数解释，这边都有： <a href="https://aplayer.js.org/#/zh-Hans/" target="_blank" rel="noopener">Aplayer 中文文档</a></p>
 <p><code>audio</code>对应的便是音频文件，所以音乐播放器需要播放的音乐是需要自己进行相关信息（如歌曲链接、歌词、封面等）的配置。这里放一个mp3音乐外链网站：<a href="http://up.mcyt.net/" target="_blank" rel="noopener">http://up.mcyt.net/</a> ，搜索对应的音乐，然后复制<code>url</code>和右击封面图片链接粘贴到对应的位置上就行了。</p>
 <p>注：由于该外链网站没有歌词链接，我这边没有进行配置，所以播放器在播放音乐时点击歌词是没有显示的。</p>
-<h1 id="layout-swig"><a href="#layout-swig" class="headerlink" title="_layout.swig"></a><a href="#layout-swig" title="_layout.swig"></a>_layout.swig</h1><p>打开<code>themes\next\layout\_layout.swig</code>文件，将  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;&#x2F;dist&#x2F;APlayer.min.css&quot;&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;aplayer&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;dist&#x2F;APlayer.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;dist&#x2F;music.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<p>添加到<code>&lt;body itemscope ...&gt;</code>后面就行，即在<code>&lt;body&gt;&lt;/body&gt;</code>里面。</p>
+<h1 id="layout-swig"><a href="#layout-swig" class="headerlink" title="_layout.swig"></a><a href="#layout-swig" title="_layout.swig"></a>_layout.swig</h1><p>打开<code>themes\next\layout\_layout.swig</code>文件，将<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;&#x2F;dist&#x2F;APlayer.min.css&quot;&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;aplayer&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;dist&#x2F;APlayer.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;dist&#x2F;music.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure><br>添加到<code>&lt;body itemscope ...&gt;</code>后面就行，即在<code>&lt;body&gt;&lt;/body&gt;</code>里面。</p>
 <p>重新生成，访问页面，就能看到左下角的音乐播放器了。</p>
 
       
@@ -495,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/05/leetcode_Backtracking/" rel="next" title="LeetCode回溯">
-                <i class="fa fa-chevron-left"></i> LeetCode回溯
+              <a href="/2020/03/05/leetcode_Branch_and_bound/" rel="next" title="LeetCode分支限界法">
+                <i class="fa fa-chevron-left"></i> LeetCode分支限界法
               </a>
             
           </div>
@@ -1239,6 +1234,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

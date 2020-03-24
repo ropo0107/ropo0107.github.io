@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="blog,trojan,ubuntu," />
+  <meta name="keywords" content="blog,ubuntu,trojan," />
 
 
 
@@ -90,8 +90,8 @@
 <meta property="article:modified_time" content="2020-03-14T08:27:57.843Z">
 <meta property="article:author" content="无恙">
 <meta property="article:tag" content="blog">
-<meta property="article:tag" content="trojan">
 <meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="trojan">
 <meta name="twitter:card" content="summary">
 
 
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  327
+                  324
                 </span>
               
 
@@ -432,22 +432,18 @@
 <p><a href="https://www.johnrosen1.com/trojan/" target="_blank" rel="noopener">一键脚本</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/johnrosen1/trojan-gfw-script/master/vps.sh)</span>"</span></span><br></pre></td></tr></table></figure>
 <p>一路默认即可</p>
-<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>如果是ubuntu18.04可以用这个</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:greaterfire/trojan</span><br><span class="line">sudo apt-get install trojan -y</span><br><span class="line">sudo nano /etc/trojan/config.json</span><br></pre></td></tr></table></figure>
-
+<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>如果是ubuntu18.04可以用这个<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:greaterfire/trojan</span><br><span class="line">sudo apt-get install trojan -y</span><br><span class="line">sudo nano /etc/trojan/config.json</span><br></pre></td></tr></table></figure></p>
 <p>我个人时候用的ubuntu16.04,客户端使用有点狗</p>
 <p>要下两个东西</p>
 <p>trojan-cli</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/atrandys/trojan/raw/master/trojan-cli.zip</span><br></pre></td></tr></table></figure>
-
-<p>trojan-1.14.1-linux-amd64.tar.xz</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz</span><br></pre></td></tr></table></figure>
-<p>将trojan-1.14.1-linux-amd64.tar.xz里面的克制向文件 <strong>trojan</strong> 放到trojan-cli文件下</p>
+<p>trojan-1.14.1-linux-amd64.tar.xz<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz</span><br></pre></td></tr></table></figure><br>将trojan-1.14.1-linux-amd64.tar.xz里面的克制向文件 <strong>trojan</strong> 放到trojan-cli文件下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./trojan -c config.json</span><br></pre></td></tr></table></figure>
-
 <p>本人运行时一直有个错误</p>
-<pre><code>fatal: bind: Address already in use</code></pre><p>说端口被占用．<br>一直以为是服务端的问题，最后试了下 iso 端是可以用的，说明是客户端的问题，默认 1080　端口</p>
-<pre><code>lsof -i:1080</code></pre><p>查看发现并没有问题</p>
+<pre><code> fatal: bind: Address already in use
+</code></pre><p>说端口被占用．<br>一直以为是服务端的问题，最后试了下 iso 端是可以用的，说明是客户端的问题，默认 1080　端口</p>
+<pre><code>lsof -i:1080
+</code></pre><p>查看发现并没有问题</p>
 <p>最后解决方法是　cofig.jaon 文件中将本地端口换了一个，就可以了</p>
 <p>神奇</p>
 
@@ -498,9 +494,9 @@
           
             <a href="/tags/blog/" rel="tag"><i class="fa fa-tag"></i> blog</a>
           
-            <a href="/tags/trojan/" rel="tag"><i class="fa fa-tag"></i> trojan</a>
-          
             <a href="/tags/ubuntu/" rel="tag"><i class="fa fa-tag"></i> ubuntu</a>
+          
+            <a href="/tags/trojan/" rel="tag"><i class="fa fa-tag"></i> trojan</a>
           
         </div>
       
@@ -1257,6 +1253,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

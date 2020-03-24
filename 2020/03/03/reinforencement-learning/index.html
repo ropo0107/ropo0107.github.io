@@ -448,10 +448,8 @@
 <li>模型缺乏通用性，每次换一个问题，就要重新建模。</li>
 </ul>
 <h1 id="RL主要研究点"><a href="#RL主要研究点" class="headerlink" title="RL主要研究点"></a>RL主要研究点</h1><ul>
-<li><p>基于模型的方法。基于模型的方法不仅能大幅降低采样需求，还可以通过学习任务的动力学模型，为预测学习做铺垫。</p>
-</li>
-<li><p>提高免模型方法的数据利用率和扩展性。这是免模型学习的两处硬伤，Rich Sutton 的终极研究目标。这个领域很艰难，但是任何有意义的突破也将带来极大价值。</p>
-</li>
+<li>基于模型的方法。基于模型的方法不仅能大幅降低采样需求，还可以通过学习任务的动力学模型，为预测学习做铺垫。</li>
+<li>提高免模型方法的数据利用率和扩展性。这是免模型学习的两处硬伤，Rich Sutton 的终极研究目标。这个领域很艰难，但是任何有意义的突破也将带来极大价值。</li>
 <li><p>更高效的探索策略（Exploration Strategies）。平衡“探索”与“利用”是 RL 的本质问题，这需要我们设计更加高效的探索策略。除了若干经典的算法如 Softmax、ϵ-Greedy 和 Thompson Sampling 等，近期学界陆续提出了大批新算法，如 Intrinsic Motivation 、Curiosity-driven Exploration、Count-based Exploration  等。其实这些“新”算法的思想不少早在 80 年代就已出现 ，而与 DL 的有机结合使它们重新得到重视。此外，OpenAI 与 DeepMind 先后提出通过在策略参数 和 神经网络权重 上引入噪声来提升探索策略, 开辟了一个新方向。</p>
 </li>
 <li><p>模仿学习（Imitation Learning, IL）结合。机器学习与自动驾驶领域最早的成功案例 ALVINN 就是基于 IL；当前 RL 领域最顶级的学者 Pieter Abbeel 在跟随 Andrew Ng 读博士时候, 设计的通过 IL 控制直升机的算法 成为 IL 领域的代表性工作。2016 年，英伟达提出的端到端自动驾驶系统也是通过 IL 进行学习 。而 AlphaGo 的学习方式也是 IL。IL 介于 RL 与监督学习之间，兼具两者的优势，既能更快地得到反馈、更快地收敛，又有推理能力，很有研究价值。</p>
@@ -464,18 +462,13 @@
 </li>
 <li><p>分层 RL（Hierarchical RL, HRL）。周志华教授总结 DL 成功的三个条件为：有逐层处理、有特征的内部变化和有足够的模型复杂度 。而 HRL 不仅满足这三个条件，而且具备更强的推理能力，是一个非常潜力的研究领域。目前 HRL 已经在一些需要复杂推理的任务（如 Atari 平台上的《Montezuma’s Revenge》游戏）中展示了强大的学习能力 。</p>
 </li>
-<li><p>与序列预测（Sequence Prediction）结合。Sequence Prediction 与 RL、IL 解决的问题相似又不相同。三者间有很多思想可以互相借鉴。当前已有一些基于 RL 和 IL 的方法在 Sequence Prediction 任务上取得了很好的结果 。这一方向的突破对 Video Prediction 和 NLP 中的很多任务都会产生广泛影响。</p>
-</li>
-<li><p>（免模型）方法探索行为的安全性（Safe RL）。相比于基于模型的方法，免模型方法缺乏预测能力，这使得其探索行为带有更多不稳定性。一种研究思路是结合贝叶斯方法为 RL 代理行为的不确定性建模，从而避免过于危险的探索行为。此外，为了安全地将 RL 应用于现实环境中，可以在模拟器中借助混合现实技术划定危险区域，通过限制代理的活动空间约束代理的行为。</p>
-</li>
-<li><p>关系 RL。近期学习客体间关系从而进行推理与预测的“关系学习”受到了学界的广泛关注。关系学习往往在训练中构建的状态链，而中间状态与最终的反馈是脱节的。RL 可以将最终的反馈回传给中间状态，实现有效学习，因而成为实现关系学习的最佳方式。2017 年 DeepMind 提出的 VIN 和 Pridictron 均是这方面的代表作。2018 年 6 月，DeepMind 又接连发表了多篇关系学习方向的工作如关系归纳偏置 、关系 RL、关系 RNN、图网络  和已经在《科学》杂志发表的生成查询网络（Generative Query Network，GQN）。这一系列引人注目的工作将引领关系 RL 的热潮。</p>
-</li>
-<li><p>对抗样本 RL。RL 被广泛应用于机械控制等领域，这些领域相比于图像识别语音识别等等，对鲁棒性和安全性的要求更高。因此针对 RL 的对抗攻击是一个非常重要的问题。近期有研究表明，会被对抗样本操控，很多经典模型如 DQN 等算法都经不住对抗攻击的扰动 。</p>
-</li>
-<li><p>处理其他模态的输入。在 NLP 领域，学界已经将 RL 应用于处理很多模态的数据上，如句子、篇章、知识库等等。但是在计算机视觉领域，RL 算法主要还是通过神经网络提取图像和视频的特征，对其他模态的数据很少涉及。我们可以探索将 RL 应用于其他模态的数据的方法，比如处理 RGB-D 数据和激光雷达数据等。一旦某一种数据的特征提取难度大大降低，将其与 RL 有机结合后都可能取得 AlphaGo 级别的突破。英特尔研究院已经基于 CARLA 模拟器在这方面开展了一系列的工作。</p>
-</li>
+<li>与序列预测（Sequence Prediction）结合。Sequence Prediction 与 RL、IL 解决的问题相似又不相同。三者间有很多思想可以互相借鉴。当前已有一些基于 RL 和 IL 的方法在 Sequence Prediction 任务上取得了很好的结果 。这一方向的突破对 Video Prediction 和 NLP 中的很多任务都会产生广泛影响。</li>
+<li>（免模型）方法探索行为的安全性（Safe RL）。相比于基于模型的方法，免模型方法缺乏预测能力，这使得其探索行为带有更多不稳定性。一种研究思路是结合贝叶斯方法为 RL 代理行为的不确定性建模，从而避免过于危险的探索行为。此外，为了安全地将 RL 应用于现实环境中，可以在模拟器中借助混合现实技术划定危险区域，通过限制代理的活动空间约束代理的行为。</li>
+<li>关系 RL。近期学习客体间关系从而进行推理与预测的“关系学习”受到了学界的广泛关注。关系学习往往在训练中构建的状态链，而中间状态与最终的反馈是脱节的。RL 可以将最终的反馈回传给中间状态，实现有效学习，因而成为实现关系学习的最佳方式。2017 年 DeepMind 提出的 VIN 和 Pridictron 均是这方面的代表作。2018 年 6 月，DeepMind 又接连发表了多篇关系学习方向的工作如关系归纳偏置 、关系 RL、关系 RNN、图网络  和已经在《科学》杂志发表的生成查询网络（Generative Query Network，GQN）。这一系列引人注目的工作将引领关系 RL 的热潮。</li>
+<li>对抗样本 RL。RL 被广泛应用于机械控制等领域，这些领域相比于图像识别语音识别等等，对鲁棒性和安全性的要求更高。因此针对 RL 的对抗攻击是一个非常重要的问题。近期有研究表明，会被对抗样本操控，很多经典模型如 DQN 等算法都经不住对抗攻击的扰动 。</li>
+<li>处理其他模态的输入。在 NLP 领域，学界已经将 RL 应用于处理很多模态的数据上，如句子、篇章、知识库等等。但是在计算机视觉领域，RL 算法主要还是通过神经网络提取图像和视频的特征，对其他模态的数据很少涉及。我们可以探索将 RL 应用于其他模态的数据的方法，比如处理 RGB-D 数据和激光雷达数据等。一旦某一种数据的特征提取难度大大降低，将其与 RL 有机结合后都可能取得 AlphaGo 级别的突破。英特尔研究院已经基于 CARLA 模拟器在这方面开展了一系列的工作。</li>
 </ul>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+<h1 id=""><a href="#" class="headerlink" title=" "></a> </h1>
       
     </div>
     
@@ -720,7 +713,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目前DRL的坑"><span class="nav-number">1.1.</span> <span class="nav-text">目前ＤＲＬ的坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-Based-和Model-Free"><span class="nav-number">1.2.</span> <span class="nav-text">Model-Based 和Model-Free</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#是否基于model"><span class="nav-number">1.2.1.</span> <span class="nav-text">是否基于model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Free"><span class="nav-number">1.2.2.</span> <span class="nav-text">Model-Free</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#model-based"><span class="nav-number">1.2.3.</span> <span class="nav-text">model-based</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RL主要研究点"><span class="nav-number">2.</span> <span class="nav-text">RL主要研究点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text"></span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目前DRL的坑"><span class="nav-number">1.1.</span> <span class="nav-text">目前ＤＲＬ的坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-Based-和Model-Free"><span class="nav-number">1.2.</span> <span class="nav-text">Model-Based 和Model-Free</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#是否基于model"><span class="nav-number">1.2.1.</span> <span class="nav-text">是否基于model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Free"><span class="nav-number">1.2.2.</span> <span class="nav-text">Model-Free</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#model-based"><span class="nav-number">1.2.3.</span> <span class="nav-text">model-based</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RL主要研究点"><span class="nav-number">2.</span> <span class="nav-text">RL主要研究点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text"> </span></a></li></ol></div>
             
 
           </div>
@@ -1280,6 +1273,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

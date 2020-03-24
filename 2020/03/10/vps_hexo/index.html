@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  670
+                  669
                 </span>
               
 
@@ -436,27 +436,26 @@
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo.git</span><br><span class="line"><span class="built_in">cd</span> hexo.git</span><br><span class="line">git init --bare </span><br><span class="line"><span class="comment">#  --bare是建立裸仓库</span></span><br></pre></td></tr></table></figure></li>
 <li><p>然后来到/var/www文件夹下，我们的网页就会存放在这里的某一个文件夹下，这里我们创建一个文件夹hexo，然后赋予它操作权限，同时赋予自己权限来操作它。</p>
  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo</span><br><span class="line">chmod 0755 hexo</span><br><span class="line">chown root:root -R /var/www/hexo</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 <h2 id="githook。"><a href="#githook。" class="headerlink" title="githook。"></a>githook。</h2><p>当我们将本地网页文件传上来之后，我们可能还要到服务器端操作一番，以能够将网页文件放到/var/www/hexo下展示。git自带一个功能，那就是只要有文件传输它就会执行某个脚本。那么我们怎么做呢？写个脚本就好了！</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim hexo.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
 <p>将下面内容贴进去</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">GIT_REPO=~/hexo.git                      <span class="comment"># 触发 hook</span></span><br><span class="line">TMP_GIT_CLONE=/tmp/hexo                  <span class="comment"># 存在 /tmp 下</span></span><br><span class="line">PUBLIC_WWW=/var/www/hexo                 <span class="comment"># 展示网站的目录</span></span><br><span class="line">rm -rf <span class="variable">$&#123;TMP_GIT_CLONE&#125;</span>                  <span class="comment"># 删除之前内容</span></span><br><span class="line">git <span class="built_in">clone</span> <span class="variable">$GIT_REPO</span> <span class="variable">$TMP_GIT_CLONE</span>       <span class="comment"># 将 Git 仓库上传的内容复制到/tmp</span></span><br><span class="line">rm -rf <span class="variable">$&#123;PUBLIC_WWW&#125;</span>/*                   <span class="comment"># 删除展示网站的目录的全部内容</span></span><br><span class="line">cp -rf <span class="variable">$&#123;TMP_GIT_CLONE&#125;</span>/* <span class="variable">$&#123;PUBLIC_WWW&#125;</span>  <span class="comment"># 将/tmp所有内容复制到网站目录</span></span><br></pre></td></tr></table></figure>
-<h2 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h2><p>正常应该是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;nginx&#x2F;sites-available</span><br><span class="line">vim default</span><br></pre></td></tr></table></figure>
-<p>因为之前安装过 <strong>trojan</strong> 用到了 <strong>nginx</strong> 所以我的</p>
+<h2 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h2><p>正常应该是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;nginx&#x2F;sites-available</span><br><span class="line">vim default</span><br></pre></td></tr></table></figure><br>因为之前安装过 <strong>trojan</strong> 用到了 <strong>nginx</strong> 所以我的</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;trojan.conf</span><br><span class="line">vim trojan.conf</span><br></pre></td></tr></table></figure>
 <p>我的只需要修改下面内容即可</p>
-<pre><code>location / {
-        root /usr/share/nginx/html/;
-                index index.html;
-        }</code></pre><p>将上面的内容替换</p>
-<pre><code>location / {
-        root  /var/www/hexo/;
-        index  index.html index.htm;
-}</code></pre><ul>
-<li>这儿有个坑，看别的博主 <strong>root  /var/www/hexo/;</strong> 的博主，这句都没有最后的 <strong>/</strong> ,我这儿是有问题的</li>
+<pre><code>    location / {
+            root /usr/share/nginx/html/;
+                    index index.html;
+            }
+</code></pre><p>将上面的内容替换</p>
+<pre><code>    location / {
+            root  /var/www/hexo/;
+            index  index.html index.htm;
+    }
+</code></pre><ul>
+<li>这儿有个坑，看别的博主 <strong>root  /var/www/hexo/;</strong> 的博主，这句都没有最后的 <strong>\/</strong> ,我这儿是有问题的</li>
 </ul>
 <p>完整的config文件</p>
 <pre><code>server {
@@ -484,9 +483,8 @@
                         rewrite ^/(.*)$  /$1 break;
                 }
         }
-}</code></pre><p>重启nginx即可</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service nginx restart</span><br></pre></td></tr></table></figure>
-
+}
+</code></pre><p>重启nginx即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service nginx restart</span><br></pre></td></tr></table></figure></p>
 <p>在浏览器输入自己域名就ok了！！！</p>
 <h2 id="同时部署到多个仓库"><a href="#同时部署到多个仓库" class="headerlink" title="同时部署到多个仓库"></a>同时部署到多个仓库</h2><p>在 <strong>_config.yaml</strong> 添加要部署的地址即可，前面的名字无所谓，冒号后面要空格.</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> </span><br><span class="line">        <span class="attr">vps:</span> <span class="string">vpa_user@vps_ip:hexo.git</span> </span><br><span class="line">        <span class="attr">epository:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
@@ -1297,6 +1295,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
