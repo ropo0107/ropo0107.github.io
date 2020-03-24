@@ -51,7 +51,7 @@ footer:
   icon: user
 
   # If not defined, will be used `author` from Hexo main config.
-  copyright:
+  copyright: false
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
   powered: false
@@ -59,11 +59,12 @@ footer:
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
     enable: false
-    # Version info of NexT after scheme info (vX.X.X).
+    # # Version info of NexT after scheme info (vX.X.X).
     version: false
   # -------------------------------------------------------------
   # Any custom text can be defined here.
   #custom_text: Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
+  custom_text: 时光如水，或踏浪而行，或逆流而上！！！
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -629,7 +630,7 @@ local_search:
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
   # show top n results per article, show all results by setting to -1
-  top_n_per_article: 1
+  top_n_per_article: -1
 
 
 # ---------------------------------------------------------------

@@ -72,3 +72,8 @@ date: 2020-03-04 02:51:55
     1) 打开新的 terminal, 运行 (不用 $PYTHONPATH)
     ----------------------------------------------------------------
     $ youdao-dict
+
+
+### vscode
+
+vscode  虚拟环境的时候只需要通过命令面板Python: Select Interpreter就会列出所有的虚拟环境.

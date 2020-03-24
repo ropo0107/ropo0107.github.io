@@ -1,5 +1,5 @@
 ---
-title: 添加自定义HTML静态网页
+title: HEXO添加自定义HTML静态网页
 categories:
   - 杂记
 tags: blog
