@@ -211,25 +211,6 @@
   </entry>
   
   <entry>
-    <title>LeetCode分支限界法</title>
-    <link href="http://yoursite.com/2020/03/05/leetcode_Branch_and_bound/"/>
-    <id>http://yoursite.com/2020/03/05/leetcode_Branch_and_bound/</id>
-    <published>2020-03-05T09:51:55.000Z</published>
-    <updated>2020-03-10T21:46:50.791Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
-    
-    
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
     <title>LeetCode回溯</title>
     <link href="http://yoursite.com/2020/03/05/leetcode_Backtracking/"/>
     <id>http://yoursite.com/2020/03/05/leetcode_Backtracking/</id>
@@ -249,11 +230,30 @@
   </entry>
   
   <entry>
-    <title>LeetCode动态规划</title>
-    <link href="http://yoursite.com/2020/03/05/leetcode_greedy/"/>
-    <id>http://yoursite.com/2020/03/05/leetcode_greedy/</id>
+    <title>LeetCode分支限界法</title>
+    <link href="http://yoursite.com/2020/03/05/leetcode_Branch_and_bound/"/>
+    <id>http://yoursite.com/2020/03/05/leetcode_Branch_and_bound/</id>
     <published>2020-03-05T09:51:55.000Z</published>
-    <updated>2020-03-10T21:44:28.240Z</updated>
+    <updated>2020-03-10T21:46:50.791Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode动态规划</title>
+    <link href="http://yoursite.com/2020/03/05/leetcode_dp/"/>
+    <id>http://yoursite.com/2020/03/05/leetcode_dp/</id>
+    <published>2020-03-05T09:51:55.000Z</published>
+    <updated>2020-03-10T19:00:30.556Z</updated>
     
     <content type="html"><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p><ul><li>原问题与子问题</li><li>动态规划状态</li><li>边界状态的值</li><li>状态转移方差</li></ul>]]></content>
     
@@ -302,10 +302,10 @@
   
   <entry>
     <title>LeetCode动态规划</title>
-    <link href="http://yoursite.com/2020/03/05/leetcode_dp/"/>
-    <id>http://yoursite.com/2020/03/05/leetcode_dp/</id>
+    <link href="http://yoursite.com/2020/03/05/leetcode_greedy/"/>
+    <id>http://yoursite.com/2020/03/05/leetcode_greedy/</id>
     <published>2020-03-05T09:51:55.000Z</published>
-    <updated>2020-03-10T19:00:30.556Z</updated>
+    <updated>2020-03-10T21:44:28.240Z</updated>
     
     <content type="html"><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p><ul><li>原问题与子问题</li><li>动态规划状态</li><li>边界状态的值</li><li>状态转移方差</li></ul>]]></content>
     
