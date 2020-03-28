@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-24T13:12:02.929Z</updated>
+  <updated>2020-03-24T13:36:48.351Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/03/24/A2CvsGAN/"/>
     <id>http://yoursite.com/2020/03/24/A2CvsGAN/</id>
     <published>2020-03-24T04:51:55.000Z</published>
-    <updated>2020-03-24T13:12:02.929Z</updated>
+    <updated>2020-03-24T13:36:48.351Z</updated>
     
     <content type="html"><![CDATA[<h1 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h1><h2 id="GAN数学描述"><a href="#GAN数学描述" class="headerlink" title="GAN数学描述"></a>GAN数学描述</h2><p><strong>目标:</strong> 以假乱真的生成器</p><ul><li>高水平的鉴赏家</li><li>高水平的工艺大师</li></ul><p>原始数据概率分布: </p><script type="math/tex; mode=display">P_{data} =(x;\theta)</script><p>生成器概率分布:  </p><script type="math/tex; mode=display">P_z =(z;\theta_g)</script><p>这儿 $\theta_g$ 表示概率的参数，</p><p>生成器网络表示：</p><script type="math/tex; mode=display">x=G (z;\theta_g)</script><p>这儿 $\theta_g$ 表示网络的参数，</p><pre><code>这儿不对生成器进行具体建模，用一个神经网络(确定性函数)去描述 </code></pre><p>鉴别器网络表示：</p><pre><code>为伯努利分布</code></pre><script type="math/tex; mode=display">D (x;\theta_d)</script><p>$x$ 可以来着 $P_{data}$ 或者 生成器 $G$ </p><p><strong>高水平专家</strong></p><ul><li>if $x$ from $P_{data}$ ，Then $D(x)$  $\Uparrow$</li><li>if $x$ from $P_g$ ，Then $D(x)$ $\Downarrow$<ul><li>$D(x)$ 下降，即，$1-D(G(z))$ $\Uparrow$</li></ul></li></ul><p>为计算方便，可加上log</p><ul><li>if $x$ from $P_{data}$ ，Then $logD(x)$ $\Uparrow$</li><li>if $x$ from $P_g$ ，Then $log(1-D(G(z)))$ $\Uparrow$</li></ul><p>目标：</p><script type="math/tex; mode=display">\max_D E_{x\sim{P_{data}}}[\log(D(x))]+E_{z\sim{P_{z}}}[log(1-D(G(z)))]</script><p><strong>高水平大师</strong></p><ul><li>if $x$ from $P_g$ ，Then $D(G(z))$ $\Uparrow$</li></ul><p>即</p><ul><li>if $x$ from $P_g$ ，Then $log(1-D(G(z)))$ $\Downarrow$</li></ul><p>目标：</p><script type="math/tex; mode=display">\min_G E_{z\sim{P_{z}}}[log(1-D(G(z)))]</script><p>总目标：</p><script type="math/tex; mode=display">\min_G \max_D E_{x\sim{P_{data}}}[\log(D(x))]+E_{z\sim{P_{z}}}[log(1-D(G(z)))]</script><h2 id="GAN全局最优解"><a href="#GAN全局最优解" class="headerlink" title="GAN全局最优解"></a>GAN全局最优解</h2><p>$\min_G \max_D E_{x\sim{P_{data}}}[\log(D(x))]+E_{z\sim{P_{z}}}[log(1-D(G(z)))]$</p><p>恒等</p><p>$V(D,G)=\min_G \max_D E_{x\sim{P_{data}}}[\log(D(x))]+E_{x\sim{P_{g}}}[log(1-D(x)]$</p><p>for fix $G$ , $\max_D V(D,G)$</p><p>$\max_D V(D,G)=\int{P_{data}\log{D}}dx+ \int{P_g\log(1-D)}dx$</p><p>$=\int{[P_{data}\log{D}+ P_g\log(1-D)]}dx$</p><p>$=\int{[P_{data}\log{D}+ P_g\log(1-D)]}dx$</p><p>对 $D$ 求偏导</p><p>$<br>\frac {\partial max_D V(D,G)} {\partial D } = \int \frac {\partial} {\partial D } [P_{data}\log{D}+ P_g\log(1-D)]dx<br>$</p><p>$=\int[ P_{data}{1 \over D}+P_g{-1 \over 1-D}]dx$</p><p>令导数为0：</p><p>$D^*_G = {P_{data} \over P_{data}+P_g}$</p><p>故 $D$ 存在最大值</p><p>将 $D^*_G$ 带入 $V(D,G)$</p><p>$min_G max_D V(D,G)$</p><p>$=min_G V(D^*_G,G)$</p><p>$=\min_G E_{x\sim{P_{data}}}[\log{P_{data}\over P_{data}+P_g}]+E_{x\sim{P_{g}}}[log({P_{g}\over P_{data}+P_g})]$</p><p>$=\min_G E_{x\sim{P_{data}}}[\log{1\over2}{P_{data}\over {P_{data}+P_g\over 2} }]+E_{x\sim{P_{g}}}[log({1\over2}{P_{g}\over {P_{data}+P_g\over2}})]$</p><p>$=\min_G KL(P_{data} \parallel {P_{data}+P_g\over2})+KL(P_{g} \parallel {P_{data}+P_g\over2})-log4$</p><p>$\geqslant-log4$</p><p>当且仅当：$p_{data}=P_g={P_{data}+P_g\over2}$ 时成立。</p><p><strong>最优解：</strong></p><p>$P^*_g = P_{data}$</p><p>$D^*={1\over2}$</p><p>最终判别器在概率角度已经不能够分辨真假。</p><hr><ul><li>$P_{data}+P_g$ 这儿不是概率分布，凑出 $P_{data}+P_g \over 2$ 为概率分布。</li></ul><p>KL公式：</p><p>分子分母必须保证为概率分布</p><script type="math/tex; mode=display">KL(p \parallel q) =E_p log{p\over q}</script><p>打公式可太费劲了</p><hr>]]></content>
     
@@ -42,6 +42,8 @@
     
       <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
+      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
+    
   </entry>
   
   <entry>
@@ -49,9 +51,9 @@
     <link href="http://yoursite.com/2020/03/19/python_tips/"/>
     <id>http://yoursite.com/2020/03/19/python_tips/</id>
     <published>2020-03-18T18:51:55.000Z</published>
-    <updated>2020-03-19T09:35:16.249Z</updated>
+    <updated>2020-03-26T14:18:21.500Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Python中读写pkl文件"><a href="#Python中读写pkl文件" class="headerlink" title="Python中读写pkl文件"></a>Python中读写pkl文件</h2><ul><li><p>不采用压缩方式</p>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line"><span class="comment">#write</span></span><br><span class="line">pack = <span class="string">"xxx"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"demo.pkl"</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        pickle.dump(pack,f)</span><br><span class="line"></span><br><span class="line"><span class="comment">#read</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"demo.pkl"</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        data = pickle.load(f)</span><br></pre></td></tr></table></figure></li><li><p>采用压缩方式</p>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bz2</span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line"><span class="comment">#write</span></span><br><span class="line">pack = <span class="string">"xxx"</span></span><br><span class="line"><span class="keyword">with</span> bz2.BZ2File(<span class="string">"demo.pkl"</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        pickle.dump(pack,f)</span><br><span class="line"></span><br><span class="line"><span class="comment">#read</span></span><br><span class="line"><span class="keyword">with</span> bz2.BZ2File(<span class="string">"demo.pkl"</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        data = pickle.load(f)</span><br></pre></td></tr></table></figure><p>两种方式数据占用量差别在3-4倍，可以显著节省空间。</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="Python中读写pkl文件"><a href="#Python中读写pkl文件" class="headerlink" title="Python中读写pkl文件"></a>Python中读写pkl文件</h2><ul><li><p>不采用压缩方式</p>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line"><span class="comment">#write</span></span><br><span class="line">pack = <span class="string">"xxx"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"demo.pkl"</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        pickle.dump(pack,f)</span><br><span class="line"></span><br><span class="line"><span class="comment">#read</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"demo.pkl"</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        data = pickle.load(f)</span><br></pre></td></tr></table></figure></li><li><p>采用压缩方式</p>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bz2</span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line"><span class="comment">#write</span></span><br><span class="line">pack = <span class="string">"xxx"</span></span><br><span class="line"><span class="keyword">with</span> bz2.BZ2File(<span class="string">"demo.pkl"</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        pickle.dump(pack,f)</span><br><span class="line"></span><br><span class="line"><span class="comment">#read</span></span><br><span class="line"><span class="keyword">with</span> bz2.BZ2File(<span class="string">"demo.pkl"</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        data = pickle.load(f)</span><br></pre></td></tr></table></figure><p>两种方式数据占用量差别在3-4倍，可以显著节省空间。</p></li></ul><h2 id="保存图片"><a href="#保存图片" class="headerlink" title="保存图片"></a>保存图片</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># matplotlib</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.image <span class="keyword">as</span> Image</span><br><span class="line">Image.imsave(<span class="string">"save_path.jpg"</span>, left_shoulder_rgb)</span><br></pre></td></tr></table></figure><p>保存值范围:0~1<br>保存格式为:RGB</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cv2</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cv2.imwrite(<span class="string">"save_path.jpg"</span>,rgb,[int(cv2.IMWRITE_JPEG_QUALITY),<span class="number">100</span>])</span><br></pre></td></tr></table></figure><p>保存值范围:0~255<br>保存格式为:RBG</p><h2 id="tensor"><a href="#tensor" class="headerlink" title="tensor"></a>tensor</h2><p>np.array 转成 tensor两种方法</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># print("numpy",color.shape)</span></span><br><span class="line"><span class="comment"># numpy shape(240*320*3)</span></span><br><span class="line"><span class="comment"># cv2.imwrite("/home/sunshine/color"+str(index)+".jpg",color,[int(cv2.IMWRITE_JPEG_QUALITY),100])</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># to (3*240*320) </span></span><br><span class="line">color = trans.ToTensor()(color) </span><br><span class="line">sensor = trans.ToTensor()(sensor)</span><br><span class="line"></span><br><span class="line"><span class="comment"># to (240*320*3)</span></span><br><span class="line"><span class="comment"># color = torch.from_numpy(color)</span></span><br><span class="line"><span class="comment"># sensor = torch.from_numpy(sensor)</span></span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -211,49 +213,11 @@
   </entry>
   
   <entry>
-    <title>LeetCode回溯</title>
-    <link href="http://yoursite.com/2020/03/05/leetcode_Backtracking/"/>
-    <id>http://yoursite.com/2020/03/05/leetcode_Backtracking/</id>
-    <published>2020-03-05T09:51:55.000Z</published>
-    <updated>2020-03-10T21:44:00.285Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
-    
-    
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode分支限界法</title>
-    <link href="http://yoursite.com/2020/03/05/leetcode_Branch_and_bound/"/>
-    <id>http://yoursite.com/2020/03/05/leetcode_Branch_and_bound/</id>
-    <published>2020-03-05T09:51:55.000Z</published>
-    <updated>2020-03-10T21:46:50.791Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
-    
-    
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
     <title>LeetCode动态规划</title>
     <link href="http://yoursite.com/2020/03/05/leetcode_dp/"/>
     <id>http://yoursite.com/2020/03/05/leetcode_dp/</id>
     <published>2020-03-05T09:51:55.000Z</published>
-    <updated>2020-03-10T19:00:30.556Z</updated>
+    <updated>2020-03-27T01:52:03.507Z</updated>
     
     <content type="html"><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p><ul><li>原问题与子问题</li><li>动态规划状态</li><li>边界状态的值</li><li>状态转移方差</li></ul>]]></content>
     
@@ -270,6 +234,25 @@
 &lt;/ul&gt;
 
       
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode贪心</title>
+    <link href="http://yoursite.com/2020/03/05/leetcode_greedy/"/>
+    <id>http://yoursite.com/2020/03/05/leetcode_greedy/</id>
+    <published>2020-03-05T09:51:55.000Z</published>
+    <updated>2020-03-24T17:20:10.727Z</updated>
+    
+    <summary type="html">
     
     </summary>
     
@@ -301,39 +284,6 @@
   </entry>
   
   <entry>
-    <title>LeetCode动态规划</title>
-    <link href="http://yoursite.com/2020/03/05/leetcode_greedy/"/>
-    <id>http://yoursite.com/2020/03/05/leetcode_greedy/</id>
-    <published>2020-03-05T09:51:55.000Z</published>
-    <updated>2020-03-10T21:44:28.240Z</updated>
-    
-    <content type="html"><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p><ul><li>原问题与子问题</li><li>动态规划状态</li><li>边界状态的值</li><li>状态转移方差</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;原问题与子问题&lt;/li&gt;
-&lt;li&gt;动态规划状态&lt;/li&gt;
-&lt;li&gt;边界状态的值&lt;/li&gt;
-&lt;li&gt;状态转移方差&lt;/li&gt;
-&lt;/ul&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
-    
-    
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
     <title>LeetCode排序</title>
     <link href="http://yoursite.com/2020/03/05/leetcode_sort/"/>
     <id>http://yoursite.com/2020/03/05/leetcode_sort/</id>
@@ -349,6 +299,44 @@
         &lt;p&gt;leetcode中的排序问题&lt;/p&gt;
 &lt;h1 id=&quot;冒泡排序&quot;&gt;&lt;a href=&quot;#冒泡排序&quot; class=&quot;headerlink&quot; title=&quot;冒泡排序&quot;&gt;&lt;/a&gt;冒泡排序&lt;/h1&gt;&lt;h2 id=&quot;思想&quot;&gt;&lt;a href=&quot;#思想&quot; class=&quot;headerlink
       
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode分支限界法</title>
+    <link href="http://yoursite.com/2020/03/05/leetcode_Branch_and_bound/"/>
+    <id>http://yoursite.com/2020/03/05/leetcode_Branch_and_bound/</id>
+    <published>2020-03-05T09:51:55.000Z</published>
+    <updated>2020-03-10T21:46:50.791Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode回溯</title>
+    <link href="http://yoursite.com/2020/03/05/leetcode_Backtracking/"/>
+    <id>http://yoursite.com/2020/03/05/leetcode_Backtracking/</id>
+    <published>2020-03-05T09:51:55.000Z</published>
+    <updated>2020-03-24T17:20:19.619Z</updated>
+    
+    <summary type="html">
     
     </summary>
     
@@ -394,9 +382,9 @@
     <link href="http://yoursite.com/2020/03/04/ubuntu/"/>
     <id>http://yoursite.com/2020/03/04/ubuntu/</id>
     <published>2020-03-03T18:51:55.000Z</published>
-    <updated>2020-03-20T14:05:42.997Z</updated>
+    <updated>2020-03-28T18:48:35.281Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="常用的-linux-配置"><a href="#常用的-linux-配置" class="headerlink" title="常用的 linux 配置"></a>常用的 linux 配置</h1><h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><h2 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h2><h1 id="常用的-linux-命令"><a href="#常用的-linux-命令" class="headerlink" title="常用的 linux 命令"></a>常用的 linux 命令</h1><h2 id="后台运行命令"><a href="#后台运行命令" class="headerlink" title="后台运行命令"></a>后台运行命令</h2><ul><li><p>第一种 &amp;</p><p> 关闭终端停止运行   </p><pre><code> command &amp;</code></pre></li><li><p>第二中 nohup<br> 关闭终端停止运行,如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用nohup命令。该命令可以在你退出帐户之后继续运行相应的进程。nohup就是不挂起的意思( no hang up)。 该命令的一般形式为：</p><pre><code> nohup conmmand &amp;</code></pre><p> 如果使用nohup命令提交作业，那么在缺省情况下该作业的所有输出都被重定向到一个名为nohup.out的文件中，除非另外指定了输出文件：</p><pre><code>  nohup command &gt; myout.file 2&gt;&amp;1</code></pre><p> 在上面的例子中，输出被重定向到myout.file文件中。</p></li></ul><h3 id="安装有道词典"><a href="#安装有道词典" class="headerlink" title="安装有道词典"></a>安装有道词典</h3><p>一直出现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ModuleNotFoundError: No module named &#39;PyQt5.QtWebKitWidgets</span><br></pre></td></tr></table></figure><br>找了好多方法并没有解决。</p><pre><code>1) 检查有用 APT 安装上 PyQt5----------------------------------------$ apt search python3-pyqt5 | grep installedpython3-pyqt5/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]python3-pyqt5.qtmultimedia/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]python3-pyqt5.qtquick/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]python3-pyqt5.qtwebkit/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]确保 PyQt5 以上安装在 /usr/lib/python3/dist-packages/PyQt51) PIP3 上卸载 PyQt5 (目前最新是 5.12.1)------------------------------------------------------$ su$ apt install python3-pip$ pip3 list | grep PyQt5如有列出 PyQt5, 再查一查这个 PyQt5 是否安装在 /usr/local/lib/python3.6/dist-packages$ pip3 show PyQt5如是, 撤除 PyQt5 和 PyQt5-sip.$ pip3 uninstall PyQt5 PyQt5-sip1) 打开新的 terminal, 运行 (不用 $PYTHONPATH)----------------------------------------------------------------$ youdao-dict</code></pre><h3 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h3><p>vscode  虚拟环境的时候只需要通过命令面板Python: Select Interpreter就会列出所有的虚拟环境.</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="常用的-linux-配置"><a href="#常用的-linux-配置" class="headerlink" title="常用的 linux 配置"></a>常用的 linux 配置</h1><h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;</span><br><span class="line"></span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions</span><br></pre></td></tr></table></figure><h2 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h2><h1 id="常用的-linux-命令"><a href="#常用的-linux-命令" class="headerlink" title="常用的 linux 命令"></a>常用的 linux 命令</h1><h2 id="后台运行命令"><a href="#后台运行命令" class="headerlink" title="后台运行命令"></a>后台运行命令</h2><ul><li><p>第一种 &amp;</p><p> 关闭终端停止运行   </p><pre><code> command &amp;</code></pre></li><li><p>第二中 nohup<br> 关闭终端停止运行,如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用nohup命令。该命令可以在你退出帐户之后继续运行相应的进程。nohup就是不挂起的意思( no hang up)。 该命令的一般形式为：</p><pre><code> nohup conmmand &amp;</code></pre><p> 如果使用nohup命令提交作业，那么在缺省情况下该作业的所有输出都被重定向到一个名为nohup.out的文件中，除非另外指定了输出文件：</p><pre><code>  nohup command &gt; myout.file 2&gt;&amp;1</code></pre><p> 在上面的例子中，输出被重定向到myout.file文件中。</p></li></ul><h2 id="安装有道词典"><a href="#安装有道词典" class="headerlink" title="安装有道词典"></a>安装有道词典</h2><p>一直出现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ModuleNotFoundError: No module named &#39;PyQt5.QtWebKitWidgets</span><br></pre></td></tr></table></figure><br>找了好多方法并没有解决。</p><pre><code>1) 检查有用 APT 安装上 PyQt5----------------------------------------$ apt search python3-pyqt5 | grep installedpython3-pyqt5/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]python3-pyqt5.qtmultimedia/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]python3-pyqt5.qtquick/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]python3-pyqt5.qtwebkit/bionic,now 5.10.1+dfsg-1ubuntu2 amd64 [installed]确保 PyQt5 以上安装在 /usr/lib/python3/dist-packages/PyQt51) PIP3 上卸载 PyQt5 (目前最新是 5.12.1)------------------------------------------------------$ su$ apt install python3-pip$ pip3 list | grep PyQt5如有列出 PyQt5, 再查一查这个 PyQt5 是否安装在 /usr/local/lib/python3.6/dist-packages$ pip3 show PyQt5如是, 撤除 PyQt5 和 PyQt5-sip.$ pip3 uninstall PyQt5 PyQt5-sip1) 打开新的 terminal, 运行 (不用 $PYTHONPATH)----------------------------------------------------------------$ youdao-dict</code></pre><h2 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h2><p>vscode  虚拟环境的时候只需要通过命令面板Python: Select Interpreter就会列出所有的虚拟环境.</p><h2 id="ssr服务器安装脚本"><a href="#ssr服务器安装脚本" class="headerlink" title="ssr服务器安装脚本"></a>ssr服务器安装脚本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ToyoDAdoubi&#x2F;doubi&#x2F;master&#x2F;ssr.sh &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.sh</span><br></pre></td></tr></table></figure><h2 id="ubuntu16-04安装小飞机："><a href="#ubuntu16-04安装小飞机：" class="headerlink" title="ubuntu16.04安装小飞机："></a>ubuntu16.04安装小飞机：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:hzwhuang&#x2F;ss-qt5</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get install shadowsocks-qt5</span><br></pre></td></tr></table></figure><h2 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda:"></a>Anaconda:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">conda config --set auto_activate_base false</span><br><span class="line"></span><br><span class="line">conda env export &gt; environment.yaml</span><br><span class="line"></span><br><span class="line">conda env create -f environment.yaml</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;是否自动启动conda　base 环境：</span><br><span class="line">conda config --set auto_activate_base false</span><br><span class="line"></span><br><span class="line">conda activate py35</span><br><span class="line"></span><br><span class="line">conda deactivate</span><br><span class="line">&#x2F;&#x2F;conda 安装 opencv</span><br><span class="line">conda install -c https:&#x2F;&#x2F;conda.binstar.org&#x2F;menpo opencv</span><br><span class="line"></span><br><span class="line">conda clean -p      &#x2F;&#x2F;删除没有用的包</span><br><span class="line">conda clean -t      &#x2F;&#x2F;tar打包</span><br><span class="line">&#x2F;&#x2F;删除所有的安装包及cache</span><br><span class="line">conda clean -y -all </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 更换清华源　conda</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;free&#x2F;</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;main&#x2F;</span><br><span class="line">conda config --set show_channel_urls yes</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 优先使用清华源</span><br><span class="line">conda config --prepend channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;free&#x2F;</span><br></pre></td></tr></table></figure><h2 id="显示屏设置："><a href="#显示屏设置：" class="headerlink" title="显示屏设置："></a>显示屏设置：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">xrandr     (查看显示屏设置)</span><br><span class="line">xrandr --output HDMI2 --auto --primary</span><br><span class="line">xrandr --output eDP1 --right-of HDMI2 --auto</span><br><span class="line">xrandr 是查看和设置的命令</span><br><span class="line">HDMI2 是显示屏的名字</span><br><span class="line">auto 是自动分辨率</span><br><span class="line">primary 是主屏</span><br><span class="line">eDP1 是笔记本显示屏的名字</span><br><span class="line">--right-of HDMI2  就是放在HDMI2 显示器的右边</span><br><span class="line">xrandr --output HDMI-0 --auto --primary</span><br><span class="line">xrandr --output HDMI-0 --right-of DVI-D-0 --auto</span><br></pre></td></tr></table></figure><h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker:"></a>Docker:</h2><p>docker pull bhyang12/replab</p><p>docker run -it —rm —privileged bhyang12/replab<br>(-d，以后台方式执行命令；</p><p>-e，设置环境变量</p><p>-i，交互模式</p><p>-t，设置TTY</p><p>-u，用户名或UID )</p><ul><li>方法一：如果要正常退出不关闭容器，请按Ctrl+P+Q进行退出容器</li><li><p>方法二：如果使用exit退出，那么在退出之后会关闭容器，可以使用下面的流程进行恢复</p><pre><code>  使用docker restart命令重启容器  使用docker attach命令进入容器</code></pre></li></ul><p>docker exec -it [container ID] bash</p><h2 id="scp-和-ssh"><a href="#scp-和-ssh" class="headerlink" title="scp 和 ssh"></a>scp 和 ssh</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">往服务器传文件：</span><br><span class="line"></span><br><span class="line">scp -r &lt;本地文件名&gt; wzt@166.111.131.24:&lt;上传保存路径即文件名&gt; </span><br><span class="line"></span><br><span class="line">从服务器下载文件：</span><br><span class="line"></span><br><span class="line">scp -r wzt@166.111.131.24:&#x2F;home&#x2F;wzt&#x2F;remotefile.txt</span><br><span class="line"></span><br><span class="line">scp -r wzt@166.111.131.24:~&#x2F;Downloads Anaconda3-2018.12-x86_64.sh</span><br></pre></td></tr></table></figure><h2 id="ros安装"><a href="#ros安装" class="headerlink" title="ros安装"></a>ros安装</h2><h3 id="添加源"><a href="#添加源" class="headerlink" title="添加源"></a>添加源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c &#39;echo &quot;deb http:&#x2F;&#x2F;packages.ros.org&#x2F;ros&#x2F;ubuntu $(lsb_release -sc) main&quot; &gt; &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;ros-latest.list&#39;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 设置key</span><br><span class="line">sudo apt-key adv --keyserver &#39;hkp:&#x2F;&#x2F;keyserver.ubuntu.com:80&#39; --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ros-kinetic-desktop-full</span><br><span class="line"></span><br><span class="line">initialize rosdep &amp;&amp; sudo rosdep init &amp;&amp; rosdep update</span><br></pre></td></tr></table></figure><h2 id="Scholar-学术搜索"><a href="#Scholar-学术搜索" class="headerlink" title="Scholar 学术搜索"></a>Scholar 学术搜索</h2><ul><li><p>修改  /etc/hosts<br>  2404:6800:4008:c06::be scholar.google.com<br>  2404:6800:4008:c06::be scholar.google.com.hk<br>  2404:6800:4008:c06::be scholar.google.com.tw<br>  2404:6800:4005:805::200e scholar.google.cn #www.google.cn</p></li><li><p>修改/etc/shadowsock/use_config.jiso </p><p>  dns_ipv6 :true</p></li></ul><h2 id="虚拟X-service"><a href="#虚拟X-service" class="headerlink" title="虚拟Ｘ-service"></a>虚拟Ｘ-service</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xvfb-run --auto-servernum --server-num&#x3D;1 c-s &quot;-screen 0 640x480x24&quot; cmd</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -414,6 +402,34 @@
       <category term="ubuntu" scheme="http://yoursite.com/tags/ubuntu/"/>
     
       <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习_Tips</title>
+    <link href="http://yoursite.com/2020/03/03/dl_tips/"/>
+    <id>http://yoursite.com/2020/03/03/dl_tips/</id>
+    <published>2020-03-03T08:51:55.000Z</published>
+    <updated>2020-03-28T18:54:36.906Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="归纳偏置-Inductive-bias"><a href="#归纳偏置-Inductive-bias" class="headerlink" title="归纳偏置(Inductive bias)"></a>归纳偏置(Inductive bias)</h2><p><a href="https://www.zhihu.com/question/264264203/answer/830077823" target="_blank" rel="noopener">转载</a></p><p>归纳偏置在机器学习中是一种很微妙的概念：在机器学习中，很多学习算法经常会对学习的问题做一些假设，这些假设就称为归纳偏置(Inductive Bias)。归纳偏置这个译名可能不能很好地帮助理解，不妨拆解开来看：归纳(Induction)是自然科学中常用的两大方法之一(归纳与演绎, induction and deduction)，指的是从一些例子中寻找共性、泛化，形成一个比较通用的规则的过程；偏置(Bias)是指我们对模型的偏好。</p><p>因此，归纳偏置可以理解为，从现实生活中观察到的现象中归纳出一定的规则(heuristics)，然后对模型做一定的约束，从而可以起到“模型选择”的作用，即从假设空间中选择出更符合现实规则的模型。其实，贝叶斯学习中的“先验(Prior)”这个叫法，可能比“归纳偏置”更直观一些。</p><p>归纳偏置在机器学习中几乎无处不可见。老生常谈的“奥卡姆剃刀”原理，即希望学习到的模型复杂度更低，就是一种归纳偏置。另外，还可以看见一些更强的一些假设：KNN中假设特征空间中相邻的样本倾向于属于同一类；SVM中假设好的分类器应该最大化类别边界距离；等等。</p><p>在深度学习方面也是一样。以神经网络为例，各式各样的网络结构/组件/机制往往就来源于归纳偏置。在卷积神经网络中，我们假设特征具有局部性(Locality)的特性，即当我们把相邻的一些特征放在一起，会更容易得到“解”；在循环神经网络中，我们假设每一时刻的计算依赖于历史计算结果；还有注意力机制，也是基于从人的直觉、生活经验归纳得到的规则。</p><p>在自然语言处理领域赫赫有名的word2vec，以及一些基于共现窗口的词嵌入方法，都是基于分布式假设：A word’s meaning is given by the words that frequently appear close-by. 这当然也可以看作是一种归纳偏置；一些自然语言理解的模型中加入解析树，也可以类似地理解。都是为了选择“更好”的模型。</p><h2 id="正则项"><a href="#正则项" class="headerlink" title="正则项"></a>正则项</h2><p>正则化以及类似处理方法的本质（个人认为）是：这是一种对对象进行限制以满足某一特定目的的处理方法。</p><p>正则项的加入使原来的非适定问题变为适定问题。</p><pre><code> 一个例子是，图像去噪的目标函数，如果只考虑一项（去噪后的图像的像素平均值和原图像一致），问题就有无穷多组解。但是，加上正则项（一般的是BV范数）以后，问题的解就变成唯一的了。</code></pre><p>剩下的问题就是什么是适定问题？什么是不适定问题？</p><p>定解问题是适定的，是指它具备如下三个条件：</p><ul><li><p>问题的解存在；</p></li><li><p>问题的解唯一；</p></li><li><p>解连续依赖于定解条件，即定解条件（数据）改变很小时，相应的解也改变很小，也就是解具有稳定性。</p><p>不满足上述三个条件之一的问题称为不适定(ill-posed)问题。特别地，对不满足第三个条件的定解问题，称为Hadamard意义下的不适定问题。</p></li></ul><h2 id="pytorch-默认初始化网络参数"><a href="#pytorch-默认初始化网络参数" class="headerlink" title="pytorch 默认初始化网络参数"></a>pytorch 默认初始化网络参数</h2><p>torch.nn.Conv2d 参数初始化</p><p>因为 Conv2d 继承 _ConvNd ,_ConvNd 有参数初始化。</p><h2 id="特征学习两种范式"><a href="#特征学习两种范式" class="headerlink" title="特征学习两种范式"></a>特征学习两种范式</h2><p>分别使用类标签和正负样本标签进行学习</p><ul><li>类标签，一般需要用分类损失函数(比如:softmax + cross entropy)优化样本和权重向量之间的相识度。</li><li>样本对标签，用度量损失函数(比如:triplet loss)优化样本之间的相识度。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;归纳偏置-Inductive-bias&quot;&gt;&lt;a href=&quot;#归纳偏置-Inductive-bias&quot; class=&quot;headerlink&quot; title=&quot;归纳偏置(Inductive bias)&quot;&gt;&lt;/a&gt;归纳偏置(Inductive bias)&lt;/h2&gt;&lt;p&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
+    
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
   </entry>
   
@@ -446,34 +462,6 @@
     <updated>2020-03-14T21:54:20.373Z</updated>
     
     <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
-    
-    
-      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
-    
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习_Tips</title>
-    <link href="http://yoursite.com/2020/03/03/dl_tips/"/>
-    <id>http://yoursite.com/2020/03/03/dl_tips/</id>
-    <published>2020-03-03T08:51:55.000Z</published>
-    <updated>2020-03-17T01:33:13.662Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="归纳偏置-Inductive-bias"><a href="#归纳偏置-Inductive-bias" class="headerlink" title="归纳偏置(Inductive bias)"></a>归纳偏置(Inductive bias)</h2><p><a href="https://www.zhihu.com/question/264264203/answer/830077823" target="_blank" rel="noopener">转载</a></p><p>归纳偏置在机器学习中是一种很微妙的概念：在机器学习中，很多学习算法经常会对学习的问题做一些假设，这些假设就称为归纳偏置(Inductive Bias)。归纳偏置这个译名可能不能很好地帮助理解，不妨拆解开来看：归纳(Induction)是自然科学中常用的两大方法之一(归纳与演绎, induction and deduction)，指的是从一些例子中寻找共性、泛化，形成一个比较通用的规则的过程；偏置(Bias)是指我们对模型的偏好。</p><p>因此，归纳偏置可以理解为，从现实生活中观察到的现象中归纳出一定的规则(heuristics)，然后对模型做一定的约束，从而可以起到“模型选择”的作用，即从假设空间中选择出更符合现实规则的模型。其实，贝叶斯学习中的“先验(Prior)”这个叫法，可能比“归纳偏置”更直观一些。</p><p>归纳偏置在机器学习中几乎无处不可见。老生常谈的“奥卡姆剃刀”原理，即希望学习到的模型复杂度更低，就是一种归纳偏置。另外，还可以看见一些更强的一些假设：KNN中假设特征空间中相邻的样本倾向于属于同一类；SVM中假设好的分类器应该最大化类别边界距离；等等。</p><p>在深度学习方面也是一样。以神经网络为例，各式各样的网络结构/组件/机制往往就来源于归纳偏置。在卷积神经网络中，我们假设特征具有局部性(Locality)的特性，即当我们把相邻的一些特征放在一起，会更容易得到“解”；在循环神经网络中，我们假设每一时刻的计算依赖于历史计算结果；还有注意力机制，也是基于从人的直觉、生活经验归纳得到的规则。</p><p>在自然语言处理领域赫赫有名的word2vec，以及一些基于共现窗口的词嵌入方法，都是基于分布式假设：A word’s meaning is given by the words that frequently appear close-by. 这当然也可以看作是一种归纳偏置；一些自然语言理解的模型中加入解析树，也可以类似地理解。都是为了选择“更好”的模型。</p><h2 id="正则项"><a href="#正则项" class="headerlink" title="正则项"></a>正则项</h2><p>正则化以及类似处理方法的本质（个人认为）是：这是一种对对象进行限制以满足某一特定目的的处理方法。</p><p>正则项的加入使原来的非适定问题变为适定问题。</p><pre><code> 一个例子是，图像去噪的目标函数，如果只考虑一项（去噪后的图像的像素平均值和原图像一致），问题就有无穷多组解。但是，加上正则项（一般的是BV范数）以后，问题的解就变成唯一的了。</code></pre><p>剩下的问题就是什么是适定问题？什么是不适定问题？</p><p>定解问题是适定的，是指它具备如下三个条件：</p><ul><li><p>问题的解存在；</p></li><li><p>问题的解唯一；</p></li><li><p>解连续依赖于定解条件，即定解条件（数据）改变很小时，相应的解也改变很小，也就是解具有稳定性。</p><p>不满足上述三个条件之一的问题称为不适定(ill-posed)问题。特别地，对不满足第三个条件的定解问题，称为Hadamard意义下的不适定问题。</p></li></ul><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;归纳偏置-Inductive-bias&quot;&gt;&lt;a href=&quot;#归纳偏置-Inductive-bias&quot; class=&quot;headerlink&quot; title=&quot;归纳偏置(Inductive bias)&quot;&gt;&lt;/a&gt;归纳偏置(Inductive bias)&lt;/h2&gt;&lt;p&gt;
-      
     
     </summary>
     
