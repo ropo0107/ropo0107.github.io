@@ -1,12 +1,13 @@
 ---
 title:  强化学习_A2CvsGAN
 categories: [学术]
-tags:   [RL, Note]
+tags:   [RL, Note,GAN]
 copyright: false
 reward: false
 rating: false
 related_posts: false
-date: 2020-03-03 16:51:55
+mathjax: true
+date: 2020-03-24 12:51:55
 ---
 
 # GAN
@@ -103,7 +104,8 @@ $=\int[ P_{data}{1 \over D}+P_g{-1 \over 1-D}]dx$
 
 令导数为0：
 
-$D^*_G = {P_{data}\over P_{data}+P_g}$
+
+$D^*_G = {P_{data} \over P_{data}+P_g}$
 
 故 $D$ 存在最大值
 
@@ -125,7 +127,9 @@ $\geqslant-log4$
 
 **最优解：**
 
-$P^*_g =P_{data}$
+
+$P^*_g = P_{data}$
+
 
 $D^*={1\over2}$
 

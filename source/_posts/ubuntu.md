@@ -14,6 +14,13 @@ date: 2020-03-04 02:51:55
 
 ## zsh
 
+```
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+git clone https://github.com/zsh-users/zsh-autosuggestions
+```
+
 ## tmux 
 
 
@@ -38,7 +45,7 @@ date: 2020-03-04 02:51:55
     在上面的例子中，输出被重定向到myout.file文件中。
 
 
-### 安装有道词典
+## 安装有道词典
 
 一直出现：
 ```        
@@ -74,6 +81,132 @@ date: 2020-03-04 02:51:55
     $ youdao-dict
 
 
-### vscode
+## vscode
 
 vscode  虚拟环境的时候只需要通过命令面板Python: Select Interpreter就会列出所有的虚拟环境.
+
+## ssr服务器安装脚本
+```
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+```
+## ubuntu16.04安装小飞机：
+```
+sudo add-apt-repository ppa:hzwhuang/ss-qt5
+
+sudo apt-get update
+
+sudo apt-get install shadowsocks-qt5
+```
+
+## Anaconda:
+```
+conda config --set auto_activate_base false
+
+conda env export > environment.yaml
+
+conda env create -f environment.yaml
+
+//是否自动启动conda　base 环境：
+conda config --set auto_activate_base false
+
+conda activate py35
+
+conda deactivate
+//conda 安装 opencv
+conda install -c https://conda.binstar.org/menpo opencv
+
+conda clean -p      //删除没有用的包
+conda clean -t      //tar打包
+//删除所有的安装包及cache
+conda clean -y -all 
+
+// 更换清华源　conda
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
+
+// 优先使用清华源
+conda config --prepend channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ 
+```
+
+## 显示屏设置：
+```
+xrandr     (查看显示屏设置)
+xrandr --output HDMI2 --auto --primary
+xrandr --output eDP1 --right-of HDMI2 --auto
+xrandr 是查看和设置的命令
+HDMI2 是显示屏的名字
+auto 是自动分辨率
+primary 是主屏
+eDP1 是笔记本显示屏的名字
+--right-of HDMI2  就是放在HDMI2 显示器的右边
+xrandr --output HDMI-0 --auto --primary
+xrandr --output HDMI-0 --right-of DVI-D-0 --auto
+```
+
+## Docker:
+
+docker pull bhyang12/replab
+
+docker run -it --rm --privileged bhyang12/replab
+(-d，以后台方式执行命令；
+
+-e，设置环境变量
+
+-i，交互模式
+
+-t，设置TTY
+
+-u，用户名或UID )
+
+- 方法一：如果要正常退出不关闭容器，请按Ctrl+P+Q进行退出容器
+- 方法二：如果使用exit退出，那么在退出之后会关闭容器，可以使用下面的流程进行恢复
+  
+        使用docker restart命令重启容器
+        使用docker attach命令进入容器
+
+docker exec -it [container ID] bash
+
+
+## scp 和 ssh
+```
+往服务器传文件：
+
+scp -r <本地文件名> wzt@166.111.131.24:<上传保存路径即文件名> 
+
+从服务器下载文件：
+
+scp -r wzt@166.111.131.24:/home/wzt/remotefile.txt
+
+scp -r wzt@166.111.131.24:~/Downloads Anaconda3-2018.12-x86_64.sh
+```
+
+## ros安装
+### 添加源
+```
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+// 设置key
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+
+sudo apt-get update
+sudo apt-get install ros-kinetic-desktop-full
+
+initialize rosdep && sudo rosdep init && rosdep update
+```
+
+## Scholar 学术搜索
+- 修改  /etc/hosts
+    2404:6800:4008:c06::be scholar.google.com
+    2404:6800:4008:c06::be scholar.google.com.hk
+    2404:6800:4008:c06::be scholar.google.com.tw
+    2404:6800:4005:805::200e scholar.google.cn #www.google.cn
+
+- 修改/etc/shadowsock/use_config.jiso 
+
+    dns_ipv6 :true
+
+## 虚拟Ｘ-service
+```
+xvfb-run --auto-servernum --server-num=1 c-s "-screen 0 640x480x24" cmd
+```
