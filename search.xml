@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>强化学习_A2CvsGAN</title>
-    <url>/2020/03/24/A2CvsGAN/</url>
+    <title>GAN_公式推导</title>
+    <url>/2020/03/24/dl/GAN/</url>
     <content><![CDATA[<h1 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h1><h2 id="GAN数学描述"><a href="#GAN数学描述" class="headerlink" title="GAN数学描述"></a>GAN数学描述</h2><p><strong>目标:</strong> 以假乱真的生成器</p>
 <ul>
 <li>高水平的鉴赏家</li>
@@ -12,11 +12,9 @@
 <script type="math/tex; mode=display">P_{data} =(x;\theta)</script><p>生成器概率分布:  </p>
 <script type="math/tex; mode=display">P_z =(z;\theta_g)</script><p>这儿 $\theta_g$ 表示概率的参数，</p>
 <p>生成器网络表示：</p>
-<script type="math/tex; mode=display">x=G (z;\theta_g)</script><p>这儿 $\theta_g$ 表示网络的参数，</p>
-<pre><code>这儿不对生成器进行具体建模，用一个神经网络(确定性函数)去描述 
-</code></pre><p>鉴别器网络表示：</p>
-<pre><code>为伯努利分布
-</code></pre><script type="math/tex; mode=display">D (x;\theta_d)</script><p>$x$ 可以来着 $P_{data}$ 或者 生成器 $G$ </p>
+<script type="math/tex; mode=display">x=G (z;\theta_g)</script><p>这儿 $\theta_g$ 表示网络的参数，这儿不对生成器进行具体建模，用一个神经网络(<strong>确定性函数</strong>)去描述 </p>
+<p>鉴别器网络表示：<strong>为伯努利分布</strong></p>
+<script type="math/tex; mode=display">D (x;\theta_d)</script><p>$x$ 可以来着 $P_{data}$ 或者 生成器 $G$ </p>
 <p><strong>高水平专家</strong></p>
 <ul>
 <li>if $x$ from $P_{data}$ ，Then $D(x)$  $\Uparrow$</li>
@@ -86,7 +84,7 @@
   </entry>
   <entry>
     <title>python中的tips</title>
-    <url>/2020/03/19/python_tips/</url>
+    <url>/2020/03/19/tips/python_tips/</url>
     <content><![CDATA[<h2 id="Python中读写pkl文件"><a href="#Python中读写pkl文件" class="headerlink" title="Python中读写pkl文件"></a>Python中读写pkl文件</h2><ul>
 <li><p>不采用压缩方式</p>
   <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line"><span class="comment">#write</span></span><br><span class="line">pack = <span class="string">"xxx"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"demo.pkl"</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        pickle.dump(pack,f)</span><br><span class="line"></span><br><span class="line"><span class="comment">#read</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"demo.pkl"</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        data = pickle.load(f)</span><br></pre></td></tr></table></figure>
@@ -112,7 +110,7 @@
   </entry>
   <entry>
     <title>Hexo修改背景图片及主题透明</title>
-    <url>/2020/03/15/background/</url>
+    <url>/2020/03/15/blog/blog_background/</url>
     <content><![CDATA[<h1 id="背景图片的更改"><a href="#背景图片的更改" class="headerlink" title="背景图片的更改"></a>背景图片的更改</h1><h2 id="背景背景图片添加"><a href="#背景背景图片添加" class="headerlink" title="背景背景图片添加"></a>背景背景图片添加</h2><ul>
 <li><p>首先将已选定的背景图片放到博客根目录下的\source\images下</p>
 <pre><code>  Blog\source\images\background.jpg
@@ -210,7 +208,7 @@ margin-bottom: 45px;
   </entry>
   <entry>
     <title>Hexo迁移到vps</title>
-    <url>/2020/03/10/vps_hexo/</url>
+    <url>/2020/03/10/blog/vps_hexo/</url>
     <content><![CDATA[<p>搭建完 <strong>trojan</strong> 后把域名和 <strong>vps</strong> 绑定后想把 <strong>blog</strong> 迁移到 <strong>vps</strong> 上</p>
 <h2 id="安装必要工具"><a href="#安装必要工具" class="headerlink" title="安装必要工具"></a>安装必要工具</h2><ul>
 <li><p>配置SSH<br> 避免每次登录都需要密码</p>
@@ -282,13 +280,13 @@ margin-bottom: 45px;
       </categories>
       <tags>
         <tag>blog</tag>
-        <tag>ubuntu</tag>
         <tag>vps</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
     <title>trojan做点不一样的事</title>
-    <url>/2020/03/09/trojan/</url>
+    <url>/2020/03/09/technology/trojan/</url>
     <content><![CDATA[<h1 id="trojan-安装和使用"><a href="#trojan-安装和使用" class="headerlink" title="trojan 安装和使用"></a>trojan 安装和使用</h1><p>最近墙越来越高了,开始的ssr,在后来的V2ray,没办法,干就完事了</p>
 <p>折腾了好久终于搞好了,记录一下</p>
 <h2 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h2><h3 id="搭建vps"><a href="#搭建vps" class="headerlink" title="搭建vps"></a>搭建vps</h3><p>个人用的 <strong>digitalocean</strong>
@@ -303,10 +301,10 @@ margin-bottom: 45px;
 <p>要下两个东西</p>
 <p>trojan-cli</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://github.com/atrandys/trojan/raw/master/trojan-cli.zip</span><br></pre></td></tr></table></figure>
-<p>trojan-1.14.1-linux-amd64.tar.xz<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz</span><br></pre></td></tr></table></figure><br>将trojan-1.14.1-linux-amd64.tar.xz里面的克制向文件 <strong>trojan</strong> 放到trojan-cli文件下</p>
+<p>trojan-1.14.1-linux-amd64.tar.xz<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz</span><br></pre></td></tr></table></figure><br>将trojan-1.14.1-linux-amd64.tar.xz里面的可执行文件 <strong>trojan</strong> 放到trojan-cli文件下</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./trojan -c config.json</span><br></pre></td></tr></table></figure>
 <p>本人运行时一直有个错误</p>
-<pre><code> fatal: bind: Address already in use
+<pre><code>fatal: bind: Address already in use
 </code></pre><p>说端口被占用．<br>一直以为是服务端的问题，最后试了下 iso 端是可以用的，说明是客户端的问题，默认 1080　端口</p>
 <pre><code>lsof -i:1080
 </code></pre><p>查看发现并没有问题</p>
@@ -323,8 +321,96 @@ margin-bottom: 45px;
       </tags>
   </entry>
   <entry>
+    <title>Go_并发</title>
+    <url>/2020/03/09/go/go_concurrency/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Go</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Go_接口</title>
+    <url>/2020/03/09/go/go_interface/</url>
+    <content><![CDATA[<h2 id="go语言接口"><a href="#go语言接口" class="headerlink" title="go语言接口"></a>go语言接口</h2><p>在Go语言中接口（interface）是一种<strong>类型</strong>，一种抽象的类型。</p>
+<p>interface是一组method的集合，接口做的事情就像是定义一个协议（规则），不关心属性（数据），只关心行为（方法）。</p>
+<h3 id="接口的定义"><a href="#接口的定义" class="headerlink" title="接口的定义"></a>接口的定义</h3><p>Go语言提倡面向接口编程。</p>
+<p>每个接口由数个方法组成，接口的定义格式如下：</p>
+<pre><code>type 接口类型名 interface{
+    方法名1( 参数列表1 ) 返回值列表1
+    方法名2( 参数列表2 ) 返回值列表2
+    …
+}
+</code></pre><ul>
+<li>接口名：使用type将接口定义为自定义的类型名。接口名最好要能突出该接口的类型含义。</li>
+<li>方法名：当方法名首字母是大写且这个接口类型名首字母也是大写时，这个方法可以被接口所在的包（package）之外的代码访问。</li>
+<li>参数列表、返回值列表：参数列表和返回值列表中的参数变量名可以省略。</li>
+</ul>
+<pre><code>    type writer interface{
+        Write([]byte) error
+    }
+</code></pre><h3 id="实现接口的条件"><a href="#实现接口的条件" class="headerlink" title="实现接口的条件"></a>实现接口的条件</h3><p>一个对象只要全部实现了接口中的方法，那么就实现了这个接口。换句话说，接口就是一个需要实现的方法列表。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Sayer 接口</span></span><br><span class="line"><span class="keyword">type</span> Sayer <span class="keyword">interface</span> &#123;</span><br><span class="line">	say()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义dog和cat两个结构体：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> dog <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> cat <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line"><span class="comment">//因为Sayer接口里只有一个say方法，所以我们只需要给dog和cat 分别实现say方法就可以实现Sayer接口了。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// dog实现了Sayer接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d dog)</span> <span class="title">say</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"汪汪汪"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// cat实现了Sayer接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c cat)</span> <span class="title">say</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"喵喵喵"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接口的实现就是这么简单，只要实现了接口中的所有方法，就实现了这个接口。</p>
+<h3 id="接口类型变量"><a href="#接口类型变量" class="headerlink" title="接口类型变量"></a>接口类型变量</h3><p>接口类型变量能够存储所有实现了该接口的实例。 例如上面的示例中，Sayer类型的变量能够存储dog和cat类型的变量。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> x Sayer <span class="comment">// 声明一个Sayer类型的变量x</span></span><br><span class="line">	a := cat&#123;&#125;  <span class="comment">// 实例化一个cat</span></span><br><span class="line">	b := dog&#123;&#125;  <span class="comment">// 实例化一个dog</span></span><br><span class="line">	x = a       <span class="comment">// 可以把cat实例直接赋值给x</span></span><br><span class="line">	x.say()     <span class="comment">// 喵喵喵</span></span><br><span class="line">	x = b       <span class="comment">// 可以把dog实例直接赋值给x</span></span><br><span class="line">	x.say()     <span class="comment">// 汪汪汪</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="值接收者和指针接收者实现接口的区别"><a href="#值接收者和指针接收者实现接口的区别" class="headerlink" title="值接收者和指针接收者实现接口的区别"></a>值接收者和指针接收者实现接口的区别</h3><p>使用值接收者实现接口和使用指针接收者实现接口有什么区别呢？</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//我们有一个Mover接口和一个dog结构体。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Mover <span class="keyword">interface</span> &#123;</span><br><span class="line">	move()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> dog <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//值接收者实现接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d dog)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"狗会动"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//此时实现接口的是dog类型：</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> x Mover</span><br><span class="line">	<span class="keyword">var</span> wangcai = dog&#123;&#125; <span class="comment">// 旺财是dog类型</span></span><br><span class="line">	x = wangcai         <span class="comment">// x可以接收dog类型</span></span><br><span class="line">	<span class="keyword">var</span> fugui = &amp;dog&#123;&#125;  <span class="comment">// 富贵是*dog类型</span></span><br><span class="line">	x = fugui           <span class="comment">// x可以接收*dog类型</span></span><br><span class="line">	x.move()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从上面的代码中我们可以发现，使用值接收者实现接口之后，不管是dog结构体还是结构体指针<em>dog类型的变量都可以赋值给该接口变量。因为Go语言中有对指针类型变量求值的语法糖，dog指针fugui内部会自动求值</em>fugui。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//指针接收者实现接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d *dog)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"狗会动"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> x Mover</span><br><span class="line">	<span class="keyword">var</span> wangcai = dog&#123;&#125; <span class="comment">// 旺财是dog类型</span></span><br><span class="line">	x = wangcai         <span class="comment">// x不可以接收dog类型</span></span><br><span class="line">	<span class="keyword">var</span> fugui = &amp;dog&#123;&#125;  <span class="comment">// 富贵是*dog类型</span></span><br><span class="line">	x = fugui           <span class="comment">// x可以接收*dog类型</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时实现Mover接口的是<em>dog类型，所以不能给x传入dog类型的wangcai，此时x只能存储</em>dog类型的值。</p>
+<p>样例:</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> People <span class="keyword">interface</span> &#123;</span><br><span class="line">	Speak(<span class="keyword">string</span>) <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Student <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(stu *Student)</span> <span class="title">Speak</span><span class="params">(think <span class="keyword">string</span>)</span> <span class="params">(talk <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> think == <span class="string">"sb"</span> &#123;</span><br><span class="line">		talk = <span class="string">"你是个大帅比"</span></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		talk = <span class="string">"您好"</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">//wrong</span></span><br><span class="line">	<span class="comment">//var peo People = Student&#123;&#125;</span></span><br><span class="line">	<span class="comment">//true</span></span><br><span class="line">	<span class="keyword">var</span> peo People = &amp;Student&#123;&#125;</span><br><span class="line"></span><br><span class="line">	think := <span class="string">"bitch"</span></span><br><span class="line">	fmt.Println(peo.Speak(think))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="类型与接口的关系"><a href="#类型与接口的关系" class="headerlink" title="类型与接口的关系"></a>类型与接口的关系</h3><ul>
+<li><p>一个类型可以同时实现多个接口，而接口间彼此独立，不知道对方的实现。 例如，狗可以叫，也可以动。我们就分别定义Sayer接口和Mover接口，如下： Mover接口。</p>
+  <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Sayer 接口</span></span><br><span class="line"><span class="keyword">type</span> Sayer <span class="keyword">interface</span> &#123;</span><br><span class="line">    say()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Mover 接口</span></span><br><span class="line"><span class="keyword">type</span> Mover <span class="keyword">interface</span> &#123;</span><br><span class="line">    move()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//dog既可以实现Sayer接口，也可以实现Mover接口。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> dog <span class="keyword">struct</span> &#123;</span><br><span class="line">    name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现Sayer接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d dog)</span> <span class="title">say</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"%s会叫汪汪汪\n"</span>, d.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现Mover接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d dog)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"%s会动\n"</span>, d.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x Sayer</span><br><span class="line">    <span class="keyword">var</span> y Mover</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a = dog&#123;name: <span class="string">"旺财"</span>&#125;</span><br><span class="line">    x = a</span><br><span class="line">    y = a</span><br><span class="line">    x.say()</span><br><span class="line">    y.move()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多个类型实现同一接口, Go语言中不同的类型还可以实现同一接口 首先我们定义一个Mover接口，它要求必须由一个move方法。</p>
+  <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Mover 接口</span></span><br><span class="line"><span class="keyword">type</span> Mover <span class="keyword">interface</span> &#123;</span><br><span class="line">    move()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//例如狗可以动，汽车也可以动，可以使用如下代码实现这个关系：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> dog <span class="keyword">struct</span> &#123;</span><br><span class="line">    name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> car <span class="keyword">struct</span> &#123;</span><br><span class="line">    brand <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// dog类型实现Mover接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d dog)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"%s会跑\n"</span>, d.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// car类型实现Mover接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c car)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"%s速度70迈\n"</span>, c.brand)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//这个时候我们在代码中就可以把狗和汽车当成一个会动的物体来处理了，不再需要关注它们具体是什么，只需要调用它们的move方法就可以了。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x Mover</span><br><span class="line">    <span class="keyword">var</span> a = dog&#123;name: <span class="string">"旺财"</span>&#125;</span><br><span class="line">    <span class="keyword">var</span> b = car&#123;brand: <span class="string">"保时捷"</span>&#125;</span><br><span class="line">    x = a</span><br><span class="line">    x.move()</span><br><span class="line">    x = b</span><br><span class="line">    x.move()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  执行结果：</p>
+<pre><code>  旺财会跑  
+  保时捷速度70迈
+</code></pre></li>
+</ul>
+<h3 id="接口嵌套"><a href="#接口嵌套" class="headerlink" title="接口嵌套"></a>接口嵌套</h3><p>接口与接口间可以通过嵌套创造出新的接口。<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Sayer 接口</span></span><br><span class="line"><span class="keyword">type</span> Sayer <span class="keyword">interface</span> &#123;</span><br><span class="line">	say()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Mover 接口</span></span><br><span class="line"><span class="keyword">type</span> Mover <span class="keyword">interface</span> &#123;</span><br><span class="line">	move()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接口嵌套</span></span><br><span class="line"><span class="keyword">type</span> animal <span class="keyword">interface</span> &#123;</span><br><span class="line">	Sayer</span><br><span class="line">	Mover</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//嵌套得到的接口的使用与普通接口一样，这里我们让cat实现animal接口：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> cat <span class="keyword">struct</span> &#123;</span><br><span class="line">	name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c cat)</span> <span class="title">say</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"喵喵喵"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c cat)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"猫会动"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> x animal</span><br><span class="line">	x = cat&#123;name: <span class="string">"花花"</span>&#125;</span><br><span class="line">	x.move()</span><br><span class="line">	x.say()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="空接口"><a href="#空接口" class="headerlink" title="空接口"></a>空接口</h3><p>空接口是指没有定义任何方法的接口。因此任何类型都实现了空接口。</p>
+<ul>
+<li><p>空接口类型的变量可以存储任意类型的变量。</p>
+  <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 定义一个空接口x</span></span><br><span class="line">    <span class="keyword">var</span> x <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">    s := <span class="string">"Hello"</span></span><br><span class="line">    x = s</span><br><span class="line">    fmt.Printf(<span class="string">"type:%T value:%v\n"</span>, x, x)</span><br><span class="line">    i := <span class="number">100</span></span><br><span class="line">    x = i</span><br><span class="line">    fmt.Printf(<span class="string">"type:%T value:%v\n"</span>, x, x)</span><br><span class="line">    b := <span class="literal">true</span></span><br><span class="line">    x = b</span><br><span class="line">    fmt.Printf(<span class="string">"type:%T value:%v\n"</span>, x, x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>空接口作为函数的参数,使用空接口实现可以接收任意类型的函数参数。</p>
+  <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 空接口作为函数参数</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">show</span><span class="params">(a <span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"type:%T value:%v\n"</span>, a, a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>空接口作为map的值，使用空接口实现可以保存任意值的字典。  <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 空接口作为map值</span></span><br><span class="line">    <span class="keyword">var</span> studentInfo = <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;)</span><br><span class="line">    studentInfo[<span class="string">"name"</span>] = <span class="string">"无恙"</span></span><br><span class="line">    studentInfo[<span class="string">"age"</span>] = <span class="number">18</span></span><br><span class="line">    studentInfo[<span class="string">"married"</span>] = <span class="literal">false</span></span><br><span class="line">    fmt.Println(studentInfo)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h3><p>空接口可以存储任意类型的值，那我们如何获取其存储的具体数据呢？</p>
+<pre><code>一个接口的值（简称接口值）是由 **一个具体类型** 和 **具体类型的值** 两部分组成的。这两部分分别称为接口的 **动态类型** 和 **动态值**。
+</code></pre><p>想要判断空接口中的值这个时候就可以使用类型断言，其语法格式：</p>
+<pre><code>x.(T)
+</code></pre><p>其中：</p>
+<pre><code>x：表示类型为interface{}的变量
+T：表示断言x可能是的类型。
+
+该语法返回两个参数，第一个参数是x转化为T类型后的变量，第二个值是一个布尔值，若为true则表示断言成功，为false则表示断言失败。
+</code></pre><p>样例:<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> x <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">	x = <span class="string">"Hello"</span></span><br><span class="line">    <span class="comment">//wrong</span></span><br><span class="line">    <span class="comment">//v, ok := x.(int)</span></span><br><span class="line">    <span class="comment">//true</span></span><br><span class="line">    v, ok := x.(<span class="keyword">string</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> ok &#123;</span><br><span class="line">		fmt.Println(v)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">"类型断言失败"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面的示例中如果要断言多次就需要写多个if判断，这个时候我们可以使用switch语句来实现：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">justifyType</span><span class="params">(x <span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">	<span class="keyword">switch</span> v := x.(<span class="keyword">type</span>) &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">string</span>:</span><br><span class="line">		fmt.Printf(<span class="string">"x is a string，value is %v\n"</span>, v)</span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">int</span>:</span><br><span class="line">		fmt.Printf(<span class="string">"x is a int is %v\n"</span>, v)</span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">bool</span>:</span><br><span class="line">		fmt.Printf(<span class="string">"x is a bool is %v\n"</span>, v)</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		fmt.Println(<span class="string">"unsupport type！"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为空接口可以存储任意类型值的特点，所以空接口在Go语言中的使用十分广泛。</p>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Go</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HEXO添加自定义HTML静态网页</title>
-    <url>/2020/03/08/add_custom_html/</url>
+    <url>/2020/03/08/blog/blog_add_custom_html/</url>
     <content><![CDATA[<h2 id="添加自定义HTML静态网页"><a href="#添加自定义HTML静态网页" class="headerlink" title="添加自定义HTML静态网页"></a>添加自定义HTML静态网页</h2><p>今天发现一个好玩的毒鸡汤界面,打开了新世界的大门.</p>
 <h2 id="新建个page"><a href="#新建个page" class="headerlink" title="新建个page"></a>新建个page</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page soup</span><br></pre></td></tr></table></figure>
 <p>在source 会生成一个</p>
@@ -356,7 +442,7 @@ margin-bottom: 45px;
   </entry>
   <entry>
     <title>Hexo添加网页音乐播放器功能</title>
-    <url>/2020/03/08/music/</url>
+    <url>/2020/03/08/blog/music/</url>
     <content><![CDATA[<p><span><br><a id="more"></a><br>效果图：   </p>
 <p><img src="https://yfzhou.oss-cn-beijing.aliyuncs.com/blog/img/music01.png" alt=""></p>
 <h1 id="download"><a href="#download" class="headerlink" title="download"></a><a href="#download" title="download"></a>download</h1><p>点击访问Aplayer源码：<a href="https://github.com/MoePlayer/APlayer" target="_blank" rel="noopener">GitHub Aplayer</a>。下载到本地，解压后将<code>dist</code>文件夹复制到<code>themes\next\source</code>文件夹下。</p>
@@ -376,8 +462,19 @@ margin-bottom: 45px;
       </tags>
   </entry>
   <entry>
-    <title>LeetCode动态规划</title>
-    <url>/2020/03/05/leetcode_dp/</url>
+    <title>分支限界法</title>
+    <url>/2020/03/05/leetcode/leetcode_Branch_and_bound/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>动态规划</title>
+    <url>/2020/03/05/leetcode/leetcode_dp/</url>
     <content><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p>
 <ul>
 <li>原问题与子问题</li>
@@ -394,8 +491,8 @@ margin-bottom: 45px;
       </tags>
   </entry>
   <entry>
-    <title>LeetCode贪心</title>
-    <url>/2020/03/05/leetcode_greedy/</url>
+    <title>回溯</title>
+    <url>/2020/03/05/leetcode/leetcode_Backtracking/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>杂记</category>
@@ -405,8 +502,8 @@ margin-bottom: 45px;
       </tags>
   </entry>
   <entry>
-    <title>LeetCode分治</title>
-    <url>/2020/03/05/leetcode_Divide_and_Conquer/</url>
+    <title>分治</title>
+    <url>/2020/03/05/leetcode/leetcode_Divide_and_Conquer/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>杂记</category>
@@ -416,8 +513,8 @@ margin-bottom: 45px;
       </tags>
   </entry>
   <entry>
-    <title>LeetCode排序</title>
-    <url>/2020/03/05/leetcode_sort/</url>
+    <title>排序</title>
+    <url>/2020/03/05/leetcode/leetcode_sort/</url>
     <content><![CDATA[<p>leetcode中的排序问题</p>
 <h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><p>冒泡排序要对一个列表多次重复遍历。它要比较相邻的两项，并且交换顺序排错的项。每对 列表实行一次遍历，就有一个最大项排在了正确的位置。大体上讲，列表的每一个数据项都会在 其相应的位置 “冒泡”。如果列表有 n 项，第一次遍历就要比较 n-1 对数据。需要注意，一旦列 表中最大(按照规定的原则定义大小)的数据是所比较的数据对中的一个，它就会沿着列表一直 后移，直到这次遍历结束。</p>
 <h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p><img src="https://pic4.zhimg.com/v2-33a947c71ad62b254cab62e5364d2813_b.webp" alt="冒泡"></p>
@@ -456,19 +553,8 @@ margin-bottom: 45px;
       </tags>
   </entry>
   <entry>
-    <title>LeetCode分支限界法</title>
-    <url>/2020/03/05/leetcode_Branch_and_bound/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode回溯</title>
-    <url>/2020/03/05/leetcode_Backtracking/</url>
+    <title>贪心</title>
+    <url>/2020/03/05/leetcode/leetcode_greedy/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>杂记</category>
@@ -479,7 +565,7 @@ margin-bottom: 45px;
   </entry>
   <entry>
     <title>LeetCode的笔记</title>
-    <url>/2020/03/04/leetcode/</url>
+    <url>/2020/03/04/leetcode/leetcode_note/</url>
     <content><![CDATA[<h1 id="菜鸡刷leetcode"><a href="#菜鸡刷leetcode" class="headerlink" title="菜鸡刷leetcode"></a>菜鸡刷leetcode</h1><p>用来记录一些好的点子</p>
 <h2 id="面试题57-II-和为s的连续正数序列"><a href="#面试题57-II-和为s的连续正数序列" class="headerlink" title="面试题57 - II. 和为s的连续正数序列"></a>面试题57 - II. 和为s的连续正数序列</h2><p> 输入一个正整数 target ，输出所有和为 target 的连续正整数序列（至少含有两个数）。序列内的数字由小到大排列，不同序列按照首个数字从小到大排列。</p>
 <p>示例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：target &#x3D; 9</span><br><span class="line">输出：[[2,3,4],[4,5]]</span><br><span class="line">示例 2：</span><br><span class="line"></span><br><span class="line">输入：target &#x3D; 15</span><br><span class="line">输出：[[1,2,3,4,5],[4,5,6],[7,8]]</span><br></pre></td></tr></table></figure></p>
@@ -517,7 +603,7 @@ margin-bottom: 45px;
   </entry>
   <entry>
     <title>使用ubuntu的小tips</title>
-    <url>/2020/03/04/ubuntu/</url>
+    <url>/2020/03/04/tips/ubuntu_tips/</url>
     <content><![CDATA[<h1 id="常用的-linux-配置"><a href="#常用的-linux-配置" class="headerlink" title="常用的 linux 配置"></a>常用的 linux 配置</h1><h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;</span><br><span class="line"></span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions</span><br></pre></td></tr></table></figure>
 <h2 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h2><h1 id="常用的-linux-命令"><a href="#常用的-linux-命令" class="headerlink" title="常用的 linux 命令"></a>常用的 linux 命令</h1><h2 id="后台运行命令"><a href="#后台运行命令" class="headerlink" title="后台运行命令"></a>后台运行命令</h2><ul>
 <li><p>第一种 &amp;</p>
@@ -597,7 +683,7 @@ $ youdao-dict
   </entry>
   <entry>
     <title>深度学习_Tips</title>
-    <url>/2020/03/03/dl_tips/</url>
+    <url>/2020/03/03/dl/dl_tips/</url>
     <content><![CDATA[<h2 id="归纳偏置-Inductive-bias"><a href="#归纳偏置-Inductive-bias" class="headerlink" title="归纳偏置(Inductive bias)"></a>归纳偏置(Inductive bias)</h2><p><a href="https://www.zhihu.com/question/264264203/answer/830077823" target="_blank" rel="noopener">转载</a></p>
 <p>归纳偏置在机器学习中是一种很微妙的概念：在机器学习中，很多学习算法经常会对学习的问题做一些假设，这些假设就称为归纳偏置(Inductive Bias)。归纳偏置这个译名可能不能很好地帮助理解，不妨拆解开来看：归纳(Induction)是自然科学中常用的两大方法之一(归纳与演绎, induction and deduction)，指的是从一些例子中寻找共性、泛化，形成一个比较通用的规则的过程；偏置(Bias)是指我们对模型的偏好。</p>
 <p>因此，归纳偏置可以理解为，从现实生活中观察到的现象中归纳出一定的规则(heuristics)，然后对模型做一定的约束，从而可以起到“模型选择”的作用，即从假设空间中选择出更符合现实规则的模型。其实，贝叶斯学习中的“先验(Prior)”这个叫法，可能比“归纳偏置”更直观一些。</p>
@@ -625,6 +711,7 @@ $ youdao-dict
 <li>类标签，一般需要用分类损失函数(比如:softmax + cross entropy)优化样本和权重向量之间的相识度。</li>
 <li>样本对标签，用度量损失函数(比如:triplet loss)优化样本之间的相识度。</li>
 </ul>
+<h2 id="BCELoss"><a href="#BCELoss" class="headerlink" title="BCELoss"></a>BCELoss</h2><p>cress_entropy_loss: 永不多分类问题一般输出层需要加sigmoid将值归一到（0-1）之间<br>同理 binary_cross_entropy_loss,也需要加入sigmoid进行归一化</p>
 ]]></content>
       <categories>
         <category>学术</category>
@@ -636,7 +723,7 @@ $ youdao-dict
   </entry>
   <entry>
     <title>强化学习_A2C</title>
-    <url>/2020/03/03/A2C/</url>
+    <url>/2020/03/03/rl/A2C/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学术</category>
@@ -648,7 +735,7 @@ $ youdao-dict
   </entry>
   <entry>
     <title>强化学习_DQN</title>
-    <url>/2020/03/03/DQN/</url>
+    <url>/2020/03/03/rl/DQN/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学术</category>
@@ -660,7 +747,7 @@ $ youdao-dict
   </entry>
   <entry>
     <title>Reinforencement Learning</title>
-    <url>/2020/03/03/reinforencement-learning/</url>
+    <url>/2020/03/03/rl/reinforencement-learning/</url>
     <content><![CDATA[<a id="more"></a>
 <p>本文用来记录自己关于强化学习的<strong>note</strong> 和<strong>tips</strong></p>
 <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>该部分参考侯博士的文章 <a href="https://zhuanlan.zhihu.com/p/41369224" target="_blank" rel="noopener">链接</a></p>
@@ -718,7 +805,7 @@ $ youdao-dict
   </entry>
   <entry>
     <title>搭建我的博客</title>
-    <url>/2020/03/03/build_my_blog/</url>
+    <url>/2020/03/03/blog/build_my_blog/</url>
     <content><![CDATA[<p> 自己瞎折腾的博客</p>
 <h2 id="本地安装Hexo出现的一些问题"><a href="#本地安装Hexo出现的一些问题" class="headerlink" title="本地安装Hexo出现的一些问题"></a>本地安装Hexo出现的一些问题</h2><h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><p>安装了node后，执行npm run xxx的命令的时候，报错，提示如下：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;bin&#x2F;env: node: No such file or directory</span><br></pre></td></tr></table></figure>
@@ -745,8 +832,8 @@ $ youdao-dict
       </tags>
   </entry>
   <entry>
-    <title>Go语言基础</title>
-    <url>/2020/03/03/go/</url>
+    <title>Go_基础</title>
+    <url>/2020/03/03/go/go/</url>
     <content><![CDATA[<p>go语言知识点<br>看到一个比较好的在线教程网站<a href="https://tour.go-zh.org/basics" target="_blank" rel="noopener">地址</a></p>
 <h2 id="go语言结构"><a href="#go语言结构" class="headerlink" title="go语言结构"></a>go语言结构</h2><p>Go 语言的基础组成有以下几个部分：</p>
 <ul>
@@ -1433,71 +1520,7 @@ countryCapitalMap := map[string]string{&quot;France&quot;: &quot;Paris&quot;, &q
 </code></pre><h2 id="go语言类型转换"><a href="#go语言类型转换" class="headerlink" title="go语言类型转换"></a>go语言类型转换</h2><p>类型转换用于将一种数据类型的变量转换为另外一种类型的变量。Go 语言类型转换基本格式如下：</p>
 <pre><code>type_name(expression)
 //type_name 为类型，expression 为表达式
-</code></pre><h2 id="go语言接口"><a href="#go语言接口" class="headerlink" title="go语言接口"></a>go语言接口</h2><p>在Go语言中接口（interface）是一种<strong>类型</strong>，一种抽象的类型。</p>
-<p>interface是一组method的集合，接口做的事情就像是定义一个协议（规则），不关心属性（数据），只关心行为（方法）。</p>
-<h3 id="接口的定义"><a href="#接口的定义" class="headerlink" title="接口的定义"></a>接口的定义</h3><p>Go语言提倡面向接口编程。</p>
-<p>每个接口由数个方法组成，接口的定义格式如下：</p>
-<pre><code>type 接口类型名 interface{
-    方法名1( 参数列表1 ) 返回值列表1
-    方法名2( 参数列表2 ) 返回值列表2
-    …
-}
-</code></pre><ul>
-<li>接口名：使用type将接口定义为自定义的类型名。接口名最好要能突出该接口的类型含义。</li>
-<li>方法名：当方法名首字母是大写且这个接口类型名首字母也是大写时，这个方法可以被接口所在的包（package）之外的代码访问。</li>
-<li>参数列表、返回值列表：参数列表和返回值列表中的参数变量名可以省略。</li>
-</ul>
-<pre><code>    type writer interface{
-        Write([]byte) error
-    }
-</code></pre><h3 id="实现接口的条件"><a href="#实现接口的条件" class="headerlink" title="实现接口的条件"></a>实现接口的条件</h3><p>一个对象只要全部实现了接口中的方法，那么就实现了这个接口。换句话说，接口就是一个需要实现的方法列表。</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Sayer 接口</span></span><br><span class="line"><span class="keyword">type</span> Sayer <span class="keyword">interface</span> &#123;</span><br><span class="line">	say()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义dog和cat两个结构体：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> dog <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> cat <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line"><span class="comment">//因为Sayer接口里只有一个say方法，所以我们只需要给dog和cat 分别实现say方法就可以实现Sayer接口了。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// dog实现了Sayer接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d dog)</span> <span class="title">say</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"汪汪汪"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// cat实现了Sayer接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c cat)</span> <span class="title">say</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"喵喵喵"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>接口的实现就是这么简单，只要实现了接口中的所有方法，就实现了这个接口。</p>
-<h3 id="接口类型变量"><a href="#接口类型变量" class="headerlink" title="接口类型变量"></a>接口类型变量</h3><p>接口类型变量能够存储所有实现了该接口的实例。 例如上面的示例中，Sayer类型的变量能够存储dog和cat类型的变量。</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> x Sayer <span class="comment">// 声明一个Sayer类型的变量x</span></span><br><span class="line">	a := cat&#123;&#125;  <span class="comment">// 实例化一个cat</span></span><br><span class="line">	b := dog&#123;&#125;  <span class="comment">// 实例化一个dog</span></span><br><span class="line">	x = a       <span class="comment">// 可以把cat实例直接赋值给x</span></span><br><span class="line">	x.say()     <span class="comment">// 喵喵喵</span></span><br><span class="line">	x = b       <span class="comment">// 可以把dog实例直接赋值给x</span></span><br><span class="line">	x.say()     <span class="comment">// 汪汪汪</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="值接收者和指针接收者实现接口的区别"><a href="#值接收者和指针接收者实现接口的区别" class="headerlink" title="值接收者和指针接收者实现接口的区别"></a>值接收者和指针接收者实现接口的区别</h3><p>使用值接收者实现接口和使用指针接收者实现接口有什么区别呢？</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//我们有一个Mover接口和一个dog结构体。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Mover <span class="keyword">interface</span> &#123;</span><br><span class="line">	move()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> dog <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//值接收者实现接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d dog)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"狗会动"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//此时实现接口的是dog类型：</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> x Mover</span><br><span class="line">	<span class="keyword">var</span> wangcai = dog&#123;&#125; <span class="comment">// 旺财是dog类型</span></span><br><span class="line">	x = wangcai         <span class="comment">// x可以接收dog类型</span></span><br><span class="line">	<span class="keyword">var</span> fugui = &amp;dog&#123;&#125;  <span class="comment">// 富贵是*dog类型</span></span><br><span class="line">	x = fugui           <span class="comment">// x可以接收*dog类型</span></span><br><span class="line">	x.move()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>从上面的代码中我们可以发现，使用值接收者实现接口之后，不管是dog结构体还是结构体指针<em>dog类型的变量都可以赋值给该接口变量。因为Go语言中有对指针类型变量求值的语法糖，dog指针fugui内部会自动求值</em>fugui。</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//指针接收者实现接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d *dog)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"狗会动"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> x Mover</span><br><span class="line">	<span class="keyword">var</span> wangcai = dog&#123;&#125; <span class="comment">// 旺财是dog类型</span></span><br><span class="line">	x = wangcai         <span class="comment">// x不可以接收dog类型</span></span><br><span class="line">	<span class="keyword">var</span> fugui = &amp;dog&#123;&#125;  <span class="comment">// 富贵是*dog类型</span></span><br><span class="line">	x = fugui           <span class="comment">// x可以接收*dog类型</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>此时实现Mover接口的是<em>dog类型，所以不能给x传入dog类型的wangcai，此时x只能存储</em>dog类型的值。</p>
-<p>样例:</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> People <span class="keyword">interface</span> &#123;</span><br><span class="line">	Speak(<span class="keyword">string</span>) <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Student <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(stu *Student)</span> <span class="title">Speak</span><span class="params">(think <span class="keyword">string</span>)</span> <span class="params">(talk <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> think == <span class="string">"sb"</span> &#123;</span><br><span class="line">		talk = <span class="string">"你是个大帅比"</span></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		talk = <span class="string">"您好"</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">//wrong</span></span><br><span class="line">	<span class="comment">//var peo People = Student&#123;&#125;</span></span><br><span class="line">	<span class="comment">//true</span></span><br><span class="line">	<span class="keyword">var</span> peo People = &amp;Student&#123;&#125;</span><br><span class="line"></span><br><span class="line">	think := <span class="string">"bitch"</span></span><br><span class="line">	fmt.Println(peo.Speak(think))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="类型与接口的关系"><a href="#类型与接口的关系" class="headerlink" title="类型与接口的关系"></a>类型与接口的关系</h3><ul>
-<li><p>一个类型可以同时实现多个接口，而接口间彼此独立，不知道对方的实现。 例如，狗可以叫，也可以动。我们就分别定义Sayer接口和Mover接口，如下： Mover接口。</p>
-  <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Sayer 接口</span></span><br><span class="line"><span class="keyword">type</span> Sayer <span class="keyword">interface</span> &#123;</span><br><span class="line">    say()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Mover 接口</span></span><br><span class="line"><span class="keyword">type</span> Mover <span class="keyword">interface</span> &#123;</span><br><span class="line">    move()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//dog既可以实现Sayer接口，也可以实现Mover接口。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> dog <span class="keyword">struct</span> &#123;</span><br><span class="line">    name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现Sayer接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d dog)</span> <span class="title">say</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"%s会叫汪汪汪\n"</span>, d.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现Mover接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d dog)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"%s会动\n"</span>, d.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x Sayer</span><br><span class="line">    <span class="keyword">var</span> y Mover</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a = dog&#123;name: <span class="string">"旺财"</span>&#125;</span><br><span class="line">    x = a</span><br><span class="line">    y = a</span><br><span class="line">    x.say()</span><br><span class="line">    y.move()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>多个类型实现同一接口, Go语言中不同的类型还可以实现同一接口 首先我们定义一个Mover接口，它要求必须由一个move方法。</p>
-  <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Mover 接口</span></span><br><span class="line"><span class="keyword">type</span> Mover <span class="keyword">interface</span> &#123;</span><br><span class="line">    move()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//例如狗可以动，汽车也可以动，可以使用如下代码实现这个关系：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> dog <span class="keyword">struct</span> &#123;</span><br><span class="line">    name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> car <span class="keyword">struct</span> &#123;</span><br><span class="line">    brand <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// dog类型实现Mover接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d dog)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"%s会跑\n"</span>, d.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// car类型实现Mover接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c car)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"%s速度70迈\n"</span>, c.brand)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//这个时候我们在代码中就可以把狗和汽车当成一个会动的物体来处理了，不再需要关注它们具体是什么，只需要调用它们的move方法就可以了。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x Mover</span><br><span class="line">    <span class="keyword">var</span> a = dog&#123;name: <span class="string">"旺财"</span>&#125;</span><br><span class="line">    <span class="keyword">var</span> b = car&#123;brand: <span class="string">"保时捷"</span>&#125;</span><br><span class="line">    x = a</span><br><span class="line">    x.move()</span><br><span class="line">    x = b</span><br><span class="line">    x.move()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  执行结果：</p>
-<pre><code>  旺财会跑  
-  保时捷速度70迈
-</code></pre></li>
-</ul>
-<h3 id="接口嵌套"><a href="#接口嵌套" class="headerlink" title="接口嵌套"></a>接口嵌套</h3><p>接口与接口间可以通过嵌套创造出新的接口。<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Sayer 接口</span></span><br><span class="line"><span class="keyword">type</span> Sayer <span class="keyword">interface</span> &#123;</span><br><span class="line">	say()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Mover 接口</span></span><br><span class="line"><span class="keyword">type</span> Mover <span class="keyword">interface</span> &#123;</span><br><span class="line">	move()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接口嵌套</span></span><br><span class="line"><span class="keyword">type</span> animal <span class="keyword">interface</span> &#123;</span><br><span class="line">	Sayer</span><br><span class="line">	Mover</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//嵌套得到的接口的使用与普通接口一样，这里我们让cat实现animal接口：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> cat <span class="keyword">struct</span> &#123;</span><br><span class="line">	name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c cat)</span> <span class="title">say</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"喵喵喵"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c cat)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"猫会动"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> x animal</span><br><span class="line">	x = cat&#123;name: <span class="string">"花花"</span>&#125;</span><br><span class="line">	x.move()</span><br><span class="line">	x.say()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="空接口"><a href="#空接口" class="headerlink" title="空接口"></a>空接口</h3><p>空接口是指没有定义任何方法的接口。因此任何类型都实现了空接口。</p>
-<ul>
-<li><p>空接口类型的变量可以存储任意类型的变量。</p>
-  <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 定义一个空接口x</span></span><br><span class="line">    <span class="keyword">var</span> x <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">    s := <span class="string">"Hello"</span></span><br><span class="line">    x = s</span><br><span class="line">    fmt.Printf(<span class="string">"type:%T value:%v\n"</span>, x, x)</span><br><span class="line">    i := <span class="number">100</span></span><br><span class="line">    x = i</span><br><span class="line">    fmt.Printf(<span class="string">"type:%T value:%v\n"</span>, x, x)</span><br><span class="line">    b := <span class="literal">true</span></span><br><span class="line">    x = b</span><br><span class="line">    fmt.Printf(<span class="string">"type:%T value:%v\n"</span>, x, x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>空接口作为函数的参数,使用空接口实现可以接收任意类型的函数参数。</p>
-  <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 空接口作为函数参数</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">show</span><span class="params">(a <span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"type:%T value:%v\n"</span>, a, a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>空接口作为map的值，使用空接口实现可以保存任意值的字典。  <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 空接口作为map值</span></span><br><span class="line">    <span class="keyword">var</span> studentInfo = <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;)</span><br><span class="line">    studentInfo[<span class="string">"name"</span>] = <span class="string">"无恙"</span></span><br><span class="line">    studentInfo[<span class="string">"age"</span>] = <span class="number">18</span></span><br><span class="line">    studentInfo[<span class="string">"married"</span>] = <span class="literal">false</span></span><br><span class="line">    fmt.Println(studentInfo)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h3><p>空接口可以存储任意类型的值，那我们如何获取其存储的具体数据呢？</p>
-<pre><code>一个接口的值（简称接口值）是由 **一个具体类型** 和 **具体类型的值** 两部分组成的。这两部分分别称为接口的 **动态类型** 和 **动态值**。
-</code></pre><p>想要判断空接口中的值这个时候就可以使用类型断言，其语法格式：</p>
-<pre><code>x.(T)
-</code></pre><p>其中：</p>
-<pre><code>x：表示类型为interface{}的变量
-T：表示断言x可能是的类型。
-
-该语法返回两个参数，第一个参数是x转化为T类型后的变量，第二个值是一个布尔值，若为true则表示断言成功，为false则表示断言失败。
-</code></pre><p>样例:<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> x <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">	x = <span class="string">"Hello 沙河"</span></span><br><span class="line">    <span class="comment">//wrong</span></span><br><span class="line">    <span class="comment">//v, ok := x.(int)</span></span><br><span class="line">    <span class="comment">//true</span></span><br><span class="line">    v, ok := x.(<span class="keyword">string</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> ok &#123;</span><br><span class="line">		fmt.Println(v)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">"类型断言失败"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>上面的示例中如果要断言多次就需要写多个if判断，这个时候我们可以使用switch语句来实现：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">justifyType</span><span class="params">(x <span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">	<span class="keyword">switch</span> v := x.(<span class="keyword">type</span>) &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">string</span>:</span><br><span class="line">		fmt.Printf(<span class="string">"x is a string，value is %v\n"</span>, v)</span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">int</span>:</span><br><span class="line">		fmt.Printf(<span class="string">"x is a int is %v\n"</span>, v)</span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">bool</span>:</span><br><span class="line">		fmt.Printf(<span class="string">"x is a bool is %v\n"</span>, v)</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		fmt.Println(<span class="string">"unsupport type！"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>因为空接口可以存储任意类型值的特点，所以空接口在Go语言中的使用十分广泛。</p>
-]]></content>
+</code></pre>]]></content>
       <categories>
         <category>杂记</category>
       </categories>
