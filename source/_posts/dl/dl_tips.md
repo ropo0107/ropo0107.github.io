@@ -54,3 +54,9 @@ torch.nn.Conv2d 参数初始化
 分别使用类标签和正负样本标签进行学习
 - 类标签，一般需要用分类损失函数(比如:softmax + cross entropy)优化样本和权重向量之间的相识度。
 - 样本对标签，用度量损失函数(比如:triplet loss)优化样本之间的相识度。
+  
+## BCELoss
+
+cress_entropy_loss: 永不多分类问题一般输出层需要加sigmoid将值归一到（0-1）之间
+同理 binary_cross_entropy_loss,也需要加入sigmoid进行归一化
+

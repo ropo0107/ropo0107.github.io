@@ -1,5 +1,5 @@
 ---
-title:  LeetCode动态规划
+title:  动态规划
 categories: [杂记]
 tags:   [leetcode]
 copyright: false

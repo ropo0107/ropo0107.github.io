@@ -1,5 +1,5 @@
 ---
-title:  LeetCode排序
+title:  排序
 categories: [杂记]
 tags:   [leetcode]
 copyright: false

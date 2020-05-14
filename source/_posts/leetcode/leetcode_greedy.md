@@ -1,5 +1,5 @@
 ---
-title:  LeetCode贪心
+title:  贪心
 categories: [杂记]
 tags:   [leetcode]
 copyright: false

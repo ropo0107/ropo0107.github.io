@@ -63,7 +63,7 @@ trojan-1.14.1-linux-amd64.tar.xz
 ```bash
 wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz
 ```
-将trojan-1.14.1-linux-amd64.tar.xz里面的克制向文件 **trojan** 放到trojan-cli文件下
+将trojan-1.14.1-linux-amd64.tar.xz里面的可执行文件 **trojan** 放到trojan-cli文件下
 
 ```bash
 ./trojan -c config.json
@@ -71,7 +71,7 @@ wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.
 
 本人运行时一直有个错误
 
-     fatal: bind: Address already in use
+    fatal: bind: Address already in use
 
 说端口被占用．
 一直以为是服务端的问题，最后试了下 iso 端是可以用的，说明是客户端的问题，默认 1080　端口

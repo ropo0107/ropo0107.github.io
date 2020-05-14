@@ -1,5 +1,5 @@
 ---
-title:  LeetCode分支限界法
+title:  分支限界法
 categories: [杂记]
 tags:   [leetcode]
 copyright: false
