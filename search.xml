@@ -3,7 +3,7 @@
   <entry>
     <title>网络参数计算</title>
     <url>/2020/04/24/dl/net_param_calculate/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="MLP"><a href="#MLP" class="headerlink" title="MLP"></a>MLP</h1><h1 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h1><h1 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h1>]]></content>
       <categories>
         <category>学术</category>
       </categories>
@@ -683,7 +683,24 @@ $ youdao-dict
 <p>  dns_ipv6 :true</p>
 </li>
 </ul>
-<h2 id="虚拟X-service"><a href="#虚拟X-service" class="headerlink" title="虚拟Ｘ-service"></a>虚拟Ｘ-service</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xvfb-run --auto-servernum --server-num&#x3D;1 c-s &quot;-screen 0 640x480x24&quot; cmd</span><br></pre></td></tr></table></figure>]]></content>
+<h2 id="虚拟X-service"><a href="#虚拟X-service" class="headerlink" title="虚拟Ｘ-service"></a>虚拟Ｘ-service</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xvfb-run --auto-servernum --server-num&#x3D;1 c-s &quot;-screen 0 640x480x24&quot; cmd</span><br></pre></td></tr></table></figure>
+<h2 id="visudo-权限修改"><a href="#visudo-权限修改" class="headerlink" title="visudo 权限修改"></a>visudo 权限修改</h2><p>在 Ubuntu 下新建用户 需要付予用户权限，<br>修改文件是 /etc/sudoers</p>
+<ul>
+<li>比较笨的方法，容易出问题<ul>
+<li>添加用户<br>  adduser XXX</li>
+<li>修改文件权限<br>  chmod 660 /etc/sudoers</li>
+<li>添加字段<br>  user ALL=(ALL:ALL) ALL</li>
+<li>修改回权限(特别重要，不然就炸了)<br>  chmod 440 /etc/sudoers</li>
+</ul>
+</li>
+<li>visudo<ul>
+<li>添加字段</li>
+<li>ctrl + o 保存</li>
+<li>ctrl + x 退出</li>
+</ul>
+</li>
+</ul>
+]]></content>
       <categories>
         <category>杂记</category>
       </categories>
