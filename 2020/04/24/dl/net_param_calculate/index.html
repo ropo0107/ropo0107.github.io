@@ -86,19 +86,18 @@
 <meta property="og:site_name" content="无恙の博客">
 <meta property="og:description" content="参数量 MLP假设输入神经元数为M，输出神经元数为N，则  bias为True时：   则参数数量为：M*N + N（bias的数量与输出神经元数的数量是一样的）  bias为False时：   则参数数量为：M×N   CNN假设卷积核的大小为 k*k, 输入channel为M， 输出channel为N。  bias为True时：   则参数数量为：k×k×M×N + N（bias的数量与输出c">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/2020/04/24/dl/net_param_calculate/images/leNet_param.png">
-<meta property="og:image" content="https://zhuanlan.zhihu.com/p/47907312">
-<meta property="og:image" content="http://yoursite.com/2020/04/24/dl/net_param_calculate/images/forget.webp">
-<meta property="og:image" content="http://yoursite.com/2020/04/24/dl/net_param_calculate/images/input.gif">
-<meta property="og:image" content="http://yoursite.com/2020/04/24/dl/net_param_calculate/images/cell.webp">
-<meta property="og:image" content="http://yoursite.com/2020/04/24/dl/net_param_calculate/images/output.webp">
-<meta property="og:image" content="http://yoursite.com/2020/04/24/dl/net_param_calculate/images/lstm.jpg">
+<meta property="og:image" content="http://yoursite.com/images/posts/dl/leNet_param.png">
+<meta property="og:image" content="http://yoursite.com/images/posts/dl/forget.webp">
+<meta property="og:image" content="http://yoursite.com/images/posts/dl/input.gif">
+<meta property="og:image" content="http://yoursite.com/images/posts/dl/cell.webp">
+<meta property="og:image" content="http://yoursite.com/images/posts/dl/output.webp">
+<meta property="og:image" content="http://yoursite.com/images/posts/dl/lstm.jpg">
 <meta property="article:published_time" content="2020-04-24T04:51:55.000Z">
-<meta property="article:modified_time" content="2020-05-29T13:12:41.721Z">
+<meta property="article:modified_time" content="2020-05-29T13:39:09.573Z">
 <meta property="article:author" content="无恙">
 <meta property="article:tag" content="DL，Note">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/04/24/dl/net_param_calculate/images/leNet_param.png">
+<meta name="twitter:image" content="http://yoursite.com/images/posts/dl/leNet_param.png">
 
 
 
@@ -108,7 +107,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -429,7 +428,7 @@
       
 
       
-        <h1 id="参数量"><a href="#参数量" class="headerlink" title="参数量"></a>参数量</h1><p><img src="./images/leNet_param.png" alt="LeNet"></p>
+        <h1 id="参数量"><a href="#参数量" class="headerlink" title="参数量"></a>参数量</h1><p><img src="/images/posts/dl/leNet_param.png" alt="LeNet"></p>
 <h2 id="MLP"><a href="#MLP" class="headerlink" title="MLP"></a>MLP</h2><p>假设输入神经元数为M，输出神经元数为N，则</p>
 <ul>
 <li><p>bias为True时：</p>
@@ -452,12 +451,12 @@
 </li>
 </ul>
 <h2 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h2><p>首先要说一下LSTM的结构</p>
-<p>[参考链接]<img src="https://zhuanlan.zhihu.com/p/47907312" alt=""></p>
+<p><a href="https://zhuanlan.zhihu.com/p/47907312" target="_blank" rel="noopener">参考链接</a></p>
 <ul>
-<li>遗忘门<br>  <img src="./images/forget.webp" alt=""></li>
-<li>输入们<br>  <img src="./images/input.gif" alt=""></li>
-<li>cell 状态<br>  <img src="./images/cell.webp" alt=""></li>
-<li><p>输出门<br>  <img src="./images/output.webp" alt=""></p>
+<li>遗忘门<br>  <img src="/images/posts/dl/forget.webp" alt=""></li>
+<li>输入们<br>  <img src="/images/posts/dl/input.gif" alt=""></li>
+<li>cell 状态<br>  <img src="/images/posts/dl/cell.webp" alt=""></li>
+<li><p>输出门<br>  <img src="/images/posts/dl/output.webp" alt=""></p>
 <p>  1，把先前隐藏状态prev_ht和当前输入input合并成combine</p>
 <p>  2，把combine输入遗忘层，决定哪些不相关数据需要被剔除</p>
 <p>  3，用combine创建候选层，其中包含能被添加进cell状态的可能值</p>
@@ -468,7 +467,7 @@
 </li>
 </ul>
 <p>因为input进入了四个不同的mlp，每一个可参考MLP的参数进行计算</p>
-<p><strong>实际的LSTM模型</strong><img src="./images/lstm.jpg" alt=""></p>
+<p><strong>实际的LSTM模型</strong><img src="/images/posts/dl/lstm.jpg" alt=""></p>
 <h1 id="计算量"><a href="#计算量" class="headerlink" title="计算量"></a>计算量</h1><h2 id="MLP-1"><a href="#MLP-1" class="headerlink" title="MLP"></a>MLP</h2><p>假设 输入神经元数为M，输出神经元数为N，则</p>
 <ul>
 <li><p>先执行M次乘法；</p>
@@ -573,6 +572,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2020/05/29/rl/rl_note_mpc/" rel="prev" title="【rl_note】 Markov Decision Processes">
+                【rl_note】 Markov Decision Processes <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -654,7 +657,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -796,7 +799,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">19.7k</span>
+    <span title="Site words total count">20.4k</span>
   
 </div>
 
@@ -844,6 +847,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     

@@ -1,9 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【rl_note】 Overview</title>
+    <url>/2020/05/29/rl/rl_note_overview/</url>
+    <content><![CDATA[<h2 id="Difference-between-Reinforcement-Learning-and-Supervised-Learning"><a href="#Difference-between-Reinforcement-Learning-and-Supervised-Learning" class="headerlink" title="Difference between Reinforcement Learning and Supervised Learning"></a>Difference between Reinforcement Learning and Supervised Learning</h2><ul>
+<li><p>Sequential data as input (not i.i.d)</p>
+</li>
+<li><p>The learner is not told which actions to take, but instead must discover which actions yield the most reward by trying them.</p>
+</li>
+<li><p>Trial-and-error exploration (balance between exploration and</p>
+</li>
+<li><p>There is no supervisor, only a reward signal, which is also delayed</p>
+</li>
+</ul>
+<h2 id="Features-of-Reinforcement-Learning"><a href="#Features-of-Reinforcement-Learning" class="headerlink" title="Features of Reinforcement Learning"></a>Features of Reinforcement Learning</h2><ul>
+<li>Trial-and-error exploration</li>
+<li>Delayed reward</li>
+<li>Time matters (sequential data, non i.i.d data)</li>
+<li>Agent’s actions affect the subsequent data it receives (agent’s action changes the environment)</li>
+</ul>
+<h2 id="Introduction-to-Sequential-Decision-Making"><a href="#Introduction-to-Sequential-Decision-Making" class="headerlink" title="Introduction to Sequential Decision Making"></a>Introduction to Sequential Decision Making</h2><h3 id="Rewards"><a href="#Rewards" class="headerlink" title="Rewards"></a>Rewards</h3><ul>
+<li>A reward is a scalar feedback signal</li>
+<li>Indicate how well agent is doing at step t</li>
+<li>Reinforcement Learning is based on the maximization of rewards:<br>All goals of the agent can be described by the maximization of expected<br>cumulative reward.</li>
+</ul>
+<h3 id="Sequential-Decision-Making"><a href="#Sequential-Decision-Making" class="headerlink" title="Sequential Decision Making"></a>Sequential Decision Making</h3><ul>
+<li>Objective of the agent: select a series of actions to maximize total<br>  future rewards</li>
+<li>Actions may have long term consequences</li>
+<li>Reward may be delayed</li>
+<li>Trade-off between immediate reward and long-term reward</li>
+</ul>
+<h3 id="Sequential-Decision-Making-1"><a href="#Sequential-Decision-Making-1" class="headerlink" title="Sequential Decision Making"></a>Sequential Decision Making</h3><ul>
+<li><p>The history is the sequence of observations, actions, rewards.</p>
+<script type="math/tex; mode=display">H_t = O_1, R_1, A_1, ..., A_{t-1}, O_t, R_t</script></li>
+<li><p>What happens next depends on the history</p>
+</li>
+<li>State is the function used to determine what happens next<script type="math/tex; mode=display">S_t = f(H_t)</script></li>
+</ul>
+<h3 id="Sequential-Decision-Making-2"><a href="#Sequential-Decision-Making-2" class="headerlink" title="Sequential Decision Making"></a>Sequential Decision Making</h3><ul>
+<li><p>Environment state and agent state:</p>
+<script type="math/tex; mode=display">S^e_t = f^e(H_t)</script><script type="math/tex; mode=display">S^a_t = f^a(H_t)</script></li>
+<li><p><strong>Full observability</strong> : agent directly observes the environment state</p>
+<script type="math/tex; mode=display">O_t = S^e_t = S^a_t</script></li>
+<li><p><strong>Partial observability</strong> : agent indirectly observes the environment, formally as partially observable Markov decision process (POMDP)</p>
+<script type="math/tex; mode=display">O_t \neq ^e_t \neq S^a_t</script></li>
+</ul>
+<h2 id="Major-Components-of-an-RL-Agent"><a href="#Major-Components-of-an-RL-Agent" class="headerlink" title="Major Components of an RL Agent"></a>Major Components of an RL Agent</h2><ul>
+<li><p><strong>Policy</strong>:</p>
+<p>​    agent’s behavior function</p>
+</li>
+<li><p><strong>Value function</strong>: </p>
+<p>​    how good is each state or action</p>
+</li>
+<li><p><strong>Model</strong>:</p>
+<p>​    agent’s state representation of the environment</p>
+</li>
+</ul>
+<h3 id="Policy"><a href="#Policy" class="headerlink" title="Policy"></a>Policy</h3><ul>
+<li><p>A policy is the agent’s behavior model</p>
+</li>
+<li><p>It is a map function from state/observation to action.</p>
+</li>
+<li><p>Stochastic policy: Probabilistic sample</p>
+<script type="math/tex; mode=display">\pi(a \mid s) = P[A_t = a\mid S_t = s]</script></li>
+<li><p>Deterministic policy:</p>
+<script type="math/tex; mode=display">a^* = \arg\max\limits_a \pi(a\mid s)</script></li>
+</ul>
+<h3 id="Value-function"><a href="#Value-function" class="headerlink" title="Value function"></a>Value function</h3><ul>
+<li><p>Value function: expected discounted sum of future rewards under a<br>  particular policy $\pi$</p>
+</li>
+<li><p>Discount factor weights immediate vs future rewards</p>
+</li>
+<li><p>Used to quantify goodness/badness of <strong>states</strong></p>
+<script type="math/tex; mode=display">G_t = R_{t+1}+\gamma R_{t+2}+ ... = \sum\limits_{k=0}
+  ^\infty\gamma^kR_{t+k+1}</script><p>  <strong>$G_t$is the total step discounted reward from time step $t$.</strong></p>
+<script type="math/tex; mode=display">V_\pi(s) = E_\pi[G_t\mid S_t=s]</script><script type="math/tex; mode=display">= E_\pi[\sum\limits^\infty_{k=0}\gamma^kR_{t+k+1}\mid S_t=s]</script></li>
+<li><p>Q-function at state $s$ and action $a$</p>
+<script type="math/tex; mode=display">Q_\pi(s,a) = E_\pi[G_t\mid S_t=s, A_t = a] = E_\pi[\sum\limits^\infty_{k=0}\gamma^kR_{t+k+1}\mid S_t=s, A_t=a]</script></li>
+</ul>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>A model predicts what the environment will do next</p>
+<ul>
+<li><p>Predict the next state:(转移概率)</p>
+<script type="math/tex; mode=display">P^a_{ss'} = P[S_{t+1}=s' \mid S_t=s, A_t=a]</script></li>
+<li><p>Predict the next reward:</p>
+<script type="math/tex; mode=display">R^a_s = P[R_{t+1} \mid S_t=s, A_t=a]</script></li>
+</ul>
+<h2 id="Types-of-RL-Agents-based-on-What-the-Agent-Learns"><a href="#Types-of-RL-Agents-based-on-What-the-Agent-Learns" class="headerlink" title="Types of RL Agents based on What the Agent Learns"></a>Types of RL Agents based on What the Agent Learns</h2><ul>
+<li>Value-based agent:<ul>
+<li>Explicit: Value function</li>
+<li>Implicit: Policy (can derive a policy from value function)</li>
+</ul>
+</li>
+<li>Policy-based agent:<ul>
+<li>Explicit: policy</li>
+<li>No value function</li>
+</ul>
+</li>
+<li>Actor-Critic agent:<ul>
+<li>Explicit: policy and value function</li>
+</ul>
+</li>
+</ul>
+<h2 id="Types-of-RL-Agents-on-if-there-is-model"><a href="#Types-of-RL-Agents-on-if-there-is-model" class="headerlink" title="Types of RL Agents on if there is model"></a>Types of RL Agents on if there is model</h2><ul>
+<li>Model-based<ul>
+<li>Explicit: model</li>
+<li>May or may not have policy and/or value function</li>
+</ul>
+</li>
+<li>Model-free<ul>
+<li>Explicit: value function and/or policy function</li>
+<li>No model.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Two-Fundamental-Problems-in-Sequential-Decision-Making"><a href="#Two-Fundamental-Problems-in-Sequential-Decision-Making" class="headerlink" title="Two Fundamental Problems in Sequential Decision Making"></a>Two Fundamental Problems in Sequential Decision Making</h2><ul>
+<li><p>Planning</p>
+<ul>
+<li>Given model about how the environment works.</li>
+<li>Compute how to act to maximize expected reward without external interaction.</li>
+</ul>
+</li>
+<li><p>Reinforcement learning</p>
+<ul>
+<li>Agent doesn’t know how world works</li>
+<li>Interacts with world to implicitly learn how world works</li>
+<li>Agent improves policy (also involves planning)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Exploration-and-Exploitation"><a href="#Exploration-and-Exploitation" class="headerlink" title="Exploration and Exploitation"></a>Exploration and Exploitation</h2><ul>
+<li>Agent only experiences what happens for the actions it tries!</li>
+<li>How should an RL agent balance its actions?<ul>
+<li>Exploration: trying new things that might enable the agent to make better<br> decisions in the future</li>
+<li>Exploitation: choosing actions that are expected to yield good reward given<br> the past experience</li>
+</ul>
+</li>
+<li>Often there may be an exploration-exploitation trade-off<ul>
+<li>May have to sacrifice reward in order to explore &amp; learn about potentially<br> better policy</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>学术</category>
+      </categories>
+      <tags>
+        <tag>RL</tag>
+        <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【rl_note】 Markov Decision Processes</title>
+    <url>/2020/05/29/rl/rl_note_mpc/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学术</category>
+      </categories>
+      <tags>
+        <tag>RL</tag>
+        <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>神经网络中参数量和计算量</title>
     <url>/2020/04/24/dl/net_param_calculate/</url>
-    <content><![CDATA[<h1 id="参数量"><a href="#参数量" class="headerlink" title="参数量"></a>参数量</h1><p><img src="./images/leNet_param.png" alt="LeNet"></p>
+    <content><![CDATA[<h1 id="参数量"><a href="#参数量" class="headerlink" title="参数量"></a>参数量</h1><p><img src="/images/posts/dl/leNet_param.png" alt="LeNet"></p>
 <h2 id="MLP"><a href="#MLP" class="headerlink" title="MLP"></a>MLP</h2><p>假设输入神经元数为M，输出神经元数为N，则</p>
 <ul>
 <li><p>bias为True时：</p>
@@ -26,12 +187,12 @@
 </li>
 </ul>
 <h2 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h2><p>首先要说一下LSTM的结构</p>
-<p>[参考链接]<img src="https://zhuanlan.zhihu.com/p/47907312" alt=""></p>
+<p><a href="https://zhuanlan.zhihu.com/p/47907312" target="_blank" rel="noopener">参考链接</a></p>
 <ul>
-<li>遗忘门<br>  <img src="./images/forget.webp" alt=""></li>
-<li>输入们<br>  <img src="./images/input.gif" alt=""></li>
-<li>cell 状态<br>  <img src="./images/cell.webp" alt=""></li>
-<li><p>输出门<br>  <img src="./images/output.webp" alt=""></p>
+<li>遗忘门<br>  <img src="/images/posts/dl/forget.webp" alt=""></li>
+<li>输入们<br>  <img src="/images/posts/dl/input.gif" alt=""></li>
+<li>cell 状态<br>  <img src="/images/posts/dl/cell.webp" alt=""></li>
+<li><p>输出门<br>  <img src="/images/posts/dl/output.webp" alt=""></p>
 <p>  1，把先前隐藏状态prev_ht和当前输入input合并成combine</p>
 <p>  2，把combine输入遗忘层，决定哪些不相关数据需要被剔除</p>
 <p>  3，用combine创建候选层，其中包含能被添加进cell状态的可能值</p>
@@ -42,7 +203,7 @@
 </li>
 </ul>
 <p>因为input进入了四个不同的mlp，每一个可参考MLP的参数进行计算</p>
-<p><strong>实际的LSTM模型</strong><img src="./images/lstm.jpg" alt=""></p>
+<p><strong>实际的LSTM模型</strong><img src="/images/posts/dl/lstm.jpg" alt=""></p>
 <h1 id="计算量"><a href="#计算量" class="headerlink" title="计算量"></a>计算量</h1><h2 id="MLP-1"><a href="#MLP-1" class="headerlink" title="MLP"></a>MLP</h2><p>假设 输入神经元数为M，输出神经元数为N，则</p>
 <ul>
 <li><p>先执行M次乘法；</p>

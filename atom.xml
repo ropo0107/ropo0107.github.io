@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-29T13:12:41.721Z</updated>
+  <updated>2020-05-29T13:22:18.774Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,20 +17,69 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>神经网络中参数量和计算量</title>
-    <link href="http://yoursite.com/2020/04/24/dl/net_param_calculate/"/>
-    <id>http://yoursite.com/2020/04/24/dl/net_param_calculate/</id>
-    <published>2020-04-24T04:51:55.000Z</published>
-    <updated>2020-05-29T13:12:41.721Z</updated>
+    <title>【rl_note】 Overview</title>
+    <link href="http://yoursite.com/2020/05/29/rl/rl_note_overview/"/>
+    <id>http://yoursite.com/2020/05/29/rl/rl_note_overview/</id>
+    <published>2020-05-29T03:51:55.000Z</published>
+    <updated>2020-05-29T13:22:18.774Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="参数量"><a href="#参数量" class="headerlink" title="参数量"></a>参数量</h1><p><img src="./images/leNet_param.png" alt="LeNet"></p><h2 id="MLP"><a href="#MLP" class="headerlink" title="MLP"></a>MLP</h2><p>假设输入神经元数为M，输出神经元数为N，则</p><ul><li><p>bias为True时：</p><p>  则参数数量为：M*N + N（bias的数量与输出神经元数的数量是一样的）</p></li><li><p>bias为False时：</p><p>  则参数数量为：M×N</p></li></ul><h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><p>假设卷积核的大小为 k*k, 输入channel为M， 输出channel为N。</p><ul><li><p>bias为True时：</p><p>  则参数数量为：k×k×M×N + N（bias的数量与输出channel的数量是一样的）</p></li><li><p>bias为False时：</p><p>  则参数数量为：k×k×M×N</p></li><li><p>当使用BN时，还有两个可学习的参数α和β，参数量均为N</p><p>  则参数数量为：k×k×M×N + 3×N</p></li></ul><h2 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h2><p>首先要说一下LSTM的结构</p><p>[参考链接]<img src="https://zhuanlan.zhihu.com/p/47907312" alt=""></p><ul><li>遗忘门<br>  <img src="./images/forget.webp" alt=""></li><li>输入们<br>  <img src="./images/input.gif" alt=""></li><li>cell 状态<br>  <img src="./images/cell.webp" alt=""></li><li><p>输出门<br>  <img src="./images/output.webp" alt=""></p><p>  1，把先前隐藏状态prev_ht和当前输入input合并成combine</p><p>  2，把combine输入遗忘层，决定哪些不相关数据需要被剔除</p><p>  3，用combine创建候选层，其中包含能被添加进cell状态的可能值</p><p>  4，把combine输入输入层，决定把候选层中哪些信息添加进cell状态</p><p>  5，更新当前cell状态</p><p>  6，把combine输入输出层，计算输出</p><p>  7，把输出和当前cell状态进行点乘，得到更新后的隐藏状态</p></li></ul><p>因为input进入了四个不同的mlp，每一个可参考MLP的参数进行计算</p><p><strong>实际的LSTM模型</strong><img src="./images/lstm.jpg" alt=""></p><h1 id="计算量"><a href="#计算量" class="headerlink" title="计算量"></a>计算量</h1><h2 id="MLP-1"><a href="#MLP-1" class="headerlink" title="MLP"></a>MLP</h2><p>假设 输入神经元数为M，输出神经元数为N，则</p><ul><li><p>先执行M次乘法；</p></li><li><p>再执行M-1次加法</p></li><li><p>加上bias，计算出一个神经元的计算量为 （M+M-1+1）</p></li><li><p>N个输出神经元，则总的计算量为 2M×N</p></li></ul><h2 id="CNN-1"><a href="#CNN-1" class="headerlink" title="CNN"></a>CNN</h2><p>假设输入特征图（B，C，H，W），卷积核大小为K×K， 输入通道为C，输出通道为N，步长stride为S， 输出特征图大小为H2，W2.</p><ul><li><p>一次卷积的计算量</p><p>  一个k×k的卷积，执行一次卷积操作，需要k×k次乘法操作（卷积核中每个参数都要和特征图上的元素相乘一次），k×k−1 次加法操作（将卷积结果，k×k 个数加起来）。所以，一次卷积操作需要的乘加次数：(K×K)+(K×K−1)=2×K×K−1</p></li><li><p>在一个特征图上需要执行卷积需要卷积的次数</p><p>  在一个特征图上需要执行的卷积次数：(（H-k+Ph）/S +1 )×(（H-k+Pw）/S +1)，Ph，Pw表示在高和宽方向填充的像素，此处假定了宽高方向滑动步长和核的宽高是一样，若不同，调整一下值即可。若不能整除，可向下取整。</p><p>  <strong>Note</strong>:卷积输出层的维度</p></li><li><p>C个特征图上进行卷积运算的次数</p><p>  C个输入特征图上进行卷积运算的次数为C</p></li><li><p>输出一个特征图通道需要的加法次数</p><p>  在C个输入特征图上进行卷积之后需要将卷积的结果相加，得到一个输出特征图上卷积结果，C个相加需要C-1次加法，计算量为 ：（C-1）×H2×W2</p></li><li><p>输出N个特征图需要计算的次数</p><p>  N×（（C-1）×H2×W2 + （2×K×K−1）×(（H-k+Ph）/S +1 )×(（H-k+Pw）/S +1) ×C）</p></li><li><p>一个batch需要计算的次数</p><p>  B×N×（（C-1）×H2×W2 + （2×K×K−1）×(（H-k+Ph）/S +1 )×(（H-k+Pw）/S +1) ×C）</p></li></ul><h3 id="LSTM-1"><a href="#LSTM-1" class="headerlink" title="LSTM"></a>LSTM</h3><p>具体可参考上面LSTM流程，按照MLP的计算方式去计算</p><p>Bingo!!!<br>一直想写，终于把这个坑填上了</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Difference-between-Reinforcement-Learning-and-Supervised-Learning"><a href="#Difference-between-Reinforcement-Learning-and-Supervised-Learning" class="headerlink" title="Difference between Reinforcement Learning and Supervised Learning"></a>Difference between Reinforcement Learning and Supervised Learning</h2><ul><li><p>Sequential data as input (not i.i.d)</p></li><li><p>The learner is not told which actions to take, but instead must discover which actions yield the most reward by trying them.</p></li><li><p>Trial-and-error exploration (balance between exploration and</p></li><li><p>There is no supervisor, only a reward signal, which is also delayed</p></li></ul><h2 id="Features-of-Reinforcement-Learning"><a href="#Features-of-Reinforcement-Learning" class="headerlink" title="Features of Reinforcement Learning"></a>Features of Reinforcement Learning</h2><ul><li>Trial-and-error exploration</li><li>Delayed reward</li><li>Time matters (sequential data, non i.i.d data)</li><li>Agent’s actions affect the subsequent data it receives (agent’s action changes the environment)</li></ul><h2 id="Introduction-to-Sequential-Decision-Making"><a href="#Introduction-to-Sequential-Decision-Making" class="headerlink" title="Introduction to Sequential Decision Making"></a>Introduction to Sequential Decision Making</h2><h3 id="Rewards"><a href="#Rewards" class="headerlink" title="Rewards"></a>Rewards</h3><ul><li>A reward is a scalar feedback signal</li><li>Indicate how well agent is doing at step t</li><li>Reinforcement Learning is based on the maximization of rewards:<br>All goals of the agent can be described by the maximization of expected<br>cumulative reward.</li></ul><h3 id="Sequential-Decision-Making"><a href="#Sequential-Decision-Making" class="headerlink" title="Sequential Decision Making"></a>Sequential Decision Making</h3><ul><li>Objective of the agent: select a series of actions to maximize total<br>  future rewards</li><li>Actions may have long term consequences</li><li>Reward may be delayed</li><li>Trade-off between immediate reward and long-term reward</li></ul><h3 id="Sequential-Decision-Making-1"><a href="#Sequential-Decision-Making-1" class="headerlink" title="Sequential Decision Making"></a>Sequential Decision Making</h3><ul><li><p>The history is the sequence of observations, actions, rewards.</p><script type="math/tex; mode=display">H_t = O_1, R_1, A_1, ..., A_{t-1}, O_t, R_t</script></li><li><p>What happens next depends on the history</p></li><li>State is the function used to determine what happens next<script type="math/tex; mode=display">S_t = f(H_t)</script></li></ul><h3 id="Sequential-Decision-Making-2"><a href="#Sequential-Decision-Making-2" class="headerlink" title="Sequential Decision Making"></a>Sequential Decision Making</h3><ul><li><p>Environment state and agent state:</p><script type="math/tex; mode=display">S^e_t = f^e(H_t)</script><script type="math/tex; mode=display">S^a_t = f^a(H_t)</script></li><li><p><strong>Full observability</strong> : agent directly observes the environment state</p><script type="math/tex; mode=display">O_t = S^e_t = S^a_t</script></li><li><p><strong>Partial observability</strong> : agent indirectly observes the environment, formally as partially observable Markov decision process (POMDP)</p><script type="math/tex; mode=display">O_t \neq ^e_t \neq S^a_t</script></li></ul><h2 id="Major-Components-of-an-RL-Agent"><a href="#Major-Components-of-an-RL-Agent" class="headerlink" title="Major Components of an RL Agent"></a>Major Components of an RL Agent</h2><ul><li><p><strong>Policy</strong>:</p><p>​    agent’s behavior function</p></li><li><p><strong>Value function</strong>: </p><p>​    how good is each state or action</p></li><li><p><strong>Model</strong>:</p><p>​    agent’s state representation of the environment</p></li></ul><h3 id="Policy"><a href="#Policy" class="headerlink" title="Policy"></a>Policy</h3><ul><li><p>A policy is the agent’s behavior model</p></li><li><p>It is a map function from state/observation to action.</p></li><li><p>Stochastic policy: Probabilistic sample</p><script type="math/tex; mode=display">\pi(a \mid s) = P[A_t = a\mid S_t = s]</script></li><li><p>Deterministic policy:</p><script type="math/tex; mode=display">a^* = \arg\max\limits_a \pi(a\mid s)</script></li></ul><h3 id="Value-function"><a href="#Value-function" class="headerlink" title="Value function"></a>Value function</h3><ul><li><p>Value function: expected discounted sum of future rewards under a<br>  particular policy $\pi$</p></li><li><p>Discount factor weights immediate vs future rewards</p></li><li><p>Used to quantify goodness/badness of <strong>states</strong></p><script type="math/tex; mode=display">G_t = R_{t+1}+\gamma R_{t+2}+ ... = \sum\limits_{k=0}  ^\infty\gamma^kR_{t+k+1}</script><p>  <strong>$G_t$is the total step discounted reward from time step $t$.</strong></p><script type="math/tex; mode=display">V_\pi(s) = E_\pi[G_t\mid S_t=s]</script><script type="math/tex; mode=display">= E_\pi[\sum\limits^\infty_{k=0}\gamma^kR_{t+k+1}\mid S_t=s]</script></li><li><p>Q-function at state $s$ and action $a$</p><script type="math/tex; mode=display">Q_\pi(s,a) = E_\pi[G_t\mid S_t=s, A_t = a] = E_\pi[\sum\limits^\infty_{k=0}\gamma^kR_{t+k+1}\mid S_t=s, A_t=a]</script></li></ul><h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>A model predicts what the environment will do next</p><ul><li><p>Predict the next state:(转移概率)</p><script type="math/tex; mode=display">P^a_{ss'} = P[S_{t+1}=s' \mid S_t=s, A_t=a]</script></li><li><p>Predict the next reward:</p><script type="math/tex; mode=display">R^a_s = P[R_{t+1} \mid S_t=s, A_t=a]</script></li></ul><h2 id="Types-of-RL-Agents-based-on-What-the-Agent-Learns"><a href="#Types-of-RL-Agents-based-on-What-the-Agent-Learns" class="headerlink" title="Types of RL Agents based on What the Agent Learns"></a>Types of RL Agents based on What the Agent Learns</h2><ul><li>Value-based agent:<ul><li>Explicit: Value function</li><li>Implicit: Policy (can derive a policy from value function)</li></ul></li><li>Policy-based agent:<ul><li>Explicit: policy</li><li>No value function</li></ul></li><li>Actor-Critic agent:<ul><li>Explicit: policy and value function</li></ul></li></ul><h2 id="Types-of-RL-Agents-on-if-there-is-model"><a href="#Types-of-RL-Agents-on-if-there-is-model" class="headerlink" title="Types of RL Agents on if there is model"></a>Types of RL Agents on if there is model</h2><ul><li>Model-based<ul><li>Explicit: model</li><li>May or may not have policy and/or value function</li></ul></li><li>Model-free<ul><li>Explicit: value function and/or policy function</li><li>No model.</li></ul></li></ul><h2 id="Two-Fundamental-Problems-in-Sequential-Decision-Making"><a href="#Two-Fundamental-Problems-in-Sequential-Decision-Making" class="headerlink" title="Two Fundamental Problems in Sequential Decision Making"></a>Two Fundamental Problems in Sequential Decision Making</h2><ul><li><p>Planning</p><ul><li>Given model about how the environment works.</li><li>Compute how to act to maximize expected reward without external interaction.</li></ul></li><li><p>Reinforcement learning</p><ul><li>Agent doesn’t know how world works</li><li>Interacts with world to implicitly learn how world works</li><li>Agent improves policy (also involves planning)</li></ul></li></ul><h2 id="Exploration-and-Exploitation"><a href="#Exploration-and-Exploitation" class="headerlink" title="Exploration and Exploitation"></a>Exploration and Exploitation</h2><ul><li>Agent only experiences what happens for the actions it tries!</li><li>How should an RL agent balance its actions?<ul><li>Exploration: trying new things that might enable the agent to make better<br> decisions in the future</li><li>Exploitation: choosing actions that are expected to yield good reward given<br> the past experience</li></ul></li><li>Often there may be an exploration-exploitation trade-off<ul><li>May have to sacrifice reward in order to explore &amp; learn about potentially<br> better policy</li></ul></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;参数量&quot;&gt;&lt;a href=&quot;#参数量&quot; class=&quot;headerlink&quot; title=&quot;参数量&quot;&gt;&lt;/a&gt;参数量&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;./images/leNet_param.png&quot; alt=&quot;LeNet&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;MLP&quot;&gt;
+        &lt;h2 id=&quot;Difference-between-Reinforcement-Learning-and-Supervised-Learning&quot;&gt;&lt;a href=&quot;#Difference-between-Reinforcement-Learning-and-Supervise
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
+    
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【rl_note】 Markov Decision Processes</title>
+    <link href="http://yoursite.com/2020/05/29/rl/rl_note_mpc/"/>
+    <id>http://yoursite.com/2020/05/29/rl/rl_note_mpc/</id>
+    <published>2020-05-29T03:51:55.000Z</published>
+    <updated>2020-05-29T13:21:37.770Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
+    
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>神经网络中参数量和计算量</title>
+    <link href="http://yoursite.com/2020/04/24/dl/net_param_calculate/"/>
+    <id>http://yoursite.com/2020/04/24/dl/net_param_calculate/</id>
+    <published>2020-04-24T04:51:55.000Z</published>
+    <updated>2020-05-29T13:39:09.573Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="参数量"><a href="#参数量" class="headerlink" title="参数量"></a>参数量</h1><p><img src="/images/posts/dl/leNet_param.png" alt="LeNet"></p><h2 id="MLP"><a href="#MLP" class="headerlink" title="MLP"></a>MLP</h2><p>假设输入神经元数为M，输出神经元数为N，则</p><ul><li><p>bias为True时：</p><p>  则参数数量为：M*N + N（bias的数量与输出神经元数的数量是一样的）</p></li><li><p>bias为False时：</p><p>  则参数数量为：M×N</p></li></ul><h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><p>假设卷积核的大小为 k*k, 输入channel为M， 输出channel为N。</p><ul><li><p>bias为True时：</p><p>  则参数数量为：k×k×M×N + N（bias的数量与输出channel的数量是一样的）</p></li><li><p>bias为False时：</p><p>  则参数数量为：k×k×M×N</p></li><li><p>当使用BN时，还有两个可学习的参数α和β，参数量均为N</p><p>  则参数数量为：k×k×M×N + 3×N</p></li></ul><h2 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h2><p>首先要说一下LSTM的结构</p><p><a href="https://zhuanlan.zhihu.com/p/47907312" target="_blank" rel="noopener">参考链接</a></p><ul><li>遗忘门<br>  <img src="/images/posts/dl/forget.webp" alt=""></li><li>输入们<br>  <img src="/images/posts/dl/input.gif" alt=""></li><li>cell 状态<br>  <img src="/images/posts/dl/cell.webp" alt=""></li><li><p>输出门<br>  <img src="/images/posts/dl/output.webp" alt=""></p><p>  1，把先前隐藏状态prev_ht和当前输入input合并成combine</p><p>  2，把combine输入遗忘层，决定哪些不相关数据需要被剔除</p><p>  3，用combine创建候选层，其中包含能被添加进cell状态的可能值</p><p>  4，把combine输入输入层，决定把候选层中哪些信息添加进cell状态</p><p>  5，更新当前cell状态</p><p>  6，把combine输入输出层，计算输出</p><p>  7，把输出和当前cell状态进行点乘，得到更新后的隐藏状态</p></li></ul><p>因为input进入了四个不同的mlp，每一个可参考MLP的参数进行计算</p><p><strong>实际的LSTM模型</strong><img src="/images/posts/dl/lstm.jpg" alt=""></p><h1 id="计算量"><a href="#计算量" class="headerlink" title="计算量"></a>计算量</h1><h2 id="MLP-1"><a href="#MLP-1" class="headerlink" title="MLP"></a>MLP</h2><p>假设 输入神经元数为M，输出神经元数为N，则</p><ul><li><p>先执行M次乘法；</p></li><li><p>再执行M-1次加法</p></li><li><p>加上bias，计算出一个神经元的计算量为 （M+M-1+1）</p></li><li><p>N个输出神经元，则总的计算量为 2M×N</p></li></ul><h2 id="CNN-1"><a href="#CNN-1" class="headerlink" title="CNN"></a>CNN</h2><p>假设输入特征图（B，C，H，W），卷积核大小为K×K， 输入通道为C，输出通道为N，步长stride为S， 输出特征图大小为H2，W2.</p><ul><li><p>一次卷积的计算量</p><p>  一个k×k的卷积，执行一次卷积操作，需要k×k次乘法操作（卷积核中每个参数都要和特征图上的元素相乘一次），k×k−1 次加法操作（将卷积结果，k×k 个数加起来）。所以，一次卷积操作需要的乘加次数：(K×K)+(K×K−1)=2×K×K−1</p></li><li><p>在一个特征图上需要执行卷积需要卷积的次数</p><p>  在一个特征图上需要执行的卷积次数：(（H-k+Ph）/S +1 )×(（H-k+Pw）/S +1)，Ph，Pw表示在高和宽方向填充的像素，此处假定了宽高方向滑动步长和核的宽高是一样，若不同，调整一下值即可。若不能整除，可向下取整。</p><p>  <strong>Note</strong>:卷积输出层的维度</p></li><li><p>C个特征图上进行卷积运算的次数</p><p>  C个输入特征图上进行卷积运算的次数为C</p></li><li><p>输出一个特征图通道需要的加法次数</p><p>  在C个输入特征图上进行卷积之后需要将卷积的结果相加，得到一个输出特征图上卷积结果，C个相加需要C-1次加法，计算量为 ：（C-1）×H2×W2</p></li><li><p>输出N个特征图需要计算的次数</p><p>  N×（（C-1）×H2×W2 + （2×K×K−1）×(（H-k+Ph）/S +1 )×(（H-k+Pw）/S +1) ×C）</p></li><li><p>一个batch需要计算的次数</p><p>  B×N×（（C-1）×H2×W2 + （2×K×K−1）×(（H-k+Ph）/S +1 )×(（H-k+Pw）/S +1) ×C）</p></li></ul><h3 id="LSTM-1"><a href="#LSTM-1" class="headerlink" title="LSTM"></a>LSTM</h3><p>具体可参考上面LSTM流程，按照MLP的计算方式去计算</p><p>Bingo!!!<br>一直想写，终于把这个坑填上了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;参数量&quot;&gt;&lt;a href=&quot;#参数量&quot; class=&quot;headerlink&quot; title=&quot;参数量&quot;&gt;&lt;/a&gt;参数量&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/images/posts/dl/leNet_param.png&quot; alt=&quot;LeNet&quot;&gt;&lt;/p&gt;
+&lt;h2 i
       
     
     </summary>
@@ -478,55 +527,6 @@
       <category term="ubuntu" scheme="http://yoursite.com/tags/ubuntu/"/>
     
       <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习_Tips</title>
-    <link href="http://yoursite.com/2020/03/03/dl/dl_tips/"/>
-    <id>http://yoursite.com/2020/03/03/dl/dl_tips/</id>
-    <published>2020-03-03T08:51:55.000Z</published>
-    <updated>2020-05-14T09:49:20.950Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="归纳偏置-Inductive-bias"><a href="#归纳偏置-Inductive-bias" class="headerlink" title="归纳偏置(Inductive bias)"></a>归纳偏置(Inductive bias)</h2><p><a href="https://www.zhihu.com/question/264264203/answer/830077823" target="_blank" rel="noopener">转载</a></p><p>归纳偏置在机器学习中是一种很微妙的概念：在机器学习中，很多学习算法经常会对学习的问题做一些假设，这些假设就称为归纳偏置(Inductive Bias)。归纳偏置这个译名可能不能很好地帮助理解，不妨拆解开来看：归纳(Induction)是自然科学中常用的两大方法之一(归纳与演绎, induction and deduction)，指的是从一些例子中寻找共性、泛化，形成一个比较通用的规则的过程；偏置(Bias)是指我们对模型的偏好。</p><p>因此，归纳偏置可以理解为，从现实生活中观察到的现象中归纳出一定的规则(heuristics)，然后对模型做一定的约束，从而可以起到“模型选择”的作用，即从假设空间中选择出更符合现实规则的模型。其实，贝叶斯学习中的“先验(Prior)”这个叫法，可能比“归纳偏置”更直观一些。</p><p>归纳偏置在机器学习中几乎无处不可见。老生常谈的“奥卡姆剃刀”原理，即希望学习到的模型复杂度更低，就是一种归纳偏置。另外，还可以看见一些更强的一些假设：KNN中假设特征空间中相邻的样本倾向于属于同一类；SVM中假设好的分类器应该最大化类别边界距离；等等。</p><p>在深度学习方面也是一样。以神经网络为例，各式各样的网络结构/组件/机制往往就来源于归纳偏置。在卷积神经网络中，我们假设特征具有局部性(Locality)的特性，即当我们把相邻的一些特征放在一起，会更容易得到“解”；在循环神经网络中，我们假设每一时刻的计算依赖于历史计算结果；还有注意力机制，也是基于从人的直觉、生活经验归纳得到的规则。</p><p>在自然语言处理领域赫赫有名的word2vec，以及一些基于共现窗口的词嵌入方法，都是基于分布式假设：A word’s meaning is given by the words that frequently appear close-by. 这当然也可以看作是一种归纳偏置；一些自然语言理解的模型中加入解析树，也可以类似地理解。都是为了选择“更好”的模型。</p><h2 id="正则项"><a href="#正则项" class="headerlink" title="正则项"></a>正则项</h2><p>正则化以及类似处理方法的本质（个人认为）是：这是一种对对象进行限制以满足某一特定目的的处理方法。</p><p>正则项的加入使原来的非适定问题变为适定问题。</p><pre><code> 一个例子是，图像去噪的目标函数，如果只考虑一项（去噪后的图像的像素平均值和原图像一致），问题就有无穷多组解。但是，加上正则项（一般的是BV范数）以后，问题的解就变成唯一的了。</code></pre><p>剩下的问题就是什么是适定问题？什么是不适定问题？</p><p>定解问题是适定的，是指它具备如下三个条件：</p><ul><li><p>问题的解存在；</p></li><li><p>问题的解唯一；</p></li><li><p>解连续依赖于定解条件，即定解条件（数据）改变很小时，相应的解也改变很小，也就是解具有稳定性。</p><p>不满足上述三个条件之一的问题称为不适定(ill-posed)问题。特别地，对不满足第三个条件的定解问题，称为Hadamard意义下的不适定问题。</p></li></ul><h2 id="pytorch-默认初始化网络参数"><a href="#pytorch-默认初始化网络参数" class="headerlink" title="pytorch 默认初始化网络参数"></a>pytorch 默认初始化网络参数</h2><p>torch.nn.Conv2d 参数初始化</p><p>因为 Conv2d 继承 _ConvNd ,_ConvNd 有参数初始化。</p><h2 id="特征学习两种范式"><a href="#特征学习两种范式" class="headerlink" title="特征学习两种范式"></a>特征学习两种范式</h2><p>分别使用类标签和正负样本标签进行学习</p><ul><li>类标签，一般需要用分类损失函数(比如:softmax + cross entropy)优化样本和权重向量之间的相识度。</li><li>样本对标签，用度量损失函数(比如:triplet loss)优化样本之间的相识度。</li></ul><h2 id="BCELoss"><a href="#BCELoss" class="headerlink" title="BCELoss"></a>BCELoss</h2><p>cress_entropy_loss: 永不多分类问题一般输出层需要加sigmoid将值归一到（0-1）之间<br>同理 binary_cross_entropy_loss,也需要加入sigmoid进行归一化</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;归纳偏置-Inductive-bias&quot;&gt;&lt;a href=&quot;#归纳偏置-Inductive-bias&quot; class=&quot;headerlink&quot; title=&quot;归纳偏置(Inductive bias)&quot;&gt;&lt;/a&gt;归纳偏置(Inductive bias)&lt;/h2&gt;&lt;p&gt;
-      
-    
-    </summary>
-    
-    
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
-    
-    
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
-    
-      <category term="DL" scheme="http://yoursite.com/tags/DL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>强化学习_A2C</title>
-    <link href="http://yoursite.com/2020/03/03/rl/A2C/"/>
-    <id>http://yoursite.com/2020/03/03/rl/A2C/</id>
-    <published>2020-03-03T08:51:55.000Z</published>
-    <updated>2020-05-14T09:41:07.633Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
-    
-    
-      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
-    
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
   </entry>
   
