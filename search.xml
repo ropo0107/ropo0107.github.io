@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>网络参数计算</title>
+    <url>/2020/04/24/dl/net_param_calculate/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学术</category>
+      </categories>
+      <tags>
+        <tag>DL，Note</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GAN_公式推导</title>
     <url>/2020/03/24/dl/GAN/</url>
     <content><![CDATA[<h1 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h1><h2 id="GAN数学描述"><a href="#GAN数学描述" class="headerlink" title="GAN数学描述"></a>GAN数学描述</h2><p><strong>目标:</strong> 以假乱真的生成器</p>
@@ -717,8 +728,8 @@ $ youdao-dict
         <category>学术</category>
       </categories>
       <tags>
-        <tag>RL</tag>
         <tag>Note</tag>
+        <tag>DL</tag>
       </tags>
   </entry>
   <entry>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-14T09:41:18.316Z</updated>
+  <updated>2020-05-14T09:49:45.984Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网络参数计算</title>
+    <link href="http://yoursite.com/2020/04/24/dl/net_param_calculate/"/>
+    <id>http://yoursite.com/2020/04/24/dl/net_param_calculate/</id>
+    <published>2020-04-24T04:51:55.000Z</published>
+    <updated>2020-05-14T09:49:45.984Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="DL，Note" scheme="http://yoursite.com/tags/DL%EF%BC%8CNote/"/>
+    
+  </entry>
   
   <entry>
     <title>GAN_公式推导</title>
@@ -459,7 +478,7 @@
     <link href="http://yoursite.com/2020/03/03/dl/dl_tips/"/>
     <id>http://yoursite.com/2020/03/03/dl/dl_tips/</id>
     <published>2020-03-03T08:51:55.000Z</published>
-    <updated>2020-05-14T09:41:03.591Z</updated>
+    <updated>2020-05-14T09:49:20.950Z</updated>
     
     <content type="html"><![CDATA[<h2 id="归纳偏置-Inductive-bias"><a href="#归纳偏置-Inductive-bias" class="headerlink" title="归纳偏置(Inductive bias)"></a>归纳偏置(Inductive bias)</h2><p><a href="https://www.zhihu.com/question/264264203/answer/830077823" target="_blank" rel="noopener">转载</a></p><p>归纳偏置在机器学习中是一种很微妙的概念：在机器学习中，很多学习算法经常会对学习的问题做一些假设，这些假设就称为归纳偏置(Inductive Bias)。归纳偏置这个译名可能不能很好地帮助理解，不妨拆解开来看：归纳(Induction)是自然科学中常用的两大方法之一(归纳与演绎, induction and deduction)，指的是从一些例子中寻找共性、泛化，形成一个比较通用的规则的过程；偏置(Bias)是指我们对模型的偏好。</p><p>因此，归纳偏置可以理解为，从现实生活中观察到的现象中归纳出一定的规则(heuristics)，然后对模型做一定的约束，从而可以起到“模型选择”的作用，即从假设空间中选择出更符合现实规则的模型。其实，贝叶斯学习中的“先验(Prior)”这个叫法，可能比“归纳偏置”更直观一些。</p><p>归纳偏置在机器学习中几乎无处不可见。老生常谈的“奥卡姆剃刀”原理，即希望学习到的模型复杂度更低，就是一种归纳偏置。另外，还可以看见一些更强的一些假设：KNN中假设特征空间中相邻的样本倾向于属于同一类；SVM中假设好的分类器应该最大化类别边界距离；等等。</p><p>在深度学习方面也是一样。以神经网络为例，各式各样的网络结构/组件/机制往往就来源于归纳偏置。在卷积神经网络中，我们假设特征具有局部性(Locality)的特性，即当我们把相邻的一些特征放在一起，会更容易得到“解”；在循环神经网络中，我们假设每一时刻的计算依赖于历史计算结果；还有注意力机制，也是基于从人的直觉、生活经验归纳得到的规则。</p><p>在自然语言处理领域赫赫有名的word2vec，以及一些基于共现窗口的词嵌入方法，都是基于分布式假设：A word’s meaning is given by the words that frequently appear close-by. 这当然也可以看作是一种归纳偏置；一些自然语言理解的模型中加入解析树，也可以类似地理解。都是为了选择“更好”的模型。</p><h2 id="正则项"><a href="#正则项" class="headerlink" title="正则项"></a>正则项</h2><p>正则化以及类似处理方法的本质（个人认为）是：这是一种对对象进行限制以满足某一特定目的的处理方法。</p><p>正则项的加入使原来的非适定问题变为适定问题。</p><pre><code> 一个例子是，图像去噪的目标函数，如果只考虑一项（去噪后的图像的像素平均值和原图像一致），问题就有无穷多组解。但是，加上正则项（一般的是BV范数）以后，问题的解就变成唯一的了。</code></pre><p>剩下的问题就是什么是适定问题？什么是不适定问题？</p><p>定解问题是适定的，是指它具备如下三个条件：</p><ul><li><p>问题的解存在；</p></li><li><p>问题的解唯一；</p></li><li><p>解连续依赖于定解条件，即定解条件（数据）改变很小时，相应的解也改变很小，也就是解具有稳定性。</p><p>不满足上述三个条件之一的问题称为不适定(ill-posed)问题。特别地，对不满足第三个条件的定解问题，称为Hadamard意义下的不适定问题。</p></li></ul><h2 id="pytorch-默认初始化网络参数"><a href="#pytorch-默认初始化网络参数" class="headerlink" title="pytorch 默认初始化网络参数"></a>pytorch 默认初始化网络参数</h2><p>torch.nn.Conv2d 参数初始化</p><p>因为 Conv2d 继承 _ConvNd ,_ConvNd 有参数初始化。</p><h2 id="特征学习两种范式"><a href="#特征学习两种范式" class="headerlink" title="特征学习两种范式"></a>特征学习两种范式</h2><p>分别使用类标签和正负样本标签进行学习</p><ul><li>类标签，一般需要用分类损失函数(比如:softmax + cross entropy)优化样本和权重向量之间的相识度。</li><li>样本对标签，用度量损失函数(比如:triplet loss)优化样本之间的相识度。</li></ul><h2 id="BCELoss"><a href="#BCELoss" class="headerlink" title="BCELoss"></a>BCELoss</h2><p>cress_entropy_loss: 永不多分类问题一般输出层需要加sigmoid将值归一到（0-1）之间<br>同理 binary_cross_entropy_loss,也需要加入sigmoid进行归一化</p>]]></content>
     
@@ -476,9 +495,9 @@
       <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
-    
       <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+    
+      <category term="DL" scheme="http://yoursite.com/tags/DL/"/>
     
   </entry>
   
@@ -488,27 +507,6 @@
     <id>http://yoursite.com/2020/03/03/rl/A2C/</id>
     <published>2020-03-03T08:51:55.000Z</published>
     <updated>2020-05-14T09:41:07.633Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
-    
-    
-      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
-    
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>强化学习_DQN</title>
-    <link href="http://yoursite.com/2020/03/03/rl/DQN/"/>
-    <id>http://yoursite.com/2020/03/03/rl/DQN/</id>
-    <published>2020-03-03T08:51:55.000Z</published>
-    <updated>2020-05-14T09:41:12.448Z</updated>
     
     <summary type="html">
     
