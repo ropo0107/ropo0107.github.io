@@ -1,7 +1,7 @@
 ---
 title:  深度学习_Tips
 categories: [学术]
-tags:   [RL, Note]
+tags:   [DL, Note]
 copyright: false
 reward: false
 rating: false
