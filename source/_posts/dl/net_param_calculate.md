@@ -11,7 +11,7 @@ date: 2020-04-24 12:51:55
 ---
 
 # 参数量
-![LeNet](./images/leNet_param.png)
+![LeNet](/images/posts/dl/leNet_param.png)
 ## MLP
 假设输入神经元数为M，输出神经元数为N，则
 
@@ -41,16 +41,16 @@ date: 2020-04-24 12:51:55
 ## LSTM
 首先要说一下LSTM的结构
 
-[参考链接]![](https://zhuanlan.zhihu.com/p/47907312)
+[参考链接](https://zhuanlan.zhihu.com/p/47907312)
 
 - 遗忘门
-    ![](./images/forget.webp)
+    ![](/images/posts/dl/forget.webp)
 - 输入们
-    ![](./images/input.gif)
+    ![](/images/posts/dl/input.gif)
 - cell 状态
-    ![](./images/cell.webp)
+    ![](/images/posts/dl/cell.webp)
 - 输出门
-    ![](./images/output.webp)
+    ![](/images/posts/dl/output.webp)
 
     1，把先前隐藏状态prev_ht和当前输入input合并成combine
 
@@ -69,7 +69,7 @@ date: 2020-04-24 12:51:55
 
 因为input进入了四个不同的mlp，每一个可参考MLP的参数进行计算
 
-**实际的LSTM模型**![](./images/lstm.jpg)
+**实际的LSTM模型**![](/images/posts/dl/lstm.jpg)
 
 
 # 计算量

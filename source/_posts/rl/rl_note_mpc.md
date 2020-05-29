@@ -1,5 +1,5 @@
 ---
-title:  [rl_note]: Markov Decision Processes
+title: 【rl_note】 Markov Decision Processes
 categories: [学术]
 tags:   [RL, Note]
 copyright: false
