@@ -109,7 +109,12 @@ $$ S_t = f(H_t)$$
 
 - Used to quantify goodness/badness of **states**
 
-    $$V_\pi(s) = E_\pi[G_t\mid S_t=s] = E_\pi[\sum\limits^\infty_{k=0}\gamma^kR_{t+k+1}\mid S_t=s]$$
+    $$G_t = R_{t+1}+\gamma R_{t+2}+ ... = \sum\limits_{k=0}
+    ^\infty\gamma^kR_{t+k+1}$$
+    **$G_t$is the total step discounted reward from time step $t$.**
+    $$V_\pi(s) = E_\pi[G_t\mid S_t=s]$$
+
+    $$ = E_\pi[\sum\limits^\infty_{k=0}\gamma^kR_{t+k+1}\mid S_t=s]$$
 
 - Q-function at state $s$ and action $a$
 

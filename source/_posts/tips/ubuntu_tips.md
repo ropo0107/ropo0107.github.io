@@ -89,6 +89,7 @@ vscode  虚拟环境的时候只需要通过命令面板Python: Select Interpret
 ```
 wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 ```
+
 ## ubuntu16.04安装小飞机：
 ```
 sudo add-apt-repository ppa:hzwhuang/ss-qt5
@@ -210,3 +211,20 @@ initialize rosdep && sudo rosdep init && rosdep update
 ```
 xvfb-run --auto-servernum --server-num=1 c-s "-screen 0 640x480x24" cmd
 ```
+
+## visudo 权限修改
+在 Ubuntu 下新建用户 需要付予用户权限， 
+修改文件是 /etc/sudoers
+- 比较笨的方法，容易出问题
+    - 添加用户
+        adduser XXX
+    - 修改文件权限
+        chmod 660 /etc/sudoers
+    - 添加字段
+        user ALL=(ALL:ALL) ALL
+    - 修改回权限(特别重要，不然就炸了)
+        chmod 440 /etc/sudoers
+- visudo
+    - 添加字段
+    - ctrl + o 保存
+    - ctrl + x 退出
