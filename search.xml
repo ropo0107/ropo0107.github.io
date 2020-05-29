@@ -1,9 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>网络参数计算</title>
+    <title>神经网络中参数量和计算量</title>
     <url>/2020/04/24/dl/net_param_calculate/</url>
-    <content><![CDATA[<h1 id="MLP"><a href="#MLP" class="headerlink" title="MLP"></a>MLP</h1><h1 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h1><h1 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h1>]]></content>
+    <content><![CDATA[<h1 id="参数量"><a href="#参数量" class="headerlink" title="参数量"></a>参数量</h1><p><img src="./images/leNet_param.png" alt="LeNet"></p>
+<h2 id="MLP"><a href="#MLP" class="headerlink" title="MLP"></a>MLP</h2><p>假设输入神经元数为M，输出神经元数为N，则</p>
+<ul>
+<li><p>bias为True时：</p>
+<p>  则参数数量为：M*N + N（bias的数量与输出神经元数的数量是一样的）</p>
+</li>
+<li><p>bias为False时：</p>
+<p>  则参数数量为：M×N</p>
+</li>
+</ul>
+<h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><p>假设卷积核的大小为 k*k, 输入channel为M， 输出channel为N。</p>
+<ul>
+<li><p>bias为True时：</p>
+<p>  则参数数量为：k×k×M×N + N（bias的数量与输出channel的数量是一样的）</p>
+</li>
+<li><p>bias为False时：</p>
+<p>  则参数数量为：k×k×M×N</p>
+</li>
+<li><p>当使用BN时，还有两个可学习的参数α和β，参数量均为N</p>
+<p>  则参数数量为：k×k×M×N + 3×N</p>
+</li>
+</ul>
+<h2 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h2><p>首先要说一下LSTM的结构</p>
+<p>[参考链接]<img src="https://zhuanlan.zhihu.com/p/47907312" alt=""></p>
+<ul>
+<li>遗忘门<br>  <img src="./images/forget.webp" alt=""></li>
+<li>输入们<br>  <img src="./images/input.gif" alt=""></li>
+<li>cell 状态<br>  <img src="./images/cell.webp" alt=""></li>
+<li><p>输出门<br>  <img src="./images/output.webp" alt=""></p>
+<p>  1，把先前隐藏状态prev_ht和当前输入input合并成combine</p>
+<p>  2，把combine输入遗忘层，决定哪些不相关数据需要被剔除</p>
+<p>  3，用combine创建候选层，其中包含能被添加进cell状态的可能值</p>
+<p>  4，把combine输入输入层，决定把候选层中哪些信息添加进cell状态</p>
+<p>  5，更新当前cell状态</p>
+<p>  6，把combine输入输出层，计算输出</p>
+<p>  7，把输出和当前cell状态进行点乘，得到更新后的隐藏状态</p>
+</li>
+</ul>
+<p>因为input进入了四个不同的mlp，每一个可参考MLP的参数进行计算</p>
+<p><strong>实际的LSTM模型</strong><img src="./images/lstm.jpg" alt=""></p>
+<h1 id="计算量"><a href="#计算量" class="headerlink" title="计算量"></a>计算量</h1><h2 id="MLP-1"><a href="#MLP-1" class="headerlink" title="MLP"></a>MLP</h2><p>假设 输入神经元数为M，输出神经元数为N，则</p>
+<ul>
+<li><p>先执行M次乘法；</p>
+</li>
+<li><p>再执行M-1次加法</p>
+</li>
+<li><p>加上bias，计算出一个神经元的计算量为 （M+M-1+1）</p>
+</li>
+<li><p>N个输出神经元，则总的计算量为 2M×N</p>
+</li>
+</ul>
+<h2 id="CNN-1"><a href="#CNN-1" class="headerlink" title="CNN"></a>CNN</h2><p>假设输入特征图（B，C，H，W），卷积核大小为K×K， 输入通道为C，输出通道为N，步长stride为S， 输出特征图大小为H2，W2.</p>
+<ul>
+<li><p>一次卷积的计算量</p>
+<p>  一个k×k的卷积，执行一次卷积操作，需要k×k次乘法操作（卷积核中每个参数都要和特征图上的元素相乘一次），k×k−1 次加法操作（将卷积结果，k×k 个数加起来）。所以，一次卷积操作需要的乘加次数：(K×K)+(K×K−1)=2×K×K−1</p>
+</li>
+<li><p>在一个特征图上需要执行卷积需要卷积的次数</p>
+<p>  在一个特征图上需要执行的卷积次数：(（H-k+Ph）/S +1 )×(（H-k+Pw）/S +1)，Ph，Pw表示在高和宽方向填充的像素，此处假定了宽高方向滑动步长和核的宽高是一样，若不同，调整一下值即可。若不能整除，可向下取整。</p>
+<p>  <strong>Note</strong>:卷积输出层的维度</p>
+</li>
+<li><p>C个特征图上进行卷积运算的次数</p>
+<p>  C个输入特征图上进行卷积运算的次数为C</p>
+</li>
+<li><p>输出一个特征图通道需要的加法次数</p>
+<p>  在C个输入特征图上进行卷积之后需要将卷积的结果相加，得到一个输出特征图上卷积结果，C个相加需要C-1次加法，计算量为 ：（C-1）×H2×W2</p>
+</li>
+<li><p>输出N个特征图需要计算的次数</p>
+<p>  N×（（C-1）×H2×W2 + （2×K×K−1）×(（H-k+Ph）/S +1 )×(（H-k+Pw）/S +1) ×C）</p>
+</li>
+<li><p>一个batch需要计算的次数</p>
+<p>  B×N×（（C-1）×H2×W2 + （2×K×K−1）×(（H-k+Ph）/S +1 )×(（H-k+Pw）/S +1) ×C）</p>
+</li>
+</ul>
+<h3 id="LSTM-1"><a href="#LSTM-1" class="headerlink" title="LSTM"></a>LSTM</h3><p>具体可参考上面LSTM流程，按照MLP的计算方式去计算</p>
+<p>Bingo!!!<br>一直想写，终于把这个坑填上了</p>
+]]></content>
       <categories>
         <category>学术</category>
       </categories>
