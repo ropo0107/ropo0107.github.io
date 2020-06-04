@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/05/29/rl/rl_note_model_free/</loc>
+    
+    <lastmod>2020-06-04T09:23:24.986Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/05/29/rl/rl_note_mpc/</loc>
+    
+    <lastmod>2020-06-04T09:20:55.168Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/24/dl/net_param_calculate/</loc>
     
     <lastmod>2020-05-29T13:39:09.573Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://yoursite.com/2020/05/29/rl/rl_note_overview/</loc>
     
     <lastmod>2020-05-29T13:22:18.774Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/05/29/rl/rl_note_mpc/</loc>
-    
-    <lastmod>2020-05-29T13:21:37.770Z</lastmod>
     
   </url>
   
