@@ -74,6 +74,7 @@
 <li><p>Used to quantify goodness/badness of <strong>states</strong></p>
 <script type="math/tex; mode=display">G_t = R_{t+1}+\gamma R_{t+2}+ ... = \sum\limits_{k=0}
   ^\infty\gamma^kR_{t+k+1}</script><p>  <strong>$G_t$is the total step discounted reward from time step $t$.</strong></p>
+<p>  <strong>Note:</strong> 这个期望并不是$G_t$的期望，而是多个不同轨迹对应的在$S_t$的期望</p>
 <script type="math/tex; mode=display">V_\pi(s) = E_\pi[G_t\mid S_t=s]</script><script type="math/tex; mode=display">= E_\pi[\sum\limits^\infty_{k=0}\gamma^kR_{t+k+1}\mid S_t=s]</script></li>
 <li><p>Q-function at state $s$ and action $a$</p>
 <script type="math/tex; mode=display">Q_\pi(s,a) = E_\pi[G_t\mid S_t=s, A_t = a] = E_\pi[\sum\limits^\infty_{k=0}\gamma^kR_{t+k+1}\mid S_t=s, A_t=a]</script></li>
@@ -224,14 +225,23 @@
 </li>
 </ul>
 <h2 id="v-s-q-s-a"><a href="#v-s-q-s-a" class="headerlink" title="v(s),q(s,a)"></a>v(s),q(s,a)</h2><p><strong>NOTE:</strong> MRP 对应 V(s), MDP 对应 Q(s,a)</p>
-<h2 id="Dynamic-Programming"><a href="#Dynamic-Programming" class="headerlink" title="Dynamic Programming"></a>Dynamic Programming</h2><p>已知MDP过程，<strong>转移矩阵</strong> 和 <strong>奖励函数</strong> 都是已知的</p>
+<h2 id="Dynamic-Programming"><a href="#Dynamic-Programming" class="headerlink" title="Dynamic Programming"></a>Dynamic Programming</h2><ul>
+<li><p>已知MDP过程，<strong>转移矩阵</strong> 和 <strong>奖励函数</strong> 都是已知的</p>
+</li>
+<li><p>迭代过程中对每个状态$s$进行更新， 完成后再进入下一次迭代。</p>
+</li>
+<li><p><strong>bootstrapping: 利用i-1时刻的值去估计i时刻的值</strong></p>
+</li>
+<li><p><strong>状态是利用s’估计s</strong></p>
+</li>
+</ul>
 <h3 id="Policy-Iteration"><a href="#Policy-Iteration" class="headerlink" title="Policy Iteration"></a>Policy Iteration</h3><p>Bellman Expectation Equation<br><img src="/images/posts/rl/mdp/policy_iteration.png" alt=""></p>
 <h4 id="policy-evaluation"><a href="#policy-evaluation" class="headerlink" title="policy evaluation"></a>policy evaluation</h4><p>iteration on the Bellman expectation backup</p>
 <script type="math/tex; mode=display">V_i(s) = \sum\limits_{a \in A} \pi(a|s)(R(a,s) + \sum\limits_{s' \in S}P(s'|s,a)v_{i-1}(s'))</script><h4 id="policy-improvement"><a href="#policy-improvement" class="headerlink" title="policy improvement"></a>policy improvement</h4><p>greedy on action-value function q</p>
 <script type="math/tex; mode=display">q_{\pi_i}(s,a) = R(s,a)+\gamma\sum\limits_{s\in S}P(s'|s,a) V_{\pi_i}(s')</script><script type="math/tex; mode=display">\pi_{i+1}(s) =  arg \max\limits_a q_{\pi_i}(s,a)</script><h3 id="Value-Iteration"><a href="#Value-Iteration" class="headerlink" title="Value Iteration"></a>Value Iteration</h3><p>Bellman Optimality Equation</p>
 <p>整个过程没有策略的引入</p>
-<h4 id="iteration-on-the-Bellman-optimality-backup"><a href="#iteration-on-the-Bellman-optimality-backup" class="headerlink" title="iteration on the Bellman optimality backup"></a>iteration on the Bellman optimality backup</h4><script type="math/tex; mode=display">v_{i+1}(s) \larr \max\limits_{a\in A}R(s,a) + \gamma\sum\limits_{s'\in S}P(s'|s,a)v_i(s')</script><h4 id="retrieve-the-optimal-policy-after-the-value-iteration"><a href="#retrieve-the-optimal-policy-after-the-value-iteration" class="headerlink" title="retrieve the optimal policy after the value iteration"></a>retrieve the optimal policy after the value iteration</h4><p>在前面迭代收敛后再，根据 $v_{end}(s)$ 选取策略</p>
-<script type="math/tex; mode=display">\pi^*(s) \larr \argmax\limits_a R(s,a) + \gamma\sum\limits_{s'\in S}P(s'|s,a)v_{end}(s')</script>]]></content>
+<h4 id="iteration-on-the-Bellman-optimality-backup"><a href="#iteration-on-the-Bellman-optimality-backup" class="headerlink" title="iteration on the Bellman optimality backup"></a>iteration on the Bellman optimality backup</h4><script type="math/tex; mode=display">v_{i+1}(s) \leftarrow \max\limits_{a\in A}R(s,a) + \gamma\sum\limits_{s'\in S}P(s'|s,a)v_i(s')</script><h4 id="retrieve-the-optimal-policy-after-the-value-iteration"><a href="#retrieve-the-optimal-policy-after-the-value-iteration" class="headerlink" title="retrieve the optimal policy after the value iteration"></a>retrieve the optimal policy after the value iteration</h4><p>在前面迭代收敛后再，根据 $v_{end}(s)$ 选取策略</p>
+<script type="math/tex; mode=display">\pi^*(s) \leftarrow \argmax\limits_a R(s,a) + \gamma\sum\limits_{s'\in S}P(s'|s,a)v_{end}(s')</script>]]></content>
       <categories>
         <category>学术</category>
       </categories>
@@ -243,7 +253,67 @@
   <entry>
     <title>【rl_note】 model-free Prediction And Control</title>
     <url>/2020/05/29/rl/rl_note_model_free/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="prediction"><a href="#prediction" class="headerlink" title="prediction"></a>prediction</h2><p>Evaluate the state value without knowing the MDP model, by only interacting with the environment</p>
+<h3 id="MC"><a href="#MC" class="headerlink" title="MC"></a>MC</h3><h4 id="traditional"><a href="#traditional" class="headerlink" title="traditional"></a>traditional</h4><ul>
+<li><p>value state of v(s)</p>
+<ul>
+<li><p>$t$ is time  that state $s_i$ is visited in an episode</p>
+<p>   <strong>Note:</strong> 在每个episode里面分为first-visit 和every-visit，代表每一条轨迹可能会重复出现状态$s$，是每一条轨迹只计算第一次出现，或者每次出现都会计算。</p>
+</li>
+<li><p>$N_0 = 0;S_0(s_i) = 0; G_0 = 0$</p>
+</li>
+<li>Increment counter  $N_t(s_i) ← N_{t-1}(s_i) + 1$</li>
+<li>Increment total return $S_t(s_i) ← S_{t-1}(s_i) + G_t$</li>
+<li>Value is estimated by mean return $v_t(s_i) = S_t(s_i)/N_t(s_i)$</li>
+</ul>
+</li>
+<li>By law of large numbers(大数定律), 　$v(s_i) → v_\pi(s_i)$ as　$N(s_i) → ∞$</li>
+</ul>
+<h4 id="incremental"><a href="#incremental" class="headerlink" title="incremental"></a>incremental</h4><ul>
+<li>Collect one episode $(S_1 , A_1 , R_1 , …, S_t )$</li>
+<li><p>For each state $s_i$ with computed return $G_t$</p>
+<p>$N_0(s_i) = 0; G_0 = 0; v_0(s_i) = 0$</p>
+</li>
+<li>$N_t(s_i) \leftarrow N_{t-1}(s_i) + 1$</li>
+<li><p>$v_t(s_i) \leftarrow v_{t-1}(s_i) + 1/N_t(G_t -v_{t-1}(s_i)))$</p>
+<ul>
+<li>$v_t(s_i) \leftarrow v_{t-1}(s_i) + \alpha(G_t -v_{t-1}(s_i)))$</li>
+<li>$\alpha$ 也被叫做学习率， 区别于监督学习的<em>learning rate</em></li>
+</ul>
+</li>
+</ul>
+<h3 id="TD-0"><a href="#TD-0" class="headerlink" title="TD(0)"></a>TD(0)</h3><p><strong>Objective:</strong> learn $v_\pi$ online from experience under policy $\pi$</p>
+<ul>
+<li><p>Update $v_t(s)$ toward estimated return $R + \gamma v_{t-1}(s’)$</p>
+<p>  <strong>Note</strong> 这儿是 $R$ 是 $s\rightarrow s’$产生的奖励</p>
+</li>
+<li><p>$v_t(s) \leftarrow v_{t-1}(s) + \alpha (R + \gamma v_{t-1}(s’) − v_{t-1}(s))$</p>
+</li>
+<li><strong>TD target:</strong> $R + \gamma v_{t-1}(s’)$ </li>
+<li><p><strong>TD error:</strong> $\delta_t = R + \gamma v_{t-1}(s’) − v_{t-1}(s)$</p>
+<ul>
+<li>$v_\pi\doteq E_\pi[G_t|S_t = s]$</li>
+<li>$=E_\pi[R_{t+1} + \gamma G_{t+1}|S_t = s]$</li>
+<li>$=E_\pi[R_{t+1} + \gamma v_\pi(S_{t+1})|S_t = s]$</li>
+<li>MC将式一估计值作为目标, 之所以叫估计值， 是因为$G_t$ 的期望是未知的，需要在采样得到样本期望值</li>
+<li>DP则是对式三值作为目标，之所以叫估计值， 不是因为期望的原因，会假定环境会完整的提供期望值， 这儿 $v_\pi(S_{t+1})$ 是未知的 需要用当前的 $V(S_{t+1})$</li>
+<li><p>TD 也是估计值</p>
+<ul>
+<li>通过采样得到式三的期望 </li>
+<li>使用当前的估计值 $V$ 来代替真实值 $v_\pi$</li>
+</ul>
+<p><strong>NOTE:</strong> TD error 是一种误差， 衡量 $s$ 的估计值与更好的估计值 $R + \gamma v_{t-1}(s’)之间的差距。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>因为用到了$v_{t-1}(s’)$了， 就涉及到 <strong>bootstrapping</strong> 的思想，即基于前一时刻的除本身要更新的 $v_{t-1}(s)$ 外的其他值，有点动态规划的味道</li>
+</ul>
+<h3 id="compare-DP-MC-TD"><a href="#compare-DP-MC-TD" class="headerlink" title="compare DP MC TD"></a>compare DP MC TD</h3><p>结合上面TD error 的 Note</p>
+<p><img src="/images/posts/rl/model_free/compare.png" alt=""></p>
+<p><img src="/images/posts/rl/model_free/4.png" alt=""></p>
+<h2 id="control"><a href="#control" class="headerlink" title="control"></a>control</h2><h3 id="On-policy-Off-policy"><a href="#On-policy-Off-policy" class="headerlink" title="On-policy Off-policy"></a>On-policy Off-policy</h3>]]></content>
       <categories>
         <category>学术</category>
       </categories>
