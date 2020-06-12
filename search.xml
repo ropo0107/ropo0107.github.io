@@ -138,7 +138,49 @@
 <h3 id="compare-DP-MC-TD"><a href="#compare-DP-MC-TD" class="headerlink" title="compare DP MC TD"></a>compare DP MC TD</h3><p>结合上面TD error 的 Note</p>
 <p><img src="/images/posts/rl/model_free/compare_dp_mc_td.png" alt=""></p>
 <p><img src="/images/posts/rl/model_free/compare_dp_mc_td_1.png" alt=""></p>
-<h2 id="control"><a href="#control" class="headerlink" title="control"></a>control</h2><h3 id="On-policy-Off-policy"><a href="#On-policy-Off-policy" class="headerlink" title="On-policy Off-policy"></a>On-policy Off-policy</h3>]]></content>
+<ul>
+<li>MC does not bootstrap, DP TD  bootstraps</li>
+<li>MC TD samples, DP does not sample</li>
+<li>TD advantages over MC<ul>
+<li>Lower variance</li>
+<li>Online</li>
+<li>Incomplete sequences</li>
+</ul>
+</li>
+</ul>
+<h2 id="control"><a href="#control" class="headerlink" title="control"></a>control</h2><h3 id="On-policy-Off-policy"><a href="#On-policy-Off-policy" class="headerlink" title="On-policy Off-policy"></a>On-policy Off-policy</h3><ul>
+<li><p>On-policy learning</p>
+<p>“Learn on the job”</p>
+<p>Learn about policy π from experience sampled from π</p>
+</li>
+<li><p>Off-policy learning</p>
+<p>“Look over someone’s shoulder”</p>
+<p>Learn about policy π from experience sampled from μ</p>
+</li>
+</ul>
+<h3 id="sarsa"><a href="#sarsa" class="headerlink" title="sarsa"></a>sarsa</h3><p><img src="/images/posts/rl/model_free/sarsa_control.png" alt=""></p>
+<p><img src="/images/posts/rl/model_free/sarsa_al.png" alt=""></p>
+<h3 id="q-learning"><a href="#q-learning" class="headerlink" title="q-learning"></a>q-learning</h3><p><img src="/images/posts/rl/model_free/q_learning_al.png" alt=""></p>
+<h3 id="compare-sarsa-q-learning"><a href="#compare-sarsa-q-learning" class="headerlink" title="compare sarsa q-learning"></a>compare sarsa q-learning</h3><p><img src="/images/posts/rl/model_free/diagram_sarsa_qlearning.png" alt=""></p>
+<p><strong>Sarsa:</strong> </p>
+<ul>
+<li>On-Policy TD control</li>
+<li>Choose action $A_t$ from $S_t$ using policy derived from Q with $\epsilon$-greedy</li>
+<li>Take action $A_t$ , observe $R_{t+1}$ and $S_{t+1}$</li>
+<li>Choose action $A_{t+1}$ from $S_{t+1}$ using policy derived from Q with $\epsilon$-greedy</li>
+<li>$Q(S_t , A_t ) \leftarrow Q(S_t , A_t ) + \alpha[R_{t+1} + \gamma Q(S_{t+1} , A_{t+1}) − Q(S_t , A_t)]$</li>
+<li><strong>note:</strong> $A$ and $A’$ are sampled from the same policy so it is on-policy</li>
+</ul>
+<p><strong>Q-Learning:</strong></p>
+<ul>
+<li>Off-Policy TD control</li>
+<li>Choose action $A_t$ from $S_t￥ using policy derived from Q with $\epsilon$-greedy</li>
+<li>Take action $A_t$ , observe $R_{t+1}$ and $S_{t+1}$</li>
+<li>Then ‘imagine’ $A_{t+1}$ as $argmax Q(S_{t+1} , a’ )$ in the update target </li>
+<li>$Q(S_t , A_t ) \leftarrow Q(S_t , A_t ) + \alpha[R_{t+1} + \gamma \max\limits_a Q(S_{t+1} , a) − Q(S_t , A_t)]$</li>
+<li><strong>note:</strong> In Q Learning, $A$ and $A’$ are from different policies, with $A$ being<br>more exploratory and $A’$ determined directly by the max operator</li>
+</ul>
+]]></content>
       <categories>
         <category>学术</category>
       </categories>
