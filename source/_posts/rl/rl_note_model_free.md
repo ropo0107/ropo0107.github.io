@@ -57,5 +57,51 @@ Evaluate the state value without knowing the MDP model, by only interacting with
 
 ![](/images/posts/rl/model_free/compare_dp_mc_td_1.png)
 
+- MC does not bootstrap, DP TD  bootstraps
+- MC TD samples, DP does not sample
+- TD advantages over MC
+  - Lower variance
+  - Online
+  - Incomplete sequences
+
 ## control
 ### On-policy Off-policy
+- On-policy learning
+  
+  “Learn on the job”
+  
+  Learn about policy π from experience sampled from π
+- Off-policy learning
+  
+  “Look over someone’s shoulder”
+  
+  Learn about policy π from experience sampled from μ
+
+### sarsa
+
+![](/images/posts/rl/model_free/sarsa_control.png)
+
+![](/images/posts/rl/model_free/sarsa_al.png)
+
+### q-learning
+![](/images/posts/rl/model_free/q_learning_al.png)
+
+### compare sarsa q-learning 
+![](/images/posts/rl/model_free/diagram_sarsa_qlearning.png)
+
+**Sarsa:** 
+- On-Policy TD control
+- Choose action $A_t$ from $S_t$ using policy derived from Q with $\epsilon$-greedy
+- Take action $A_t$ , observe $R_{t+1}$ and $S_{t+1}$
+- Choose action $A_{t+1}$ from $S_{t+1}$ using policy derived from Q with $\epsilon$-greedy
+- $Q(S_t , A_t ) \leftarrow Q(S_t , A_t ) + \alpha[R_{t+1} + \gamma Q(S_{t+1} , A_{t+1}) − Q(S_t , A_t)]$
+- **note:** $A$ and $A’$ are sampled from the same policy so it is on-policy
+
+**Q-Learning:**
+- Off-Policy TD control
+- Choose action $A_t$ from $S_t￥ using policy derived from Q with $\epsilon$-greedy
+- Take action $A_t$ , observe $R_{t+1}$ and $S_{t+1}$
+- Then ‘imagine’ $A_{t+1}$ as $argmax Q(S_{t+1} , a' )$ in the update target 
+- $Q(S_t , A_t ) \leftarrow Q(S_t , A_t ) + \alpha[R_{t+1} + \gamma \max\limits_a Q(S_{t+1} , a) − Q(S_t , A_t)]$
+- **note:** In Q Learning, $A$ and $A’$ are from different policies, with $A$ being
+more exploratory and $A’$ determined directly by the max operator
