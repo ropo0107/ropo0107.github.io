@@ -41,9 +41,9 @@ Evaluate the state value without knowing the MDP model, by only interacting with
 - **TD target:** $R + \gamma v_{t-1}(s’)$
 - **TD error:** $\delta_t = R + \gamma v_{t-1}(s’) − v_{t-1}(s)$
 
-  - $v_\pi\doteq E_\pi[G_t|S_t = s]$
-  - $=E_\pi[R_{t+1} + \gamma G_{t+1}|S_t = s]$
-  - $=E_\pi[R_{t+1} + \gamma v_\pi(S_{t+1})|S_t = s]$
+  - $v_\pi\doteq \mathbb{E}_\pi[G_t|S_t = s]$
+  - $=\mathbb{E}_\pi[R_{t+1} + \gamma G_{t+1}|S_t = s]$
+  - $=\mathbb{E}_\pi[R_{t+1} + \gamma v_\pi(S_{t+1})|S_t = s]$
   - MC将式一估计值作为目标, 之所以叫估计值， 是因为$G_t$ 的期望是未知的，需要在采样得到样本期望值
   - DP则是对式三值作为目标，之所以叫估计值， 不是因为期望的原因，会假定环境会完整的提供期望值， 这儿 $v_\pi(S_{t+1})$ 是未知的 需要用当前的 $V(S_{t+1})$
   - TD 也是估计值, 通过采样得到式三的期望 , 使用当前的估计值 $V$ 来代替真实值 $v_\pi$
@@ -94,7 +94,7 @@ Evaluate the state value without knowing the MDP model, by only interacting with
 - Choose action $A_t$ from $S_t$ using policy derived from Q with $\epsilon$-greedy
 - Take action $A_t$ , observe $R_{t+1}$ and $S_{t+1}$
 - Choose action $A_{t+1}$ from $S_{t+1}$ using policy derived from Q with $\epsilon$-greedy
-- $Q(S_t , A_t ) \leftarrow Q(S_t , A_t ) + \alpha[R_{t+1} + \gamma Q(S_{t+1} , A_{t+1}) − Q(S_t , A_t)]$
+- $Q(S_t,A_t) \leftarrow Q(S_t , A_t ) + \alpha[R_{t+1} + \gamma Q(S_{t+1} , A_{t+1}) − Q(S_t , A_t)]$
 - **note:** $A$ and $A’$ are sampled from the same policy so it is on-policy
 
 **Q-Learning:**

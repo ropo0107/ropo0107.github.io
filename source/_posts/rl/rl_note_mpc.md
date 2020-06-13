@@ -34,12 +34,12 @@ The future is independent of the past given the present
     - P is dynamics/transition model that specifies 
     $$P(S_{t+1} = s' |s_t = s)$$
     - R is a reward function 
-    $$R(s_t = s) = E[r_t \mid s_t = s]$$
+    $$R(s_t = s) = \mathbb{E}[r_t \mid s_t = s]$$
     - Discount factor $\gamma \in [0,1]$
 - Value Function
    - $$G_t = R_{t+1}+\gamma R_{t+2}+ ... = \sum\gamma^kR_{t+k+1}$$
 
-        $$V_\pi(s) = E_\pi[G_t\mid S_t=s]$$
+        $$V_\pi(s) = \mathbb{E}_\pi[G_t\mid S_t=s]$$
     - **Bellman equation**
   
         $$V_\pi(s) = R_{t+1} + \gamma\sum P(s'\mid s)V(s')$$
@@ -57,7 +57,7 @@ The future is independent of the past given the present
         $$P(s_{t+1} = s' |s_t = s, a_t = a)
     - 
     - $R$ is a reward function 
-        $$R(s_t = s, a_t = a) = E[r_t \mid s_t = s, a_t = a]
+        $$R(s_t = s, a_t = a) = \mathbb{E}[r_t \mid s_t = s, a_t = a]
     - 
     - Discount factor $\gamma \in [0, 1]$
 - Policy in MDP
@@ -69,12 +69,12 @@ The future is independent of the past given the present
     - state value function
         
         用来衡量当前状态的价值
-        $$V^\pi = E_\pi[G_t \mid s_t = s]$$
+        $$V^\pi = \mathbb{E}_\pi[G_t \mid s_t = s]$$
 
     - action value function
         
         用来衡量状态s下a的价值
-        $$q^\pi(s,a) = E_\pi[G_t \mid s_t =s, a_t = a]$$
+        $$q^\pi(s,a) = \mathbb{E}_\pi[G_t \mid s_t =s, a_t = a]$$
     
     - $v^\pi(s) \And q^\pi(s,a)$
         $$ v^\pi(s) = \sum\limits_{a\in A} \pi(a | s)q^\pi(s,a) $$
