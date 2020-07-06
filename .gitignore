@@ -1,5 +1,6 @@
 #cache use "hexo d " deploy on github 
 .deploy_git/
+.history
 
 #cache use "hexo g " generate the cache
 public/
