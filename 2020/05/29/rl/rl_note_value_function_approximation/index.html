@@ -79,17 +79,24 @@
 
 
 
+<meta name="description" content="Challenges with large MDPs: too many states or actions to store in memory too slow to learn the value of each state individually  Solution 为了避免通过查表的方式表示Value function, state-action function，Policy Est">
 <meta property="og:type" content="article">
-<meta property="og:title" content="强化学习_A2C">
-<meta property="og:url" content="http://yoursite.com/2020/03/03/rl/A2C/index.html">
+<meta property="og:title" content="【rl_note】 Value Function Approximation">
+<meta property="og:url" content="http://yoursite.com/2020/05/29/rl/rl_note_value_function_approximation/index.html">
 <meta property="og:site_name" content="无恙の博客">
+<meta property="og:description" content="Challenges with large MDPs: too many states or actions to store in memory too slow to learn the value of each state individually  Solution 为了避免通过查表的方式表示Value function, state-action function，Policy Est">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-03T08:51:55.000Z">
-<meta property="article:modified_time" content="2020-06-09T18:52:20.070Z">
+<meta property="og:image" content="http://yoursite.com/images/posts/rl/value_function_approximation/policy_iteration.png">
+<meta property="og:image" content="http://yoursite.com/images/posts/rl/value_function_approximation/sarsa_semi_gradient.png">
+<meta property="og:image" content="http://yoursite.com/images/posts/rl/value_function_approximation/convergence.png">
+<meta property="og:image" content="http://yoursite.com/images/posts/rl/value_function_approximation/convergence_al.png">
+<meta property="article:published_time" content="2020-05-29T03:51:55.000Z">
+<meta property="article:modified_time" content="2020-07-06T10:37:47.456Z">
 <meta property="article:author" content="无恙">
 <meta property="article:tag" content="Note">
 <meta property="article:tag" content="RL">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/posts/rl/value_function_approximation/policy_iteration.png">
 
 
 
@@ -119,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/03/rl/A2C/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/05/29/rl/rl_note_value_function_approximation/"/>
 
 
 
 
 
-  <title>强化学习_A2C | 无恙の博客</title>
+  <title>【rl_note】 Value Function Approximation | 无恙の博客</title>
   
 
 
@@ -295,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/rl/A2C/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/29/rl/rl_note_value_function_approximation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="无恙">
@@ -312,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">强化学习_A2C</h1>
+          <h1 class="post-title" itemprop="name headline">【rl_note】 Value Function Approximation</h1>
         
 
         <div class="post-meta">
@@ -324,8 +331,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-03T16:51:55+08:00">
-                2020-03-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-29T11:51:55+08:00">
+                2020-05-29
               </time>
             
 
@@ -383,7 +390,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  0
+                  673
                 </span>
               
 
@@ -399,7 +406,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  3
                 </span>
               
             </div>
@@ -420,7 +427,77 @@
       
 
       
-        
+        <h2 id="Challenges-with-large-MDPs"><a href="#Challenges-with-large-MDPs" class="headerlink" title="Challenges with large MDPs:"></a>Challenges with large MDPs:</h2><ul>
+<li>too many states or actions to store in memory</li>
+<li>too slow to learn the value of each state individually</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>为了避免通过查表的方式表示Value function, state-action function，Policy</li>
+<li><p>Estimate with function approximation</p>
+<ul>
+<li>$\hat{v} (s, \mathbf{\omega}) \approx  v^π (s)$</li>
+<li>$\hat{q}(s, a, \mathbf{\omega}) \approx  q^π (s, a)$</li>
+<li>$\hat{\pi}(a, s, \mathbf{\omega}) \approx  π(a \mid s)$</li>
+</ul>
+</li>
+<li><p>Linear VFA often works well given the right set of features, But it requires manual designing of the feature set</p>
+</li>
+<li>Alternative is to use a much richer function approximator that is able to directly learn from states without requiring the feature design</li>
+<li>Nonlinear function approximator: Deep neural networks</li>
+</ul>
+<h2 id="Value-Function-Approximation-with-an-Oracle"><a href="#Value-Function-Approximation-with-an-Oracle" class="headerlink" title="Value Function Approximation with an Oracle"></a>Value Function Approximation with an Oracle</h2><ul>
+<li>We assume that we have the oracle for knowing the true value for<br>$v^π (s)$ for any given state $s$</li>
+<li>Then the objective is to find the best approximate representation of $v^π (s)$</li>
+<li>Thus use the <strong>mean squared error</strong> and define the loss function as<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_π [(v^π (s) − \hat{v}(s, w))^2]</script></li>
+<li>Follow the gradient descend to find a local minimum<script type="math/tex; mode=display">\Delta \omega = − {1 \over 2} \alpha ∇_\omega J(\omega)</script><script type="math/tex; mode=display">\omega_{t+1} = \omega_t + \Delta \omega</script></li>
+</ul>
+<h2 id="Linear-Value-Function-Approximation"><a href="#Linear-Value-Function-Approximation" class="headerlink" title="Linear Value Function Approximation"></a>Linear Value Function Approximation</h2><ul>
+<li>Represent value function by a linear combination of features, s is feature vector<script type="math/tex; mode=display">\hat{v}(s,\omega) = x(s)^T \omega = \sum_{j=1}^n x_j(s)\omega_j</script></li>
+<li>The objective function is quadratic in parameter $\omega$<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_\pi[v^\pi(s) − x(s)^T \omega]^2</script></li>
+<li>Thus the update rule is as simple as<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{v^\pi(s)} − \hat{v}(s, \omega))x(s)</script><script type="math/tex; mode=display">Update = StepSize × PredictionError × FeatureValue</script></li>
+<li>Stochastic gradient descent converges to global optimum. Because in the linear case, there is only one optimum, thus local optimum is automatically converge to or near the global optimum.</li>
+<li><p>Special case</p>
+<ul>
+<li>Table lookup is a special case of linear value function approximation</li>
+<li><p>Table lookup feature is one-hot vector <strong>(只有一个元素为1)</strong> as follows</p>
+<script type="math/tex; mode=display">x^{table}(s) = [0(s = s_1 ), ..., 1(s = s_n )]^T</script></li>
+<li><p>Then we can see that each element on the parameter vector $w$ indicates the value of each individual state</p>
+<script type="math/tex; mode=display">\hat{v}(s, \omega) = [0(s = s_1 ), ..., 1(s = s_n)] [w_1 , ..., w_n]^T</script></li>
+<li><p>Thus we have（对于的权重就是对应k的权重） </p>
+<script type="math/tex; mode=display">\hat{v}(s_k , \omega) = \omega_k</script></li>
+</ul>
+</li>
+</ul>
+<h2 id="No-Oracle"><a href="#No-Oracle" class="headerlink" title="No Oracle"></a>No Oracle</h2><ul>
+<li><p>For MC, the target is the actual return $G_t$</p>
+<script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{v}(s_t , \omega) ∇\omega \hat{v}(s_t , \omega)</script><p>  <strong>$G_t$</strong> 因为是采样，所以这儿是无偏的估计， 但是会有噪声</p>
+</li>
+<li>For TD(0), the target is the TD target $R_{t+1} + \gamma \hat{v}(s_{t+1} , \mathbf{\omega})$<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{v} (s_{t+1} , \omega)} − \hat{v}(s_t , \omega) ∇ \omega\hat{v} (s_t , \omega)</script>  <strong>TD target</strong> 有偏估计， 因为用到了旧时刻的 $\omega$</li>
+</ul>
+<p>Generalized policy iteration<br><img src="/images/posts/rl/value_function_approximation/policy_iteration.png" alt=""></p>
+<h3 id="同理-v-s-可替换为-q-s-a"><a href="#同理-v-s-可替换为-q-s-a" class="headerlink" title="同理 $v(s)$ 可替换为 $q(s,a)$"></a>同理 $v(s)$ 可替换为 $q(s,a)$</h3><ul>
+<li><p>MC</p>
+<script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{q}(s_t ,a_t, \omega) ∇\omega \hat{q}(s_t ,a_t, \omega)</script></li>
+<li><p>sarsa</p>
+<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{q} (s_{t+1} ,a_{t+1}, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script><p>  <strong>Note:</strong> 训练困难</p>
+<ul>
+<li>在优化过程中，即近似 <strong>Bellman backup</strong> 又近似 <strong>value function</strong>, </li>
+<li>off-policy control: <strong>behavior policy</strong> and <strong>target policy</strong> </li>
+</ul>
+</li>
+<li><p>q-learning</p>
+<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \max_a \hat{q}(s_{t+1} ,a, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script></li>
+</ul>
+<p><img src="/images/posts/rl/value_function_approximation/sarsa_semi_gradient.png" alt=""></p>
+<h3 id="Deadly-Triad"><a href="#Deadly-Triad" class="headerlink" title="Deadly Triad"></a>Deadly Triad</h3><ul>
+<li>Function approximation: 利用函数估计会有误差</li>
+<li>Bootstrapping: 主要影响 TD 和 MP</li>
+<li>Off-policy training:  <strong>behavior policy</strong> and <strong>target policy</strong> </li>
+</ul>
+<h2 id="Convergence"><a href="#Convergence" class="headerlink" title="Convergence"></a>Convergence</h2><p><img src="/images/posts/rl/value_function_approximation/convergence.png" alt=""></p>
+<hr>
+<p><img src="/images/posts/rl/value_function_approximation/convergence_al.png" alt=""></p>
+<h2 id="DQN"><a href="#DQN" class="headerlink" title="DQN"></a>DQN</h2>
       
     </div>
     
@@ -481,8 +558,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/03/rl/reinforencement-learning/" rel="next" title="Reinforencement Learning">
-                <i class="fa fa-chevron-left"></i> Reinforencement Learning
+              <a href="/2020/05/29/rl/rl_note_policy_gradent/" rel="next" title="【rl_note】 Policy Gradent(AC,TRPO,PPO,)">
+                <i class="fa fa-chevron-left"></i> 【rl_note】 Policy Gradent(AC,TRPO,PPO,)
               </a>
             
           </div>
@@ -491,8 +568,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/03/03/rl/DQN/" rel="prev" title="强化学习_DQN">
-                强化学习_DQN <i class="fa fa-chevron-right"></i>
+              <a href="/2020/05/29/rl/rl_note_overview/" rel="prev" title="【rl_note】 Overview">
+                【rl_note】 Overview <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -547,8 +624,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -647,6 +733,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Challenges-with-large-MDPs"><span class="nav-number">1.</span> <span class="nav-text">Challenges with large MDPs:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Value-Function-Approximation-with-an-Oracle"><span class="nav-number">3.</span> <span class="nav-text">Value Function Approximation with an Oracle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Value-Function-Approximation"><span class="nav-number">4.</span> <span class="nav-text">Linear Value Function Approximation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#No-Oracle"><span class="nav-number">5.</span> <span class="nav-text">No Oracle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同理-v-s-可替换为-q-s-a"><span class="nav-number">5.1.</span> <span class="nav-text">同理 $v(s)$ 可替换为 $q(s,a)$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deadly-Triad"><span class="nav-number">5.2.</span> <span class="nav-text">Deadly Triad</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Convergence"><span class="nav-number">6.</span> <span class="nav-text">Convergence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DQN"><span class="nav-number">7.</span> <span class="nav-text">DQN</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -693,7 +795,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">21.8k</span>
+    <span title="Site words total count">24.4k</span>
   
 </div>
 

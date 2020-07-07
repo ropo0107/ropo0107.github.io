@@ -79,17 +79,26 @@
 
 
 
+<meta name="description" content="Policy GradentValue-based RL vs Policy-based RL value base 主要是学习一个value function 的近似，然后通过贪心的方法得到最优策略a_t&#x3D;\arg \max_aQ(a,st) policy base 直接学习策略$\pi_\theta(a|s)$, 学习参数$\theta$ Advantages: better converge">
 <meta property="og:type" content="article">
-<meta property="og:title" content="强化学习_DQN">
-<meta property="og:url" content="http://yoursite.com/2020/03/03/rl/DQN/index.html">
+<meta property="og:title" content="【rl_note】 Policy Gradent(AC,TRPO,PPO,)">
+<meta property="og:url" content="http://yoursite.com/2020/05/29/rl/rl_note_policy_gradent/index.html">
 <meta property="og:site_name" content="无恙の博客">
+<meta property="og:description" content="Policy GradentValue-based RL vs Policy-based RL value base 主要是学习一个value function 的近似，然后通过贪心的方法得到最优策略a_t&#x3D;\arg \max_aQ(a,st) policy base 直接学习策略$\pi_\theta(a|s)$, 学习参数$\theta$ Advantages: better converge">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-03T08:51:55.000Z">
-<meta property="article:modified_time" content="2020-06-09T18:52:20.070Z">
+<meta property="og:image" content="http://yoursite.com/images/posts/rl/policy_gradent/pg_ml.png">
+<meta property="og:image" content="http://yoursite.com/images/posts/rl/policy_gradent/reinforence.png">
+<meta property="og:image" content="http://yoursite.com/images/posts/rl/policy_gradent/pg_al.png">
+<meta property="og:image" content="http://yoursite.com/images/posts/rl/policy_gradent/importance.png">
+<meta property="og:image" content="http://yoursite.com/images/posts/rl/policy_gradent/one.png">
+<meta property="og:image" content="http://yoursite.com/images/posts/rl/policy_gradent/ppo_clip.png">
+<meta property="article:published_time" content="2020-05-29T03:51:55.000Z">
+<meta property="article:modified_time" content="2020-07-07T13:01:17.880Z">
 <meta property="article:author" content="无恙">
 <meta property="article:tag" content="Note">
 <meta property="article:tag" content="RL">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/posts/rl/policy_gradent/pg_ml.png">
 
 
 
@@ -119,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/03/rl/DQN/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/05/29/rl/rl_note_policy_gradent/"/>
 
 
 
 
 
-  <title>强化学习_DQN | 无恙の博客</title>
+  <title>【rl_note】 Policy Gradent(AC,TRPO,PPO,) | 无恙の博客</title>
   
 
 
@@ -295,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/rl/DQN/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/29/rl/rl_note_policy_gradent/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="无恙">
@@ -312,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">强化学习_DQN</h1>
+          <h1 class="post-title" itemprop="name headline">【rl_note】 Policy Gradent(AC,TRPO,PPO,)</h1>
         
 
         <div class="post-meta">
@@ -324,8 +333,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-03T16:51:55+08:00">
-                2020-03-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-29T11:51:55+08:00">
+                2020-05-29
               </time>
             
 
@@ -383,7 +392,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  0
+                  1.9k
                 </span>
               
 
@@ -399,7 +408,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  10
                 </span>
               
             </div>
@@ -420,7 +429,191 @@
       
 
       
-        
+        <h1 id="Policy-Gradent"><a href="#Policy-Gradent" class="headerlink" title="Policy Gradent"></a>Policy Gradent</h1><h2 id="Value-based-RL-vs-Policy-based-RL"><a href="#Value-based-RL-vs-Policy-based-RL" class="headerlink" title="Value-based RL vs Policy-based RL"></a>Value-based RL vs Policy-based RL</h2><ul>
+<li>value base 主要是学习一个value function 的近似，然后通过贪心的方法得到最优策略<script type="math/tex; mode=display">a_t=\arg \max_aQ(a,st)</script></li>
+<li>policy base 直接学习策略$\pi_\theta(a|s)$, 学习参数$\theta$<ul>
+<li>Advantages:<ul>
+<li>better convergence properties: we are guaranteed to converge on a local optimum (worst case) or global optimum (best case)</li>
+<li>Policy gradient is more effective in high-dimensional action space</li>
+<li>Policy gradient can learn stochastic policies, while value function can’t</li>
+</ul>
+</li>
+<li>Disadvantages:<ul>
+<li>局部最忧</li>
+<li>方差大</li>
+</ul>
+</li>
+<li>Deterministic: given a state, the policy returns a certain action to take</li>
+<li>Stochastic:<ul>
+<li>probability distribution of distribute actions</li>
+<li>a certain Gaussian distribution for continuous action</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Policy-Gradent-for-Multi-step-MDPs"><a href="#Policy-Gradent-for-Multi-step-MDPs" class="headerlink" title="Policy Gradent for Multi-step MDPs"></a>Policy Gradent for Multi-step MDPs</h2><ul>
+<li><p>轨迹序列:</p>
+<script type="math/tex; mode=display">\tau = (s_0, a_0, r_0, ... ,s_{T-1}, a_{T-1},r_{T-1},s_T, r_T) \sim (\pi_\theta, P(s_{t+1} | s_t, a_t))</script></li>
+<li><p>轨迹概率:</p>
+<script type="math/tex; mode=display">P(\tau;\theta) = \mu(s_0) \prod\limits_{t=0}^{T-1}\pi_\theta(a_t|s_t)p(s_{t+1}|s_t, a_t)</script><p>  $\pi_\theta(a_t|s_t)$ 仅该项和 Policy 有关</p>
+<p>  $p(s_{t+1}|s_t, a_t)$ 其为动力学模型， 仅与环境有关</p>
+</li>
+<li><p>累计回报:</p>
+<script type="math/tex; mode=display">R(\tau) = \sum\limits_{t=0}^T r_t</script></li>
+<li>优化目标:<script type="math/tex; mode=display">J(\theta) = \sum\limits_\tau R(\tau) P(\tau;\theta)</script>  对轨迹$\tau$进行累加</li>
+<li><p>Goal</p>
+<ul>
+<li><p>goal:</p>
+<script type="math/tex; mode=display">\theta^* = \arg\max\limits_\theta J(\theta) = \arg\max\limits_\theta \sum\limits_\tau R(\tau) P(\tau;\theta)</script></li>
+<li><p>gradient:</p>
+<script type="math/tex; mode=display">\nabla_\theta J(\theta) =\nabla_\theta \sum\limits_\tau R(\tau) P(\tau;\theta)</script><script type="math/tex; mode=display">=\sum\limits_\tau R(\tau)  P(\tau;\theta) \nabla_\theta logP(\tau;\theta)</script></li>
+<li><p>Monte carlo:</p>
+<script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m R(\tau_i) \nabla_\theta logP(\tau_i ;\theta)</script><p>采样后轨迹概率 $P(\tau;\theta)$ 变为采样的加和</p>
+</li>
+<li><p>分解 $\nabla_\theta logP(\tau_i ;\theta)$:</p>
+<script type="math/tex; mode=display">\nabla_\theta logP(\tau_i ;\theta) = \nabla_\theta log[\mu(s_0) \prod\limits_{t=0}^{T-1}\pi_\theta(a_t|s_t)p(s_{t+1}|s_t, a_t)]</script><script type="math/tex; mode=display">=\nabla_\theta[log(\mu(s_0)) + \sum\limits_{t=0}^{T-1} (\log \pi_\theta(a_t|s_t) + \log p(s_{t+1}|s_t, a_t)))]</script><script type="math/tex; mode=display">=\sum\limits_{t=0}^{T-1} \nabla_\theta \log \pi_\theta(a_t|s_t)</script><p>$\theta$仅与policy有关  </p>
+</li>
+<li><p>Finaly:</p>
+<script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m [R(\tau_i) \sum\limits_{t=0}^{T-1} \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)]</script><p>$\nabla_\theta \log\pi_\theta(a_t^i|s_t^i)$作为<strong>score function</strong>代表梯度更新方向</p>
+<p>$R(\tau_i)$表示更新方向上的权重， 偏向于好的轨迹</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Comparison-to-Maximum-Likelihood"><a href="#Comparison-to-Maximum-Likelihood" class="headerlink" title="Comparison to Maximum Likelihood"></a>Comparison to Maximum Likelihood</h2><ul>
+<li>PG<script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{M} \sum\limits_{m=1}^M (\sum\limits_{t=1}^{T} \nabla_\theta \log \pi_\theta(a_t^m|s_t^m)) (\sum\limits_{t=1}^{T}r(s_t^m, a_t^m))</script></li>
+<li>Maximum Likelihood<script type="math/tex; mode=display">\nabla_\theta J_{ML}(\theta) \approx \frac{1}{M} \sum\limits_{m=1}^M (\sum\limits_{t=1}^{T} \nabla_\theta \log \pi_\theta(a_t^m|s_t^m))</script></li>
+<li><p>往更好的轨迹偏移</p>
+<p>  <img src="/images/posts/rl/policy_gradent/pg_ml.png" alt=""></p>
+</li>
+</ul>
+<h2 id="Reduce-Variance"><a href="#Reduce-Variance" class="headerlink" title="Reduce Variance"></a>Reduce Variance</h2><ul>
+<li>temporal causality<ul>
+<li>利用当前时刻后的奖励而不用整条轨迹的奖励 $G_t^i = \sum\limits_{t’=t}^{T-1}r_{t’}^i$</li>
+<li><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m \sum\limits_{t=0}^{T-1} G_t^i \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)</script></li>
+<li></li>
+<li>REINFORCE:<br>  <img src="/images/posts/rl/policy_gradent/reinforence.png" alt=""></li>
+<li>n-step<script type="math/tex; mode=display">G_t^{(1)} = r_{t+1} + \gamma v(s_{t+1})</script><script type="math/tex; mode=display">G_t^{(2)} = r_{t+1} + \gamma r_{t+2} + \gamma^2 v(s_{t+2})</script><script type="math/tex; mode=display">G_t^{(\infty)} = r_{t+1} + \gamma r_{t+2} + ... +\gamma^{T-t-1}r_T</script></li>
+</ul>
+</li>
+<li>add baseline<ul>
+<li>利用当前时刻后的奖励 - 平均奖励，而不用整条轨迹的奖励$G_t^i -b^i(s_t)$</li>
+<li><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m \sum\limits_{t=0}^{T-1} (G_t^i-b^i(s_t)) \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)</script><h2 id="PG-Algorithm"><a href="#PG-Algorithm" class="headerlink" title="PG Algorithm"></a>PG Algorithm</h2></li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/posts/rl/policy_gradent/pg_al.png" alt=""></p>
+<h1 id="Problem-of-PG"><a href="#Problem-of-PG" class="headerlink" title="Problem of PG"></a>Problem of PG</h1><ul>
+<li>训练不稳定<ul>
+<li>Trust region (TRPO, PPO)</li>
+<li>natural policy gradient</li>
+</ul>
+</li>
+<li>如何离线化训练 <strong>off-policy</strong><ul>
+<li>Importance sampling</li>
+</ul>
+</li>
+</ul>
+<h1 id="Advantage-Actor-Critic"><a href="#Advantage-Actor-Critic" class="headerlink" title="Advantage Actor-Critic"></a>Advantage Actor-Critic</h1><ul>
+<li>利用当前状态的<strong>Advantage function</strong>作为权重 ，而不用整条轨迹的奖励<br>  一般通过参数 $w$ 来拟合<script type="math/tex; mode=display">A(s_t^i, a_t^i) = Q(s_t^i, a_t^i) - V(s_t^i)</script></li>
+<li><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m \sum\limits_{t=0}^{T-1} A_w(s_t^i,a_t^i) \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)</script></li>
+<li><p>n step</p>
+<script type="math/tex; mode=display">\hat{A}_t^{(1)} = r_{t+1} + \gamma v(s_{t+1})- v(s_t)</script><script type="math/tex; mode=display">\hat{A}_t^{(2)} = r_{t+1} + \gamma r_{t+2} + \gamma^2 v(s_{t+2})- v(s_t)</script><script type="math/tex; mode=display">\hat{A}_t^{(\infty)} = r_{t+1} + \gamma r_{t+2} + ... +\gamma^{T-t-1}r_T- v(s_t)</script><p>$\hat{A}_t^{(1)}$ low variance ,high bias</p>
+<p>$\hat{A}_t^{(\infty)}$ high variance ,low bias</p>
+</li>
+</ul>
+<h1 id="TRPO"><a href="#TRPO" class="headerlink" title="TRPO"></a>TRPO</h1><p>PG + off-policy + constrain</p>
+<ul>
+<li>步长的重要性<ul>
+<li>状态和回报在改变统计特性, 优化过程中很难确定更新步长</li>
+<li>policy 经常会过早陷入次忧的几乎确定的策略中</li>
+<li>TRPO 通过置信域的方式保证步长为单调不减</li>
+</ul>
+</li>
+<li><p>目标函数(带有折扣的奖励最大)：</p>
+<ul>
+<li><script type="math/tex; mode=display">\eta(\tilde{\pi}) =\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^{\infty} \gamma r(s_t)]</script></li>
+<li><p>新策略下的期望回报 = 旧策略下的期望回报 + 新旧策略期望回报的差</p>
+<script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\mathbb{E}_{\tau|\tilde{\pi}}[\sum\limits_{t=0}^\infty \gamma^t A_\pi(s_t,a_t)]</script><p>  $\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t A_\pi(s_t,a_t)]$</p>
+<p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t [Q_\pi(s_t,a_t)-V_\pi(s_t)]$</p>
+<p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t [r(s_t)+ \gamma V_\pi(s_{t+1})-V_\pi(s_t)]$</p>
+<p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t r(s_t)+ \sum\limits_{t=0}^\infty (\gamma V_\pi(s_{t+1})-V_\pi(s_t))]$</p>
+<p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t r(s_t)] + \mathbb{E}_{s_0}[-V_\pi(s_0)]$求和展开前后相消</p>
+<p>  $= \eta(\tilde{\pi}) - \eta(\pi)$</p>
+</li>
+</ul>
+</li>
+<li><p>对于上式展开 </p>
+<script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\mathbb{E}_{\tau|\tilde{\pi}}[\sum\limits_{t=0}^\infty \gamma^t A_\pi(s_t,a_t)]</script><script type="math/tex; mode=display">\rho_\pi(s) = P(s_0=s) + \gamma P(s_1=s) + \gamma^2P(s_2=s) + ... = \sum\limits_{t=0}^\infty \gamma^t P(s_t=s|\tilde{\pi} )</script><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\sum_{t=0}^\infty \sum\limits_{s} P(s_t = s|\tilde{\pi})\sum\limits_a \tilde{\pi}(a|s) \gamma^t A_\pi(s,a)</script><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\sum\limits_{s} \rho_{\tilde{\pi}}(s) \sum\limits_a \tilde{\pi}(a|s) A_\pi(s,a)</script><p>  这是状态分布由新的策略$\tilde{\pi}$， 严重依赖新的状态分布</p>
+</li>
+<li><p>two trick</p>
+<ul>
+<li>忽略状态分布的变化， 假定  <script type="math/tex; mode=display">\rho_{\tilde{\pi}}(s)\sim\rho_\pi(s)</script></li>
+<li><p>重要性采样，</p>
+<ul>
+<li><img src="/images/posts/rl/policy_gradent/importance.png" alt=""></li>
+<li><script type="math/tex; mode=display">\sum\limits_a \tilde{\pi_\theta}(a|s) A_{\theta_{old}}(s,a) = \mathbb{E}_{a\sim\pi_{old}} [\frac{\tilde{\pi_\theta}(a|s_n)}{\pi_{\theta_{old}}(a|s_n)}A_{\theta_{old}}(s,a)]</script></li>
+</ul>
+</li>
+<li><p>原目标：</p>
+<script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\sum\limits_{s} \rho_{\tilde{\pi}}(s) \sum\limits_a \tilde{\pi}(a|s) A_\pi(s,a)</script></li>
+<li><p>新目标：</p>
+<script type="math/tex; mode=display">L_{\pi_{\theta_{old}}} (\tilde{\pi})= \eta(\pi) + \mathbb{E}_{s\sim \rho_{\theta {old}}, a\sim\pi_{\theta {old}}} [\frac{\tilde{\pi_\theta}(a|s_n)}{\pi_{\theta_{old}}(a|s_n)}A_{\theta_{old}}(s,a)]</script></li>
+</ul>
+</li>
+<li><p>梯度更新方向， 梯度优化本身就是一阶优化，</p>
+<ul>
+<li>在$\theta_{old}$ 处, 一阶凸优化方法中，完全一致，一阶导数一致， <script type="math/tex; mode=display">\nabla_\theta \eta (\pi_{\theta_{old}}) = \nabla_\theta L_{\pi_{\theta_{old}}} (\pi_{\theta_{old}})</script></li>
+<li><img src="/images/posts/rl/policy_gradent/one.png" alt=""></li>
+</ul>
+</li>
+<li><p>梯度更新步长</p>
+<ul>
+<li><script type="math/tex; mode=display">\eta(\tilde{\pi}) \geqslant L_\pi(\tilde{\pi}) - CD_{KL}^{MAX} (\pi, \tilde{\pi})</script><p>  $where , C = \frac{2\epsilon\gamma}{(1-\gamma)^2}$</p>
+</li>
+<li><p>令 $M_{i}(\pi)  = L_{\pi_{i}}(\pi) - CD_{KL}^{MAX} (\pi_i, \pi)$</p>
+<p>  $\eta (\pi_{i+1}) \geqslant M_i(\pi_{i+1})$</p>
+<p>  等效于上面不等式</p>
+<p>  $\eta (\pi_{i}) = M_i(\pi_{i})$</p>
+<p>  将$\pi_i$带入不等式，两分布相同，$D_{KL}$为0</p>
+<p>  $\eta (\pi_{i+1}) - \eta (\pi_{i}) \geqslant M_i(\pi_{i+1}) -M_i(\pi_{i})$</p>
+<p>  即最大化$M_i$, 可保证更新步长单调不减</p>
+</li>
+</ul>
+</li>
+<li><p>Finally:</p>
+<ul>
+<li>$\max_\theta {mize}[ L_{\pi}(\tilde{\pi}) - CD_{KL}^{MAX} (\pi, \tilde{\pi})]$</li>
+<li><p>$\max_\theta {mize} L_{\theta_{old}}(\theta)$</p>
+<p>  subject to : $D_{KL}^{MAX} (\theta_{old}, \theta) \leqslant \delta$</p>
+<p>  subject to : $\bar{D}_{KL}^{\rho_{\theta_{old}}} (\theta_{old}, \theta) \leqslant \delta$</p>
+</li>
+<li><p>线性化逼近， 二次逼近后:</p>
+<p>  $\max_\theta {mize}[\nabla_\theta L_{\theta_{old}}(\theta)|_{\theta = \theta_{old}} \cdot (\theta-\theta_{old})]$gradent/ppo_clip.png)</p>
+<p>  subject to : $\frac{1}{2} \left | \theta- \theta_{old} \right |^2 \leqslant \delta$</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="PPO"><a href="#PPO" class="headerlink" title="PPO"></a>PPO</h1><p>想比于TRPO的变化就是</p>
+<ul>
+<li>TRPO 用KL作为一个约束， 而 PPO 则一快和$\theta$进行优化</li>
+<li><strong>Note:</strong> KL 为输出$a$的距离，而不是参数$\theta$ 的距离</li>
+<li>$\max_\theta {mize}[ L_{\pi}(\tilde{\pi}) -\beta KL(\pi, \tilde{\pi})]$<ul>
+<li>If $𝐾𝐿(\theta, \theta_i) &gt; KL_{max}$,  increase $\beta$</li>
+<li>If $𝐾𝐿(\theta, \theta_i) &lt; KL_{min}$,  decrease $\beta$</li>
+</ul>
+</li>
+<li><p>优化目标：</p>
+<ul>
+<li><script type="math/tex; mode=display">L(\theta) = \mathbb{E}_{\tau \sim \pi_{old}}[\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}A_{\theta_{old}}(s,a) - \beta KL(\pi_{old}, \pi)]</script></li>
+<li><script type="math/tex; mode=display">L(\theta) = \mathbb{E}_{\tau \sim \pi_{old}}[min(\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}A_{\theta_{old}}(s,a), clip(\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)},1-\epsilon, 1+\epsilon)A_{\theta_{old}}(s,a))]</script><p>  <img src="/images/posts/rl/policy_gradent/ppo_clip.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id=""><a href="#" class="headerlink" title=" "></a> </h1>
       
     </div>
     
@@ -481,8 +674,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/03/rl/A2C/" rel="next" title="强化学习_A2C">
-                <i class="fa fa-chevron-left"></i> 强化学习_A2C
+              <a href="/2020/04/24/dl/net_param_calculate/" rel="next" title="神经网络中参数量和计算量">
+                <i class="fa fa-chevron-left"></i> 神经网络中参数量和计算量
               </a>
             
           </div>
@@ -491,8 +684,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/03/03/dl/dl_tips/" rel="prev" title="深度学习_Tips">
-                深度学习_Tips <i class="fa fa-chevron-right"></i>
+              <a href="/2020/05/29/rl/rl_note_value_function_approximation/" rel="prev" title="【rl_note】 Value Function Approximation">
+                【rl_note】 Value Function Approximation <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -547,8 +740,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -647,6 +849,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Policy-Gradent"><span class="nav-number">1.</span> <span class="nav-text">Policy Gradent</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Value-based-RL-vs-Policy-based-RL"><span class="nav-number">1.1.</span> <span class="nav-text">Value-based RL vs Policy-based RL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Policy-Gradent-for-Multi-step-MDPs"><span class="nav-number">1.2.</span> <span class="nav-text">Policy Gradent for Multi-step MDPs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison-to-Maximum-Likelihood"><span class="nav-number">1.3.</span> <span class="nav-text">Comparison to Maximum Likelihood</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reduce-Variance"><span class="nav-number">1.4.</span> <span class="nav-text">Reduce Variance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PG-Algorithm"><span class="nav-number">1.5.</span> <span class="nav-text">PG Algorithm</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Problem-of-PG"><span class="nav-number">2.</span> <span class="nav-text">Problem of PG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Advantage-Actor-Critic"><span class="nav-number">3.</span> <span class="nav-text">Advantage Actor-Critic</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TRPO"><span class="nav-number">4.</span> <span class="nav-text">TRPO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PPO"><span class="nav-number">5.</span> <span class="nav-text">PPO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">6.</span> <span class="nav-text"> </span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -693,7 +911,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">21.8k</span>
+    <span title="Site words total count">24.4k</span>
   
 </div>
 
