@@ -99,7 +99,7 @@ Evaluate the state value without knowing the MDP model, by only interacting with
 
 **Q-Learning:**
 - Off-Policy TD control
-- Choose action $A_t$ from $S_t￥ using policy derived from Q with $\epsilon$-greedy
+- Choose action $A_t$ from $S_t$ using policy derived from Q with $\epsilon$-greedy
 - Take action $A_t$ , observe $R_{t+1}$ and $S_{t+1}$
 - Then ‘imagine’ $A_{t+1}$ as $argmax Q(S_{t+1} , a' )$ in the update target 
 - $Q(S_t , A_t ) \leftarrow Q(S_t , A_t ) + \alpha[R_{t+1} + \gamma \max\limits_a Q(S_{t+1} , a) − Q(S_t , A_t)]$
