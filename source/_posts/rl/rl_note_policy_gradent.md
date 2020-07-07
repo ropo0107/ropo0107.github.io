@@ -164,10 +164,33 @@ date: 2020-05-29 11:51:55
     
     - 新目标：
         $$L_{\pi_{\theta_{old}}} (\tilde{\pi})= \eta(\pi) + \mathbb{E}_{s\sim \rho_{\theta {old}}, a\sim\pi_{\theta {old}}} [\frac{\tilde{\pi_\theta}(a|s_n)}{\pi_{\theta_{old}}(a|s_n)}A_{\theta_{old}}(s,a)]$$
-    - 梯度优化本身就是一阶优化，
-        - 在$\theta_{old}$ 处, 一阶导数一致
-            $$\nabla_\theta \eta (\pi_{\theta_{old}}) = \nabla_\theta L_{\pi_{\theta_{old}}} (\pi_{\theta_{old}})$$ 
-        - ![](/images/posts/rl/policy_gradent/one.png)
+- 梯度更新方向， 梯度优化本身就是一阶优化，
+    - 在$\theta_{old}$ 处, 一阶凸优化方法中，完全一致，一阶导数一致， 
+        $$\nabla_\theta \eta (\pi_{\theta_{old}}) = \nabla_\theta L_{\pi_{\theta_{old}}} (\pi_{\theta_{old}})$$ 
+    - ![](/images/posts/rl/policy_gradent/one.png)
 
+- 梯度更新步长
+    - $$\eta(\tilde{\pi}) \geqslant L_\pi(\tilde{\pi}) - CD_{KL}^{MAX} (\pi, \tilde{\pi})$$
+
+        $where , C = \frac{2\epsilon\gamma}{(1-\gamma)^2}$
+
+    - 令 $M_{i}(\pi)  = L_{\pi_{i}}(\pi) - CD_{KL}^{MAX} (\pi_i, \pi)$
+    
+        $\eta (\pi_{i+1}) \geqslant M_i(\pi_{i+1})$
+        
+        等效于上面不等式
+
+        $\eta (\pi_{i}) = M_i(\pi_{i})$
+        
+        将$\pi_i$带入不等式，两分布相同，$D_{KL}$为0
+
+        $\eta (\pi_{i+1}) - \eta (\pi_{i}) \geqslant M_i(\pi_{i+1}) -M_i(\pi_{i})$
+
+        即最大化$M_i$, 可保证更新步长单调不减
+- Finally:
+    - $\max_\theta {mize}[ L_{\pi}(\tilde{\pi}) - CD_{KL}^{MAX} (\pi, \tilde{\pi})]$
+    - $\max_\theta {mize}[ L_{\theta_{old}}(\theta)$
+
+        subject to : $D_{KL}^{MAX} (\theta_{old}, \theta) \leqslant \delta$
 
 # PPO
