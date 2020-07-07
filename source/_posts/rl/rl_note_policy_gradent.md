@@ -120,6 +120,7 @@ date: 2020-05-29 11:51:55
   $\hat{A}_t^{(\infty)}$ high variance ,low bias
 
 # TRPO
+PG + off-policy + constrain
 - 步长的重要性
     - 状态和回报在改变统计特性, 优化过程中很难确定更新步长
     - policy 经常会过早陷入次忧的几乎确定的策略中
@@ -189,8 +190,16 @@ date: 2020-05-29 11:51:55
         即最大化$M_i$, 可保证更新步长单调不减
 - Finally:
     - $\max_\theta {mize}[ L_{\pi}(\tilde{\pi}) - CD_{KL}^{MAX} (\pi, \tilde{\pi})]$
-    - $\max_\theta {mize}[ L_{\theta_{old}}(\theta)$
-
+    - $\max_\theta {mize} L_{\theta_{old}}(\theta)$
+\left \| \right \|
         subject to : $D_{KL}^{MAX} (\theta_{old}, \theta) \leqslant \delta$
+
+        subject to : $\bar{D}_{KL}^{\rho_{\theta_{old}}} (\theta_{old}, \theta) \leqslant \delta$
+
+    - 线性化逼近， 二次逼近后:
+        
+        $\max_\theta {mize}[\nabla_\theta L_{\theta_{old}}(\theta)|_{\theta = \theta_{old}} \cdot (\theta-\theta_{old})]$
+
+        subject to : $\frac{1}{2} \left \| \theta- \theta_{old} \right \|^2 \leqslant \delta$
 
 # PPO
