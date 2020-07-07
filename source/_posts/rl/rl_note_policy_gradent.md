@@ -99,6 +99,13 @@ date: 2020-05-29 11:51:55
 
 ![](/images/posts/rl/policy_gradent/pg_al.png)
 
+# Problem of PG
+- 训练不稳定
+    - Trust region (TRPO, PPO)
+    - natural policy gradient
+- 如何离线化训练 **off-policy**
+    - Importance sampling
+
 # Advantage Actor-Critic
 - 利用当前状态的**Advantage function**作为权重 ，而不用整条轨迹的奖励
     一般通过参数 $w$ 来拟合
@@ -113,7 +120,54 @@ date: 2020-05-29 11:51:55
   $\hat{A}_t^{(\infty)}$ high variance ,low bias
 
 # TRPO
+- 步长的重要性
+    - 状态和回报在改变统计特性, 优化过程中很难确定更新步长
+    - policy 经常会过早陷入次忧的几乎确定的策略中
+    - TRPO 通过置信域的方式保证步长为单调不减
+- 目标函数(带有折扣的奖励最大)：
+    - $$\eta(\tilde{\pi}) =\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^{\infty} \gamma r(s_t)] $$
+    - 新策略下的期望回报 = 旧策略下的期望回报 + 新旧策略期望回报的差
+        $$\eta(\tilde{\pi}) = \eta(\pi) +\mathbb{E}_{\tau|\tilde{\pi}}[\sum\limits_{t=0}^\infty \gamma^t A_\pi(s_t,a_t)]$$
+
+        $\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t A_\pi(s_t,a_t)]$
+        
+        $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t [Q_\pi(s_t,a_t)-V_\pi(s_t)]$
+
+        $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t [r(s_t)+ \gamma V_\pi(s_{t+1})-V_\pi(s_t)]$
+
+        $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t r(s_t)+ \sum\limits_{t=0}^\infty (\gamma V_\pi(s_{t+1})-V_\pi(s_t))]$
+
+        $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t r(s_t)] + \mathbb{E}_{s_0}[-V_\pi(s_0)]$求和展开前后相消
+
+        $= \eta(\tilde{\pi}) - \eta(\pi)$
+
+- 对于上式展开 
+
+    $$\eta(\tilde{\pi}) = \eta(\pi) +\mathbb{E}_{\tau|\tilde{\pi}}[\sum\limits_{t=0}^\infty \gamma^t A_\pi(s_t,a_t)]$$
+
+    $$\rho_\pi(s) = P(s_0=s) + \gamma P(s_1=s) + \gamma^2P(s_2=s) + ... = \sum\limits_{t=0}^\infty \gamma^t P(s_t=s|\tilde{\pi} )$$
+
+    $$\eta(\tilde{\pi}) = \eta(\pi) +\sum_{t=0}^\infty \sum\limits_{s} P(s_t = s|\tilde{\pi})\sum\limits_a \tilde{\pi}(a|s) \gamma^t A_\pi(s,a)$$
+
+    $$\eta(\tilde{\pi}) = \eta(\pi) +\sum\limits_{s} \rho_{\tilde{\pi}}(s) \sum\limits_a \tilde{\pi}(a|s) A_\pi(s,a)$$
+    这是状态分布由新的策略$\tilde{\pi}$， 严重依赖新的状态分布
+
+- two trick
+    - 忽略状态分布的变化， 假定  
+        $$\rho_{\tilde{\pi}}(s)\sim\rho_\pi(s)$$
+    - 重要性采样，
+        - ![](/images/posts/rl/policy_gradent/importance.png)
+        - $$\sum\limits_a \tilde{\pi_\theta}(a|s) A_{\theta_{old}}(s,a) = \mathbb{E}_{a\sim\pi_{old}} [\frac{\tilde{\pi_\theta}(a|s_n)}{\pi_{\theta_{old}}(a|s_n)}A_{\theta_{old}}(s,a)]$$
+  
+    - 原目标：
+        $$\eta(\tilde{\pi}) = \eta(\pi) +\sum\limits_{s} \rho_{\tilde{\pi}}(s) \sum\limits_a \tilde{\pi}(a|s) A_\pi(s,a)$$
+    
+    - 新目标：
+        $$L_{\pi_{\theta_{old}}} (\tilde{\pi})= \eta(\pi) + \mathbb{E}_{s\sim \rho_{\theta {old}}, a\sim\pi_{\theta {old}}} [\frac{\tilde{\pi_\theta}(a|s_n)}{\pi_{\theta_{old}}(a|s_n)}A_{\theta_{old}}(s,a)]$$
+    - 梯度优化本身就是一阶优化，
+        - 在$\theta_{old}$ 处, 一阶导数一致
+            $$\nabla_\theta \eta (\pi_{\theta_{old}}) = \nabla_\theta L_{\pi_{\theta_{old}}} (\pi_{\theta_{old}})$$ 
+        - ![](/images/posts/rl/policy_gradent/one.png)
+
 
 # PPO
-- 
-$\in$
