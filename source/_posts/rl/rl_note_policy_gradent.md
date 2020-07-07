@@ -191,15 +191,30 @@ PG + off-policy + constrain
 - Finally:
     - $\max_\theta {mize}[ L_{\pi}(\tilde{\pi}) - CD_{KL}^{MAX} (\pi, \tilde{\pi})]$
     - $\max_\theta {mize} L_{\theta_{old}}(\theta)$
-\left \| \right \|
+
         subject to : $D_{KL}^{MAX} (\theta_{old}, \theta) \leqslant \delta$
 
         subject to : $\bar{D}_{KL}^{\rho_{\theta_{old}}} (\theta_{old}, \theta) \leqslant \delta$
 
     - 线性化逼近， 二次逼近后:
         
-        $\max_\theta {mize}[\nabla_\theta L_{\theta_{old}}(\theta)|_{\theta = \theta_{old}} \cdot (\theta-\theta_{old})]$
+        $\max_\theta {mize}[\nabla_\theta L_{\theta_{old}}(\theta)|_{\theta = \theta_{old}} \cdot (\theta-\theta_{old})]$gradent/ppo_clip.png)
 
         subject to : $\frac{1}{2} \left \| \theta- \theta_{old} \right \|^2 \leqslant \delta$
 
 # PPO
+想比于TRPO的变化就是
+
+- TRPO 用KL作为一个约束， 而 PPO 则一快和$\theta$进行优化
+- **Note:** KL 为输出$a$的距离，而不是参数$\theta$ 的距离
+- $\max_\theta {mize}[ L_{\pi}(\tilde{\pi}) -\beta KL(\pi, \tilde{\pi})]$
+    - If $𝐾𝐿(\theta, \theta_i) > KL_{max}$,  increase $\beta$
+    - If $𝐾𝐿(\theta, \theta_i) < KL_{min}$,  decrease $\beta$
+- 优化目标：
+    - $$L(\theta) = \mathbb{E}_{\tau \sim \pi_{old}}[\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}A_{\theta_{old}}(s,a) - \beta KL(\pi_{old}, \pi)]$$
+
+    - $$L(\theta) = \mathbb{E}_{\tau \sim \pi_{old}}[min(\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}A_{\theta_{old}}(s,a), clip(\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)},1-\epsilon, 1+\epsilon)A_{\theta_{old}}(s,a))]$$
+
+        ![](/images/posts/rl/policy_gradent/ppo_clip.png)
+
+# 
