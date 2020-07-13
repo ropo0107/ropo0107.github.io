@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>【rl_note】 Markov Decision Processes</title>
+    <title>quaternion</title>
+    <url>/2020/07/11/robot/quaternion/</url>
+    <content><![CDATA[<p>对于坐标的变换，旋转和平移是基本的两步，平移可以是一个标量， 旋转有多种形式可以表示，（四元数， 欧拉角，旋转矩阵）</p>
+<h2 id="四元数定义"><a href="#四元数定义" class="headerlink" title="四元数定义"></a>四元数定义</h2><p>首先，定义一个你需要做的旋转。旋转轴为向量$v=(vx,vy,vz)$，旋转角度为$\theta$（右手法则的旋转）</p>
+<p><img src="/images/posts/robot/quaternion/quaternion.jpg" alt=""></p>
+<p>图中$v=(\frac{1}{\sqrt{14}}, \frac{2}{\sqrt{14}}, \frac{3}{\sqrt{14}}), \theta = \frac{\pi}{3}$</p>
+<p>那么与此相对应的四元数（下三行式子都是一个意思，只是不同的表达形式）</p>
+<ul>
+<li>$q=(\cos(\frac{\theta}{2}), \sin(\frac{\theta}{2})<em>vx,\sin(\frac{\theta}{2})</em>vy,\sin(\frac{\theta}{2})*vz,$</li>
+<li>$q=(\cos(\frac{\\pi}{6}), \sin(\frac{\pi}{6})<em>\frac{1}{\sqrt{14}},sin(\frac{\pi}{6})</em>\frac{2}{\sqrt{14}}, \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})$</li>
+<li>$q=(\cos(\frac{\\pi}{6}) + \sin(\frac{\pi}{6})<em>\frac{1}{\sqrt{14}} i + sin(\frac{\pi}{6})</em>\frac{2}{\sqrt{14}} j +  \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)$</li>
+</ul>
+<p>它的共轭</p>
+<ul>
+<li>$q^{-1}=(\cos(\frac{\theta}{2}), -\sin(\frac{\theta}{2})<em>vx,-\sin(\frac{\theta}{2})</em>vy,-\sin(\frac{\theta}{2})*vz,$</li>
+<li>$q^{-1}=(\cos(\frac{\\pi}{6}), -\sin(\frac{\pi}{6})<em>\frac{1}{\sqrt{14}}, - sin(\frac{\pi}{6})</em>\frac{2}{\sqrt{14}}, -\sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})$</li>
+<li>$q^{-1}=(\cos(\frac{\\pi}{6}) - \sin(\frac{\pi}{6})<em>\frac{1}{\sqrt{14}} i - sin(\frac{\pi}{6})</em>\frac{2}{\sqrt{14}} j - \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)$</li>
+</ul>
+<h2 id="四元数运算"><a href="#四元数运算" class="headerlink" title="四元数运算"></a>四元数运算</h2><p>求$w=(wx,wy,wz)$在旋转下的新的坐标$w’$</p>
+<ul>
+<li>定义纯四元数<script type="math/tex; mode=display">qw=(0,wx,wy,wz) =0+ wx*i+ wy*j+wz*k</script></li>
+<li>进行四元数运算<script type="math/tex; mode=display">qw'=q*qw*q^{-1}</script></li>
+<li>产生的$qw’$一定是四元数，即第一项为0<script type="math/tex; mode=display">qw‘=(0,wx‘,wy’,wz‘) =0+ wx’*i+ wy‘*j+wz’*k</script></li>
+<li>$qw’$的后三项$(wx’,wt’,wz’)$就是$w’$<script type="math/tex; mode=display">w'=(wx',wy',wx')</script></li>
+</ul>
+<p>这样就完成了四元数的一次转换</p>
+<h2 id="理解四元数"><a href="#理解四元数" class="headerlink" title="理解四元数"></a>理解四元数</h2><ul>
+<li>性质<ul>
+<li>运算产生的结果也要是三维向量</li>
+<li>存在一个元运算，任何三维向量进行元运算的结果就是其本身</li>
+<li>对于任何一个运算，都存在一个逆运算，这两个运算的积是元运算</li>
+<li>运算满足结合律</li>
+</ul>
+</li>
+<li>解释<ul>
+<li>四元数不是简单的映射关系，而是一个群！（后来我们知道四元数所在群为S3，而四元数所代表的三维旋转是SO(3)，前者是后者的两倍覆盖</li>
+<li>为什么公式里面是$\frac{\theta}{2}$而不是$\theta$,因为$w$不为零,结果就不与我们最初的点在同一三维空间。为了解决这个问题，所以先只旋转一半，再用逆反过来旋转另一半，这样正好将第一次旋转产生的第四维变为0，这样就能正确地映射到三维超平面。<br> <img src="/images/posts/robot/quaternion/three_dim.jpg" alt=""></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>学术</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Robot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【rl_note】2. Markov Decision Processes</title>
     <url>/2020/05/29/rl/rl_note_mpc/</url>
     <content><![CDATA[<h2 id="overview"><a href="#overview" class="headerlink" title="overview"></a>overview</h2><ul>
 <li>Markov Processes</li>
@@ -92,7 +142,7 @@
       </tags>
   </entry>
   <entry>
-    <title>【rl_note】 model-free Prediction And Control</title>
+    <title>【rl_note】3. model-free Prediction And Control</title>
     <url>/2020/05/29/rl/rl_note_model_free/</url>
     <content><![CDATA[<h2 id="prediction"><a href="#prediction" class="headerlink" title="prediction"></a>prediction</h2><p>Evaluate the state value without knowing the MDP model, by only interacting with the environment</p>
 <h3 id="MC"><a href="#MC" class="headerlink" title="MC"></a>MC</h3><h4 id="traditional"><a href="#traditional" class="headerlink" title="traditional"></a>traditional</h4><ul>
@@ -190,7 +240,7 @@
       </tags>
   </entry>
   <entry>
-    <title>【rl_note】 Overview</title>
+    <title>【rl_note】1. Overview</title>
     <url>/2020/05/29/rl/rl_note_overview/</url>
     <content><![CDATA[<h2 id="Difference-between-Reinforcement-Learning-and-Supervised-Learning"><a href="#Difference-between-Reinforcement-Learning-and-Supervised-Learning" class="headerlink" title="Difference between Reinforcement Learning and Supervised Learning"></a>Difference between Reinforcement Learning and Supervised Learning</h2><ul>
 <li><p>Sequential data as input (not i.i.d)</p>
@@ -339,7 +389,7 @@
       </tags>
   </entry>
   <entry>
-    <title>【rl_note】 Value Function Approximation</title>
+    <title>【rl_note】4. Value Function Approximation</title>
     <url>/2020/05/29/rl/rl_note_value_function_approximation/</url>
     <content><![CDATA[<h2 id="Challenges-with-large-MDPs"><a href="#Challenges-with-large-MDPs" class="headerlink" title="Challenges with large MDPs:"></a>Challenges with large MDPs:</h2><ul>
 <li>too many states or actions to store in memory</li>
@@ -421,7 +471,7 @@
       </tags>
   </entry>
   <entry>
-    <title>【rl_note】 Policy Gradent(AC,TRPO,PPO,)</title>
+    <title>【rl_note】5. Policy Gradent(AC, TRPO, PPO)</title>
     <url>/2020/05/29/rl/rl_note_policy_gradent/</url>
     <content><![CDATA[<h1 id="Policy-Gradent"><a href="#Policy-Gradent" class="headerlink" title="Policy Gradent"></a>Policy Gradent</h1><h2 id="Value-based-RL-vs-Policy-based-RL"><a href="#Value-based-RL-vs-Policy-based-RL" class="headerlink" title="Value-based RL vs Policy-based RL"></a>Value-based RL vs Policy-based RL</h2><ul>
 <li>value base 主要是学习一个value function 的近似，然后通过贪心的方法得到最优策略<script type="math/tex; mode=display">a_t=\arg \max_aQ(a,st)</script></li>
@@ -461,7 +511,7 @@
 <li><p>goal:</p>
 <script type="math/tex; mode=display">\theta^* = \arg\max\limits_\theta J(\theta) = \arg\max\limits_\theta \sum\limits_\tau R(\tau) P(\tau;\theta)</script></li>
 <li><p>gradient:</p>
-<script type="math/tex; mode=display">\nabla_\theta J(\theta) =\nabla_\theta \sum\limits_\tau R(\tau) P(\tau;\theta)</script><script type="math/tex; mode=display">=\sum\limits_\tau R(\tau)  P(\tau;\theta) \nabla_\theta logP(\tau;\theta)</script></li>
+<script type="math/tex; mode=display">\nabla_\theta Ja(\theta) =\nabla_\theta \sum\limits_\tau R(\tau) P(\tau;\theta)</script><script type="math/tex; mode=display">=\sum\limits_\tau R(\tau)  P(\tau;\theta) \nabla_\theta logP(\tau;\theta)</script></li>
 <li><p>Monte carlo:</p>
 <script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m R(\tau_i) \nabla_\theta logP(\tau_i ;\theta)</script><p>采样后轨迹概率 $P(\tau;\theta)$ 变为采样的加和</p>
 </li>
@@ -501,11 +551,11 @@
 <h1 id="Problem-of-PG"><a href="#Problem-of-PG" class="headerlink" title="Problem of PG"></a>Problem of PG</h1><ul>
 <li>训练不稳定<ul>
 <li>Trust region (TRPO, PPO)</li>
-<li>natural policy gradient</li>
+<li>natural policy gradient (二阶优化方法)</li>
 </ul>
 </li>
 <li>如何离线化训练 <strong>off-policy</strong><ul>
-<li>Importance sampling</li>
+<li>Importance sampling（将分布转换到已知的分布）</li>
 </ul>
 </li>
 </ul>
@@ -523,6 +573,7 @@
 <li>状态和回报在改变统计特性, 优化过程中很难确定更新步长</li>
 <li>policy 经常会过早陷入次忧的几乎确定的策略中</li>
 <li>TRPO 通过置信域的方式保证步长为单调不减</li>
+<li><img src="/images/posts/rl/policy_gradent/trust_region.png" alt=""></li>
 </ul>
 </li>
 <li><p>目标函数(带有折扣的奖励最大)：</p>
@@ -607,7 +658,11 @@
 </ul>
 </li>
 </ul>
-<h1 id=""><a href="#" class="headerlink" title=" "></a> </h1>]]></content>
+<h1 id="DDPG"><a href="#DDPG" class="headerlink" title="DDPG"></a>DDPG</h1><ul>
+<li>目的： 让DQN应用于连续的动作空间</li>
+<li></li>
+</ul>
+]]></content>
       <categories>
         <category>学术</category>
       </categories>
