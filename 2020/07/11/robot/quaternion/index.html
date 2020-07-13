@@ -89,7 +89,7 @@
 <meta property="og:image" content="http://yoursite.com/images/posts/robot/quaternion/quaternion.jpg">
 <meta property="og:image" content="http://yoursite.com/images/posts/robot/quaternion/three_dim.jpg">
 <meta property="article:published_time" content="2020-07-11T15:34:55.000Z">
-<meta property="article:modified_time" content="2020-07-13T09:41:36.833Z">
+<meta property="article:modified_time" content="2020-07-13T09:46:25.782Z">
 <meta property="article:author" content="无恙">
 <meta property="article:tag" content="Note">
 <meta property="article:tag" content="Robot">
@@ -431,15 +431,15 @@
 <p>图中$v=(\frac{1}{\sqrt{14}}, \frac{2}{\sqrt{14}}, \frac{3}{\sqrt{14}}), \theta = \frac{\pi}{3}$</p>
 <p>那么与此相对应的四元数（下三行式子都是一个意思，只是不同的表达形式）</p>
 <ul>
-<li>$q=(\cos(\frac{\theta}{2}), \sin(\frac{\theta}{2})<em>vx,\sin(\frac{\theta}{2})</em>vy,\sin(\frac{\theta}{2})*vz,$</li>
-<li>$q=(\cos(\frac{\\pi}{6}), \sin(\frac{\pi}{6})<em>\frac{1}{\sqrt{14}},sin(\frac{\pi}{6})</em>\frac{2}{\sqrt{14}}, \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})$</li>
-<li>$q=(\cos(\frac{\\pi}{6}) + \sin(\frac{\pi}{6})<em>\frac{1}{\sqrt{14}} i + sin(\frac{\pi}{6})</em>\frac{2}{\sqrt{14}} j +  \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)$</li>
+<li><script type="math/tex; mode=display">q=(\cos(\frac{\theta}{2}), \sin(\frac{\theta}{2})*vx,\sin(\frac{\theta}{2})*vy,\sin(\frac{\theta}{2})*vz$$$</script></li>
+<li><script type="math/tex; mode=display">q=(\cos(\frac{\\pi}{6}), \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}},sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}}, \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})</script></li>
+<li><script type="math/tex; mode=display">q=(\cos(\frac{\\pi}{6}) + \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}} i + sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}} j +  \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)</script></li>
 </ul>
 <p>它的共轭</p>
 <ul>
-<li>$q^{-1}=(\cos(\frac{\theta}{2}), -\sin(\frac{\theta}{2})<em>vx,-\sin(\frac{\theta}{2})</em>vy,-\sin(\frac{\theta}{2})*vz,$</li>
-<li>$q^{-1}=(\cos(\frac{\\pi}{6}), -\sin(\frac{\pi}{6})<em>\frac{1}{\sqrt{14}}, - sin(\frac{\pi}{6})</em>\frac{2}{\sqrt{14}}, -\sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})$</li>
-<li>$q^{-1}=(\cos(\frac{\\pi}{6}) - \sin(\frac{\pi}{6})<em>\frac{1}{\sqrt{14}} i - sin(\frac{\pi}{6})</em>\frac{2}{\sqrt{14}} j - \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)$</li>
+<li><script type="math/tex; mode=display">q^{-1}=(\cos(\frac{\theta}{2}), -\sin(\frac{\theta}{2})*vx,-\sin(\frac{\theta}{2})*vy,-\sin(\frac{\theta}{2})*vz</script></li>
+<li><script type="math/tex; mode=display">q^{-1}=(\cos(\frac{\\pi}{6}), -\sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}}, - sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}}, -\sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})</script></li>
+<li><script type="math/tex; mode=display">q^{-1}=(\cos(\frac{\\pi}{6}) - \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}} i - sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}} j - \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)</script></li>
 </ul>
 <h2 id="四元数运算"><a href="#四元数运算" class="headerlink" title="四元数运算"></a>四元数运算</h2><p>求$w=(wx,wy,wz)$在旋转下的新的坐标$w’$</p>
 <ul>
