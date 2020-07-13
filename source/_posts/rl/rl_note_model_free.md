@@ -1,5 +1,5 @@
 ---
-title: 【rl_note】 model-free Prediction And Control
+title: 【rl_note】3. model-free Prediction And Control
 categories: [学术]
 tags:   [RL, Note]
 copyright: false

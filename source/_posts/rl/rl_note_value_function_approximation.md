@@ -1,5 +1,5 @@
 ---
-title: 【rl_note】 Value Function Approximation
+title: 【rl_note】4. Value Function Approximation
 categories: [学术]
 tags:   [RL, Note]
 copyright: false

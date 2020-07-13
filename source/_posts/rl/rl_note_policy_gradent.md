@@ -1,5 +1,5 @@
 ---
-title: 【rl_note】 Policy Gradent(AC,TRPO,PPO,)
+title: 【rl_note】5. Policy Gradent(AC, TRPO, PPO)
 categories: [学术]
 tags:   [RL, Note]
 copyright: false
@@ -50,7 +50,7 @@ date: 2020-05-29 11:51:55
   
   - gradient:
     
-    $$\nabla_\theta J(\theta) =\nabla_\theta \sum\limits_\tau R(\tau) P(\tau;\theta)$$
+    $$\nabla_\theta Ja(\theta) =\nabla_\theta \sum\limits_\tau R(\tau) P(\tau;\theta)$$
     
     $$=\sum\limits_\tau R(\tau)  P(\tau;\theta) \nabla_\theta logP(\tau;\theta)$$
   - Monte carlo:
@@ -102,9 +102,9 @@ date: 2020-05-29 11:51:55
 # Problem of PG
 - 训练不稳定
     - Trust region (TRPO, PPO)
-    - natural policy gradient
+    - natural policy gradient (二阶优化方法)
 - 如何离线化训练 **off-policy**
-    - Importance sampling
+    - Importance sampling（将分布转换到已知的分布）
 
 # Advantage Actor-Critic
 - 利用当前状态的**Advantage function**作为权重 ，而不用整条轨迹的奖励
@@ -125,6 +125,7 @@ PG + off-policy + constrain
     - 状态和回报在改变统计特性, 优化过程中很难确定更新步长
     - policy 经常会过早陷入次忧的几乎确定的策略中
     - TRPO 通过置信域的方式保证步长为单调不减
+    - ![](/images/posts/rl/policy_gradent/trust_region.png)
 - 目标函数(带有折扣的奖励最大)：
     - $$\eta(\tilde{\pi}) =\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^{\infty} \gamma r(s_t)] $$
     - 新策略下的期望回报 = 旧策略下的期望回报 + 新旧策略期望回报的差
@@ -217,4 +218,7 @@ PG + off-policy + constrain
 
         ![](/images/posts/rl/policy_gradent/ppo_clip.png)
 
-# 
+# DDPG
+
+- 目的： 让DQN应用于连续的动作空间
+- 
