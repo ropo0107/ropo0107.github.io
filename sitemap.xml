@@ -2,9 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/03/09/go/go_interface/</loc>
+    
+    <lastmod>2020-07-14T17:35:57.483Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/09/go/go_concurrency/</loc>
+    
+    <lastmod>2020-07-14T17:35:50.035Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/03/go/go/</loc>
+    
+    <lastmod>2020-07-14T17:35:35.035Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/04/24/dl/net_param_calculate/</loc>
+    
+    <lastmod>2020-07-14T17:34:58.786Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/24/dl/GAN/</loc>
+    
+    <lastmod>2020-07-14T17:34:53.869Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/03/dl/dl_tips/</loc>
+    
+    <lastmod>2020-07-14T17:34:33.769Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/15/blog/blog_background/</loc>
+    
+    <lastmod>2020-07-14T17:34:16.164Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/03/blog/build_my_blog/</loc>
+    
+    <lastmod>2020-07-14T17:34:08.296Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/08/blog/music/</loc>
+    
+    <lastmod>2020-07-14T17:34:07.100Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/10/blog/vps_hexo/</loc>
+    
+    <lastmod>2020-07-14T17:34:03.380Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/08/blog/blog_add_custom_html/</loc>
+    
+    <lastmod>2020-07-14T17:33:37.327Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/07/11/robot/quaternion/</loc>
     
-    <lastmod>2020-07-14T16:58:43.941Z</lastmod>
+    <lastmod>2020-07-14T17:33:20.386Z</lastmod>
     
   </url>
   
@@ -47,83 +124,6 @@
     <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2020-06-09T18:52:20.098Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/10/blog/vps_hexo/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/08/blog/blog_add_custom_html/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/03/blog/build_my_blog/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/04/24/dl/net_param_calculate/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/08/blog/music/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/15/blog/blog_background/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/03/go/go/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/03/dl/dl_tips/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/24/dl/GAN/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/09/go/go_concurrency/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/09/go/go_interface/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
     
   </url>
   
