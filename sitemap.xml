@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/07/11/robot/quaternion/</loc>
+    
+    <lastmod>2020-07-14T17:45:31.217Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/03/09/go/go_interface/</loc>
     
     <lastmod>2020-07-14T17:35:57.483Z</lastmod>
@@ -75,13 +82,6 @@
     <loc>http://yoursite.com/2020/03/08/blog/blog_add_custom_html/</loc>
     
     <lastmod>2020-07-14T17:33:37.327Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/07/11/robot/quaternion/</loc>
-    
-    <lastmod>2020-07-14T17:33:20.386Z</lastmod>
     
   </url>
   
