@@ -1,5 +1,5 @@
 ---
-title: Hexo修改背景图片及主题透明
+title: 【blog】 Hexo修改背景图片及主题透明
 categories:
   - 杂记
 tags: blog

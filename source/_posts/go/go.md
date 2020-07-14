@@ -1,5 +1,5 @@
 ---
-title:  Go_基础
+title:  【go】Go_基础
 categories: [杂记]
 tags:   [Go, Note]
 copyright: false``

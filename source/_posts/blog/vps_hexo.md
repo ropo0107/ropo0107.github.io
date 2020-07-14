@@ -1,5 +1,5 @@
 ---
-title: Hexo迁移到vps
+title: 【blog】 Hexo迁移到vps
 categories:
   - 杂记
 tags: [vps,blog,ubuntu]

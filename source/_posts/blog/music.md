@@ -1,5 +1,5 @@
 ---
-title: Hexo添加网页音乐播放器功能
+title: 【blog】 Hexo添加网页音乐播放器功能
 categories:
   - 杂记
 tags: blog

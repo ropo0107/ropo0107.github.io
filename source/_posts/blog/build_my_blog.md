@@ -1,5 +1,5 @@
 ---
-title: 搭建我的博客
+title: 【blog】 搭建我的博客
 categories:
   - 杂记
 tags: blog

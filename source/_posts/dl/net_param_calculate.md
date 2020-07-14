@@ -1,5 +1,5 @@
 ---
-title:  神经网络中参数量和计算量
+title:  【dl】 神经网络中参数量和计算量
 categories: [学术]
 tags:   [DL，Note]
 copyright: false

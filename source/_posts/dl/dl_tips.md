@@ -1,5 +1,5 @@
 ---
-title:  深度学习_Tips
+title:  【dl】 深度学习_Tips
 categories: [学术]
 tags:   [DL, Note]
 copyright: false

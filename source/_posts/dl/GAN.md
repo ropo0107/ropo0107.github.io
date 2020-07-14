@@ -1,5 +1,5 @@
 ---
-title:  GAN_公式推导
+title:  【dl】 GAN_公式推导
 categories: [学术]
 tags:   [RL, Note,GAN]
 copyright: false

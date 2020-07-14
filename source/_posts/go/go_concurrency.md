@@ -1,5 +1,5 @@
 ---
-title:  Go_并发
+title:  【go】 Go_并发
 categories: [杂记]
 tags:   [Go, Note]
 copyright: false``

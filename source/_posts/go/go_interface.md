@@ -1,5 +1,5 @@
 ---
-title:  Go_接口
+title:  【go】 Go_接口
 categories: [杂记]
 tags:   [Go, Note]
 copyright: false``
