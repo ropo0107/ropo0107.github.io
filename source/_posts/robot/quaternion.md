@@ -14,7 +14,7 @@ date: 2020-07-11 23:34:55
 ## 欧拉角
 ![](/images/posts/robot/quaternion/eular.gif)
 
-图中演示的就是用 $(z, x,z^{'})$ 方法表示方向的过程。在此过程中，有如下图展示的 $(\aleph, \beta,\gamma)$三个角，分别绕着原坐标z轴(蓝)，一次旋转以后的x轴(绿)以及两次旋转以后的z轴(红)旋转，最终产生的红色坐标系即表示出目标方向。
+图中演示的就是用 $(z, x,z^{'})$ 方法表示方向的过程。在此过程中，有如下图展示的 $(\alpha, \beta,\gamma)$三个角，分别绕着原坐标z轴(蓝)，一次旋转以后的x轴(绿)以及两次旋转以后的z轴(红)旋转，最终产生的红色坐标系即表示出目标方向。
 
 ## 四元数定义
 首先，定义一个你需要做的旋转。旋转轴为向量$v=(vx,vy,vz)$，旋转角度为$\theta$（右手法则的旋转）
@@ -98,5 +98,9 @@ date: 2020-07-11 23:34:55
         ![](/images/posts/robot/quaternion/three_dim.jpg)
 
 
-## 参考链接：
+## 参考链接:
 https://zhuanlan.zhihu.com/p/87418561
+
+## code链接:
+
+https://github.com/tsinghua-rll/UR5_Controller/blob/master/RTIF/LowLevel/quaternion.py
