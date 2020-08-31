@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-19T13:58:11.929Z</updated>
+  <updated>2020-08-31T09:01:41.545Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【robot】 Kinect_dk 在Ubuntu16.04 下安装并配置ROS</title>
+    <link href="http://yoursite.com/2020/08/30/robot/kinect_dk/"/>
+    <id>http://yoursite.com/2020/08/30/robot/kinect_dk/</id>
+    <published>2020-08-30T15:34:55.000Z</published>
+    <updated>2020-08-31T09:01:41.545Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>最近手头拿到了 Kinect dk 相机， 苦于自己的电脑是16.04， 于是根据网上资料自己配置了一下， 发现有许多坑， 并没有说到， 自己边安装，边记录下内容吧。默认不支持16.04</p><p><a href="https://github.com/ropo0107/kinect_dk" target="_blank" rel="noopener">https://github.com/ropo0107/kinect_dk</a></p><p>放上自己的工程目录， 可以自取</p><h2 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h2><h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><ul><li>git clone -b v1.2.0 <a href="https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git" target="_blank" rel="noopener">https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git</a></li><li>mkdir kinect_ws/src &amp;&amp; cd kinect_ws/src</li><li>git clone <a href="https://github.com/RoseFlunder/Azure_Kinect_ROS_Driver.git" target="_blank" rel="noopener">https://github.com/RoseFlunder/Azure_Kinect_ROS_Driver.git</a></li></ul><h3 id="dependence"><a href="#dependence" class="headerlink" title="dependence"></a>dependence</h3><ul><li>sudo cp ./libdepthengine.so.2.0 /usr/lib/x86_64-linux-gnu/</li><li>sudo ./Azure-Kinect-Sensor-SDK/scripts/bootstrap-ubuntu.sh</li><li>sudo apt-get install gcc-4.9</li><li>sudo apt-get upgrade libstdc++6</li></ul><h3 id="cmske-v-大于-3-9"><a href="#cmske-v-大于-3-9" class="headerlink" title="cmske -v 大于 3.9"></a>cmske -v 大于 3.9</h3><h3 id="build"><a href="#build" class="headerlink" title="build"></a>build</h3><ul><li>cd build</li><li>cmake .. -GNinja</li><li>ninja</li><li><p>sudo ninja install</p></li><li><p>ERROR：</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**CMake Error: CMake was unable to find a build program corresponding to “Ninja”. **</span><br></pre></td></tr></table></figure><ul><li>Solution：install ninja<ul><li>sudo apt-get install re2c</li><li>git clone <a href="https://github.com/ninja-build/ninja.git" target="_blank" rel="noopener">https://github.com/ninja-build/ninja.git</a></li><li>cd ninja</li><li>./configure.py —bootstrap</li><li>sudo cp ./ninja  /usr/bin</li><li>ninjia —version — 1.10.1.git</li></ul></li></ul></li></ul><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Cloning into &#39;extern&#x2F;azure_c_shared&#x2F;src&#39;...                                                           </span><br><span class="line">fatal: BUG: initial ref transaction called with existing refs                                         </span><br><span class="line">fatal: clone of &#39;https:&#x2F;&#x2F;github.com&#x2F;Azure&#x2F;azure-c-shared-utility.git&#39; into submodule path &#39;extern&#x2F;azur</span><br><span class="line">e_c_shared&#x2F;src&#39; failed                                                                                </span><br><span class="line">CMake Error at extern&#x2F;CMakeLists.txt:22 (message):                                                    </span><br><span class="line">git submodule update failed:</span><br></pre></td></tr></table></figure>- Solution:缺少依赖的库  - cd extern/azure_c_shared  - git clone https://github.com/Azure/azure-c-shared-utility.git  - cd extern/libuv  - git clone https://github.com/lemenkov/libyuv  - mv libuv src</code></pre><h3 id="without-root"><a href="#without-root" class="headerlink" title="without root"></a>without root</h3><ul><li>sudo cp scripts/99-k4a.rules /etc/udev/rules.d/</li></ul><h3 id="k4aviewer"><a href="#k4aviewer" class="headerlink" title="k4aviewer"></a>k4aviewer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k4aviewer: error while loading shared libraries: libk4a.so.1.2: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure><ul><li>sudo ln -s /usr/local/lib/libk4a.so.1.2 /usr/lib/libk4a.so.1.2</li></ul><h2 id="ROS"><a href="#ROS" class="headerlink" title="ROS"></a>ROS</h2><ul><li>cd kinect_ws/src/Azure_Kinect_ROS_Driver</li><li>mkdir ext/sdk/</li><li><p>dependence:<br>  在<a href="https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/里面找到" target="_blank" rel="noopener">https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/里面找到</a></p><p>  libk4a1.2<br>  k4a1.2-dev/<br>  文件下载下来并解压，</p><p>  在sdk中放入三个文件夹：bin、include、lib，位置关系如下：</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.\ext\sdk\</span><br><span class="line">        bin\</span><br><span class="line">        include\</span><br><span class="line">        lib\</span><br></pre></td></tr></table></figure><p>  其中，</p><p>  bin文件夹: 把编译SDK时build文件夹里面的那个bin文件夹拷贝过来</p><p>  include文件夹：SDK源码里的include文件夹和从-dev.deb文件里提取出的include文件夹合并，拷贝过来</p><p>  lib文件夹：从deb文件里提取出的两个lib文件夹合并，拷贝过来</p></li></ul><ul><li>ERROR：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">k4a_ros_device.h:166:8: error: ‘atomic_int64_t’ in namespace ‘std’ does not name a type</span><br><span class="line">std::atomic_int64_t last_capture_time_usec_;</span><br></pre></td></tr></table></figure><ul><li>Solution: 找到对应文件  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; line:165</span><br><span class="line">&#x2F;&#x2F; Last capture timestamp for synchronizing playback capture and imu thread</span><br><span class="line">std::atomic&lt;int64_t- last_capture_time_usec_;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Last imu timestamp for synchronizing playback capture and imu thread</span><br><span class="line">std::atomic&lt;uint64_t- last_imu_time_usec_;</span><br><span class="line">std::atomic&lt;bool- imu_stream_end_of_file_;</span><br></pre></td></tr></table></figure></li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot; title=&quot;引子&quot;&gt;&lt;/a&gt;引子&lt;/h1&gt;&lt;p&gt;最近手头拿到了 Kinect dk 相机， 苦于自己的电脑是16.04， 于是根据网上资料自己配置了一下， 发现有许多坑， 并没有说到， 自
+      
+    
+    </summary>
+    
+    
+      <category term="工程" scheme="http://yoursite.com/categories/%E5%B7%A5%E7%A8%8B/"/>
+    
+    
+      <category term="Robot" scheme="http://yoursite.com/tags/Robot/"/>
+    
+      <category term="ROS" scheme="http://yoursite.com/tags/ROS/"/>
+    
+  </entry>
   
   <entry>
     <title>【ros】 workspace and namespace</title>
@@ -31,6 +59,36 @@
       
         &lt;p&gt;一直想把之前ros的坑给补上， 最近终于有机会了&lt;/p&gt;
 &lt;h1 id=&quot;工作空间&quot;&gt;&lt;a href=&quot;#工作空间&quot; class=&quot;headerlink&quot; title=&quot;工作空间&quot;&gt;&lt;/a&gt;工作空间&lt;/h1&gt;&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+    
+      <category term="Robot" scheme="http://yoursite.com/tags/Robot/"/>
+    
+      <category term="Ros" scheme="http://yoursite.com/tags/Ros/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【ros】 编译时的问题</title>
+    <link href="http://yoursite.com/2020/07/19/robot/ros_error/"/>
+    <id>http://yoursite.com/2020/07/19/robot/ros_error/</id>
+    <published>2020-07-19T15:34:55.000Z</published>
+    <updated>2020-07-22T11:43:28.949Z</updated>
+    
+    <content type="html"><![CDATA[<p>ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/build.make:62: recipe for target ‘ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/src/main.cpp.o’ failed<br>make[2]: <em>*</em> [ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/src/main.cpp.o] Error 1</p><p>set(CMAKE_CXX_FLAGS “${CMAKE_CXX_FLAGS} -std=c++11”)</p><p>The kinematics plugin (rh_first_finger) failed to load. Error: Failed to load library /home/sunshine/ros/shadow_demo/base/devel/lib//libhand_kinematics.so. Make sure that yo<br>u are calling the PLUGINLIB_EXPORT_CLASS macro in the library code, and that names are consistent between this macro and your XML. Error string: Could not load library (Poco exception = libmoveit_kinematic<br>s_base.so.0.9.15: cannot open shared object file: No such file or directory)</p><p>问题不在于kinematics 插件， 问题在于moveit版本</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/build.make:62: recipe for target ‘ros_ethercat/ros_ethercat_loop/CMakeFil
       
     
     </summary>
@@ -498,58 +556,6 @@
     <updated>2020-06-09T18:52:20.070Z</updated>
     
     <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
-    
-    
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>分支限界法</title>
-    <link href="http://yoursite.com/2020/03/05/leetcode/leetcode_Branch_and_bound/"/>
-    <id>http://yoursite.com/2020/03/05/leetcode/leetcode_Branch_and_bound/</id>
-    <published>2020-03-05T09:51:55.000Z</published>
-    <updated>2020-06-09T18:52:20.070Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
-    
-    
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>动态规划</title>
-    <link href="http://yoursite.com/2020/03/05/leetcode/leetcode_dp/"/>
-    <id>http://yoursite.com/2020/03/05/leetcode/leetcode_dp/</id>
-    <published>2020-03-05T09:51:55.000Z</published>
-    <updated>2020-06-09T18:52:20.070Z</updated>
-    
-    <content type="html"><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p><ul><li>原问题与子问题</li><li>动态规划状态</li><li>边界状态的值</li><li>状态转移方差</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;原问题与子问题&lt;/li&gt;
-&lt;li&gt;动态规划状态&lt;/li&gt;
-&lt;li&gt;边界状态的值&lt;/li&gt;
-&lt;li&gt;状态转移方差&lt;/li&gt;
-&lt;/ul&gt;
-
-      
     
     </summary>
     

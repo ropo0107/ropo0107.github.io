@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/08/30/robot/kinect_dk/</loc>
+    
+    <lastmod>2020-08-31T09:01:41.545Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/07/19/robot/ros_error/</loc>
+    
+    <lastmod>2020-07-22T11:43:28.949Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/07/19/robot/ros_workspace/</loc>
     
     <lastmod>2020-07-19T13:58:11.929Z</lastmod>
