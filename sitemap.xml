@@ -2,9 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/12/21/tips/docker/</loc>
+    
+    <lastmod>2020-12-21T07:36:34.490Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/08/30/robot/kinect_dk/</loc>
     
-    <lastmod>2020-08-31T09:01:41.545Z</lastmod>
+    <lastmod>2020-11-17T14:56:10.527Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/11/17/robot/gpd/</loc>
+    
+    <lastmod>2020-11-17T14:51:49.592Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/11/03/robot/robot_dynamic/</loc>
+    
+    <lastmod>2020-11-03T08:16:25.192Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/11/03/robot/robot_base%20copy/</loc>
+    
+    <lastmod>2020-11-03T08:16:13.031Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/07/11/robot/quaternion/</loc>
+    
+    <lastmod>2020-10-23T02:02:28.039Z</lastmod>
     
   </url>
   
@@ -19,13 +54,6 @@
     <loc>http://yoursite.com/2020/07/19/robot/ros_workspace/</loc>
     
     <lastmod>2020-07-19T13:58:11.929Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/07/11/robot/quaternion/</loc>
-    
-    <lastmod>2020-07-19T13:58:04.032Z</lastmod>
     
   </url>
   
