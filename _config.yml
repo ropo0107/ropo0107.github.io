@@ -110,7 +110,7 @@ theme: next
 deploy:
   type: git
   repo: 
-        vps: root@165.22.253.164:hexo.git
+        # vps: root@165.22.253.164:hexo.git
         epository: git@github.com:ropo0107/ropo0107.github.io.git
   branch: master  
 

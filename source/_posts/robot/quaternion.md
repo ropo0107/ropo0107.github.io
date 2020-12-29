@@ -50,7 +50,7 @@ date: 2020-07-11 23:34:55
 ## 四元数求夹角
 已知两个四元数$q_0$和$q_1$, 求两个相对旋转的夹角
 - 假设已知$\Delta q$:
-    
+  
     $\Delta q q_0 = q_1$
 
     $\Delta q q_0 q_0^{-1}= q_1 q_0^{-1}$
@@ -100,6 +100,8 @@ date: 2020-07-11 23:34:55
 
 ## 参考链接:
 https://zhuanlan.zhihu.com/p/87418561
+
+https://krasjet.github.io/quaternion/quaternion.pdf
 
 ## code链接:
 
