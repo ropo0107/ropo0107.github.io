@@ -100,19 +100,19 @@ theme: next
 
 
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
-# deploy:
-#   type: git
-#   repository: git@github.com:ropo0107/ropo0107.github.io.git
-#   branch: master
-
-
+# Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: 
-        # vps: root@165.22.253.164:hexo.git
-        epository: git@github.com:ropo0107/ropo0107.github.io.git
-  branch: master  
+  repository: git@github.com:ropo0107/ropo0107.github.io.git
+  branch: master
+
+
+# deploy Multiple servers:
+#   type: git
+#   repo: 
+#         # vps: root@165.22.253.164:hexo.git
+#         repository: git@github.com:ropo0107/ropo0107.github.io.git
+#   branch: master  
 
 # web search
 search:
