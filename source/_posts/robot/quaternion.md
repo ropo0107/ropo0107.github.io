@@ -9,12 +9,23 @@ related_posts: false
 date: 2020-07-11 23:34:55
 ---
 
-对于坐标的变换，旋转和平移是基本的两步，平移可以是一个标量， 旋转有多种形式可以表示，（四元数， 欧拉角，旋转矩阵）
+对于坐标的变换，旋转和平移是基本的两步，平移可以是一个标量， 旋转有多种形式可以表示，（RPY， 欧拉角， 四元数， 旋转矢量， 旋转矩阵）
+
+## RPY
+固定（参考）坐标系 A 旋转：假设开始两个坐标系重合，先将 B 绕 A 的 X 轴旋转$\alpha$，然后绕 A 的 Y 轴旋转 $\beta$，最后绕 A 的 Z 轴旋转 $\gamma$，就能旋转到当前姿态。可以称其(Roll, Pitch, Yaw)。由于是绕固定坐标系旋转，则旋转矩阵为：
+$$R_{XYZ}​(\alpha,\beta,\gamma)=R_Z​(\gamma)R_Y​(\beta)R_X(\alpha)$$
 
 ## 欧拉角
 ![](/images/posts/robot/quaternion/eular.gif)
 
 图中演示的就是用 $(z, x,z^{'})$ 方法表示方向的过程。在此过程中，有如下图展示的 $(\alpha, \beta,\gamma)$三个角，分别绕着原坐标z轴(蓝)，一次旋转以后的x轴(绿)以及两次旋转以后的z轴(红)旋转，最终产生的红色坐标系即表示出目标方向。
+
+绕自身坐标轴 B 旋转：假设开始两个坐标系重合，先将 B 绕自身的 Z 轴旋转 $\gamma$，然后绕 Y 轴旋转 $\beta$，最后绕 X 轴旋转 $\alpha$，就能旋转到当前姿态。称其为Z-Y-X欧拉角，由于是绕自身坐标轴进行旋转，则旋转矩阵为:
+$$R_{X^{'}Y^{'}Z^{'}}​(\alpha,\beta,\gamma)=R_{Z^{'}}​(\gamma)R_{Y^{'}}​(\beta)R_{X^{'}}(\alpha)$$
+
+## RPY和欧拉角的联系
+经过RPY旋转（定轴，外旋）可以到达另一个坐标系，等价于经过绕动轴ZYX旋转（内旋）到达另一个坐标系
+$$Eular_{zyx} = (yaw, pitch, roll)$$
 
 ## 四元数定义
 首先，定义一个你需要做的旋转。旋转轴为向量$v=(vx,vy,vz)$，旋转角度为$\theta$（右手法则的旋转）
@@ -24,7 +35,7 @@ date: 2020-07-11 23:34:55
 图中$v=(\frac{1}{\sqrt{14}}, \frac{2}{\sqrt{14}}, \frac{3}{\sqrt{14}}), \theta = \frac{\pi}{3}$
 
 那么与此相对应的四元数（下三行式子都是一个意思，只是不同的表达形式）
-- $$q=(\cos(\frac{\theta}{2}), \sin(\frac{\theta}{2})*vx,\sin(\frac{\theta}{2})*vy,\sin(\frac{\theta}{2})*vz$$$$$
+- $$q=(\cos(\frac{\theta}{2}), \sin(\frac{\theta}{2})*vx,\sin(\frac{\theta}{2})*vy,\sin(\frac{\theta}{2})*vz$$
 - $$q=(\cos(\frac{\\pi}{6}), \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}},sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}}, \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})$$
 - $$q=(\cos(\frac{\\pi}{6}) + \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}} i + sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}} j +  \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)$$
 
@@ -33,7 +44,12 @@ date: 2020-07-11 23:34:55
 - $$q^{-1}=(\cos(\frac{\theta}{2}), -\sin(\frac{\theta}{2})*vx,-\sin(\frac{\theta}{2})*vy,-\sin(\frac{\theta}{2})*vz$$
 - $$q^{-1}=(\cos(\frac{\\pi}{6}), -\sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}}, - sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}}, -\sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})$$
 - $$q^{-1}=(\cos(\frac{\\pi}{6}) - \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}} i - sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}} j - \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)$$
-  
+
+## 旋转矢量和四元数的联系
+四元数由4个值组成， 可以通过旋转矢量中的3个量表示。方法是通过定轴旋转可得到四元数中的
+轴$v=(vx,vy,vz)$以及角$\theta$。
+$$RotateVector = \theta*v=\theta*(vx,vy,vz)$$
+
 ## 四元数运算
 求$w=(wx,wy,wz)$在旋转下的新的坐标$w'$
 - 定义纯四元数
