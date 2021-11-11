@@ -119,4 +119,4 @@ search:
   path: search.xml
   field: post
   format: html
-  limit: 20000
+  limit: 200
