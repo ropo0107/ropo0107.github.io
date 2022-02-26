@@ -171,23 +171,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【ros】 编译时的问题</title>
-    <url>/ropo0107.github.io/2020/07/19/robot/ros_error/</url>
-    <content><![CDATA[<p>ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/build.make:62: recipe for target ‘ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/src/main.cpp.o’ failed<br>make[2]: <em>*</em> [ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/src/main.cpp.o] Error 1</p>
-<p>set(CMAKE_CXX_FLAGS “${CMAKE_CXX_FLAGS} -std=c++11”)</p>
-<p>The kinematics plugin (rh_first_finger) failed to load. Error: Failed to load library /home/sunshine/ros/shadow_demo/base/devel/lib//libhand_kinematics.so. Make sure that yo<br>u are calling the PLUGINLIB_EXPORT_CLASS macro in the library code, and that names are consistent between this macro and your XML. Error string: Could not load library (Poco exception = libmoveit_kinematic<br>s_base.so.0.9.15: cannot open shared object file: No such file or directory)</p>
-<p>问题不在于kinematics 插件， 问题在于moveit版本</p>
-]]></content>
-      <categories>
-        <category>学术</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Robot</tag>
-        <tag>Ros</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【ros】 workspace and namespace</title>
     <url>/ropo0107.github.io/2020/07/19/robot/ros_workspace/</url>
     <content><![CDATA[<p>一直想把之前ros的坑给补上， 最近终于有机会了</p>
@@ -235,6 +218,23 @@
 <li>给两个名字前加上定语，就是 <strong>添加命名空间</strong>；</li>
 <li>给两个名字取个不同的别名，就是 <strong>重映射</strong>；</li>
 </ul>
+]]></content>
+      <categories>
+        <category>学术</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Robot</tag>
+        <tag>Ros</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【ros】 编译时的问题</title>
+    <url>/ropo0107.github.io/2020/07/19/robot/ros_error/</url>
+    <content><![CDATA[<p>ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/build.make:62: recipe for target ‘ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/src/main.cpp.o’ failed<br>make[2]: <em>*</em> [ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/src/main.cpp.o] Error 1</p>
+<p>set(CMAKE_CXX_FLAGS “${CMAKE_CXX_FLAGS} -std=c++11”)</p>
+<p>The kinematics plugin (rh_first_finger) failed to load. Error: Failed to load library /home/sunshine/ros/shadow_demo/base/devel/lib//libhand_kinematics.so. Make sure that yo<br>u are calling the PLUGINLIB_EXPORT_CLASS macro in the library code, and that names are consistent between this macro and your XML. Error string: Could not load library (Poco exception = libmoveit_kinematic<br>s_base.so.0.9.15: cannot open shared object file: No such file or directory)</p>
+<p>问题不在于kinematics 插件， 问题在于moveit版本</p>
 ]]></content>
       <categories>
         <category>学术</category>
@@ -350,97 +350,6 @@ w_{z1}\sin(\theta_1) \\
       <tags>
         <tag>Note</tag>
         <tag>Robot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【rl_note】2. Markov Decision Processes</title>
-    <url>/ropo0107.github.io/2020/05/29/rl/rl_note_mdp/</url>
-    <content><![CDATA[<h2 id="overview"><a href="#overview" class="headerlink" title="overview"></a>overview</h2><ul>
-<li>Markov Processes</li>
-<li>Markov Reward Processes(MRPs)</li>
-<li>Markov Decision Processes (MDPs)</li>
-<li>v(s)，q(s,a) transform</li>
-<li>policy iteration</li>
-<li>value iteration</li>
-</ul>
-<h2 id="Markov"><a href="#Markov" class="headerlink" title="Markov"></a>Markov</h2><h3 id="MP-S-P"><a href="#MP-S-P" class="headerlink" title="MP (S,P)"></a>MP (S,P)</h3><p>The future is independent of the past given the present</p>
-<ul>
-<li>history state $h_t = {s_1,s_2,s_3…,s_t}$</li>
-<li>$P(s_{t+1}\mid s_t) = P(s_{t+1}\mid h_t)$</li>
-<li>$P(s_{t+1}\mid s_t, a_t) = P(s_{t+1}\mid h_t, a_t)$</li>
-<li>State transition matrix P specifies <script type="math/tex; mode=display">p(s_{t+1} = s' |s_t = s)</script></li>
-</ul>
-<h3 id="MRP-S-P-R-gamma"><a href="#MRP-S-P-R-gamma" class="headerlink" title="MRP (S,P,R, $\gamma$)"></a>MRP (S,P,R, $\gamma$)</h3><ul>
-<li>Markov Chain + reward</li>
-<li>Definition of Markov Reward Process (MRP)<ul>
-<li>$S$ is a (finite) set of states ($s ∈ S$)</li>
-<li>P is dynamics/transition model that specifies <script type="math/tex; mode=display">P(S_{t+1} = s' |s_t = s)</script></li>
-<li>R is a reward function <script type="math/tex; mode=display">R(s_t = s) = \mathbb{E}[r_t \mid s_t = s]</script></li>
-<li>Discount factor $\gamma \in [0,1]$</li>
-</ul>
-</li>
-<li><p>Value Function</p>
-<ul>
-<li><script type="math/tex; mode=display">G_t = R_{t+1}+\gamma R_{t+2}+ ... = \sum\gamma^kR_{t+k+1}</script><script type="math/tex; mode=display">V_\pi(s) = \mathbb{E}_\pi[G_t\mid S_t=s]</script><ul>
-<li><p><strong>Bellman equation</strong></p>
-<script type="math/tex; mode=display">V_\pi(s) = R_{t+1} + \gamma\sum P(s'\mid s)V(s')</script></li>
-<li><script type="math/tex; mode=display">V = R + \gamma P V</script><script type="math/tex; mode=display">V = (1-\gamma P)^{-1}R</script> <strong>Note</strong>Matrix inverse takes the complexity $O(N^3 )$ for N states</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="MDP-S-P-A-R-gamma"><a href="#MDP-S-P-A-R-gamma" class="headerlink" title="MDP (S,P,A,R, $\gamma$)"></a>MDP (S,P,A,R, $\gamma$)</h3><ul>
-<li>MRP + decisions $A$.</li>
-<li>Definaation<ul>
-<li>$S$ is a finite set of states</li>
-<li>$A$ is a finite set of actions</li>
-<li>$P^a$ is dynamics/transition model for each action<br>  $$P(s_{t+1} = s’ |s_t = s, a_t = a)</li>
-<li></li>
-<li>$R$ is a reward function<br>  $$R(s_t = s, a_t = a) = \mathbb{E}[r_t \mid s_t = s, a_t = a]</li>
-<li></li>
-<li>Discount factor $\gamma \in [0, 1]$</li>
-</ul>
-</li>
-<li><p>Policy in MDP</p>
-<ul>
-<li>$\pi(a|s) = P(a_t = a|s_t = s)$</li>
-<li><p>$P_\pi(s’|s) = \sum\limits_{a \in A}\pi(a|s)P(s‘|s, a) 　　　a\in A$  </p>
-</li>
-<li><p>$R(s) = \sum\limits_{a \in A} (a|s)R(s,a)$</p>
-</li>
-</ul>
-</li>
-<li><p>Value Function</p>
-<ul>
-<li><p>state value function</p>
-<p>  用来衡量当前状态的价值</p>
-<script type="math/tex; mode=display">V^\pi = \mathbb{E}_\pi[G_t \mid s_t = s]</script></li>
-<li><p>action value function</p>
-<p>  用来衡量状态s下a的价值</p>
-<script type="math/tex; mode=display">q^\pi(s,a) = \mathbb{E}_\pi[G_t \mid s_t =s, a_t = a]</script></li>
-<li><p>$v^\pi(s) \And q^\pi(s,a)$</p>
-<script type="math/tex; mode=display">v^\pi(s) = \sum\limits_{a\in A} \pi(a | s)q^\pi(s,a)</script></li>
-<li><p>状态s 和 动作 a 之间的转换<br>  <img src="/images/posts/rl/mdp/compare_mp_mdp.png" alt=""><br>  <img src="/images/posts/rl/mdp/one.png" alt=""><br>  <img src="/images/posts/rl/mdp/two.png" alt=""></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="v-s-q-s-a"><a href="#v-s-q-s-a" class="headerlink" title="v(s),q(s,a)"></a>v(s),q(s,a)</h2><p><strong>NOTE:</strong> MRP 对应 V(s), MDP 对应 Q(s,a)</p>
-<h2 id="Dynamic-Programming"><a href="#Dynamic-Programming" class="headerlink" title="Dynamic Programming"></a>Dynamic Programming</h2><p>已知MDP过程，<strong>转移矩阵</strong> 和 <strong>奖励函数</strong> 都是已知的</p>
-<h3 id="Policy-Iteration"><a href="#Policy-Iteration" class="headerlink" title="Policy Iteration"></a>Policy Iteration</h3><p>Bellman Expectation Equation<br><img src="/images/posts/rl/mdp/policy_iteration.png" alt=""></p>
-<h4 id="policy-evaluation"><a href="#policy-evaluation" class="headerlink" title="policy evaluation"></a>policy evaluation</h4><p>iteration on the Bellman expectation backup</p>
-<script type="math/tex; mode=display">V_i(s) = \sum\limits_{a \in A} \pi(a|s)(R(a,s) + \sum\limits_{s' \in S}P(s'|s,a)v_{i-1}(s'))</script><h4 id="policy-improvement"><a href="#policy-improvement" class="headerlink" title="policy improvement"></a>policy improvement</h4><p>greedy on action-value function q</p>
-<script type="math/tex; mode=display">q_{\pi_i}(s,a) = R(s,a)+\gamma\sum\limits_{s\in S}P(s'|s,a) V_{\pi_i}(s')</script><script type="math/tex; mode=display">\pi_{i+1}(s) =  arg \max\limits_a q_{\pi_i}(s,a)</script><h3 id="Value-Iteration"><a href="#Value-Iteration" class="headerlink" title="Value Iteration"></a>Value Iteration</h3><p>Bellman Optimality Equation</p>
-<p>整个过程没有策略的引入</p>
-<h4 id="iteration-on-the-Bellman-optimality-backup"><a href="#iteration-on-the-Bellman-optimality-backup" class="headerlink" title="iteration on the Bellman optimality backup"></a>iteration on the Bellman optimality backup</h4><script type="math/tex; mode=display">v_{i+1}(s) \larr \max\limits_{a\in A}R(s,a) + \gamma\sum\limits_{s'\in S}P(s'|s,a)v_i(s')</script><h4 id="retrieve-the-optimal-policy-after-the-value-iteration"><a href="#retrieve-the-optimal-policy-after-the-value-iteration" class="headerlink" title="retrieve the optimal policy after the value iteration"></a>retrieve the optimal policy after the value iteration</h4><p>在前面迭代收敛后再，根据 $v_{end}(s)$ 选取策略</p>
-<script type="math/tex; mode=display">\pi^*(s) \larr \argmax\limits_a R(s,a) + \gamma\sum\limits_{s'\in S}P(s'|s,a)v_{end}(s')</script>]]></content>
-      <categories>
-        <category>学术</category>
-      </categories>
-      <tags>
-        <tag>RL</tag>
-        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -691,6 +600,179 @@ w_{z1}\sin(\theta_1) \\
       </tags>
   </entry>
   <entry>
+    <title>【rl_note】2. Markov Decision Processes</title>
+    <url>/ropo0107.github.io/2020/05/29/rl/rl_note_mdp/</url>
+    <content><![CDATA[<h2 id="overview"><a href="#overview" class="headerlink" title="overview"></a>overview</h2><ul>
+<li>Markov Processes</li>
+<li>Markov Reward Processes(MRPs)</li>
+<li>Markov Decision Processes (MDPs)</li>
+<li>v(s)，q(s,a) transform</li>
+<li>policy iteration</li>
+<li>value iteration</li>
+</ul>
+<h2 id="Markov"><a href="#Markov" class="headerlink" title="Markov"></a>Markov</h2><h3 id="MP-S-P"><a href="#MP-S-P" class="headerlink" title="MP (S,P)"></a>MP (S,P)</h3><p>The future is independent of the past given the present</p>
+<ul>
+<li>history state $h_t = {s_1,s_2,s_3…,s_t}$</li>
+<li>$P(s_{t+1}\mid s_t) = P(s_{t+1}\mid h_t)$</li>
+<li>$P(s_{t+1}\mid s_t, a_t) = P(s_{t+1}\mid h_t, a_t)$</li>
+<li>State transition matrix P specifies <script type="math/tex; mode=display">p(s_{t+1} = s' |s_t = s)</script></li>
+</ul>
+<h3 id="MRP-S-P-R-gamma"><a href="#MRP-S-P-R-gamma" class="headerlink" title="MRP (S,P,R, $\gamma$)"></a>MRP (S,P,R, $\gamma$)</h3><ul>
+<li>Markov Chain + reward</li>
+<li>Definition of Markov Reward Process (MRP)<ul>
+<li>$S$ is a (finite) set of states ($s ∈ S$)</li>
+<li>P is dynamics/transition model that specifies <script type="math/tex; mode=display">P(S_{t+1} = s' |s_t = s)</script></li>
+<li>R is a reward function <script type="math/tex; mode=display">R(s_t = s) = \mathbb{E}[r_t \mid s_t = s]</script></li>
+<li>Discount factor $\gamma \in [0,1]$</li>
+</ul>
+</li>
+<li><p>Value Function</p>
+<ul>
+<li><script type="math/tex; mode=display">G_t = R_{t+1}+\gamma R_{t+2}+ ... = \sum\gamma^kR_{t+k+1}</script><script type="math/tex; mode=display">V_\pi(s) = \mathbb{E}_\pi[G_t\mid S_t=s]</script><ul>
+<li><p><strong>Bellman equation</strong></p>
+<script type="math/tex; mode=display">V_\pi(s) = R_{t+1} + \gamma\sum P(s'\mid s)V(s')</script></li>
+<li><script type="math/tex; mode=display">V = R + \gamma P V</script><script type="math/tex; mode=display">V = (1-\gamma P)^{-1}R</script> <strong>Note</strong>Matrix inverse takes the complexity $O(N^3 )$ for N states</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="MDP-S-P-A-R-gamma"><a href="#MDP-S-P-A-R-gamma" class="headerlink" title="MDP (S,P,A,R, $\gamma$)"></a>MDP (S,P,A,R, $\gamma$)</h3><ul>
+<li>MRP + decisions $A$.</li>
+<li>Definaation<ul>
+<li>$S$ is a finite set of states</li>
+<li>$A$ is a finite set of actions</li>
+<li>$P^a$ is dynamics/transition model for each action<br>  $$P(s_{t+1} = s’ |s_t = s, a_t = a)</li>
+<li></li>
+<li>$R$ is a reward function<br>  $$R(s_t = s, a_t = a) = \mathbb{E}[r_t \mid s_t = s, a_t = a]</li>
+<li></li>
+<li>Discount factor $\gamma \in [0, 1]$</li>
+</ul>
+</li>
+<li><p>Policy in MDP</p>
+<ul>
+<li>$\pi(a|s) = P(a_t = a|s_t = s)$</li>
+<li><p>$P_\pi(s’|s) = \sum\limits_{a \in A}\pi(a|s)P(s‘|s, a) 　　　a\in A$  </p>
+</li>
+<li><p>$R(s) = \sum\limits_{a \in A} (a|s)R(s,a)$</p>
+</li>
+</ul>
+</li>
+<li><p>Value Function</p>
+<ul>
+<li><p>state value function</p>
+<p>  用来衡量当前状态的价值</p>
+<script type="math/tex; mode=display">V^\pi = \mathbb{E}_\pi[G_t \mid s_t = s]</script></li>
+<li><p>action value function</p>
+<p>  用来衡量状态s下a的价值</p>
+<script type="math/tex; mode=display">q^\pi(s,a) = \mathbb{E}_\pi[G_t \mid s_t =s, a_t = a]</script></li>
+<li><p>$v^\pi(s) \And q^\pi(s,a)$</p>
+<script type="math/tex; mode=display">v^\pi(s) = \sum\limits_{a\in A} \pi(a | s)q^\pi(s,a)</script></li>
+<li><p>状态s 和 动作 a 之间的转换<br>  <img src="/images/posts/rl/mdp/compare_mp_mdp.png" alt=""><br>  <img src="/images/posts/rl/mdp/one.png" alt=""><br>  <img src="/images/posts/rl/mdp/two.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="v-s-q-s-a"><a href="#v-s-q-s-a" class="headerlink" title="v(s),q(s,a)"></a>v(s),q(s,a)</h2><p><strong>NOTE:</strong> MRP 对应 V(s), MDP 对应 Q(s,a)</p>
+<h2 id="Dynamic-Programming"><a href="#Dynamic-Programming" class="headerlink" title="Dynamic Programming"></a>Dynamic Programming</h2><p>已知MDP过程，<strong>转移矩阵</strong> 和 <strong>奖励函数</strong> 都是已知的</p>
+<h3 id="Policy-Iteration"><a href="#Policy-Iteration" class="headerlink" title="Policy Iteration"></a>Policy Iteration</h3><p>Bellman Expectation Equation<br><img src="/images/posts/rl/mdp/policy_iteration.png" alt=""></p>
+<h4 id="policy-evaluation"><a href="#policy-evaluation" class="headerlink" title="policy evaluation"></a>policy evaluation</h4><p>iteration on the Bellman expectation backup</p>
+<script type="math/tex; mode=display">V_i(s) = \sum\limits_{a \in A} \pi(a|s)(R(a,s) + \sum\limits_{s' \in S}P(s'|s,a)v_{i-1}(s'))</script><h4 id="policy-improvement"><a href="#policy-improvement" class="headerlink" title="policy improvement"></a>policy improvement</h4><p>greedy on action-value function q</p>
+<script type="math/tex; mode=display">q_{\pi_i}(s,a) = R(s,a)+\gamma\sum\limits_{s\in S}P(s'|s,a) V_{\pi_i}(s')</script><script type="math/tex; mode=display">\pi_{i+1}(s) =  arg \max\limits_a q_{\pi_i}(s,a)</script><h3 id="Value-Iteration"><a href="#Value-Iteration" class="headerlink" title="Value Iteration"></a>Value Iteration</h3><p>Bellman Optimality Equation</p>
+<p>整个过程没有策略的引入</p>
+<h4 id="iteration-on-the-Bellman-optimality-backup"><a href="#iteration-on-the-Bellman-optimality-backup" class="headerlink" title="iteration on the Bellman optimality backup"></a>iteration on the Bellman optimality backup</h4><script type="math/tex; mode=display">v_{i+1}(s) \larr \max\limits_{a\in A}R(s,a) + \gamma\sum\limits_{s'\in S}P(s'|s,a)v_i(s')</script><h4 id="retrieve-the-optimal-policy-after-the-value-iteration"><a href="#retrieve-the-optimal-policy-after-the-value-iteration" class="headerlink" title="retrieve the optimal policy after the value iteration"></a>retrieve the optimal policy after the value iteration</h4><p>在前面迭代收敛后再，根据 $v_{end}(s)$ 选取策略</p>
+<script type="math/tex; mode=display">\pi^*(s) \larr \argmax\limits_a R(s,a) + \gamma\sum\limits_{s'\in S}P(s'|s,a)v_{end}(s')</script>]]></content>
+      <categories>
+        <category>学术</category>
+      </categories>
+      <tags>
+        <tag>RL</tag>
+        <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【rl_note】4. Value Function Approximation</title>
+    <url>/ropo0107.github.io/2020/05/29/rl/rl_note_value_function_approximation/</url>
+    <content><![CDATA[<h2 id="Challenges-with-large-MDPs"><a href="#Challenges-with-large-MDPs" class="headerlink" title="Challenges with large MDPs:"></a>Challenges with large MDPs:</h2><ul>
+<li>too many states or actions to store in memory</li>
+<li>too slow to learn the value of each state individually</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>为了避免通过查表的方式表示Value function, state-action function，Policy</li>
+<li><p>Estimate with function approximation</p>
+<ul>
+<li>$\hat{v} (s, \mathbf{\omega}) \approx  v^π (s)$</li>
+<li>$\hat{q}(s, a, \mathbf{\omega}) \approx  q^π (s, a)$</li>
+<li>$\hat{\pi}(a, s, \mathbf{\omega}) \approx  π(a \mid s)$</li>
+</ul>
+</li>
+<li><p>Linear VFA often works well given the right set of features, But it requires manual designing of the feature set</p>
+</li>
+<li>Alternative is to use a much richer function approximator that is able to directly learn from states without requiring the feature design</li>
+<li>Nonlinear function approximator: Deep neural networks</li>
+</ul>
+<h2 id="Value-Function-Approximation-with-an-Oracle"><a href="#Value-Function-Approximation-with-an-Oracle" class="headerlink" title="Value Function Approximation with an Oracle"></a>Value Function Approximation with an Oracle</h2><ul>
+<li>We assume that we have the oracle for knowing the true value for<br>$v^π (s)$ for any given state $s$</li>
+<li>Then the objective is to find the best approximate representation of $v^π (s)$</li>
+<li>Thus use the <strong>mean squared error</strong> and define the loss function as<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_π [(v^π (s) − \hat{v}(s, w))^2]</script></li>
+<li>Follow the gradient descend to find a local minimum<script type="math/tex; mode=display">\Delta \omega = − {1 \over 2} \alpha ∇_\omega J(\omega)</script><script type="math/tex; mode=display">\omega_{t+1} = \omega_t + \Delta \omega</script></li>
+</ul>
+<h2 id="Linear-Value-Function-Approximation"><a href="#Linear-Value-Function-Approximation" class="headerlink" title="Linear Value Function Approximation"></a>Linear Value Function Approximation</h2><ul>
+<li>Represent value function by a linear combination of features, s is feature vector<script type="math/tex; mode=display">\hat{v}(s,\omega) = x(s)^T \omega = \sum_{j=1}^n x_j(s)\omega_j</script></li>
+<li>The objective function is quadratic in parameter $\omega$<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_\pi[v^\pi(s) − x(s)^T \omega]^2</script></li>
+<li>Thus the update rule is as simple as<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{v^\pi(s)} − \hat{v}(s, \omega))x(s)</script><script type="math/tex; mode=display">Update = StepSize × PredictionError × FeatureValue</script></li>
+<li>Stochastic gradient descent converges to global optimum. Because in the linear case, there is only one optimum, thus local optimum is automatically converge to or near the global optimum.</li>
+<li><p>Special case</p>
+<ul>
+<li>Table lookup is a special case of linear value function approximation</li>
+<li><p>Table lookup feature is one-hot vector <strong>(只有一个元素为1)</strong> as follows</p>
+<script type="math/tex; mode=display">x^{table}(s) = [0(s = s_1 ), ..., 1(s = s_n )]^T</script></li>
+<li><p>Then we can see that each element on the parameter vector $w$ indicates the value of each individual state</p>
+<script type="math/tex; mode=display">\hat{v}(s, \omega) = [0(s = s_1 ), ..., 1(s = s_n)] [w_1 , ..., w_n]^T</script></li>
+<li><p>Thus we have（对于的权重就是对应k的权重） </p>
+<script type="math/tex; mode=display">\hat{v}(s_k , \omega) = \omega_k</script></li>
+</ul>
+</li>
+</ul>
+<h2 id="No-Oracle"><a href="#No-Oracle" class="headerlink" title="No Oracle"></a>No Oracle</h2><ul>
+<li><p>For MC, the target is the actual return $G_t$</p>
+<script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{v}(s_t , \omega) ∇\omega \hat{v}(s_t , \omega)</script><p>  <strong>$G_t$</strong> 因为是采样，所以这儿是无偏的估计， 但是会有噪声</p>
+</li>
+<li>For TD(0), the target is the TD target $R_{t+1} + \gamma \hat{v}(s_{t+1} , \mathbf{\omega})$<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{v} (s_{t+1} , \omega)} − \hat{v}(s_t , \omega) ∇ \omega\hat{v} (s_t , \omega)</script>  <strong>TD target</strong> 有偏估计， 因为用到了旧时刻的 $\omega$</li>
+</ul>
+<p>Generalized policy iteration<br><img src="/images/posts/rl/value_function_approximation/policy_iteration.png" alt=""></p>
+<h3 id="同理-v-s-可替换为-q-s-a"><a href="#同理-v-s-可替换为-q-s-a" class="headerlink" title="同理 $v(s)$ 可替换为 $q(s,a)$"></a>同理 $v(s)$ 可替换为 $q(s,a)$</h3><ul>
+<li><p>MC</p>
+<script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{q}(s_t ,a_t, \omega) ∇\omega \hat{q}(s_t ,a_t, \omega)</script></li>
+<li><p>sarsa</p>
+<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{q} (s_{t+1} ,a_{t+1}, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script><p>  <strong>Note:</strong> 训练困难</p>
+<ul>
+<li>在优化过程中，即近似 <strong>Bellman backup</strong> 又近似 <strong>value function</strong>, </li>
+<li>off-policy control: <strong>behavior policy</strong> and <strong>target policy</strong> </li>
+</ul>
+</li>
+<li><p>q-learning</p>
+<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \max_a \hat{q}(s_{t+1} ,a, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script></li>
+</ul>
+<p><img src="/images/posts/rl/value_function_approximation/sarsa_semi_gradient.png" alt=""></p>
+<h3 id="Deadly-Triad"><a href="#Deadly-Triad" class="headerlink" title="Deadly Triad"></a>Deadly Triad</h3><ul>
+<li>Function approximation: 利用函数估计会有误差</li>
+<li>Bootstrapping: 主要影响 TD 和 MP</li>
+<li>Off-policy training:  <strong>behavior policy</strong> and <strong>target policy</strong> </li>
+</ul>
+<h2 id="Convergence"><a href="#Convergence" class="headerlink" title="Convergence"></a>Convergence</h2><p><img src="/images/posts/rl/value_function_approximation/convergence.png" alt=""></p>
+<hr>
+<p><img src="/images/posts/rl/value_function_approximation/convergence_al.png" alt=""></p>
+<h2 id="DQN"><a href="#DQN" class="headerlink" title="DQN"></a>DQN</h2>]]></content>
+      <categories>
+        <category>学术</category>
+      </categories>
+      <tags>
+        <tag>RL</tag>
+        <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【rl_note】5. Policy Gradent(AC, TRPO, PPO)</title>
     <url>/ropo0107.github.io/2020/05/29/rl/rl_note_policy_gradent/</url>
     <content><![CDATA[<h1 id="Policy-Gradent"><a href="#Policy-Gradent" class="headerlink" title="Policy Gradent"></a>Policy Gradent</h1><h2 id="Value-based-RL-vs-Policy-based-RL"><a href="#Value-based-RL-vs-Policy-based-RL" class="headerlink" title="Value-based RL vs Policy-based RL"></a>Value-based RL vs Policy-based RL</h2><ul>
@@ -883,88 +965,6 @@ w_{z1}\sin(\theta_1) \\
 <li></li>
 </ul>
 ]]></content>
-      <categories>
-        <category>学术</category>
-      </categories>
-      <tags>
-        <tag>RL</tag>
-        <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【rl_note】4. Value Function Approximation</title>
-    <url>/ropo0107.github.io/2020/05/29/rl/rl_note_value_function_approximation/</url>
-    <content><![CDATA[<h2 id="Challenges-with-large-MDPs"><a href="#Challenges-with-large-MDPs" class="headerlink" title="Challenges with large MDPs:"></a>Challenges with large MDPs:</h2><ul>
-<li>too many states or actions to store in memory</li>
-<li>too slow to learn the value of each state individually</li>
-</ul>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
-<li>为了避免通过查表的方式表示Value function, state-action function，Policy</li>
-<li><p>Estimate with function approximation</p>
-<ul>
-<li>$\hat{v} (s, \mathbf{\omega}) \approx  v^π (s)$</li>
-<li>$\hat{q}(s, a, \mathbf{\omega}) \approx  q^π (s, a)$</li>
-<li>$\hat{\pi}(a, s, \mathbf{\omega}) \approx  π(a \mid s)$</li>
-</ul>
-</li>
-<li><p>Linear VFA often works well given the right set of features, But it requires manual designing of the feature set</p>
-</li>
-<li>Alternative is to use a much richer function approximator that is able to directly learn from states without requiring the feature design</li>
-<li>Nonlinear function approximator: Deep neural networks</li>
-</ul>
-<h2 id="Value-Function-Approximation-with-an-Oracle"><a href="#Value-Function-Approximation-with-an-Oracle" class="headerlink" title="Value Function Approximation with an Oracle"></a>Value Function Approximation with an Oracle</h2><ul>
-<li>We assume that we have the oracle for knowing the true value for<br>$v^π (s)$ for any given state $s$</li>
-<li>Then the objective is to find the best approximate representation of $v^π (s)$</li>
-<li>Thus use the <strong>mean squared error</strong> and define the loss function as<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_π [(v^π (s) − \hat{v}(s, w))^2]</script></li>
-<li>Follow the gradient descend to find a local minimum<script type="math/tex; mode=display">\Delta \omega = − {1 \over 2} \alpha ∇_\omega J(\omega)</script><script type="math/tex; mode=display">\omega_{t+1} = \omega_t + \Delta \omega</script></li>
-</ul>
-<h2 id="Linear-Value-Function-Approximation"><a href="#Linear-Value-Function-Approximation" class="headerlink" title="Linear Value Function Approximation"></a>Linear Value Function Approximation</h2><ul>
-<li>Represent value function by a linear combination of features, s is feature vector<script type="math/tex; mode=display">\hat{v}(s,\omega) = x(s)^T \omega = \sum_{j=1}^n x_j(s)\omega_j</script></li>
-<li>The objective function is quadratic in parameter $\omega$<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_\pi[v^\pi(s) − x(s)^T \omega]^2</script></li>
-<li>Thus the update rule is as simple as<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{v^\pi(s)} − \hat{v}(s, \omega))x(s)</script><script type="math/tex; mode=display">Update = StepSize × PredictionError × FeatureValue</script></li>
-<li>Stochastic gradient descent converges to global optimum. Because in the linear case, there is only one optimum, thus local optimum is automatically converge to or near the global optimum.</li>
-<li><p>Special case</p>
-<ul>
-<li>Table lookup is a special case of linear value function approximation</li>
-<li><p>Table lookup feature is one-hot vector <strong>(只有一个元素为1)</strong> as follows</p>
-<script type="math/tex; mode=display">x^{table}(s) = [0(s = s_1 ), ..., 1(s = s_n )]^T</script></li>
-<li><p>Then we can see that each element on the parameter vector $w$ indicates the value of each individual state</p>
-<script type="math/tex; mode=display">\hat{v}(s, \omega) = [0(s = s_1 ), ..., 1(s = s_n)] [w_1 , ..., w_n]^T</script></li>
-<li><p>Thus we have（对于的权重就是对应k的权重） </p>
-<script type="math/tex; mode=display">\hat{v}(s_k , \omega) = \omega_k</script></li>
-</ul>
-</li>
-</ul>
-<h2 id="No-Oracle"><a href="#No-Oracle" class="headerlink" title="No Oracle"></a>No Oracle</h2><ul>
-<li><p>For MC, the target is the actual return $G_t$</p>
-<script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{v}(s_t , \omega) ∇\omega \hat{v}(s_t , \omega)</script><p>  <strong>$G_t$</strong> 因为是采样，所以这儿是无偏的估计， 但是会有噪声</p>
-</li>
-<li>For TD(0), the target is the TD target $R_{t+1} + \gamma \hat{v}(s_{t+1} , \mathbf{\omega})$<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{v} (s_{t+1} , \omega)} − \hat{v}(s_t , \omega) ∇ \omega\hat{v} (s_t , \omega)</script>  <strong>TD target</strong> 有偏估计， 因为用到了旧时刻的 $\omega$</li>
-</ul>
-<p>Generalized policy iteration<br><img src="/images/posts/rl/value_function_approximation/policy_iteration.png" alt=""></p>
-<h3 id="同理-v-s-可替换为-q-s-a"><a href="#同理-v-s-可替换为-q-s-a" class="headerlink" title="同理 $v(s)$ 可替换为 $q(s,a)$"></a>同理 $v(s)$ 可替换为 $q(s,a)$</h3><ul>
-<li><p>MC</p>
-<script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{q}(s_t ,a_t, \omega) ∇\omega \hat{q}(s_t ,a_t, \omega)</script></li>
-<li><p>sarsa</p>
-<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{q} (s_{t+1} ,a_{t+1}, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script><p>  <strong>Note:</strong> 训练困难</p>
-<ul>
-<li>在优化过程中，即近似 <strong>Bellman backup</strong> 又近似 <strong>value function</strong>, </li>
-<li>off-policy control: <strong>behavior policy</strong> and <strong>target policy</strong> </li>
-</ul>
-</li>
-<li><p>q-learning</p>
-<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \max_a \hat{q}(s_{t+1} ,a, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script></li>
-</ul>
-<p><img src="/images/posts/rl/value_function_approximation/sarsa_semi_gradient.png" alt=""></p>
-<h3 id="Deadly-Triad"><a href="#Deadly-Triad" class="headerlink" title="Deadly Triad"></a>Deadly Triad</h3><ul>
-<li>Function approximation: 利用函数估计会有误差</li>
-<li>Bootstrapping: 主要影响 TD 和 MP</li>
-<li>Off-policy training:  <strong>behavior policy</strong> and <strong>target policy</strong> </li>
-</ul>
-<h2 id="Convergence"><a href="#Convergence" class="headerlink" title="Convergence"></a>Convergence</h2><p><img src="/images/posts/rl/value_function_approximation/convergence.png" alt=""></p>
-<hr>
-<p><img src="/images/posts/rl/value_function_approximation/convergence_al.png" alt=""></p>
-<h2 id="DQN"><a href="#DQN" class="headerlink" title="DQN"></a>DQN</h2>]]></content>
       <categories>
         <category>学术</category>
       </categories>
@@ -1543,6 +1543,17 @@ T：表示断言x可能是的类型。
       </tags>
   </entry>
   <entry>
+    <title>贪心</title>
+    <url>/ropo0107.github.io/2020/03/05/leetcode/leetcode_greedy/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>分治</title>
     <url>/ropo0107.github.io/2020/03/05/leetcode/leetcode_Divide_and_Conquer/</url>
     <content><![CDATA[]]></content>
@@ -1564,17 +1575,6 @@ T：表示断言x可能是的类型。
 <li>状态转移方差</li>
 </ul>
 ]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>贪心</title>
-    <url>/ropo0107.github.io/2020/03/05/leetcode/leetcode_greedy/</url>
-    <content><![CDATA[]]></content>
       <categories>
         <category>杂记</category>
       </categories>
