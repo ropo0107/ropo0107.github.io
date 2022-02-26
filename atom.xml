@@ -3,11 +3,11 @@
   <title>无恙の博客</title>
   
   <subtitle>Nothing can replace hard work!</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/ropo0107.github.io/atom.xml" rel="self"/>
   
-  <link href="https://ropo0107.github.io/"/>
+  <link href="https://ropo0107.github.io/ropo0107.github.io/"/>
   <updated>2021-08-19T09:03:04.000Z</updated>
-  <id>https://ropo0107.github.io/</id>
+  <id>https://ropo0107.github.io/ropo0107.github.io/</id>
   
   <author>
     <name>无恙</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>docker中的tips</title>
-    <link href="https://ropo0107.github.io/2022/02/26/tips/docker/"/>
-    <id>https://ropo0107.github.io/2022/02/26/tips/docker/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2022/02/26/tips/docker/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2022/02/26/tips/docker/</id>
     <published>2022-02-26T07:02:52.261Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -35,19 +35,19 @@
     </summary>
     
     
-      <category term="编程" scheme="https://ropo0107.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
-      <category term="docker" scheme="https://ropo0107.github.io/tags/docker/"/>
+      <category term="docker" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>【robot】相机标定机器人TCP</title>
-    <link href="https://ropo0107.github.io/2021/11/16/robot/tcp_calibration/"/>
-    <id>https://ropo0107.github.io/2021/11/16/robot/tcp_calibration/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2021/11/16/robot/tcp_calibration/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2021/11/16/robot/tcp_calibration/</id>
     <published>2021-11-16T09:30:00.000Z</published>
     <updated>2021-11-17T02:52:46.000Z</updated>
     
@@ -64,17 +64,17 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Robot/"/>
     
   </entry>
   
   <entry>
     <title>【robot】优化空间中点的圆心</title>
-    <link href="https://ropo0107.github.io/2021/11/16/robot/optimize_circle_center/"/>
-    <id>https://ropo0107.github.io/2021/11/16/robot/optimize_circle_center/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2021/11/16/robot/optimize_circle_center/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2021/11/16/robot/optimize_circle_center/</id>
     <published>2021-11-16T07:30:00.000Z</published>
     <updated>2021-11-16T09:02:18.000Z</updated>
     
@@ -91,17 +91,17 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Robot/"/>
     
   </entry>
   
   <entry>
     <title>Machine Learning Base</title>
-    <link href="https://ropo0107.github.io/2021/01/10/ml/ml_base/"/>
-    <id>https://ropo0107.github.io/2021/01/10/ml/ml_base/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2021/01/10/ml/ml_base/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2021/01/10/ml/ml_base/</id>
     <published>2021-01-10T08:51:55.000Z</published>
     <updated>2021-11-11T08:35:20.000Z</updated>
     
@@ -118,19 +118,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
-      <category term="ML" scheme="https://ropo0107.github.io/tags/ML/"/>
+      <category term="ML" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/ML/"/>
     
   </entry>
   
   <entry>
     <title>【gpd】复现GPD</title>
-    <link href="https://ropo0107.github.io/2020/11/17/robot/gpd/"/>
-    <id>https://ropo0107.github.io/2020/11/17/robot/gpd/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/11/17/robot/gpd/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/11/17/robot/gpd/</id>
     <published>2020-11-17T15:34:55.000Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -147,17 +147,17 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Robot/"/>
     
   </entry>
   
   <entry>
     <title>【robot】 Kinect_dk 在Ubuntu16.04 下安装并配置ROS</title>
-    <link href="https://ropo0107.github.io/2020/08/30/robot/kinect_dk/"/>
-    <id>https://ropo0107.github.io/2020/08/30/robot/kinect_dk/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/08/30/robot/kinect_dk/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/08/30/robot/kinect_dk/</id>
     <published>2020-08-30T15:34:55.000Z</published>
     <updated>2022-02-26T07:58:04.145Z</updated>
     
@@ -173,19 +173,19 @@
     </summary>
     
     
-      <category term="工程" scheme="https://ropo0107.github.io/categories/%E5%B7%A5%E7%A8%8B/"/>
+      <category term="工程" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%B7%A5%E7%A8%8B/"/>
     
     
-      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Robot/"/>
     
-      <category term="ROS" scheme="https://ropo0107.github.io/tags/ROS/"/>
+      <category term="ROS" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/ROS/"/>
     
   </entry>
   
   <entry>
     <title>【ros】 编译时的问题</title>
-    <link href="https://ropo0107.github.io/2020/07/19/robot/ros_error/"/>
-    <id>https://ropo0107.github.io/2020/07/19/robot/ros_error/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/07/19/robot/ros_error/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/07/19/robot/ros_error/</id>
     <published>2020-07-19T15:34:55.000Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -201,21 +201,21 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
-      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Robot/"/>
     
-      <category term="Ros" scheme="https://ropo0107.github.io/tags/Ros/"/>
+      <category term="Ros" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Ros/"/>
     
   </entry>
   
   <entry>
     <title>【ros】 workspace and namespace</title>
-    <link href="https://ropo0107.github.io/2020/07/19/robot/ros_workspace/"/>
-    <id>https://ropo0107.github.io/2020/07/19/robot/ros_workspace/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/07/19/robot/ros_workspace/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/07/19/robot/ros_workspace/</id>
     <published>2020-07-19T15:34:55.000Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -232,21 +232,21 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
-      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Robot/"/>
     
-      <category term="Ros" scheme="https://ropo0107.github.io/tags/Ros/"/>
+      <category term="Ros" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Ros/"/>
     
   </entry>
   
   <entry>
     <title>【robot】 quaternion</title>
-    <link href="https://ropo0107.github.io/2020/07/11/robot/quaternion/"/>
-    <id>https://ropo0107.github.io/2020/07/11/robot/quaternion/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/07/11/robot/quaternion/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/07/11/robot/quaternion/</id>
     <published>2020-07-11T15:34:55.000Z</published>
     <updated>2021-11-11T07:24:02.000Z</updated>
     
@@ -263,19 +263,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
-      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Robot/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】1. Overview</title>
-    <link href="https://ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/"/>
-    <id>https://ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:56:55.357Z</updated>
     
@@ -291,19 +291,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/RL/"/>
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】2. Markov Decision Processes</title>
-    <link href="https://ropo0107.github.io/2020/05/29/rl/rl_note_2_mdp/"/>
-    <id>https://ropo0107.github.io/2020/05/29/rl/rl_note_2_mdp/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_2_mdp/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_2_mdp/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:57:02.922Z</updated>
     
@@ -321,19 +321,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/RL/"/>
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】3. model-free Prediction And Control</title>
-    <link href="https://ropo0107.github.io/2020/05/29/rl/rl_note_3_model_free/"/>
-    <id>https://ropo0107.github.io/2020/05/29/rl/rl_note_3_model_free/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_3_model_free/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_3_model_free/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:57:11.074Z</updated>
     
@@ -349,19 +349,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/RL/"/>
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】4. Value Function Approximation</title>
-    <link href="https://ropo0107.github.io/2020/05/29/rl/rl_note_4_value_function_approximation/"/>
-    <id>https://ropo0107.github.io/2020/05/29/rl/rl_note_4_value_function_approximation/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_4_value_function_approximation/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_4_value_function_approximation/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:57:22.019Z</updated>
     
@@ -377,19 +377,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/RL/"/>
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】5. Policy Gradent(AC, TRPO, PPO)</title>
-    <link href="https://ropo0107.github.io/2020/05/29/rl/rl_note_5_policy_gradent/"/>
-    <id>https://ropo0107.github.io/2020/05/29/rl/rl_note_5_policy_gradent/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_5_policy_gradent/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_5_policy_gradent/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:57:29.395Z</updated>
     
@@ -405,19 +405,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/RL/"/>
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
   </entry>
   
   <entry>
     <title>【dl】 神经网络中参数量和计算量</title>
-    <link href="https://ropo0107.github.io/2020/04/24/dl/net_param_calculate/"/>
-    <id>https://ropo0107.github.io/2020/04/24/dl/net_param_calculate/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/04/24/dl/net_param_calculate/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/04/24/dl/net_param_calculate/</id>
     <published>2020-04-24T04:51:55.000Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -434,17 +434,17 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="DL，Note" scheme="https://ropo0107.github.io/tags/DL%EF%BC%8CNote/"/>
+      <category term="DL，Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/DL%EF%BC%8CNote/"/>
     
   </entry>
   
   <entry>
     <title>【dl】 GAN_公式推导</title>
-    <link href="https://ropo0107.github.io/2020/03/24/dl/GAN/"/>
-    <id>https://ropo0107.github.io/2020/03/24/dl/GAN/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/03/24/dl/GAN/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/03/24/dl/GAN/</id>
     <published>2020-03-24T04:51:55.000Z</published>
     <updated>2022-02-26T07:43:36.856Z</updated>
     
@@ -460,21 +460,21 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/RL/"/>
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
-      <category term="GAN" scheme="https://ropo0107.github.io/tags/GAN/"/>
+      <category term="GAN" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/GAN/"/>
     
   </entry>
   
   <entry>
     <title>python中的tips</title>
-    <link href="https://ropo0107.github.io/2020/03/19/tips/python_tips/"/>
-    <id>https://ropo0107.github.io/2020/03/19/tips/python_tips/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/03/19/tips/python_tips/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/03/19/tips/python_tips/</id>
     <published>2020-03-18T18:51:55.000Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -492,19 +492,19 @@
     </summary>
     
     
-      <category term="编程" scheme="https://ropo0107.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
-      <category term="python" scheme="https://ropo0107.github.io/tags/python/"/>
+      <category term="python" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>【blog】 Hexo修改背景图片及主题透明</title>
-    <link href="https://ropo0107.github.io/2020/03/15/blog/blog_background/"/>
-    <id>https://ropo0107.github.io/2020/03/15/blog/blog_background/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/03/15/blog/blog_background/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/03/15/blog/blog_background/</id>
     <published>2020-03-14T22:51:55.000Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -520,17 +520,17 @@
     </summary>
     
     
-      <category term="杂记" scheme="https://ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="blog" scheme="https://ropo0107.github.io/tags/blog/"/>
+      <category term="blog" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>【blog】 Hexo迁移到vps</title>
-    <link href="https://ropo0107.github.io/2020/03/10/blog/vps_hexo/"/>
-    <id>https://ropo0107.github.io/2020/03/10/blog/vps_hexo/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/03/10/blog/vps_hexo/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/03/10/blog/vps_hexo/</id>
     <published>2020-03-09T23:23:55.000Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -547,21 +547,21 @@
     </summary>
     
     
-      <category term="杂记" scheme="https://ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="blog" scheme="https://ropo0107.github.io/tags/blog/"/>
+      <category term="blog" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/blog/"/>
     
-      <category term="vps" scheme="https://ropo0107.github.io/tags/vps/"/>
+      <category term="vps" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/vps/"/>
     
-      <category term="ubuntu" scheme="https://ropo0107.github.io/tags/ubuntu/"/>
+      <category term="ubuntu" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>trojan做点不一样的事</title>
-    <link href="https://ropo0107.github.io/2020/03/09/technology/trojan/"/>
-    <id>https://ropo0107.github.io/2020/03/09/technology/trojan/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/03/09/technology/trojan/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/03/09/technology/trojan/</id>
     <published>2020-03-09T12:51:55.000Z</published>
     <updated>2021-08-19T09:27:06.000Z</updated>
     
@@ -577,14 +577,14 @@
     </summary>
     
     
-      <category term="杂记" scheme="https://ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="blog" scheme="https://ropo0107.github.io/tags/blog/"/>
+      <category term="blog" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/blog/"/>
     
-      <category term="ubuntu" scheme="https://ropo0107.github.io/tags/ubuntu/"/>
+      <category term="ubuntu" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/ubuntu/"/>
     
-      <category term="trojan" scheme="https://ropo0107.github.io/tags/trojan/"/>
+      <category term="trojan" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/trojan/"/>
     
   </entry>
   
