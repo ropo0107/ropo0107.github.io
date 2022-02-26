@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>无恙の博客</title>
+  
+  <subtitle>Nothing can replace hard work!</subtitle>
+  <link href="/ropo0107.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://github.com/ropo0107/ropo0107.github.io/"/>
+  <updated>2022-02-26T07:02:52.261Z</updated>
+  <id>https://github.com/ropo0107/ropo0107.github.io/</id>
+  
+  <author>
+    <name>无恙</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker中的tips</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2022/02/26/tips/docker/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2022/02/26/tips/docker/</id>
+    <published>2022-02-26T07:02:52.261Z</published>
+    <updated>2022-02-26T07:02:52.261Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="docker-中添加串口设备"><a href="#docker-中添加串口设备" class="headerlink" title="docker 中添加串口设备"></a>docker 中添加串口设备</h1><h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><pre><code>--device /dev/ttyUSB0:/dev/ttyUSB0--cap-add 一般这种方式没有权限， 加cap-add添加权限</code></pre><h2 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h2><pre><code>--privileged-v /dev/bus/usb:/dev/bus/usb会给docker读取本地虽有设备的权限，一般不会这样用</code></pre><h1 id="docker-添加相机等设备"><a href="#docker-添加相机等设备" class="headerlink" title="docker 添加相机等设备"></a>docker 添加相机等设备</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;docker-中添加串口设备&quot;&gt;&lt;a href=&quot;#docker-中添加串口设备&quot; class=&quot;headerlink&quot; title=&quot;docker 中添加串口设备&quot;&gt;&lt;/a&gt;docker 中添加串口设备&lt;/h1&gt;&lt;h2 id=&quot;方法一：&quot;&gt;&lt;a href=&quot;#方
+      
+    
+    </summary>
+    
+    
+      <category term="编程" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+    
+      <category term="docker" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Machine Learning Base</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2021/01/10/ml/ml_base/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2021/01/10/ml/ml_base/</id>
+    <published>2021-01-10T08:51:55.000Z</published>
+    <updated>2022-02-26T07:02:52.259Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近懒了， 错过了好多机会， 值得庆幸的是终于知道自己想要什么，来的有点晚，<br>把该补的坑补上</p><h2 id="Liner-Regression"><a href="#Liner-Regression" class="headerlink" title="Liner Regression"></a>Liner Regression</h2><ul><li>定义系统:<script type="math/tex; mode=display">y^{*}= \omega^T x + b</script><ul><li>$\omega\in R^n$ 为参数向量</li><li>b 为偏置</li></ul></li><li>目的:最小化均方误差(MSE loss)<ul><li>当$y^{*(test)} = y^{(test)}$ 时误差为0， </li><li>通过MSE loss 改进权重 $\omega$</li></ul></li><li>当导数为0时，求解正规方程:<ul><li>$\nabla_{\omega} MSE_{train} = 0$</li><li>$\nabla_{\omega} {1\over m} \begin{Vmatrix} y^{*(train)}-y^{(train)} \end{Vmatrix}^2_2=0$      </li><li>$\nabla_{\omega}(X^{(train)}\omega -y^{(train)})^T(X^{(train)}\omega -y^{(train)})=0$  </li><li>$\nabla_{\omega}(\omega^T X^{(train)T}X^{(train)}\omega -2\omega^TX^{(train)T}y^{(train)}  -y^{(train)T}y^{(train)})=0$</li><li>对$\omega$求导:<ul><li>$2X^{(train)T}X^{(train)}\omega - 2X^{(train)T}y^{(train)}=0$</li><li>$\omega=(X^{(train)T}X^{(train)})^{-1} X^{(train)T}y^{(train)}$ 也叫正规方程</li></ul></li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近懒了， 错过了好多机会， 值得庆幸的是终于知道自己想要什么，来的有点晚，&lt;br&gt;把该补的坑补上&lt;/p&gt;
+&lt;h2 id=&quot;Liner-Regression&quot;&gt;&lt;a href=&quot;#Liner-Regression&quot; class=&quot;headerlink&quot; title=&quot;Lin
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+    
+      <category term="ML" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/ML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【gpd】复现GPD</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/11/17/robot/gpd/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/11/17/robot/gpd/</id>
+    <published>2020-11-17T15:34:55.000Z</published>
+    <updated>2022-02-26T07:02:52.260Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="environment"><a href="#environment" class="headerlink" title="environment"></a>environment</h1><p>源码编译opencv3.4.0， 和pcl1.9.1</p><h2 id="error1"><a href="#error1" class="headerlink" title="error1"></a>error1</h2><p>错误描述:</p><pre><code>./detect_grasps error while loading shared libraries: libopencv_highgui.so.3.4: cannot open shared object file: No such file or directory</code></pre><p>源码编译后链接库文件在 <strong>/uer/local/lib</strong></p><p>首先看看这个文件需要哪些库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ldd detect_grasps</span><br></pre></td></tr></table></figure><br>这时候会看到有一些库没有连接到。</p><h2 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h2><p>那些not　found的就是找不到的库拉。很明显这些都是的库，这说明我们在安装的时候，忘记把他配置进去了。接下来，我们定位一下这些库的位置。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ locate libopencv_highgui.so.3.4</span><br></pre></td></tr></table></figure></p><p>在/etc/ld.so.conf.d目录下新建一个opencv.conf文件并将其内容写入刚才找到的库的路径。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim opencv.conf</span><br></pre></td></tr></table></figure><p>里面添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;lib</span><br></pre></td></tr></table></figure><br>保存后执行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;environment&quot;&gt;&lt;a href=&quot;#environment&quot; class=&quot;headerlink&quot; title=&quot;environment&quot;&gt;&lt;/a&gt;environment&lt;/h1&gt;&lt;p&gt;源码编译opencv3.4.0， 和pcl1.9.1&lt;/p&gt;
+&lt;h2
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="Robot" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Robot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【robot】 机器人中的动力学</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/11/03/robot/robot_dynamic/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/11/03/robot/robot_dynamic/</id>
+    <published>2020-11-02T19:34:55.000Z</published>
+    <updated>2022-02-26T07:02:52.261Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><h2 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot; title=&quot;引子&quot;&gt;&lt;/a&gt;引子&lt;/h1&gt;&lt;h2 id=&quot;SDK&quot;&gt;&lt;a href=&quot;#SDK&quot; class=&quot;headerlink&quot; title=&quot;SDK&quot;&gt;&lt;/a&gt;SDK&lt;/h2&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="工程" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%B7%A5%E7%A8%8B/"/>
+    
+    
+      <category term="Robot" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Robot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【robot】 Kinect_dk 在Ubuntu16.04 下安装并配置ROS</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/08/30/robot/kinect_dk/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/08/30/robot/kinect_dk/</id>
+    <published>2020-08-30T15:34:55.000Z</published>
+    <updated>2022-02-26T07:02:52.260Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>最近手头拿到了 Kinect dk 相机， 苦于自己的电脑是16.04， 于是根据网上资料自己配置了一下， 发现有许多坑， 并没有说到， 自己边安装，边记录下内容吧。默认不支持16.04</p><p><a href="https://github.com/ropo0107/kinect_dk">https://github.com/ropo0107/kinect_dk</a></p><p>放上自己的工程目录， 可以自取</p><h2 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h2><h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><ul><li>git clone -b v1.2.0 <a href="https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git">https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git</a></li><li>mkdir kinect_ws/src &amp;&amp; cd kinect_ws/src</li><li>git clone <a href="https://github.com/RoseFlunder/Azure_Kinect_ROS_Driver.git">https://github.com/RoseFlunder/Azure_Kinect_ROS_Driver.git</a></li></ul><h3 id="dependence"><a href="#dependence" class="headerlink" title="dependence"></a>dependence</h3><ul><li>sudo cp ./libdepthengine.so.2.0 /usr/lib/x86_64-linux-gnu/</li><li>sudo ./Azure-Kinect-Sensor-SDK/scripts/bootstrap-ubuntu.sh</li><li>sudo apt-get install gcc-4.9</li><li>sudo apt-get upgrade libstdc++6</li></ul><h3 id="cmske-v-大于-3-9"><a href="#cmske-v-大于-3-9" class="headerlink" title="cmske -v 大于 3.9"></a>cmske -v 大于 3.9</h3><h3 id="build"><a href="#build" class="headerlink" title="build"></a>build</h3><ul><li>cd build</li><li>cmake .. -GNinja</li><li>ninja</li><li><p>sudo ninja install</p></li><li><p>ERROR：</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**CMake Error: CMake was unable to find a build program corresponding to “Ninja”. **</span><br></pre></td></tr></table></figure><ul><li>Solution：install ninja<ul><li>sudo apt-get install re2c</li><li>git clone <a href="https://github.com/ninja-build/ninja.git">https://github.com/ninja-build/ninja.git</a></li><li>cd ninja</li><li>./configure.py —bootstrap</li><li>sudo cp ./ninja  /usr/bin</li><li>ninjia —version — 1.10.1.git</li></ul></li></ul></li></ul><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Cloning into &#39;extern&#x2F;azure_c_shared&#x2F;src&#39;...                                                           </span><br><span class="line">fatal: BUG: initial ref transaction called with existing refs                                         </span><br><span class="line">fatal: clone of &#39;https:&#x2F;&#x2F;github.com&#x2F;Azure&#x2F;azure-c-shared-utility.git&#39; into submodule path &#39;extern&#x2F;azur</span><br><span class="line">e_c_shared&#x2F;src&#39; failed                                                                                </span><br><span class="line">CMake Error at extern&#x2F;CMakeLists.txt:22 (message):                                                    </span><br><span class="line">git submodule update failed:</span><br></pre></td></tr></table></figure>- Solution:缺少依赖的库  - cd extern/azure_c_shared  - git clone https://github.com/Azure/azure-c-shared-utility.git  - cd extern/libuv  - git clone https://github.com/lemenkov/libyuv  - mv libuv src</code></pre><h3 id="without-root"><a href="#without-root" class="headerlink" title="without root"></a>without root</h3><ul><li>sudo cp scripts/99-k4a.rules /etc/udev/rules.d/</li></ul><h3 id="k4aviewer"><a href="#k4aviewer" class="headerlink" title="k4aviewer"></a>k4aviewer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k4aviewer: error while loading shared libraries: libk4a.so.1.2: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure><ul><li>sudo ln -s /usr/local/lib/libk4a.so.1.2 /usr/lib/libk4a.so.1.2</li></ul><h2 id="ROS"><a href="#ROS" class="headerlink" title="ROS"></a>ROS</h2><ul><li>cd kinect_ws/src/Azure_Kinect_ROS_Driver</li><li>mkdir ext/sdk/</li><li><p>dependence:<br>  在<a href="https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/里面找到" target="_blank" rel="noopener">https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/里面找到</a></p><p>  libk4a1.2<br>  k4a1.2-dev/<br>  文件下载下来并解压，</p><p>  在sdk中放入三个文件夹：bin、include、lib，位置关系如下：</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.\ext\sdk\</span><br><span class="line">        bin\</span><br><span class="line">        include\</span><br><span class="line">        lib\</span><br></pre></td></tr></table></figure><p>  其中，</p><p>  bin文件夹: 把编译SDK时build文件夹里面的那个bin文件夹拷贝过来</p><p>  include文件夹：SDK源码里的include文件夹和从-dev.deb文件里提取出的include文件夹合并，拷贝过来</p><p>  lib文件夹：从deb文件里提取出的两个lib文件夹合并，拷贝过来</p></li></ul><ul><li>ERROR:  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">k4a_ros_device.h:166:8: error: ‘atomic_int64_t’ in namespace ‘std’ does not name a type</span><br><span class="line">std::atomic_int64_t last_capture_time_usec_;</span><br></pre></td></tr></table></figure><ul><li>Solution: 找到对应文件  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; line:165</span><br><span class="line">&#x2F;&#x2F; Last capture timestamp for synchronizing playback capture and imu thread</span><br><span class="line">std::atomic&lt;int64_t- last_capture_time_usec_;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Last imu timestamp for synchronizing playback capture and imu thread</span><br><span class="line">std::atomic&lt;uint64_t- last_imu_time_usec_;</span><br><span class="line">std::atomic&lt;bool- imu_stream_end_of_file_;</span><br></pre></td></tr></table></figure></li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;引子&quot;&gt;&lt;a href=&quot;#引子&quot; class=&quot;headerlink&quot; title=&quot;引子&quot;&gt;&lt;/a&gt;引子&lt;/h1&gt;&lt;p&gt;最近手头拿到了 Kinect dk 相机， 苦于自己的电脑是16.04， 于是根据网上资料自己配置了一下， 发现有许多坑， 并没有说到， 自
+      
+    
+    </summary>
+    
+    
+      <category term="工程" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%B7%A5%E7%A8%8B/"/>
+    
+    
+      <category term="Robot" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Robot/"/>
+    
+      <category term="ROS" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/ROS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【ros】 编译时的问题</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/07/19/robot/ros_error/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/07/19/robot/ros_error/</id>
+    <published>2020-07-19T15:34:55.000Z</published>
+    <updated>2022-02-26T07:02:52.261Z</updated>
+    
+    <content type="html"><![CDATA[<p>ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/build.make:62: recipe for target ‘ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/src/main.cpp.o’ failed<br>make[2]: <em>*</em> [ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/src/main.cpp.o] Error 1</p><p>set(CMAKE_CXX_FLAGS “${CMAKE_CXX_FLAGS} -std=c++11”)</p><p>The kinematics plugin (rh_first_finger) failed to load. Error: Failed to load library /home/sunshine/ros/shadow_demo/base/devel/lib//libhand_kinematics.so. Make sure that yo<br>u are calling the PLUGINLIB_EXPORT_CLASS macro in the library code, and that names are consistent between this macro and your XML. Error string: Could not load library (Poco exception = libmoveit_kinematic<br>s_base.so.0.9.15: cannot open shared object file: No such file or directory)</p><p>问题不在于kinematics 插件， 问题在于moveit版本</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/build.make:62: recipe for target ‘ros_ethercat/ros_ethercat_loop/CMakeFil
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+    
+      <category term="Robot" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Robot/"/>
+    
+      <category term="Ros" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Ros/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【ros】 workspace and namespace</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/07/19/robot/ros_workspace/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/07/19/robot/ros_workspace/</id>
+    <published>2020-07-19T15:34:55.000Z</published>
+    <updated>2022-02-26T07:02:52.261Z</updated>
+    
+    <content type="html"><![CDATA[<p>一直想把之前ros的坑给补上， 最近终于有机会了</p><h1 id="工作空间"><a href="#工作空间" class="headerlink" title="工作空间"></a>工作空间</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>工作空间(workspace)是存放工程开发相关文件的文件夹。现ROS默认使用Catkin编译系统。<br>典型的工作空间包括四部分：</p><ul><li>src ： 放源代码文件</li><li>build ： 放编译中的缓存和中间文件</li><li>devel ： 放编译生成的可执行文件</li><li>install ： （非必需）</li></ul><h2 id="工作空间的相互依赖"><a href="#工作空间的相互依赖" class="headerlink" title="工作空间的相互依赖"></a>工作空间的相互依赖</h2><ul><li>若想查看所有ROS相关的环境变量：   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env | grep ros</span><br></pre></td></tr></table></figure></li><li>若想查看ROS_PACKAGE_PATH：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$ROS_PACKAGE_PATH</span></span><br></pre></td></tr></table></figure></li><li>激活相应工作空间  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#根据自己启用的shell工具决定， bash用sh，zsh用zsh</span></span><br><span class="line">soucrce &#123;workspace&#125;/devel/setup.sh</span><br><span class="line"></span><br><span class="line">soucrce &#123;workspace&#125;/devel/setup.zsh</span><br></pre></td></tr></table></figure></li><li><p>工作空间编译依赖问题:</p><ul><li><p>默认的工作空间,即使用 sudo apt-get install ros-kinetic-desktop-full, 安装的默认位置为:</p><p>  /opt/ros/kinetic/setup.zsh</p></li><li><p>激活默认环境:</p>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /opt/ros/kinetic/setup.zsh</span><br></pre></td></tr></table></figure></li><li>查看环境变量  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$ROS_PACKAGE_PATH</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">#output</span></span><br><span class="line">/opt/ros/kinetic/share</span><br></pre></td></tr></table></figure></li><li><p>激活默认环境后激活要用的工作空间， 这儿我的是 ur_ws</p>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># compile</span></span><br><span class="line"><span class="built_in">source</span> /opt/ros/kinetic/setup.zsh</span><br><span class="line"><span class="built_in">cd</span> ~/ros/ur_ws/</span><br><span class="line">catkin_make</span><br><span class="line"></span><br><span class="line"><span class="comment"># use new workspace</span></span><br><span class="line"><span class="built_in">source</span> ~/ros/ur_ws/devel/setup.zsh</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ROS_PACKAGE_PATH</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># output                         </span></span><br><span class="line">/home/sunshine/ros/ur_ws/src:/opt/ros/kinetic/share</span><br></pre></td></tr></table></figure><p>  新的workspace在前面，被依赖的workspace在后面 如果两个公共空间有重名的功能包，调用新的工作空间的功能包。</p></li><li><p>这儿有个问题，如果接下来要用的工作空间arm_ws继续依赖前面两个工作空间呢</p>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># compile</span></span><br><span class="line"><span class="built_in">source</span> <span class="built_in">source</span> ~/ros/ur_ws/devel/setup.zsh</span><br><span class="line"><span class="built_in">cd</span> ~/ros/arm_ws/</span><br><span class="line">catkin_make</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ROS_PACKAGE_PATH</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># output                         </span></span><br><span class="line">/home/user/ros/arm_ws/src:/home/user/ros/ur_ws/src:/opt/ros/kinetic/share</span><br><span class="line"></span><br><span class="line"><span class="comment"># use arm_ws</span></span><br><span class="line"><span class="built_in">source</span> <span class="built_in">source</span> ~/ros/arm_ws/devel/setup.zsh</span><br></pre></td></tr></table></figure><h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2></li></ul></li><li><p>工作空间的依赖只在编译时有用，</p><ul><li><strong>c++:</strong> 因为大部分程序采样 <strong>c++</strong> 编写， c++为编译型语言， 故修改c++程序后需要重新编译工作空间</li><li><strong>python:</strong> 为解释型语言，如果修改部分为python语言，则不需要重新编译工作空间</li></ul></li><li><p>在使用相应工作空间的时候，需要用source激活，可以用alias来简化</p>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> ros=<span class="string">'source /opt/ros/kinetic/setup.zsh'</span></span><br></pre></td></tr></table></figure></li></ul><h1 id="namespace"><a href="#namespace" class="headerlink" title="namespace"></a>namespace</h1><p>在实际的ROS网络中，各个节点、话题、消息和参数的名称必须是唯一的，不然就会发生冲突。</p><p>因此最简单的两种方法，来区分相同名字的资源：</p><ul><li>给两个名字前加上定语，就是 <strong>添加命名空间</strong>；</li><li>给两个名字取个不同的别名，就是 <strong>重映射</strong>；</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一直想把之前ros的坑给补上， 最近终于有机会了&lt;/p&gt;
+&lt;h1 id=&quot;工作空间&quot;&gt;&lt;a href=&quot;#工作空间&quot; class=&quot;headerlink&quot; title=&quot;工作空间&quot;&gt;&lt;/a&gt;工作空间&lt;/h1&gt;&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+    
+      <category term="Robot" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Robot/"/>
+    
+      <category term="Ros" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Ros/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【robot】 quaternion</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/07/11/robot/quaternion/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/07/11/robot/quaternion/</id>
+    <published>2020-07-11T15:34:55.000Z</published>
+    <updated>2022-02-26T07:02:52.260Z</updated>
+    
+    <content type="html"><![CDATA[<p>对于坐标的变换，旋转和平移是基本的两步，平移可以是一个标量， 旋转有多种形式可以表示，（RPY， 欧拉角， 四元数， 旋转矢量， 旋转矩阵）</p><h2 id="RPY"><a href="#RPY" class="headerlink" title="RPY"></a>RPY</h2><p>固定（参考）坐标系 A 旋转：假设开始两个坐标系重合，先将 B 绕 A 的 X 轴旋转$\alpha$，然后绕 A 的 Y 轴旋转 $\beta$，最后绕 A 的 Z 轴旋转 $\gamma$，就能旋转到当前姿态。可以称其(Roll, Pitch, Yaw)。由于是绕固定坐标系旋转，则旋转矩阵为：</p><script type="math/tex; mode=display">R_{XYZ}​(\alpha,\beta,\gamma)=R_Z​(\gamma)R_Y​(\beta)R_X(\alpha)</script><h2 id="欧拉角"><a href="#欧拉角" class="headerlink" title="欧拉角"></a>欧拉角</h2><p><img src="/images/posts/robot/quaternion/eular.gif" alt=""></p><p>图中演示的就是用 $(z, x,z^{‘})$ 方法表示方向的过程。在此过程中，有如下图展示的 $(\alpha, \beta,\gamma)$三个角，分别绕着原坐标z轴(蓝)，一次旋转以后的x轴(绿)以及两次旋转以后的z轴(红)旋转，最终产生的红色坐标系即表示出目标方向。</p><p>绕自身坐标轴 B 旋转：假设开始两个坐标系重合，先将 B 绕自身的 Z 轴旋转 $\gamma$，然后绕 Y 轴旋转 $\beta$，最后绕 X 轴旋转 $\alpha$，就能旋转到当前姿态。称其为Z-Y-X欧拉角，由于是绕自身坐标轴进行旋转，则旋转矩阵为:</p><script type="math/tex; mode=display">R_{X^{'}Y^{'}Z^{'}}​(\alpha,\beta,\gamma)=R_{Z^{'}}​(\gamma)R_{Y^{'}}​(\beta)R_{X^{'}}(\alpha)</script><h2 id="旋转矩阵"><a href="#旋转矩阵" class="headerlink" title="旋转矩阵"></a>旋转矩阵</h2><p>  坐标系B由坐标系A旋转得到，$^A_BR$为坐标系B的各轴单位向量在坐标系A中的投影</p><script type="math/tex; mode=display">^A_BR = \begin{bmatrix} ^A\hat{X}_B & ^A\hat{X}_B & ^A\hat{X}_B  \end{bmatrix}</script><h2 id="旋转矩阵的左乘和右乘"><a href="#旋转矩阵的左乘和右乘" class="headerlink" title="旋转矩阵的左乘和右乘"></a>旋转矩阵的左乘和右乘</h2><p>  如上面 RPY 和欧拉角绕轴旋转得到 $R_Z$、$R_Y$、$R_Z$乘法顺序rpy绕定轴旋转是左乘，欧拉角绕自身坐标系即动轴旋转是右乘</p><ul><li>这里的左右乘指的并不是某一向量左乘或者右乘旋转矩阵，而是多个旋转矩阵的组合方式是左乘还是右乘。</li><li>这句话还遗漏了一个相当重要的信息，绕固定坐标系旋转讨论的是向量的旋转，绕自身坐标系旋转讨论的是坐标变换！这是完全不一样的两种功能，</li></ul><h2 id="齐次变换矩阵的描述"><a href="#齐次变换矩阵的描述" class="headerlink" title="齐次变换矩阵的描述"></a>齐次变换矩阵的描述</h2><ul><li>坐标系的描述<br>$_B^A{T}$表示$B$坐标系基于$A$坐标系的变换， $_B^A{R}$的各列是坐标系$B$主轴方向上的单位矢量，$^A{P}_{BORG}$确定$B$的原点。</li><li><p>变换映射（同一点相对于不同坐标系的描述）</p><script type="math/tex; mode=display">^A{P} = _B^A{T} ^B{P}</script><script type="math/tex; mode=display">\begin{bmatrix} ^A{P}\\1\end{bmatrix} =\begin{bmatrix} ^A_B{R} & ^A{P}_{BORG} \\ 0 & 1 \end{bmatrix} \begin{bmatrix} ^B{P}\\1\end{bmatrix}</script></li><li><p>变换算子（同一坐标系下，向量的旋转）</p><script type="math/tex; mode=display">^A{P}_2 = {T} ^A{P}_1</script><p>一个矢量在当前坐标系下的变化, 其中$T$为1到2的变化, 其中$T$可看作 $_2^1{T}$。</p></li></ul><h2 id="RPY和欧拉角的联系"><a href="#RPY和欧拉角的联系" class="headerlink" title="RPY和欧拉角的联系"></a>RPY和欧拉角的联系</h2><p>经过RPY旋转（定轴，外旋）可以到达另一个坐标系，等价于经过绕动轴ZYX旋转（内旋）到达另一个坐标系</p><script type="math/tex; mode=display">Eular_{zyx} = (yaw, pitch, roll)</script><h2 id="四元数定义"><a href="#四元数定义" class="headerlink" title="四元数定义"></a>四元数定义</h2><p>首先，定义一个你需要做的旋转。旋转轴为向量$v=(vx,vy,vz)$，旋转角度为$\theta$（右手法则的旋转）</p><p><img src="/images/posts/robot/quaternion/quaternion.jpg" alt=""></p><p>图中$v=(\frac{1}{\sqrt{14}}, \frac{2}{\sqrt{14}}, \frac{3}{\sqrt{14}}), \theta = \frac{\pi}{3}$</p><p>那么与此相对应的四元数（下三行式子都是一个意思，只是不同的表达形式）</p><ul><li><script type="math/tex; mode=display">q=(\cos(\frac{\theta}{2}), \sin(\frac{\theta}{2})*vx,\sin(\frac{\theta}{2})*vy,\sin(\frac{\theta}{2})*vz</script></li><li><script type="math/tex; mode=display">q=(\cos(\frac{\\pi}{6}), \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}},sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}}, \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})</script></li><li><script type="math/tex; mode=display">q=(\cos(\frac{\\pi}{6}) + \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}} i + sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}} j +  \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)</script></li></ul><p>它的共轭</p><ul><li><script type="math/tex; mode=display">q^{-1}=(\cos(\frac{\theta}{2}), -\sin(\frac{\theta}{2})*vx,-\sin(\frac{\theta}{2})*vy,-\sin(\frac{\theta}{2})*vz</script></li><li><script type="math/tex; mode=display">q^{-1}=(\cos(\frac{\\pi}{6}), -\sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}}, - sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}}, -\sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})</script></li><li><script type="math/tex; mode=display">q^{-1}=(\cos(\frac{\\pi}{6}) - \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}} i - sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}} j - \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)</script></li></ul><h2 id="旋转矢量和四元数的联系"><a href="#旋转矢量和四元数的联系" class="headerlink" title="旋转矢量和四元数的联系"></a>旋转矢量和四元数的联系</h2><p>四元数由4个值组成， 可以通过旋转矢量中的3个量表示。方法是通过定轴旋转可得到四元数中的<br>轴$v=(vx,vy,vz)$以及角$\theta$。</p><script type="math/tex; mode=display">RotateVector = \theta*v=\theta*(vx,vy,vz)</script><h2 id="四元数运算"><a href="#四元数运算" class="headerlink" title="四元数运算"></a>四元数运算</h2><p>求$w=(wx,wy,wz)$在旋转下的新的坐标$w’$</p><ul><li>定义纯四元数<script type="math/tex; mode=display">qw=(0,wx,wy,wz) =0+ wx*i+ wy*j+wz*k</script></li><li>进行四元数运算<script type="math/tex; mode=display">qw'=q*qw*q^{-1}</script></li><li>产生的$qw’$一定是四元数，即第一项为0<script type="math/tex; mode=display">qw‘=(0,wx‘,wy’,wz‘) =0+ wx’*i+ wy‘*j+wz’*k</script></li><li>$qw’$的后三项$(wx’,wt’,wz’)$就是$w’$<script type="math/tex; mode=display">w'=(wx',wy',wx')</script></li></ul><p>这样就完成了四元数的一次转换</p><h2 id="四元数求夹角"><a href="#四元数求夹角" class="headerlink" title="四元数求夹角"></a>四元数求夹角</h2><p>已知两个四元数$q_0$和$q_1$, 求两个相对旋转的夹角</p><ul><li><p>假设已知$\Delta q$:</p><p>  $\Delta q q_0 = q_1$</p><p>  $\Delta q q_0 q_0^{-1}= q_1 q_0^{-1}$</p><p>  $\Delta q = q_1 q_0^{-1}$</p></li><li><p>假设两个四元数为单位四元数 $q^{-1} = q^*$，</p><p>  $\Delta q=q_1 q_0^{*}$</p></li><li><p>一个单位四元数的 $t$ 次幂等同于将它的旋转角度缩放至 $t$ 倍，并且不会改变它的旋转轴</p></li></ul><h2 id="3D空间旋转变化量-vs-四元数4D向量空间夹角"><a href="#3D空间旋转变化量-vs-四元数4D向量空间夹角" class="headerlink" title="3D空间旋转变化量 vs 四元数4D向量空间夹角"></a>3D空间旋转变化量 vs 四元数4D向量空间夹角</h2><ul><li><p>四元数作为四维空间中的向量，表示为</p><script type="math/tex; mode=display">q_0=\begin{bmatrix}\cos(\theta_0) \\w_{x0}\sin(\theta_0) \\w_{y0}\sin(\theta_0) \\w_{z0}\sin(\theta_0) \\\end{bmatrix}， q_1=\begin{bmatrix}\cos(\theta_1) \\w_{x1}\sin(\theta_1) \\w_{y1}\sin(\theta_1) \\w_{z1}\sin(\theta_1) \\\end{bmatrix}</script></li><li>根据向量点乘关系$q_0 \cdot q_1 =|q_0|\cdot |q_1|\cos(\theta)$, 假定单位四元数， <script type="math/tex; mode=display">q_0 \cdot q_1 =\cos(\theta)</script></li><li><p><strong>NOTE</strong> 上面的东西正好为$\Delta q$ 的实部</p><p>这也就是说，$q_0$ 与 $q_1$ 作为向量在 4D 四元数空间中的夹角 $\theta$，正好被它们旋转变化量 $∆q$ 所平分，四元数定义</p><p><strong>$\Delta q$ 可作为$q_0$ 与 $q_1$ 的中间插值</strong></p></li></ul><h2 id="理解四元数"><a href="#理解四元数" class="headerlink" title="理解四元数"></a>理解四元数</h2><ul><li>性质<ul><li>运算产生的结果也要是三维向量</li><li>存在一个元运算，任何三维向量进行元运算的结果就是其本身</li><li>对于任何一个运算，都存在一个逆运算，这两个运算的积是元运算</li><li>运算满足结合律</li></ul></li><li>解释<ul><li>四元数不是简单的映射关系，而是一个群！（后来我们知道四元数所在群为S3，而四元数所代表的三维旋转是SO(3)，前者是后者的两倍覆盖</li><li>为什么公式里面是$\frac{\theta}{2}$而不是$\theta$,因为$w$不为零,结果就不与我们最初的点在同一三维空间。为了解决这个问题，所以先只旋转一半，再用逆反过来旋转另一半，这样正好将第一次旋转产生的第四维变为0，这样就能正确地映射到三维超平面。<br> <img src="/images/posts/robot/quaternion/three_dim.jpg" alt=""></li></ul></li></ul><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接:"></a>参考链接:</h2><p><a href="https://zhuanlan.zhihu.com/p/87418561" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/87418561</a></p><p><a href="https://krasjet.github.io/quaternion/quaternion.pdf" target="_blank" rel="noopener">https://krasjet.github.io/quaternion/quaternion.pdf</a></p><h2 id="code链接"><a href="#code链接" class="headerlink" title="code链接:"></a>code链接:</h2><p><a href="https://github.com/tsinghua-rll/UR5_Controller/blob/master/RTIF/LowLevel/quaternion.py">https://github.com/tsinghua-rll/UR5_Controller/blob/master/RTIF/LowLevel/quaternion.py</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;对于坐标的变换，旋转和平移是基本的两步，平移可以是一个标量， 旋转有多种形式可以表示，（RPY， 欧拉角， 四元数， 旋转矢量， 旋转矩阵）&lt;/p&gt;
+&lt;h2 id=&quot;RPY&quot;&gt;&lt;a href=&quot;#RPY&quot; class=&quot;headerlink&quot; title=&quot;RPY&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+    
+      <category term="Robot" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Robot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【rl_note】2. Markov Decision Processes</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_mdp/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_mdp/</id>
+    <published>2020-05-29T03:51:55.000Z</published>
+    <updated>2022-02-26T07:02:52.259Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="overview"><a href="#overview" class="headerlink" title="overview"></a>overview</h2><ul><li>Markov Processes</li><li>Markov Reward Processes(MRPs)</li><li>Markov Decision Processes (MDPs)</li><li>v(s)，q(s,a) transform</li><li>policy iteration</li><li>value iteration</li></ul><h2 id="Markov"><a href="#Markov" class="headerlink" title="Markov"></a>Markov</h2><h3 id="MP-S-P"><a href="#MP-S-P" class="headerlink" title="MP (S,P)"></a>MP (S,P)</h3><p>The future is independent of the past given the present</p><ul><li>history state $h_t = {s_1,s_2,s_3…,s_t}$</li><li>$P(s_{t+1}\mid s_t) = P(s_{t+1}\mid h_t)$</li><li>$P(s_{t+1}\mid s_t, a_t) = P(s_{t+1}\mid h_t, a_t)$</li><li>State transition matrix P specifies <script type="math/tex; mode=display">p(s_{t+1} = s' |s_t = s)</script></li></ul><h3 id="MRP-S-P-R-gamma"><a href="#MRP-S-P-R-gamma" class="headerlink" title="MRP (S,P,R, $\gamma$)"></a>MRP (S,P,R, $\gamma$)</h3><ul><li>Markov Chain + reward</li><li>Definition of Markov Reward Process (MRP)<ul><li>$S$ is a (finite) set of states ($s ∈ S$)</li><li>P is dynamics/transition model that specifies <script type="math/tex; mode=display">P(S_{t+1} = s' |s_t = s)</script></li><li>R is a reward function <script type="math/tex; mode=display">R(s_t = s) = \mathbb{E}[r_t \mid s_t = s]</script></li><li>Discount factor $\gamma \in [0,1]$</li></ul></li><li><p>Value Function</p><ul><li><script type="math/tex; mode=display">G_t = R_{t+1}+\gamma R_{t+2}+ ... = \sum\gamma^kR_{t+k+1}</script><script type="math/tex; mode=display">V_\pi(s) = \mathbb{E}_\pi[G_t\mid S_t=s]</script><ul><li><p><strong>Bellman equation</strong></p><script type="math/tex; mode=display">V_\pi(s) = R_{t+1} + \gamma\sum P(s'\mid s)V(s')</script></li><li><script type="math/tex; mode=display">V = R + \gamma P V</script><script type="math/tex; mode=display">V = (1-\gamma P)^{-1}R</script> <strong>Note</strong>Matrix inverse takes the complexity $O(N^3 )$ for N states</li></ul></li></ul></li></ul><h3 id="MDP-S-P-A-R-gamma"><a href="#MDP-S-P-A-R-gamma" class="headerlink" title="MDP (S,P,A,R, $\gamma$)"></a>MDP (S,P,A,R, $\gamma$)</h3><ul><li>MRP + decisions $A$.</li><li>Definaation<ul><li>$S$ is a finite set of states</li><li>$A$ is a finite set of actions</li><li>$P^a$ is dynamics/transition model for each action<br>  $$P(s_{t+1} = s’ |s_t = s, a_t = a)</li><li></li><li>$R$ is a reward function<br>  $$R(s_t = s, a_t = a) = \mathbb{E}[r_t \mid s_t = s, a_t = a]</li><li></li><li>Discount factor $\gamma \in [0, 1]$</li></ul></li><li><p>Policy in MDP</p><ul><li>$\pi(a|s) = P(a_t = a|s_t = s)$</li><li><p>$P_\pi(s’|s) = \sum\limits_{a \in A}\pi(a|s)P(s‘|s, a) 　　　a\in A$  </p></li><li><p>$R(s) = \sum\limits_{a \in A} (a|s)R(s,a)$</p></li></ul></li><li><p>Value Function</p><ul><li><p>state value function</p><p>  用来衡量当前状态的价值</p><script type="math/tex; mode=display">V^\pi = \mathbb{E}_\pi[G_t \mid s_t = s]</script></li><li><p>action value function</p><p>  用来衡量状态s下a的价值</p><script type="math/tex; mode=display">q^\pi(s,a) = \mathbb{E}_\pi[G_t \mid s_t =s, a_t = a]</script></li><li><p>$v^\pi(s) \And q^\pi(s,a)$</p><script type="math/tex; mode=display">v^\pi(s) = \sum\limits_{a\in A} \pi(a | s)q^\pi(s,a)</script></li><li><p>状态s 和 动作 a 之间的转换<br>  <img src="/images/posts/rl/mdp/compare_mp_mdp.png" alt=""><br>  <img src="/images/posts/rl/mdp/one.png" alt=""><br>  <img src="/images/posts/rl/mdp/two.png" alt=""></p></li></ul></li></ul><h2 id="v-s-q-s-a"><a href="#v-s-q-s-a" class="headerlink" title="v(s),q(s,a)"></a>v(s),q(s,a)</h2><p><strong>NOTE:</strong> MRP 对应 V(s), MDP 对应 Q(s,a)</p><h2 id="Dynamic-Programming"><a href="#Dynamic-Programming" class="headerlink" title="Dynamic Programming"></a>Dynamic Programming</h2><p>已知MDP过程，<strong>转移矩阵</strong> 和 <strong>奖励函数</strong> 都是已知的</p><h3 id="Policy-Iteration"><a href="#Policy-Iteration" class="headerlink" title="Policy Iteration"></a>Policy Iteration</h3><p>Bellman Expectation Equation<br><img src="/images/posts/rl/mdp/policy_iteration.png" alt=""></p><h4 id="policy-evaluation"><a href="#policy-evaluation" class="headerlink" title="policy evaluation"></a>policy evaluation</h4><p>iteration on the Bellman expectation backup</p><script type="math/tex; mode=display">V_i(s) = \sum\limits_{a \in A} \pi(a|s)(R(a,s) + \sum\limits_{s' \in S}P(s'|s,a)v_{i-1}(s'))</script><h4 id="policy-improvement"><a href="#policy-improvement" class="headerlink" title="policy improvement"></a>policy improvement</h4><p>greedy on action-value function q</p><script type="math/tex; mode=display">q_{\pi_i}(s,a) = R(s,a)+\gamma\sum\limits_{s\in S}P(s'|s,a) V_{\pi_i}(s')</script><script type="math/tex; mode=display">\pi_{i+1}(s) =  arg \max\limits_a q_{\pi_i}(s,a)</script><h3 id="Value-Iteration"><a href="#Value-Iteration" class="headerlink" title="Value Iteration"></a>Value Iteration</h3><p>Bellman Optimality Equation</p><p>整个过程没有策略的引入</p><h4 id="iteration-on-the-Bellman-optimality-backup"><a href="#iteration-on-the-Bellman-optimality-backup" class="headerlink" title="iteration on the Bellman optimality backup"></a>iteration on the Bellman optimality backup</h4><script type="math/tex; mode=display">v_{i+1}(s) \larr \max\limits_{a\in A}R(s,a) + \gamma\sum\limits_{s'\in S}P(s'|s,a)v_i(s')</script><h4 id="retrieve-the-optimal-policy-after-the-value-iteration"><a href="#retrieve-the-optimal-policy-after-the-value-iteration" class="headerlink" title="retrieve the optimal policy after the value iteration"></a>retrieve the optimal policy after the value iteration</h4><p>在前面迭代收敛后再，根据 $v_{end}(s)$ 选取策略</p><script type="math/tex; mode=display">\pi^*(s) \larr \argmax\limits_a R(s,a) + \gamma\sum\limits_{s'\in S}P(s'|s,a)v_{end}(s')</script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;overview&quot;&gt;&lt;a href=&quot;#overview&quot; class=&quot;headerlink&quot; title=&quot;overview&quot;&gt;&lt;/a&gt;overview&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Markov Processes&lt;/li&gt;
+&lt;li&gt;Markov Reward 
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="RL" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/RL/"/>
+    
+      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【rl_note】3. model-free Prediction And Control</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_model_free/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_model_free/</id>
+    <published>2020-05-29T03:51:55.000Z</published>
+    <updated>2022-02-26T07:02:52.259Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="prediction"><a href="#prediction" class="headerlink" title="prediction"></a>prediction</h2><p>Evaluate the state value without knowing the MDP model, by only interacting with the environment</p><h3 id="MC"><a href="#MC" class="headerlink" title="MC"></a>MC</h3><h4 id="traditional"><a href="#traditional" class="headerlink" title="traditional"></a>traditional</h4><ul><li><p>value state of v(s) $t$ is time  that state $s_i$ is visited in an episode</p><p>  <strong>Note</strong> 在每个episode里面分为first-visit 和every-visit，代表每一条轨迹可能会重复出现状态$s$，是每一条轨迹只计算第一次出现，或者每次出现都会计算。</p></li><li>$N_0 = 0;S_0(s_i) = 0; G_0 = 0$</li><li>Increment counter  $N_t(s_i) ← N_{t-1}(s_i) + 1$</li><li>Increment total return $S_t(s_i) ← S_{t-1}(s_i) + G_t$</li><li>Value is estimated by mean return $v_t(s_i) = S_t(s_i)/N_t(s_i)$</li><li>By law of large numbers(大数定律), 　$v(s_i) → v_\pi(s_i)$ as　$N(s_i) → ∞$</li></ul><h4 id="incremental"><a href="#incremental" class="headerlink" title="incremental"></a>incremental</h4><ul><li>Collect one episode $(S_1 , A_1 , R_1 , …, S_t )$</li><li>For each state $s_i$ with computed return $G_t$</li><li>$N_0(s_i) = 0; G_0 = 0; v_0(s_i) = 0$</li><li>$N_t(s_i) \leftarrow N_{t-1}(s_i) + 1$</li><li>$v_t(s_i) \leftarrow v_{t-1}(s_i) + 1/N_t(G_t -v_{t-1}(s_i)))$<ul><li>$v_t(s_i) \leftarrow v_{t-1}(s_i) + \alpha(G_t -v_{t-1}(s_i)))$</li><li>$\alpha$ 也被叫做学习率， 区别于监督学习的 <strong>learning rate</strong></li></ul></li></ul><h2 id="TD-0"><a href="#TD-0" class="headerlink" title="TD(0)"></a>TD(0)</h2><p><strong>Objective:</strong> learn $v_\pi$ online from experience under policy $\pi$</p><ul><li><p>Update $v_t(s)$ toward estimated return $R + \gamma v_{t-1}(s’)$</p><p>  <strong>Note</strong> 这儿是 $R$ 是 $s\rightarrow s’$产生的奖励</p></li><li>$v_t(s) \leftarrow v_{t-1}(s) + \alpha (R + \gamma v_{t-1}(s’) − v_{t-1}(s))$</li><li><strong>TD target:</strong> $R + \gamma v_{t-1}(s’)$</li><li><p><strong>TD error:</strong> $\delta_t = R + \gamma v_{t-1}(s’) − v_{t-1}(s)$</p><ul><li>$v_\pi\doteq \mathbb{E}_\pi[G_t|S_t = s]$</li><li>$=\mathbb{E}_\pi[R_{t+1} + \gamma G_{t+1}|S_t = s]$</li><li>$=\mathbb{E}_\pi[R_{t+1} + \gamma v_\pi(S_{t+1})|S_t = s]$</li><li>MC将式一估计值作为目标, 之所以叫估计值， 是因为$G_t$ 的期望是未知的，需要在采样得到样本期望值</li><li>DP则是对式三值作为目标，之所以叫估计值， 不是因为期望的原因，会假定环境会完整的提供期望值， 这儿 $v_\pi(S_{t+1})$ 是未知的 需要用当前的 $V(S_{t+1})$</li><li>TD 也是估计值, 通过采样得到式三的期望 , 使用当前的估计值 $V$ 来代替真实值 $v_\pi$</li></ul></li></ul><p><strong>NOTE:</strong> TD error 是一种误差， 衡量 $s$ 的估计值与更好的估计值 $R + \gamma v_{t-1}(s’)$之间的差距。 因为用到了$v_{t-1}(s’)$了， 就涉及到 <strong>bootstrapping</strong> 的思想，即基于前一时刻的除本身要更新的 $v_{t-1}(s)$ 外的其他值，有点动态规划的味道</p><h3 id="compare-DP-MC-TD"><a href="#compare-DP-MC-TD" class="headerlink" title="compare DP MC TD"></a>compare DP MC TD</h3><p>结合上面TD error 的 Note</p><p><img src="/images/posts/rl/model_free/compare_dp_mc_td.png" alt=""></p><p><img src="/images/posts/rl/model_free/compare_dp_mc_td_1.png" alt=""></p><ul><li>MC does not bootstrap, DP TD  bootstraps</li><li>MC TD samples, DP does not sample</li><li>TD advantages over MC<ul><li>Lower variance</li><li>Online</li><li>Incomplete sequences</li></ul></li></ul><h2 id="control"><a href="#control" class="headerlink" title="control"></a>control</h2><h3 id="On-policy-Off-policy"><a href="#On-policy-Off-policy" class="headerlink" title="On-policy Off-policy"></a>On-policy Off-policy</h3><ul><li><p>On-policy learning</p><p>“Learn on the job”</p><p>Learn about policy π from experience sampled from π</p></li><li><p>Off-policy learning</p><p>“Look over someone’s shoulder”</p><p>Learn about policy π from experience sampled from μ</p></li></ul><h3 id="sarsa"><a href="#sarsa" class="headerlink" title="sarsa"></a>sarsa</h3><p><img src="/images/posts/rl/model_free/sarsa_control.png" alt=""></p><p><img src="/images/posts/rl/model_free/sarsa_al.png" alt=""></p><h3 id="q-learning"><a href="#q-learning" class="headerlink" title="q-learning"></a>q-learning</h3><p><img src="/images/posts/rl/model_free/q_learning_al.png" alt=""></p><h3 id="compare-sarsa-q-learning"><a href="#compare-sarsa-q-learning" class="headerlink" title="compare sarsa q-learning"></a>compare sarsa q-learning</h3><p><img src="/images/posts/rl/model_free/diagram_sarsa_qlearning.png" alt=""></p><p><strong>Sarsa:</strong> </p><ul><li>On-Policy TD control</li><li>Choose action $A_t$ from $S_t$ using policy derived from Q with $\epsilon$-greedy</li><li>Take action $A_t$ , observe $R_{t+1}$ and $S_{t+1}$</li><li>Choose action $A_{t+1}$ from $S_{t+1}$ using policy derived from Q with $\epsilon$-greedy</li><li>$Q(S_t,A_t) \leftarrow Q(S_t , A_t ) + \alpha[R_{t+1} + \gamma Q(S_{t+1} , A_{t+1}) − Q(S_t , A_t)]$</li><li><strong>note:</strong> $A$ and $A’$ are sampled from the same policy so it is on-policy</li></ul><p><strong>Q-Learning:</strong></p><ul><li>Off-Policy TD control</li><li>Choose action $A_t$ from $S_t$ using policy derived from Q with $\epsilon$-greedy</li><li>Take action $A_t$ , observe $R_{t+1}$ and $S_{t+1}$</li><li>Then ‘imagine’ $A_{t+1}$ as $argmax Q(S_{t+1} , a’ )$ in the update target </li><li>$Q(S_t , A_t ) \leftarrow Q(S_t , A_t ) + \alpha[R_{t+1} + \gamma \max\limits_a Q(S_{t+1} , a) − Q(S_t , A_t)]$</li><li><strong>note:</strong> In Q Learning, $A$ and $A’$ are from different policies, with $A$ being<br>more exploratory and $A’$ determined directly by the max operator</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;prediction&quot;&gt;&lt;a href=&quot;#prediction&quot; class=&quot;headerlink&quot; title=&quot;prediction&quot;&gt;&lt;/a&gt;prediction&lt;/h2&gt;&lt;p&gt;Evaluate the state value without knowi
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="RL" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/RL/"/>
+    
+      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【rl_note】1. Overview</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_overview/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_overview/</id>
+    <published>2020-05-29T03:51:55.000Z</published>
+    <updated>2022-02-26T07:02:52.259Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Difference-between-Reinforcement-Learning-and-Supervised-Learning"><a href="#Difference-between-Reinforcement-Learning-and-Supervised-Learning" class="headerlink" title="Difference between Reinforcement Learning and Supervised Learning"></a>Difference between Reinforcement Learning and Supervised Learning</h2><ul><li><p>Sequential data as input (not i.i.d)</p></li><li><p>The learner is not told which actions to take, but instead must discover which actions yield the most reward by trying them.</p></li><li><p>Trial-and-error exploration (balance between exploration and</p></li><li><p>There is no supervisor, only a reward signal, which is also delayed</p></li></ul><h2 id="Features-of-Reinforcement-Learning"><a href="#Features-of-Reinforcement-Learning" class="headerlink" title="Features of Reinforcement Learning"></a>Features of Reinforcement Learning</h2><ul><li>Trial-and-error exploration</li><li>Delayed reward</li><li>Time matters (sequential data, non i.i.d data)</li><li>Agent’s actions affect the subsequent data it receives (agent’s action changes the environment)</li></ul><h2 id="Introduction-to-Sequential-Decision-Making"><a href="#Introduction-to-Sequential-Decision-Making" class="headerlink" title="Introduction to Sequential Decision Making"></a>Introduction to Sequential Decision Making</h2><h3 id="Rewards"><a href="#Rewards" class="headerlink" title="Rewards"></a>Rewards</h3><ul><li>A reward is a scalar feedback signal</li><li>Indicate how well agent is doing at step t</li><li>Reinforcement Learning is based on the maximization of rewards:<br>All goals of the agent can be described by the maximization of expected<br>cumulative reward.</li></ul><h3 id="Sequential-Decision-Making"><a href="#Sequential-Decision-Making" class="headerlink" title="Sequential Decision Making"></a>Sequential Decision Making</h3><ul><li>Objective of the agent: select a series of actions to maximize total<br>  future rewards</li><li>Actions may have long term consequences</li><li>Reward may be delayed</li><li>Trade-off between immediate reward and long-term reward</li></ul><h3 id="Sequential-Decision-Making-1"><a href="#Sequential-Decision-Making-1" class="headerlink" title="Sequential Decision Making"></a>Sequential Decision Making</h3><ul><li><p>The history is the sequence of observations, actions, rewards.</p><script type="math/tex; mode=display">H_t = O_1, R_1, A_1, ..., A_{t-1}, O_t, R_t</script></li><li><p>What happens next depends on the history</p></li><li>State is the function used to determine what happens next<script type="math/tex; mode=display">S_t = f(H_t)</script></li></ul><h3 id="Sequential-Decision-Making-2"><a href="#Sequential-Decision-Making-2" class="headerlink" title="Sequential Decision Making"></a>Sequential Decision Making</h3><ul><li><p>Environment state and agent state:</p><script type="math/tex; mode=display">S^e_t = f^e(H_t)</script><script type="math/tex; mode=display">S^a_t = f^a(H_t)</script></li><li><p><strong>Full observability</strong> : agent directly observes the environment state</p><script type="math/tex; mode=display">O_t = S^e_t = S^a_t</script></li><li><p><strong>Partial observability</strong> : agent indirectly observes the environment, formally as partially observable Markov decision process (POMDP)</p><script type="math/tex; mode=display">O_t \neq ^e_t \neq S^a_t</script></li></ul><h2 id="Major-Components-of-an-RL-Agent"><a href="#Major-Components-of-an-RL-Agent" class="headerlink" title="Major Components of an RL Agent"></a>Major Components of an RL Agent</h2><ul><li><p><strong>Policy</strong>:</p><p>​    agent’s behavior function</p></li><li><p><strong>Value function</strong>: </p><p>​    how good is each state or action</p></li><li><p><strong>Model</strong>:</p><p>​    agent’s state representation of the environment</p></li></ul><h3 id="Policy"><a href="#Policy" class="headerlink" title="Policy"></a>Policy</h3><ul><li><p>A policy is the agent’s behavior model</p></li><li><p>It is a map function from state/observation to action.</p></li><li><p>Stochastic policy: Probabilistic sample</p><script type="math/tex; mode=display">\pi(a \mid s) = P[A_t = a\mid S_t = s]</script></li><li><p>Deterministic policy:</p><script type="math/tex; mode=display">a^* = \arg\max\limits_a \pi(a\mid s)</script></li></ul><h3 id="Value-function"><a href="#Value-function" class="headerlink" title="Value function"></a>Value function</h3><ul><li><p>Value function: expected discounted sum of future rewards under a<br>  particular policy $\pi$</p></li><li><p>Discount factor weights immediate vs future rewards</p></li><li><p>Used to quantify goodness/badness of <strong>states</strong></p><script type="math/tex; mode=display">G_t = R_{t+1}+\gamma R_{t+2}+ ... = \sum\limits_{k=0}  ^\infty\gamma^kR_{t+k+1}</script><p>  <strong>$G_t$is the total step discounted reward from time step $t$.</strong></p><script type="math/tex; mode=display">V_\pi(s) = \mathbb{E}_\pi[G_t\mid S_t=s]</script><script type="math/tex; mode=display">= \mathbb{E}_\pi[\sum\limits^\infty_{k=0}\gamma^kR_{t+k+1}\mid S_t=s]</script></li><li><p>Q-function at state $s$ and action $a$</p><script type="math/tex; mode=display">Q_\pi(s,a) = \mathbb{E}_\pi[G_t\mid S_t=s, A_t = a] = \mathbb{E}_\pi[\sum\limits^\infty_{k=0}\gamma^kR_{t+k+1}\mid S_t=s, A_t=a]</script></li></ul><h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>A model predicts what the environment will do next</p><ul><li><p>Predict the next state:(转移概率)</p><script type="math/tex; mode=display">P^a_{ss'} = P[S_{t+1}=s' \mid S_t=s, A_t=a]</script></li><li><p>Predict the next reward:</p><script type="math/tex; mode=display">R^a_s = P[R_{t+1} \mid S_t=s, A_t=a]</script></li></ul><h2 id="Types-of-RL-Agents-based-on-What-the-Agent-Learns"><a href="#Types-of-RL-Agents-based-on-What-the-Agent-Learns" class="headerlink" title="Types of RL Agents based on What the Agent Learns"></a>Types of RL Agents based on What the Agent Learns</h2><ul><li>Value-based agent:<ul><li>Explicit: Value function</li><li>Implicit: Policy (can derive a policy from value function)</li></ul></li><li>Policy-based agent:<ul><li>Explicit: policy</li><li>No value function</li></ul></li><li>Actor-Critic agent:<ul><li>Explicit: policy and value function</li></ul></li></ul><h2 id="Types-of-RL-Agents-on-if-there-is-model"><a href="#Types-of-RL-Agents-on-if-there-is-model" class="headerlink" title="Types of RL Agents on if there is model"></a>Types of RL Agents on if there is model</h2><ul><li>Model-based<ul><li>Explicit: model</li><li>May or may not have policy and/or value function</li></ul></li><li>Model-free<ul><li>Explicit: value function and/or policy function</li><li>No model.</li></ul></li></ul><h2 id="Two-Fundamental-Problems-in-Sequential-Decision-Making"><a href="#Two-Fundamental-Problems-in-Sequential-Decision-Making" class="headerlink" title="Two Fundamental Problems in Sequential Decision Making"></a>Two Fundamental Problems in Sequential Decision Making</h2><ul><li><p>Planning</p><ul><li>Given model about how the environment works.</li><li>Compute how to act to maximize expected reward without external interaction.</li></ul></li><li><p>Reinforcement learning</p><ul><li>Agent doesn’t know how world works</li><li>Interacts with world to implicitly learn how world works</li><li>Agent improves policy (also involves planning)</li></ul></li></ul><h2 id="Exploration-and-Exploitation"><a href="#Exploration-and-Exploitation" class="headerlink" title="Exploration and Exploitation"></a>Exploration and Exploitation</h2><ul><li>Agent only experiences what happens for the actions it tries!</li><li>How should an RL agent balance its actions?<ul><li>Exploration: trying new things that might enable the agent to make better<br> decisions in the future</li><li>Exploitation: choosing actions that are expected to yield good reward given<br> the past experience</li></ul></li><li>Often there may be an exploration-exploitation trade-off<ul><li>May have to sacrifice reward in order to explore &amp; learn about potentially<br> better policy</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Difference-between-Reinforcement-Learning-and-Supervised-Learning&quot;&gt;&lt;a href=&quot;#Difference-between-Reinforcement-Learning-and-Supervise
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="RL" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/RL/"/>
+    
+      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【rl_note】5. Policy Gradent(AC, TRPO, PPO)</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_policy_gradent/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_policy_gradent/</id>
+    <published>2020-05-29T03:51:55.000Z</published>
+    <updated>2022-02-26T07:02:52.260Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Policy-Gradent"><a href="#Policy-Gradent" class="headerlink" title="Policy Gradent"></a>Policy Gradent</h1><h2 id="Value-based-RL-vs-Policy-based-RL"><a href="#Value-based-RL-vs-Policy-based-RL" class="headerlink" title="Value-based RL vs Policy-based RL"></a>Value-based RL vs Policy-based RL</h2><ul><li>value base 主要是学习一个value function 的近似，然后通过贪心的方法得到最优策略<script type="math/tex; mode=display">a_t=\arg \max_aQ(a,st)</script></li><li>policy base 直接学习策略$\pi_\theta(a|s)$, 学习参数$\theta$<ul><li>Advantages:<ul><li>better convergence properties: we are guaranteed to converge on a local optimum (worst case) or global optimum (best case)</li><li>Policy gradient is more effective in high-dimensional action space</li><li>Policy gradient can learn stochastic policies, while value function can’t</li></ul></li><li>Disadvantages:<ul><li>局部最忧</li><li>方差大</li></ul></li><li>Deterministic: given a state, the policy returns a certain action to take</li><li>Stochastic:<ul><li>probability distribution of distribute actions</li><li>a certain Gaussian distribution for continuous action</li></ul></li></ul></li></ul><h2 id="Policy-Gradent-for-Multi-step-MDPs"><a href="#Policy-Gradent-for-Multi-step-MDPs" class="headerlink" title="Policy Gradent for Multi-step MDPs"></a>Policy Gradent for Multi-step MDPs</h2><ul><li><p>轨迹序列:</p><script type="math/tex; mode=display">\tau = (s_0, a_0, r_0, ... ,s_{T-1}, a_{T-1},r_{T-1},s_T, r_T) \sim (\pi_\theta, P(s_{t+1} | s_t, a_t))</script></li><li><p>轨迹概率:</p><script type="math/tex; mode=display">P(\tau;\theta) = \mu(s_0) \prod\limits_{t=0}^{T-1}\pi_\theta(a_t|s_t)p(s_{t+1}|s_t, a_t)</script><p>  $\pi_\theta(a_t|s_t)$ 仅该项和 Policy 有关</p><p>  $p(s_{t+1}|s_t, a_t)$ 其为动力学模型， 仅与环境有关</p></li><li><p>累计回报:</p><script type="math/tex; mode=display">R(\tau) = \sum\limits_{t=0}^T r_t</script></li><li>优化目标:<script type="math/tex; mode=display">J(\theta) = \sum\limits_\tau R(\tau) P(\tau;\theta)</script>  对轨迹$\tau$进行累加</li><li><p>Goal</p><ul><li><p>goal:</p><script type="math/tex; mode=display">\theta^* = \arg\max\limits_\theta J(\theta) = \arg\max\limits_\theta \sum\limits_\tau R(\tau) P(\tau;\theta)</script></li><li><p>gradient:</p><script type="math/tex; mode=display">\nabla_\theta Ja(\theta) =\nabla_\theta \sum\limits_\tau R(\tau) P(\tau;\theta)</script><script type="math/tex; mode=display">=\sum\limits_\tau R(\tau)  P(\tau;\theta) \nabla_\theta logP(\tau;\theta)</script></li><li><p>Monte carlo:</p><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m R(\tau_i) \nabla_\theta logP(\tau_i ;\theta)</script><p>采样后轨迹概率 $P(\tau;\theta)$ 变为采样的加和</p></li><li><p>分解 $\nabla_\theta logP(\tau_i ;\theta)$:</p><script type="math/tex; mode=display">\nabla_\theta logP(\tau_i ;\theta) = \nabla_\theta log[\mu(s_0) \prod\limits_{t=0}^{T-1}\pi_\theta(a_t|s_t)p(s_{t+1}|s_t, a_t)]</script><script type="math/tex; mode=display">=\nabla_\theta[log(\mu(s_0)) + \sum\limits_{t=0}^{T-1} (\log \pi_\theta(a_t|s_t) + \log p(s_{t+1}|s_t, a_t)))]</script><script type="math/tex; mode=display">=\sum\limits_{t=0}^{T-1} \nabla_\theta \log \pi_\theta(a_t|s_t)</script><p>$\theta$仅与policy有关  </p></li><li><p>Finaly:</p><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m [R(\tau_i) \sum\limits_{t=0}^{T-1} \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)]</script><p>$\nabla_\theta \log\pi_\theta(a_t^i|s_t^i)$作为<strong>score function</strong>代表梯度更新方向</p><p>$R(\tau_i)$表示更新方向上的权重， 偏向于好的轨迹</p></li></ul></li></ul><h2 id="Comparison-to-Maximum-Likelihood"><a href="#Comparison-to-Maximum-Likelihood" class="headerlink" title="Comparison to Maximum Likelihood"></a>Comparison to Maximum Likelihood</h2><ul><li>PG<script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{M} \sum\limits_{m=1}^M (\sum\limits_{t=1}^{T} \nabla_\theta \log \pi_\theta(a_t^m|s_t^m)) (\sum\limits_{t=1}^{T}r(s_t^m, a_t^m))</script></li><li>Maximum Likelihood<script type="math/tex; mode=display">\nabla_\theta J_{ML}(\theta) \approx \frac{1}{M} \sum\limits_{m=1}^M (\sum\limits_{t=1}^{T} \nabla_\theta \log \pi_\theta(a_t^m|s_t^m))</script></li><li><p>往更好的轨迹偏移</p><p>  <img src="/images/posts/rl/policy_gradent/pg_ml.png" alt=""></p></li></ul><h2 id="Reduce-Variance"><a href="#Reduce-Variance" class="headerlink" title="Reduce Variance"></a>Reduce Variance</h2><ul><li>temporal causality<ul><li>利用当前时刻后的奖励而不用整条轨迹的奖励 $G_t^i = \sum\limits_{t’=t}^{T-1}r_{t’}^i$</li><li><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m \sum\limits_{t=0}^{T-1} G_t^i \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)</script></li><li></li><li>REINFORCE:<br>  <img src="/images/posts/rl/policy_gradent/reinforence.png" alt=""></li><li>n-step<script type="math/tex; mode=display">G_t^{(1)} = r_{t+1} + \gamma v(s_{t+1})</script><script type="math/tex; mode=display">G_t^{(2)} = r_{t+1} + \gamma r_{t+2} + \gamma^2 v(s_{t+2})</script><script type="math/tex; mode=display">G_t^{(\infty)} = r_{t+1} + \gamma r_{t+2} + ... +\gamma^{T-t-1}r_T</script></li></ul></li><li>add baseline<ul><li>利用当前时刻后的奖励 - 平均奖励，而不用整条轨迹的奖励$G_t^i -b^i(s_t)$</li><li><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m \sum\limits_{t=0}^{T-1} (G_t^i-b^i(s_t)) \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)</script><h2 id="PG-Algorithm"><a href="#PG-Algorithm" class="headerlink" title="PG Algorithm"></a>PG Algorithm</h2></li></ul></li></ul><p><img src="/images/posts/rl/policy_gradent/pg_al.png" alt=""></p><h1 id="Problem-of-PG"><a href="#Problem-of-PG" class="headerlink" title="Problem of PG"></a>Problem of PG</h1><ul><li>训练不稳定<ul><li>Trust region (TRPO, PPO)</li><li>natural policy gradient (二阶优化方法)</li></ul></li><li>如何离线化训练 <strong>off-policy</strong><ul><li>Importance sampling（将分布转换到已知的分布）</li></ul></li></ul><h1 id="Advantage-Actor-Critic"><a href="#Advantage-Actor-Critic" class="headerlink" title="Advantage Actor-Critic"></a>Advantage Actor-Critic</h1><ul><li>利用当前状态的<strong>Advantage function</strong>作为权重 ，而不用整条轨迹的奖励<br>  一般通过参数 $w$ 来拟合<script type="math/tex; mode=display">A(s_t^i, a_t^i) = Q(s_t^i, a_t^i) - V(s_t^i)</script></li><li><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m \sum\limits_{t=0}^{T-1} A_w(s_t^i,a_t^i) \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)</script></li><li><p>n step</p><script type="math/tex; mode=display">\hat{A}_t^{(1)} = r_{t+1} + \gamma v(s_{t+1})- v(s_t)</script><script type="math/tex; mode=display">\hat{A}_t^{(2)} = r_{t+1} + \gamma r_{t+2} + \gamma^2 v(s_{t+2})- v(s_t)</script><script type="math/tex; mode=display">\hat{A}_t^{(\infty)} = r_{t+1} + \gamma r_{t+2} + ... +\gamma^{T-t-1}r_T- v(s_t)</script><p>$\hat{A}_t^{(1)}$ low variance ,high bias</p><p>$\hat{A}_t^{(\infty)}$ high variance ,low bias</p></li></ul><h1 id="TRPO"><a href="#TRPO" class="headerlink" title="TRPO"></a>TRPO</h1><p>PG + off-policy + constrain</p><ul><li>步长的重要性<ul><li>状态和回报在改变统计特性, 优化过程中很难确定更新步长</li><li>policy 经常会过早陷入次忧的几乎确定的策略中</li><li>TRPO 通过置信域的方式保证步长为单调不减</li><li><img src="/images/posts/rl/policy_gradent/trust_region.png" alt=""></li></ul></li><li><p>目标函数(带有折扣的奖励最大)：</p><ul><li><script type="math/tex; mode=display">\eta(\tilde{\pi}) =\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^{\infty} \gamma r(s_t)]</script></li><li><p>新策略下的期望回报 = 旧策略下的期望回报 + 新旧策略期望回报的差</p><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\mathbb{E}_{\tau|\tilde{\pi}}[\sum\limits_{t=0}^\infty \gamma^t A_\pi(s_t,a_t)]</script><p>  $\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t A_\pi(s_t,a_t)]$</p><p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t [Q_\pi(s_t,a_t)-V_\pi(s_t)]$</p><p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t [r(s_t)+ \gamma V_\pi(s_{t+1})-V_\pi(s_t)]$</p><p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t r(s_t)+ \sum\limits_{t=0}^\infty (\gamma V_\pi(s_{t+1})-V_\pi(s_t))]$</p><p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t r(s_t)] + \mathbb{E}_{s_0}[-V_\pi(s_0)]$求和展开前后相消</p><p>  $= \eta(\tilde{\pi}) - \eta(\pi)$</p></li></ul></li><li><p>对于上式展开 </p><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\mathbb{E}_{\tau|\tilde{\pi}}[\sum\limits_{t=0}^\infty \gamma^t A_\pi(s_t,a_t)]</script><script type="math/tex; mode=display">\rho_\pi(s) = P(s_0=s) + \gamma P(s_1=s) + \gamma^2P(s_2=s) + ... = \sum\limits_{t=0}^\infty \gamma^t P(s_t=s|\tilde{\pi} )</script><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\sum_{t=0}^\infty \sum\limits_{s} P(s_t = s|\tilde{\pi})\sum\limits_a \tilde{\pi}(a|s) \gamma^t A_\pi(s,a)</script><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\sum\limits_{s} \rho_{\tilde{\pi}}(s) \sum\limits_a \tilde{\pi}(a|s) A_\pi(s,a)</script><p>  这是状态分布由新的策略$\tilde{\pi}$， 严重依赖新的状态分布</p></li><li><p>two trick</p><ul><li>忽略状态分布的变化， 假定  <script type="math/tex; mode=display">\rho_{\tilde{\pi}}(s)\sim\rho_\pi(s)</script></li><li><p>重要性采样，</p><ul><li><img src="/images/posts/rl/policy_gradent/importance.png" alt=""></li><li><script type="math/tex; mode=display">\sum\limits_a \tilde{\pi_\theta}(a|s) A_{\theta_{old}}(s,a) = \mathbb{E}_{a\sim\pi_{old}} [\frac{\tilde{\pi_\theta}(a|s_n)}{\pi_{\theta_{old}}(a|s_n)}A_{\theta_{old}}(s,a)]</script></li></ul></li><li><p>原目标：</p><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\sum\limits_{s} \rho_{\tilde{\pi}}(s) \sum\limits_a \tilde{\pi}(a|s) A_\pi(s,a)</script></li><li><p>新目标：</p><script type="math/tex; mode=display">L_{\pi_{\theta_{old}}} (\tilde{\pi})= \eta(\pi) + \mathbb{E}_{s\sim \rho_{\theta {old}}, a\sim\pi_{\theta {old}}} [\frac{\tilde{\pi_\theta}(a|s_n)}{\pi_{\theta_{old}}(a|s_n)}A_{\theta_{old}}(s,a)]</script></li></ul></li><li><p>梯度更新方向， 梯度优化本身就是一阶优化，</p><ul><li>在$\theta_{old}$ 处, 一阶凸优化方法中，完全一致，一阶导数一致， <script type="math/tex; mode=display">\nabla_\theta \eta (\pi_{\theta_{old}}) = \nabla_\theta L_{\pi_{\theta_{old}}} (\pi_{\theta_{old}})</script></li><li><img src="/images/posts/rl/policy_gradent/one.png" alt=""></li></ul></li><li><p>梯度更新步长</p><ul><li><script type="math/tex; mode=display">\eta(\tilde{\pi}) \geqslant L_\pi(\tilde{\pi}) - CD_{KL}^{MAX} (\pi, \tilde{\pi})</script><p>  $where , C = \frac{2\epsilon\gamma}{(1-\gamma)^2}$</p></li><li><p>令 $M_{i}(\pi)  = L_{\pi_{i}}(\pi) - CD_{KL}^{MAX} (\pi_i, \pi)$</p><p>  $\eta (\pi_{i+1}) \geqslant M_i(\pi_{i+1})$</p><p>  等效于上面不等式</p><p>  $\eta (\pi_{i}) = M_i(\pi_{i})$</p><p>  将$\pi_i$带入不等式，两分布相同，$D_{KL}$为0</p><p>  $\eta (\pi_{i+1}) - \eta (\pi_{i}) \geqslant M_i(\pi_{i+1}) -M_i(\pi_{i})$</p><p>  即最大化$M_i$, 可保证更新步长单调不减</p></li></ul></li><li><p>Finally:</p><ul><li>$\max_\theta {mize}[ L_{\pi}(\tilde{\pi}) - CD_{KL}^{MAX} (\pi, \tilde{\pi})]$</li><li><p>$\max_\theta {mize} L_{\theta_{old}}(\theta)$</p><p>  subject to : $D_{KL}^{MAX} (\theta_{old}, \theta) \leqslant \delta$</p><p>  subject to : $\bar{D}_{KL}^{\rho_{\theta_{old}}} (\theta_{old}, \theta) \leqslant \delta$</p></li><li><p>线性化逼近， 二次逼近后:</p><p>  $\max_\theta {mize}[\nabla_\theta L_{\theta_{old}}(\theta)|_{\theta = \theta_{old}} \cdot (\theta-\theta_{old})]$gradent/ppo_clip.png)</p><p>  subject to : $\frac{1}{2} \left | \theta- \theta_{old} \right |^2 \leqslant \delta$</p></li></ul></li></ul><h1 id="PPO"><a href="#PPO" class="headerlink" title="PPO"></a>PPO</h1><p>想比于TRPO的变化就是</p><ul><li>TRPO 用KL作为一个约束， 而 PPO 则一快和$\theta$进行优化</li><li><strong>Note:</strong> KL 为输出$a$的距离，而不是参数$\theta$ 的距离</li><li>$\max_\theta {mize}[ L_{\pi}(\tilde{\pi}) -\beta KL(\pi, \tilde{\pi})]$<ul><li>If $𝐾𝐿(\theta, \theta_i) &gt; KL_{max}$,  increase $\beta$</li><li>If $𝐾𝐿(\theta, \theta_i) &lt; KL_{min}$,  decrease $\beta$</li></ul></li><li><p>优化目标：</p><ul><li><script type="math/tex; mode=display">L(\theta) = \mathbb{E}_{\tau \sim \pi_{old}}[\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}A_{\theta_{old}}(s,a) - \beta KL(\pi_{old}, \pi)]</script></li><li><script type="math/tex; mode=display">L(\theta) = \mathbb{E}_{\tau \sim \pi_{old}}[min(\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}A_{\theta_{old}}(s,a), clip(\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)},1-\epsilon, 1+\epsilon)A_{\theta_{old}}(s,a))]</script><p>  <img src="/images/posts/rl/policy_gradent/ppo_clip.png" alt=""></p></li></ul></li></ul><h1 id="DDPG"><a href="#DDPG" class="headerlink" title="DDPG"></a>DDPG</h1><ul><li>目的： 让DQN应用于连续的动作空间</li><li></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Policy-Gradent&quot;&gt;&lt;a href=&quot;#Policy-Gradent&quot; class=&quot;headerlink&quot; title=&quot;Policy Gradent&quot;&gt;&lt;/a&gt;Policy Gradent&lt;/h1&gt;&lt;h2 id=&quot;Value-based-RL-vs
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="RL" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/RL/"/>
+    
+      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【rl_note】4. Value Function Approximation</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_value_function_approximation/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_value_function_approximation/</id>
+    <published>2020-05-29T03:51:55.000Z</published>
+    <updated>2022-02-26T07:02:52.260Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Challenges-with-large-MDPs"><a href="#Challenges-with-large-MDPs" class="headerlink" title="Challenges with large MDPs:"></a>Challenges with large MDPs:</h2><ul><li>too many states or actions to store in memory</li><li>too slow to learn the value of each state individually</li></ul><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul><li>为了避免通过查表的方式表示Value function, state-action function，Policy</li><li><p>Estimate with function approximation</p><ul><li>$\hat{v} (s, \mathbf{\omega}) \approx  v^π (s)$</li><li>$\hat{q}(s, a, \mathbf{\omega}) \approx  q^π (s, a)$</li><li>$\hat{\pi}(a, s, \mathbf{\omega}) \approx  π(a \mid s)$</li></ul></li><li><p>Linear VFA often works well given the right set of features, But it requires manual designing of the feature set</p></li><li>Alternative is to use a much richer function approximator that is able to directly learn from states without requiring the feature design</li><li>Nonlinear function approximator: Deep neural networks</li></ul><h2 id="Value-Function-Approximation-with-an-Oracle"><a href="#Value-Function-Approximation-with-an-Oracle" class="headerlink" title="Value Function Approximation with an Oracle"></a>Value Function Approximation with an Oracle</h2><ul><li>We assume that we have the oracle for knowing the true value for<br>$v^π (s)$ for any given state $s$</li><li>Then the objective is to find the best approximate representation of $v^π (s)$</li><li>Thus use the <strong>mean squared error</strong> and define the loss function as<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_π [(v^π (s) − \hat{v}(s, w))^2]</script></li><li>Follow the gradient descend to find a local minimum<script type="math/tex; mode=display">\Delta \omega = − {1 \over 2} \alpha ∇_\omega J(\omega)</script><script type="math/tex; mode=display">\omega_{t+1} = \omega_t + \Delta \omega</script></li></ul><h2 id="Linear-Value-Function-Approximation"><a href="#Linear-Value-Function-Approximation" class="headerlink" title="Linear Value Function Approximation"></a>Linear Value Function Approximation</h2><ul><li>Represent value function by a linear combination of features, s is feature vector<script type="math/tex; mode=display">\hat{v}(s,\omega) = x(s)^T \omega = \sum_{j=1}^n x_j(s)\omega_j</script></li><li>The objective function is quadratic in parameter $\omega$<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_\pi[v^\pi(s) − x(s)^T \omega]^2</script></li><li>Thus the update rule is as simple as<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{v^\pi(s)} − \hat{v}(s, \omega))x(s)</script><script type="math/tex; mode=display">Update = StepSize × PredictionError × FeatureValue</script></li><li>Stochastic gradient descent converges to global optimum. Because in the linear case, there is only one optimum, thus local optimum is automatically converge to or near the global optimum.</li><li><p>Special case</p><ul><li>Table lookup is a special case of linear value function approximation</li><li><p>Table lookup feature is one-hot vector <strong>(只有一个元素为1)</strong> as follows</p><script type="math/tex; mode=display">x^{table}(s) = [0(s = s_1 ), ..., 1(s = s_n )]^T</script></li><li><p>Then we can see that each element on the parameter vector $w$ indicates the value of each individual state</p><script type="math/tex; mode=display">\hat{v}(s, \omega) = [0(s = s_1 ), ..., 1(s = s_n)] [w_1 , ..., w_n]^T</script></li><li><p>Thus we have（对于的权重就是对应k的权重） </p><script type="math/tex; mode=display">\hat{v}(s_k , \omega) = \omega_k</script></li></ul></li></ul><h2 id="No-Oracle"><a href="#No-Oracle" class="headerlink" title="No Oracle"></a>No Oracle</h2><ul><li><p>For MC, the target is the actual return $G_t$</p><script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{v}(s_t , \omega) ∇\omega \hat{v}(s_t , \omega)</script><p>  <strong>$G_t$</strong> 因为是采样，所以这儿是无偏的估计， 但是会有噪声</p></li><li>For TD(0), the target is the TD target $R_{t+1} + \gamma \hat{v}(s_{t+1} , \mathbf{\omega})$<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{v} (s_{t+1} , \omega)} − \hat{v}(s_t , \omega) ∇ \omega\hat{v} (s_t , \omega)</script>  <strong>TD target</strong> 有偏估计， 因为用到了旧时刻的 $\omega$</li></ul><p>Generalized policy iteration<br><img src="/images/posts/rl/value_function_approximation/policy_iteration.png" alt=""></p><h3 id="同理-v-s-可替换为-q-s-a"><a href="#同理-v-s-可替换为-q-s-a" class="headerlink" title="同理 $v(s)$ 可替换为 $q(s,a)$"></a>同理 $v(s)$ 可替换为 $q(s,a)$</h3><ul><li><p>MC</p><script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{q}(s_t ,a_t, \omega) ∇\omega \hat{q}(s_t ,a_t, \omega)</script></li><li><p>sarsa</p><script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{q} (s_{t+1} ,a_{t+1}, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script><p>  <strong>Note:</strong> 训练困难</p><ul><li>在优化过程中，即近似 <strong>Bellman backup</strong> 又近似 <strong>value function</strong>, </li><li>off-policy control: <strong>behavior policy</strong> and <strong>target policy</strong> </li></ul></li><li><p>q-learning</p><script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \max_a \hat{q}(s_{t+1} ,a, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script></li></ul><p><img src="/images/posts/rl/value_function_approximation/sarsa_semi_gradient.png" alt=""></p><h3 id="Deadly-Triad"><a href="#Deadly-Triad" class="headerlink" title="Deadly Triad"></a>Deadly Triad</h3><ul><li>Function approximation: 利用函数估计会有误差</li><li>Bootstrapping: 主要影响 TD 和 MP</li><li>Off-policy training:  <strong>behavior policy</strong> and <strong>target policy</strong> </li></ul><h2 id="Convergence"><a href="#Convergence" class="headerlink" title="Convergence"></a>Convergence</h2><p><img src="/images/posts/rl/value_function_approximation/convergence.png" alt=""></p><hr><p><img src="/images/posts/rl/value_function_approximation/convergence_al.png" alt=""></p><h2 id="DQN"><a href="#DQN" class="headerlink" title="DQN"></a>DQN</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Challenges-with-large-MDPs&quot;&gt;&lt;a href=&quot;#Challenges-with-large-MDPs&quot; class=&quot;headerlink&quot; title=&quot;Challenges with large MDPs:&quot;&gt;&lt;/a&gt;Challen
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="RL" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/RL/"/>
+    
+      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【dl】 神经网络中参数量和计算量</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/04/24/dl/net_param_calculate/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/04/24/dl/net_param_calculate/</id>
+    <published>2020-04-24T04:51:55.000Z</published>
+    <updated>2022-02-26T07:02:52.257Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="参数量"><a href="#参数量" class="headerlink" title="参数量"></a>参数量</h1><p><img src="/images/posts/dl/leNet_param.png" alt="LeNet"></p><h2 id="MLP"><a href="#MLP" class="headerlink" title="MLP"></a>MLP</h2><p>假设输入神经元数为M，输出神经元数为N，则</p><ul><li><p>bias为True时：</p><p>  则参数数量为：M*N + N（bias的数量与输出神经元数的数量是一样的）</p></li><li><p>bias为False时：</p><p>  则参数数量为：M×N</p></li></ul><h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><p>假设卷积核的大小为 k*k, 输入channel为M， 输出channel为N。</p><ul><li><p>bias为True时：</p><p>  则参数数量为：k×k×M×N + N（bias的数量与输出channel的数量是一样的）</p></li><li><p>bias为False时：</p><p>  则参数数量为：k×k×M×N</p></li><li><p>当使用BN时，还有两个可学习的参数α和β，参数量均为N</p><p>  则参数数量为：k×k×M×N + 3×N</p></li></ul><h2 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h2><p>首先要说一下LSTM的结构</p><p><a href="https://zhuanlan.zhihu.com/p/47907312" target="_blank" rel="noopener">参考链接</a></p><ul><li>遗忘门<br>  <img src="/images/posts/dl/forget.webp" alt=""></li><li>输入们<br>  <img src="/images/posts/dl/input.gif" alt=""></li><li>cell 状态<br>  <img src="/images/posts/dl/cell.webp" alt=""></li><li><p>输出门<br>  <img src="/images/posts/dl/output.webp" alt=""></p><p>  1，把先前隐藏状态prev_ht和当前输入input合并成combine</p><p>  2，把combine输入遗忘层，决定哪些不相关数据需要被剔除</p><p>  3，用combine创建候选层，其中包含能被添加进cell状态的可能值</p><p>  4，把combine输入输入层，决定把候选层中哪些信息添加进cell状态</p><p>  5，更新当前cell状态</p><p>  6，把combine输入输出层，计算输出</p><p>  7，把输出和当前cell状态进行点乘，得到更新后的隐藏状态</p></li></ul><p>因为input进入了四个不同的mlp，每一个可参考MLP的参数进行计算</p><p><strong>实际的LSTM模型</strong><img src="/images/posts/dl/lstm.jpg" alt=""></p><h1 id="计算量"><a href="#计算量" class="headerlink" title="计算量"></a>计算量</h1><h2 id="MLP-1"><a href="#MLP-1" class="headerlink" title="MLP"></a>MLP</h2><p>假设 输入神经元数为M，输出神经元数为N，则</p><ul><li><p>先执行M次乘法；</p></li><li><p>再执行M-1次加法</p></li><li><p>加上bias，计算出一个神经元的计算量为 （M+M-1+1）</p></li><li><p>N个输出神经元，则总的计算量为 2M×N</p></li></ul><h2 id="CNN-1"><a href="#CNN-1" class="headerlink" title="CNN"></a>CNN</h2><p>假设输入特征图（B，C，H，W），卷积核大小为K×K， 输入通道为C，输出通道为N，步长stride为S， 输出特征图大小为H2，W2.</p><ul><li><p>一次卷积的计算量</p><p>  一个k×k的卷积，执行一次卷积操作，需要k×k次乘法操作（卷积核中每个参数都要和特征图上的元素相乘一次），k×k−1 次加法操作（将卷积结果，k×k 个数加起来）。所以，一次卷积操作需要的乘加次数：(K×K)+(K×K−1)=2×K×K−1</p></li><li><p>在一个特征图上需要执行卷积需要卷积的次数</p><p>  在一个特征图上需要执行的卷积次数：(（H-k+Ph）/S +1 )×(（H-k+Pw）/S +1)，Ph，Pw表示在高和宽方向填充的像素，此处假定了宽高方向滑动步长和核的宽高是一样，若不同，调整一下值即可。若不能整除，可向下取整。</p><p>  <strong>Note</strong>:卷积输出层的维度</p></li><li><p>C个特征图上进行卷积运算的次数</p><p>  C个输入特征图上进行卷积运算的次数为C</p></li><li><p>输出一个特征图通道需要的加法次数</p><p>  在C个输入特征图上进行卷积之后需要将卷积的结果相加，得到一个输出特征图上卷积结果，C个相加需要C-1次加法，计算量为 ：（C-1）×H2×W2</p></li><li><p>输出N个特征图需要计算的次数</p><p>  N×（（C-1）×H2×W2 + （2×K×K−1）×(（H-k+Ph）/S +1 )×(（H-k+Pw）/S +1) ×C）</p></li><li><p>一个batch需要计算的次数</p><p>  B×N×（（C-1）×H2×W2 + （2×K×K−1）×(（H-k+Ph）/S +1 )×(（H-k+Pw）/S +1) ×C）</p></li></ul><h3 id="LSTM-1"><a href="#LSTM-1" class="headerlink" title="LSTM"></a>LSTM</h3><p>具体可参考上面LSTM流程，按照MLP的计算方式去计算</p><p>Bingo!!!<br>一直想写，终于把这个坑填上了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;参数量&quot;&gt;&lt;a href=&quot;#参数量&quot; class=&quot;headerlink&quot; title=&quot;参数量&quot;&gt;&lt;/a&gt;参数量&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/images/posts/dl/leNet_param.png&quot; alt=&quot;LeNet&quot;&gt;&lt;/p&gt;
+&lt;h2 i
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="DL，Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/DL%EF%BC%8CNote/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【dl】 GAN_公式推导</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/03/24/dl/GAN/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/03/24/dl/GAN/</id>
+    <published>2020-03-24T04:51:55.000Z</published>
+    <updated>2022-02-26T07:02:52.257Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h1><h2 id="GAN数学描述"><a href="#GAN数学描述" class="headerlink" title="GAN数学描述"></a>GAN数学描述</h2><p><strong>目标:</strong> 以假乱真的生成器</p><ul><li>高水平的鉴赏家</li><li>高水平的工艺大师</li></ul><p>原始数据概率分布: </p><script type="math/tex; mode=display">P_{data} =(x;\theta)</script><p>生成器概率分布:  </p><script type="math/tex; mode=display">P_z =(z;\theta_g)</script><p>这儿 $\theta_g$ 表示概率的参数，</p><p>生成器网络表示：</p><script type="math/tex; mode=display">x=G (z;\theta_g)</script><p>这儿 $\theta_g$ 表示网络的参数，这儿不对生成器进行具体建模，用一个神经网络(<strong>确定性函数</strong>)去描述 </p><p>鉴别器网络表示：<strong>为伯努利分布</strong></p><script type="math/tex; mode=display">D (x;\theta_d)</script><p>$x$ 可以来着 $P_{data}$ 或者 生成器 $G$ </p><p><strong>高水平专家</strong></p><ul><li>if $x$ from $P_{data}$ ，Then $D(x)$  $\Uparrow$</li><li>if $x$ from $P_g$ ，Then $D(x)$ $\Downarrow$<ul><li>$D(x)$ 下降，即，$1-D(G(z))$ $\Uparrow$</li></ul></li></ul><p>为计算方便，可加上log</p><ul><li>if $x$ from $P_{data}$ ，Then $logD(x)$ $\Uparrow$</li><li>if $x$ from $P_g$ ，Then $log(1-D(G(z)))$ $\Uparrow$</li></ul><p>目标：</p><script type="math/tex; mode=display">\max_D E_{x\sim{P_{data}}}[\log(D(x))]+E_{z\sim{P_{z}}}[log(1-D(G(z)))]</script><p><strong>高水平大师</strong></p><ul><li>if $x$ from $P_g$ ，Then $D(G(z))$ $\Uparrow$</li></ul><p>即</p><ul><li>if $x$ from $P_g$ ，Then $log(1-D(G(z)))$ $\Downarrow$</li></ul><p>目标：</p><script type="math/tex; mode=display">\min_G E_{z\sim{P_{z}}}[log(1-D(G(z)))]</script><p>总目标：</p><script type="math/tex; mode=display">\min_G \max_D E_{x\sim{P_{data}}}[\log(D(x))]+E_{z\sim{P_{z}}}[log(1-D(G(z)))]</script><h2 id="GAN全局最优解"><a href="#GAN全局最优解" class="headerlink" title="GAN全局最优解"></a>GAN全局最优解</h2><p>$\min_G \max_D E_{x\sim{P_{data}}}[\log(D(x))]+E_{z\sim{P_{z}}}[log(1-D(G(z)))]$</p><p>恒等</p><p>$V(D,G)=\min_G \max_D E_{x\sim{P_{data}}}[\log(D(x))]+E_{x\sim{P_{g}}}[log(1-D(x)]$</p><p>for fix $G$ , $\max_D V(D,G)$</p><p>$\max_D V(D,G)=\int{P_{data}\log{D}}dx+ \int{P_g\log(1-D)}dx$</p><p>$=\int{[P_{data}\log{D}+ P_g\log(1-D)]}dx$</p><p>$=\int{[P_{data}\log{D}+ P_g\log(1-D)]}dx$</p><p>对 $D$ 求偏导</p><p>$<br>\frac {\partial max_D V(D,G)} {\partial D } = \int \frac {\partial} {\partial D } [P_{data}\log{D}+ P_g\log(1-D)]dx<br>$</p><p>$=\int[ P_{data}{1 \over D}+P_g{-1 \over 1-D}]dx$</p><p>令导数为0：</p><p>$D^*_G = {P_{data} \over P_{data}+P_g}$</p><p>故 $D$ 存在最大值</p><p>将 $D^*_G$ 带入 $V(D,G)$</p><p>$min_G max_D V(D,G)$</p><p>$=min_G V(D^*_G,G)$</p><p>$=\min_G E_{x\sim{P_{data}}}[\log{P_{data}\over P_{data}+P_g}]+E_{x\sim{P_{g}}}[log({P_{g}\over P_{data}+P_g})]$</p><p>$=\min_G E_{x\sim{P_{data}}}[\log{1\over2}{P_{data}\over {P_{data}+P_g\over 2} }]+E_{x\sim{P_{g}}}[log({1\over2}{P_{g}\over {P_{data}+P_g\over2}})]$</p><p>$=\min_G KL(P_{data} \parallel {P_{data}+P_g\over2})+KL(P_{g} \parallel {P_{data}+P_g\over2})-log4$</p><p>$\geqslant-log4$</p><p>当且仅当：$p_{data}=P_g={P_{data}+P_g\over2}$ 时成立。</p><p><strong>最优解：</strong></p><p>$P^*_g = P_{data}$</p><p>$D^*={1\over2}$</p><p>最终判别器在概率角度已经不能够分辨真假。</p><hr><ul><li>$P_{data}+P_g$ 这儿不是概率分布，凑出 $P_{data}+P_g \over 2$ 为概率分布。</li></ul><p>KL公式：</p><p>分子分母必须保证为概率分布</p><script type="math/tex; mode=display">KL(p \parallel q) =E_p log{p\over q}</script><p>打公式可太费劲了</p><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;GAN&quot;&gt;&lt;a href=&quot;#GAN&quot; class=&quot;headerlink&quot; title=&quot;GAN&quot;&gt;&lt;/a&gt;GAN&lt;/h1&gt;&lt;h2 id=&quot;GAN数学描述&quot;&gt;&lt;a href=&quot;#GAN数学描述&quot; class=&quot;headerlink&quot; title=&quot;GAN数学描述
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="RL" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/RL/"/>
+    
+      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+    
+      <category term="GAN" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/GAN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python中的tips</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/03/19/tips/python_tips/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/03/19/tips/python_tips/</id>
+    <published>2020-03-18T18:51:55.000Z</published>
+    <updated>2022-02-26T07:02:52.261Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Python中读写pkl文件"><a href="#Python中读写pkl文件" class="headerlink" title="Python中读写pkl文件"></a>Python中读写pkl文件</h2><ul><li><p>不采用压缩方式</p>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line"><span class="comment">#write</span></span><br><span class="line">pack = <span class="string">"xxx"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"demo.pkl"</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        pickle.dump(pack,f)</span><br><span class="line"></span><br><span class="line"><span class="comment">#read</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"demo.pkl"</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        data = pickle.load(f)</span><br></pre></td></tr></table></figure></li><li><p>采用压缩方式</p>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bz2</span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line"><span class="comment">#write</span></span><br><span class="line">pack = <span class="string">"xxx"</span></span><br><span class="line"><span class="keyword">with</span> bz2.BZ2File(<span class="string">"demo.pkl"</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        pickle.dump(pack,f)</span><br><span class="line"></span><br><span class="line"><span class="comment">#read</span></span><br><span class="line"><span class="keyword">with</span> bz2.BZ2File(<span class="string">"demo.pkl"</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        data = pickle.load(f)</span><br></pre></td></tr></table></figure><p>两种方式数据占用量差别在3-4倍，可以显著节省空间。</p></li></ul><h2 id="保存图片"><a href="#保存图片" class="headerlink" title="保存图片"></a>保存图片</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># matplotlib</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.image <span class="keyword">as</span> Image</span><br><span class="line">Image.imsave(<span class="string">"save_path.jpg"</span>, left_shoulder_rgb)</span><br></pre></td></tr></table></figure><p>保存值范围:0~1<br>保存格式为:RGB</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cv2</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cv2.imwrite(<span class="string">"save_path.jpg"</span>,rgb,[int(cv2.IMWRITE_JPEG_QUALITY),<span class="number">100</span>])</span><br></pre></td></tr></table></figure><p>保存值范围:0~255<br>保存格式为:RBG</p><h2 id="tensor"><a href="#tensor" class="headerlink" title="tensor"></a>tensor</h2><p>np.array 转成 tensor两种方法</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># print("numpy",color.shape)</span></span><br><span class="line"><span class="comment"># numpy shape(240*320*3)</span></span><br><span class="line"><span class="comment"># cv2.imwrite("/home/sunshine/color"+str(index)+".jpg",color,[int(cv2.IMWRITE_JPEG_QUALITY),100])</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># to (3*240*320) </span></span><br><span class="line">color = trans.ToTensor()(color) </span><br><span class="line">sensor = trans.ToTensor()(sensor)</span><br><span class="line"></span><br><span class="line"><span class="comment"># to (240*320*3)</span></span><br><span class="line"><span class="comment"># color = torch.from_numpy(color)</span></span><br><span class="line"><span class="comment"># sensor = torch.from_numpy(sensor)</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Python中读写pkl文件&quot;&gt;&lt;a href=&quot;#Python中读写pkl文件&quot; class=&quot;headerlink&quot; title=&quot;Python中读写pkl文件&quot;&gt;&lt;/a&gt;Python中读写pkl文件&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不采用压缩方式&lt;/p&gt;
+ 
+      
+    
+    </summary>
+    
+    
+      <category term="编程" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+    
+      <category term="python" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【blog】 Hexo修改背景图片及主题透明</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/03/15/blog/blog_background/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/03/15/blog/blog_background/</id>
+    <published>2020-03-14T22:51:55.000Z</published>
+    <updated>2022-02-26T07:02:52.256Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="背景图片的更改"><a href="#背景图片的更改" class="headerlink" title="背景图片的更改"></a>背景图片的更改</h1><h2 id="背景背景图片添加"><a href="#背景背景图片添加" class="headerlink" title="背景背景图片添加"></a>背景背景图片添加</h2><ul><li><p>首先将已选定的背景图片放到博客根目录下的\source\images下</p><pre><code>  Blog\source\images\background.jpg</code></pre></li><li><p>其次，打开配置文      Blog\themes\next\source\css_custom\custom.styl：        </p><pre><code>  // Custom styles.  body {   background-image: url(/images/background.jpg);  background-attachment: fixed;  background-repeat: no-repeat;  background-size: cover；  }</code></pre></li></ul><h2 id="界面显示优化"><a href="#界面显示优化" class="headerlink" title="界面显示优化"></a>界面显示优化</h2><p>在上面打开的配置文件body{}中继续添加以下配置；（Blog\themes\next\source\css_custom\custom.styl)</p><pre><code>//background configbody {     background-image: url(/images/bc.jpg);    background-attachment: fixed;    background-repeat: no-repeat;    background-size: cover；    //改变背景色和透明度    .main-inner {        background: #fff;        padding: 25px;        opacity: 0.75;        border-radius: 10px;    }    //修改头部导航栏显示宽度，透明度，位置等    #header {        padding: 5px 25px;        margin: 0 auto;        margin-top:15px;        width: 700px;        opacity: 0.8;        border-radius: 10px;    }    //修改底部展示信息显示宽度，透明度，位置等    #footer {        padding: 5px 25px;        position: relative;        margin: 0 auto;        margin-bottom: 5px;        width: 700px;        opacity: 0.8;        border-radius: 10px;    }}</code></pre><h2 id="大坑"><a href="#大坑" class="headerlink" title="大坑"></a>大坑</h2><p>上面代码会使Mist主题下的站内搜索无法跳转，具体原因是因为  <strong>opacity: 0.8;</strong> 这条参数，透明化的同时会让搜索栏透明化，导致无法站内搜索。</p><pre><code>        #header {        padding: 5px 25px;        margin: 0 auto;        margin-top:15px;        width: 700px;        //Notice        //opacity: 0.8;        border-radius: 10px;    }</code></pre><p>修改完上面的配置可能会发现首页博客主体部分的下方与底部展示信息的间隙过大，我们加入以下配置进行调整，需要注意的是，此时添加的配置与上方添加位置不同，需要在body{}下方添加；</p><pre><code>body .main {margin-bottom: 45px;}</code></pre><h1 id="侧边栏背景的更改"><a href="#侧边栏背景的更改" class="headerlink" title="侧边栏背景的更改"></a>侧边栏背景的更改</h1><p>同样在配置文件 Blog\themes\next\source\css_custom\custom.styl 中添加：</p><pre><code>#sidebar {        p,span,a {color: #ffb6c1;}}#sidebar {            background:url(../images/sidebar_bc.jpg);            background-size: cover;            background-position:center;            background-repeat:no-repeat;            p,span,a {color: #ffb6c1;}}</code></pre><h1 id="修改主题菜单栏背景"><a href="#修改主题菜单栏背景" class="headerlink" title="修改主题菜单栏背景"></a>修改主题菜单栏背景</h1><p>我用的主题是Next-Mist主题<br>修改文件 theme/next/source/css/_schemes/Mist/_header.styl 文件，</p><pre><code>.header { background: $whitesmoke; }</code></pre><p>将背景改为透明，0.3为透明度，</p><pre><code>.header { background: rgba(255,255,255,0.3); }</code></pre><p>将内容加入url可用图片作为背景，图片文件放在 Blog/source/images/ 文件目录下，</p><pre><code>.header { background: url(&#39;../images/header_bc.jpg&#39;); }</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;背景图片的更改&quot;&gt;&lt;a href=&quot;#背景图片的更改&quot; class=&quot;headerlink&quot; title=&quot;背景图片的更改&quot;&gt;&lt;/a&gt;背景图片的更改&lt;/h1&gt;&lt;h2 id=&quot;背景背景图片添加&quot;&gt;&lt;a href=&quot;#背景背景图片添加&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+      <category term="blog" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【blog】 Hexo迁移到vps</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/03/10/blog/vps_hexo/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/03/10/blog/vps_hexo/</id>
+    <published>2020-03-09T23:23:55.000Z</published>
+    <updated>2022-02-26T07:02:52.257Z</updated>
+    
+    <content type="html"><![CDATA[<p>搭建完 <strong>trojan</strong> 后把域名和 <strong>vps</strong> 绑定后想把 <strong>blog</strong> 迁移到 <strong>vps</strong> 上</p><h2 id="安装必要工具"><a href="#安装必要工具" class="headerlink" title="安装必要工具"></a>安装必要工具</h2><ul><li><p>配置SSH<br> 避免每次登录都需要密码</p><ul><li>本地密钥获取  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure></li><li>服务端将密钥复制进去即可  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd .ssh</span><br><span class="line">vim authorized_keys</span><br></pre></td></tr></table></figure></li></ul></li><li><p>首先需要将文件上传，我们选择 git ，然后对于网页展示我们使用久负盛名的 nginx。<br> 在root目录下安装</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo.git</span><br><span class="line"><span class="built_in">cd</span> hexo.git</span><br><span class="line">git init --bare </span><br><span class="line"><span class="comment">#  --bare是建立裸仓库</span></span><br></pre></td></tr></table></figure></li><li><p>然后来到/var/www文件夹下，我们的网页就会存放在这里的某一个文件夹下，这里我们创建一个文件夹hexo，然后赋予它操作权限，同时赋予自己权限来操作它。</p> <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo</span><br><span class="line">chmod 0755 hexo</span><br><span class="line">chown root:root -R /var/www/hexo</span><br></pre></td></tr></table></figure></li></ul><h2 id="githook。"><a href="#githook。" class="headerlink" title="githook。"></a>githook。</h2><p>当我们将本地网页文件传上来之后，我们可能还要到服务器端操作一番，以能够将网页文件放到/var/www/hexo下展示。git自带一个功能，那就是只要有文件传输它就会执行某个脚本。那么我们怎么做呢？写个脚本就好了！</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim hexo.git/hooks/post-receive</span><br></pre></td></tr></table></figure><p>将下面内容贴进去</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">GIT_REPO=~/hexo.git                      <span class="comment"># 触发 hook</span></span><br><span class="line">TMP_GIT_CLONE=/tmp/hexo                  <span class="comment"># 存在 /tmp 下</span></span><br><span class="line">PUBLIC_WWW=/var/www/hexo                 <span class="comment"># 展示网站的目录</span></span><br><span class="line">rm -rf <span class="variable">$&#123;TMP_GIT_CLONE&#125;</span>                  <span class="comment"># 删除之前内容</span></span><br><span class="line">git <span class="built_in">clone</span> <span class="variable">$GIT_REPO</span> <span class="variable">$TMP_GIT_CLONE</span>       <span class="comment"># 将 Git 仓库上传的内容复制到/tmp</span></span><br><span class="line">rm -rf <span class="variable">$&#123;PUBLIC_WWW&#125;</span>/*                   <span class="comment"># 删除展示网站的目录的全部内容</span></span><br><span class="line">cp -rf <span class="variable">$&#123;TMP_GIT_CLONE&#125;</span>/* <span class="variable">$&#123;PUBLIC_WWW&#125;</span>  <span class="comment"># 将/tmp所有内容复制到网站目录</span></span><br></pre></td></tr></table></figure><h2 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h2><p>正常应该是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;nginx&#x2F;sites-available</span><br><span class="line">vim default</span><br></pre></td></tr></table></figure><br>因为之前安装过 <strong>trojan</strong> 用到了 <strong>nginx</strong> 所以我的</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;trojan.conf</span><br><span class="line">vim trojan.conf</span><br></pre></td></tr></table></figure><p>我的只需要修改下面内容即可</p><pre><code>    location / {            root /usr/share/nginx/html/;                    index index.html;            }</code></pre><p>将上面的内容替换</p><pre><code>    location / {            root  /var/www/hexo/;            index  index.html index.htm;    }</code></pre><ul><li>这儿有个坑，看别的博主 <strong>root  /var/www/hexo/;</strong> 的博主，这句都没有最后的 <strong>\/</strong> ,我这儿是有问题的</li></ul><p>完整的config文件</p><pre><code>server {        listen 80;        listen [::]:80;        root /var/www/hexo; #坑的我好苦        index index.html index.htm index.nginx-debian.html;        server_name 你的域名;#如果没有的话就别填了QwQ        location ~* ^.+\.(ico|gif|jpg|jpeg|png)$ {                root /var/www/hexo/;                access_log   off;                expires      1d;        }        location ~* ^.+\.(css|js|txt|xml|swf|wav)$ {                root /var/www/hexo;                access_log   off;                expires      10m;        }        location / {                root /var/www/hexo;                if (-f $request_filename) {                        rewrite ^/(.*)$  /$1 break;                }        }}</code></pre><p>重启nginx即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service nginx restart</span><br></pre></td></tr></table></figure></p><p>在浏览器输入自己域名就ok了！！！</p><h2 id="同时部署到多个仓库"><a href="#同时部署到多个仓库" class="headerlink" title="同时部署到多个仓库"></a>同时部署到多个仓库</h2><p>在 <strong>_config.yaml</strong> 添加要部署的地址即可，前面的名字无所谓，冒号后面要空格.</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> </span><br><span class="line">        <span class="attr">vps:</span> <span class="string">vpa_user@vps_ip:hexo.git</span> </span><br><span class="line">        <span class="attr">epository:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;搭建完 &lt;strong&gt;trojan&lt;/strong&gt; 后把域名和 &lt;strong&gt;vps&lt;/strong&gt; 绑定后想把 &lt;strong&gt;blog&lt;/strong&gt; 迁移到 &lt;strong&gt;vps&lt;/strong&gt; 上&lt;/p&gt;
+&lt;h2 id=&quot;安装必要工具&quot;&gt;&lt;a href
+      
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+      <category term="blog" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/blog/"/>
+    
+      <category term="vps" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/vps/"/>
+    
+      <category term="ubuntu" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>trojan做点不一样的事</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/03/09/technology/trojan/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/03/09/technology/trojan/</id>
+    <published>2020-03-09T12:51:55.000Z</published>
+    <updated>2022-02-26T07:02:52.261Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="trojan-安装和使用"><a href="#trojan-安装和使用" class="headerlink" title="trojan 安装和使用"></a>trojan 安装和使用</h1><p>最近墙越来越高了,开始的ssr,在后来的V2ray,没办法,干就完事了</p><p>折腾了好久终于搞好了,记录一下</p><h2 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h2><h3 id="搭建vps"><a href="#搭建vps" class="headerlink" title="搭建vps"></a>搭建vps</h3><p>个人用的 <strong>digitalocean</strong>　</p><h3 id="获取域名"><a href="#获取域名" class="headerlink" title="获取域名"></a>获取域名</h3><p>用的 <strong>namecheap</strong></p><h3 id="开干"><a href="#开干" class="headerlink" title="开干"></a>开干</h3><p>这里使用了脚本,参考一下链接</p><p><a href="https://www.johnrosen1.com/trojan/" target="_blank" rel="noopener">一键脚本</a></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/johnrosen1/trojan-gfw-script/master/vps.sh)</span>"</span></span><br></pre></td></tr></table></figure><p>一路默认即可</p><h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>如果是ubuntu18.04可以用这个<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:greaterfire/trojan</span><br><span class="line">sudo apt-get install trojan -y</span><br><span class="line">sudo nano /etc/trojan/config.json</span><br></pre></td></tr></table></figure></p><p>我个人时候用的ubuntu16.04,客户端使用有点狗</p><p>要下两个东西</p><p>trojan-cli</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/atrandys/trojan/raw/master/trojan-cli.zip</span><br></pre></td></tr></table></figure><p>trojan-1.14.1-linux-amd64.tar.xz<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz</span><br></pre></td></tr></table></figure><br>将trojan-1.14.1-linux-amd64.tar.xz里面的可执行文件 <strong>trojan</strong> 放到trojan-cli文件下</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./trojan -c config.json</span><br></pre></td></tr></table></figure><p>本人运行时一直有个错误</p><pre><code>fatal: bind: Address already in use</code></pre><p>说端口被占用．<br>一直以为是服务端的问题，最后试了下 iso 端是可以用的，说明是客户端的问题，默认 1080　端口</p><pre><code>lsof -i:1080</code></pre><p>查看发现并没有问题</p><p>最后解决方法是　cofig.jaon 文件中将本地端口换了一个，就可以了</p><p>神奇</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;trojan-安装和使用&quot;&gt;&lt;a href=&quot;#trojan-安装和使用&quot; class=&quot;headerlink&quot; title=&quot;trojan 安装和使用&quot;&gt;&lt;/a&gt;trojan 安装和使用&lt;/h1&gt;&lt;p&gt;最近墙越来越高了,开始的ssr,在后来的V2ray,没办法,
+      
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+      <category term="blog" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/blog/"/>
+    
+      <category term="ubuntu" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/ubuntu/"/>
+    
+      <category term="trojan" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/trojan/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【go】 Go_并发</title>
+    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/03/09/go/go_concurrency/"/>
+    <id>https://github.com/ropo0107/ropo0107.github.io/2020/03/09/go/go_concurrency/</id>
+    <published>2020-03-08T20:51:55.000Z</published>
+    <updated>2022-02-26T07:02:52.258Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+    
+      <category term="Go" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Go/"/>
+    
+  </entry>
+  
+</feed>
