@@ -3,11 +3,11 @@
   <title>无恙の博客</title>
   
   <subtitle>Nothing can replace hard work!</subtitle>
-  <link href="/ropo0107.github.io/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="https://github.com/ropo0107/ropo0107.github.io/"/>
+  <link href="http://yoursite.com/"/>
   <updated>2022-02-26T07:02:52.261Z</updated>
-  <id>https://github.com/ropo0107/ropo0107.github.io/</id>
+  <id>http://yoursite.com/</id>
   
   <author>
     <name>无恙</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>docker中的tips</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2022/02/26/tips/docker/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2022/02/26/tips/docker/</id>
+    <link href="http://yoursite.com/2022/02/26/tips/docker/"/>
+    <id>http://yoursite.com/2022/02/26/tips/docker/</id>
     <published>2022-02-26T07:02:52.261Z</published>
     <updated>2022-02-26T07:02:52.261Z</updated>
     
@@ -35,19 +35,19 @@
     </summary>
     
     
-      <category term="编程" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
-      <category term="docker" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/docker/"/>
+      <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>Machine Learning Base</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2021/01/10/ml/ml_base/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2021/01/10/ml/ml_base/</id>
+    <link href="http://yoursite.com/2021/01/10/ml/ml_base/"/>
+    <id>http://yoursite.com/2021/01/10/ml/ml_base/</id>
     <published>2021-01-10T08:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.259Z</updated>
     
@@ -64,19 +64,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
-      <category term="ML" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/ML/"/>
+      <category term="ML" scheme="http://yoursite.com/tags/ML/"/>
     
   </entry>
   
   <entry>
     <title>【gpd】复现GPD</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/11/17/robot/gpd/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/11/17/robot/gpd/</id>
+    <link href="http://yoursite.com/2020/11/17/robot/gpd/"/>
+    <id>http://yoursite.com/2020/11/17/robot/gpd/</id>
     <published>2020-11-17T15:34:55.000Z</published>
     <updated>2022-02-26T07:02:52.260Z</updated>
     
@@ -93,17 +93,17 @@
     </summary>
     
     
-      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Robot" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="http://yoursite.com/tags/Robot/"/>
     
   </entry>
   
   <entry>
     <title>【robot】 机器人中的动力学</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/11/03/robot/robot_dynamic/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/11/03/robot/robot_dynamic/</id>
+    <link href="http://yoursite.com/2020/11/03/robot/robot_dynamic/"/>
+    <id>http://yoursite.com/2020/11/03/robot/robot_dynamic/</id>
     <published>2020-11-02T19:34:55.000Z</published>
     <updated>2022-02-26T07:02:52.261Z</updated>
     
@@ -119,21 +119,21 @@
     </summary>
     
     
-      <category term="工程" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%B7%A5%E7%A8%8B/"/>
+      <category term="工程" scheme="http://yoursite.com/categories/%E5%B7%A5%E7%A8%8B/"/>
     
     
-      <category term="Robot" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="http://yoursite.com/tags/Robot/"/>
     
   </entry>
   
   <entry>
     <title>【robot】 Kinect_dk 在Ubuntu16.04 下安装并配置ROS</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/08/30/robot/kinect_dk/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/08/30/robot/kinect_dk/</id>
+    <link href="http://yoursite.com/2020/08/30/robot/kinect_dk/"/>
+    <id>http://yoursite.com/2020/08/30/robot/kinect_dk/</id>
     <published>2020-08-30T15:34:55.000Z</published>
     <updated>2022-02-26T07:02:52.260Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>最近手头拿到了 Kinect dk 相机， 苦于自己的电脑是16.04， 于是根据网上资料自己配置了一下， 发现有许多坑， 并没有说到， 自己边安装，边记录下内容吧。默认不支持16.04</p><p><a href="https://github.com/ropo0107/kinect_dk">https://github.com/ropo0107/kinect_dk</a></p><p>放上自己的工程目录， 可以自取</p><h2 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h2><h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><ul><li>git clone -b v1.2.0 <a href="https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git">https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git</a></li><li>mkdir kinect_ws/src &amp;&amp; cd kinect_ws/src</li><li>git clone <a href="https://github.com/RoseFlunder/Azure_Kinect_ROS_Driver.git">https://github.com/RoseFlunder/Azure_Kinect_ROS_Driver.git</a></li></ul><h3 id="dependence"><a href="#dependence" class="headerlink" title="dependence"></a>dependence</h3><ul><li>sudo cp ./libdepthengine.so.2.0 /usr/lib/x86_64-linux-gnu/</li><li>sudo ./Azure-Kinect-Sensor-SDK/scripts/bootstrap-ubuntu.sh</li><li>sudo apt-get install gcc-4.9</li><li>sudo apt-get upgrade libstdc++6</li></ul><h3 id="cmske-v-大于-3-9"><a href="#cmske-v-大于-3-9" class="headerlink" title="cmske -v 大于 3.9"></a>cmske -v 大于 3.9</h3><h3 id="build"><a href="#build" class="headerlink" title="build"></a>build</h3><ul><li>cd build</li><li>cmake .. -GNinja</li><li>ninja</li><li><p>sudo ninja install</p></li><li><p>ERROR：</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**CMake Error: CMake was unable to find a build program corresponding to “Ninja”. **</span><br></pre></td></tr></table></figure><ul><li>Solution：install ninja<ul><li>sudo apt-get install re2c</li><li>git clone <a href="https://github.com/ninja-build/ninja.git">https://github.com/ninja-build/ninja.git</a></li><li>cd ninja</li><li>./configure.py —bootstrap</li><li>sudo cp ./ninja  /usr/bin</li><li>ninjia —version — 1.10.1.git</li></ul></li></ul></li></ul><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Cloning into &#39;extern&#x2F;azure_c_shared&#x2F;src&#39;...                                                           </span><br><span class="line">fatal: BUG: initial ref transaction called with existing refs                                         </span><br><span class="line">fatal: clone of &#39;https:&#x2F;&#x2F;github.com&#x2F;Azure&#x2F;azure-c-shared-utility.git&#39; into submodule path &#39;extern&#x2F;azur</span><br><span class="line">e_c_shared&#x2F;src&#39; failed                                                                                </span><br><span class="line">CMake Error at extern&#x2F;CMakeLists.txt:22 (message):                                                    </span><br><span class="line">git submodule update failed:</span><br></pre></td></tr></table></figure>- Solution:缺少依赖的库  - cd extern/azure_c_shared  - git clone https://github.com/Azure/azure-c-shared-utility.git  - cd extern/libuv  - git clone https://github.com/lemenkov/libyuv  - mv libuv src</code></pre><h3 id="without-root"><a href="#without-root" class="headerlink" title="without root"></a>without root</h3><ul><li>sudo cp scripts/99-k4a.rules /etc/udev/rules.d/</li></ul><h3 id="k4aviewer"><a href="#k4aviewer" class="headerlink" title="k4aviewer"></a>k4aviewer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k4aviewer: error while loading shared libraries: libk4a.so.1.2: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure><ul><li>sudo ln -s /usr/local/lib/libk4a.so.1.2 /usr/lib/libk4a.so.1.2</li></ul><h2 id="ROS"><a href="#ROS" class="headerlink" title="ROS"></a>ROS</h2><ul><li>cd kinect_ws/src/Azure_Kinect_ROS_Driver</li><li>mkdir ext/sdk/</li><li><p>dependence:<br>  在<a href="https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/里面找到" target="_blank" rel="noopener">https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/里面找到</a></p><p>  libk4a1.2<br>  k4a1.2-dev/<br>  文件下载下来并解压，</p><p>  在sdk中放入三个文件夹：bin、include、lib，位置关系如下：</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.\ext\sdk\</span><br><span class="line">        bin\</span><br><span class="line">        include\</span><br><span class="line">        lib\</span><br></pre></td></tr></table></figure><p>  其中，</p><p>  bin文件夹: 把编译SDK时build文件夹里面的那个bin文件夹拷贝过来</p><p>  include文件夹：SDK源码里的include文件夹和从-dev.deb文件里提取出的include文件夹合并，拷贝过来</p><p>  lib文件夹：从deb文件里提取出的两个lib文件夹合并，拷贝过来</p></li></ul><ul><li>ERROR:  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">k4a_ros_device.h:166:8: error: ‘atomic_int64_t’ in namespace ‘std’ does not name a type</span><br><span class="line">std::atomic_int64_t last_capture_time_usec_;</span><br></pre></td></tr></table></figure><ul><li>Solution: 找到对应文件  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; line:165</span><br><span class="line">&#x2F;&#x2F; Last capture timestamp for synchronizing playback capture and imu thread</span><br><span class="line">std::atomic&lt;int64_t- last_capture_time_usec_;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Last imu timestamp for synchronizing playback capture and imu thread</span><br><span class="line">std::atomic&lt;uint64_t- last_imu_time_usec_;</span><br><span class="line">std::atomic&lt;bool- imu_stream_end_of_file_;</span><br></pre></td></tr></table></figure></li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>最近手头拿到了 Kinect dk 相机， 苦于自己的电脑是16.04， 于是根据网上资料自己配置了一下， 发现有许多坑， 并没有说到， 自己边安装，边记录下内容吧。默认不支持16.04</p><p><a href="https://github.com/ropo0107/kinect_dk" target="_blank" rel="noopener">https://github.com/ropo0107/kinect_dk</a></p><p>放上自己的工程目录， 可以自取</p><h2 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h2><h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><ul><li>git clone -b v1.2.0 <a href="https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git" target="_blank" rel="noopener">https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git</a></li><li>mkdir kinect_ws/src &amp;&amp; cd kinect_ws/src</li><li>git clone <a href="https://github.com/RoseFlunder/Azure_Kinect_ROS_Driver.git" target="_blank" rel="noopener">https://github.com/RoseFlunder/Azure_Kinect_ROS_Driver.git</a></li></ul><h3 id="dependence"><a href="#dependence" class="headerlink" title="dependence"></a>dependence</h3><ul><li>sudo cp ./libdepthengine.so.2.0 /usr/lib/x86_64-linux-gnu/</li><li>sudo ./Azure-Kinect-Sensor-SDK/scripts/bootstrap-ubuntu.sh</li><li>sudo apt-get install gcc-4.9</li><li>sudo apt-get upgrade libstdc++6</li></ul><h3 id="cmske-v-大于-3-9"><a href="#cmske-v-大于-3-9" class="headerlink" title="cmske -v 大于 3.9"></a>cmske -v 大于 3.9</h3><h3 id="build"><a href="#build" class="headerlink" title="build"></a>build</h3><ul><li>cd build</li><li>cmake .. -GNinja</li><li>ninja</li><li><p>sudo ninja install</p></li><li><p>ERROR：</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**CMake Error: CMake was unable to find a build program corresponding to “Ninja”. **</span><br></pre></td></tr></table></figure><ul><li>Solution：install ninja<ul><li>sudo apt-get install re2c</li><li>git clone <a href="https://github.com/ninja-build/ninja.git" target="_blank" rel="noopener">https://github.com/ninja-build/ninja.git</a></li><li>cd ninja</li><li>./configure.py —bootstrap</li><li>sudo cp ./ninja  /usr/bin</li><li>ninjia —version — 1.10.1.git</li></ul></li></ul></li></ul><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Cloning into &#39;extern&#x2F;azure_c_shared&#x2F;src&#39;...                                                           </span><br><span class="line">fatal: BUG: initial ref transaction called with existing refs                                         </span><br><span class="line">fatal: clone of &#39;https:&#x2F;&#x2F;github.com&#x2F;Azure&#x2F;azure-c-shared-utility.git&#39; into submodule path &#39;extern&#x2F;azur</span><br><span class="line">e_c_shared&#x2F;src&#39; failed                                                                                </span><br><span class="line">CMake Error at extern&#x2F;CMakeLists.txt:22 (message):                                                    </span><br><span class="line">git submodule update failed:</span><br></pre></td></tr></table></figure>- Solution:缺少依赖的库  - cd extern/azure_c_shared  - git clone https://github.com/Azure/azure-c-shared-utility.git  - cd extern/libuv  - git clone https://github.com/lemenkov/libyuv  - mv libuv src</code></pre><h3 id="without-root"><a href="#without-root" class="headerlink" title="without root"></a>without root</h3><ul><li>sudo cp scripts/99-k4a.rules /etc/udev/rules.d/</li></ul><h3 id="k4aviewer"><a href="#k4aviewer" class="headerlink" title="k4aviewer"></a>k4aviewer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k4aviewer: error while loading shared libraries: libk4a.so.1.2: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure><ul><li>sudo ln -s /usr/local/lib/libk4a.so.1.2 /usr/lib/libk4a.so.1.2</li></ul><h2 id="ROS"><a href="#ROS" class="headerlink" title="ROS"></a>ROS</h2><ul><li>cd kinect_ws/src/Azure_Kinect_ROS_Driver</li><li>mkdir ext/sdk/</li><li><p>dependence:<br>  在<a href="https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/里面找到" target="_blank" rel="noopener">https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/里面找到</a></p><p>  libk4a1.2<br>  k4a1.2-dev/<br>  文件下载下来并解压，</p><p>  在sdk中放入三个文件夹：bin、include、lib，位置关系如下：</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.\ext\sdk\</span><br><span class="line">        bin\</span><br><span class="line">        include\</span><br><span class="line">        lib\</span><br></pre></td></tr></table></figure><p>  其中，</p><p>  bin文件夹: 把编译SDK时build文件夹里面的那个bin文件夹拷贝过来</p><p>  include文件夹：SDK源码里的include文件夹和从-dev.deb文件里提取出的include文件夹合并，拷贝过来</p><p>  lib文件夹：从deb文件里提取出的两个lib文件夹合并，拷贝过来</p></li></ul><ul><li>ERROR:  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">k4a_ros_device.h:166:8: error: ‘atomic_int64_t’ in namespace ‘std’ does not name a type</span><br><span class="line">std::atomic_int64_t last_capture_time_usec_;</span><br></pre></td></tr></table></figure><ul><li>Solution: 找到对应文件  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; line:165</span><br><span class="line">&#x2F;&#x2F; Last capture timestamp for synchronizing playback capture and imu thread</span><br><span class="line">std::atomic&lt;int64_t- last_capture_time_usec_;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Last imu timestamp for synchronizing playback capture and imu thread</span><br><span class="line">std::atomic&lt;uint64_t- last_imu_time_usec_;</span><br><span class="line">std::atomic&lt;bool- imu_stream_end_of_file_;</span><br></pre></td></tr></table></figure></li></ul></li></ul>]]></content>
     
     <summary type="html">
     
@@ -145,19 +145,19 @@
     </summary>
     
     
-      <category term="工程" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%B7%A5%E7%A8%8B/"/>
+      <category term="工程" scheme="http://yoursite.com/categories/%E5%B7%A5%E7%A8%8B/"/>
     
     
-      <category term="Robot" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="http://yoursite.com/tags/Robot/"/>
     
-      <category term="ROS" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/ROS/"/>
+      <category term="ROS" scheme="http://yoursite.com/tags/ROS/"/>
     
   </entry>
   
   <entry>
     <title>【ros】 编译时的问题</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/07/19/robot/ros_error/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/07/19/robot/ros_error/</id>
+    <link href="http://yoursite.com/2020/07/19/robot/ros_error/"/>
+    <id>http://yoursite.com/2020/07/19/robot/ros_error/</id>
     <published>2020-07-19T15:34:55.000Z</published>
     <updated>2022-02-26T07:02:52.261Z</updated>
     
@@ -173,21 +173,21 @@
     </summary>
     
     
-      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
-      <category term="Robot" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="http://yoursite.com/tags/Robot/"/>
     
-      <category term="Ros" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Ros/"/>
+      <category term="Ros" scheme="http://yoursite.com/tags/Ros/"/>
     
   </entry>
   
   <entry>
     <title>【ros】 workspace and namespace</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/07/19/robot/ros_workspace/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/07/19/robot/ros_workspace/</id>
+    <link href="http://yoursite.com/2020/07/19/robot/ros_workspace/"/>
+    <id>http://yoursite.com/2020/07/19/robot/ros_workspace/</id>
     <published>2020-07-19T15:34:55.000Z</published>
     <updated>2022-02-26T07:02:52.261Z</updated>
     
@@ -204,25 +204,25 @@
     </summary>
     
     
-      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
-      <category term="Robot" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="http://yoursite.com/tags/Robot/"/>
     
-      <category term="Ros" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Ros/"/>
+      <category term="Ros" scheme="http://yoursite.com/tags/Ros/"/>
     
   </entry>
   
   <entry>
     <title>【robot】 quaternion</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/07/11/robot/quaternion/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/07/11/robot/quaternion/</id>
+    <link href="http://yoursite.com/2020/07/11/robot/quaternion/"/>
+    <id>http://yoursite.com/2020/07/11/robot/quaternion/</id>
     <published>2020-07-11T15:34:55.000Z</published>
     <updated>2022-02-26T07:02:52.260Z</updated>
     
-    <content type="html"><![CDATA[<p>对于坐标的变换，旋转和平移是基本的两步，平移可以是一个标量， 旋转有多种形式可以表示，（RPY， 欧拉角， 四元数， 旋转矢量， 旋转矩阵）</p><h2 id="RPY"><a href="#RPY" class="headerlink" title="RPY"></a>RPY</h2><p>固定（参考）坐标系 A 旋转：假设开始两个坐标系重合，先将 B 绕 A 的 X 轴旋转$\alpha$，然后绕 A 的 Y 轴旋转 $\beta$，最后绕 A 的 Z 轴旋转 $\gamma$，就能旋转到当前姿态。可以称其(Roll, Pitch, Yaw)。由于是绕固定坐标系旋转，则旋转矩阵为：</p><script type="math/tex; mode=display">R_{XYZ}​(\alpha,\beta,\gamma)=R_Z​(\gamma)R_Y​(\beta)R_X(\alpha)</script><h2 id="欧拉角"><a href="#欧拉角" class="headerlink" title="欧拉角"></a>欧拉角</h2><p><img src="/images/posts/robot/quaternion/eular.gif" alt=""></p><p>图中演示的就是用 $(z, x,z^{‘})$ 方法表示方向的过程。在此过程中，有如下图展示的 $(\alpha, \beta,\gamma)$三个角，分别绕着原坐标z轴(蓝)，一次旋转以后的x轴(绿)以及两次旋转以后的z轴(红)旋转，最终产生的红色坐标系即表示出目标方向。</p><p>绕自身坐标轴 B 旋转：假设开始两个坐标系重合，先将 B 绕自身的 Z 轴旋转 $\gamma$，然后绕 Y 轴旋转 $\beta$，最后绕 X 轴旋转 $\alpha$，就能旋转到当前姿态。称其为Z-Y-X欧拉角，由于是绕自身坐标轴进行旋转，则旋转矩阵为:</p><script type="math/tex; mode=display">R_{X^{'}Y^{'}Z^{'}}​(\alpha,\beta,\gamma)=R_{Z^{'}}​(\gamma)R_{Y^{'}}​(\beta)R_{X^{'}}(\alpha)</script><h2 id="旋转矩阵"><a href="#旋转矩阵" class="headerlink" title="旋转矩阵"></a>旋转矩阵</h2><p>  坐标系B由坐标系A旋转得到，$^A_BR$为坐标系B的各轴单位向量在坐标系A中的投影</p><script type="math/tex; mode=display">^A_BR = \begin{bmatrix} ^A\hat{X}_B & ^A\hat{X}_B & ^A\hat{X}_B  \end{bmatrix}</script><h2 id="旋转矩阵的左乘和右乘"><a href="#旋转矩阵的左乘和右乘" class="headerlink" title="旋转矩阵的左乘和右乘"></a>旋转矩阵的左乘和右乘</h2><p>  如上面 RPY 和欧拉角绕轴旋转得到 $R_Z$、$R_Y$、$R_Z$乘法顺序rpy绕定轴旋转是左乘，欧拉角绕自身坐标系即动轴旋转是右乘</p><ul><li>这里的左右乘指的并不是某一向量左乘或者右乘旋转矩阵，而是多个旋转矩阵的组合方式是左乘还是右乘。</li><li>这句话还遗漏了一个相当重要的信息，绕固定坐标系旋转讨论的是向量的旋转，绕自身坐标系旋转讨论的是坐标变换！这是完全不一样的两种功能，</li></ul><h2 id="齐次变换矩阵的描述"><a href="#齐次变换矩阵的描述" class="headerlink" title="齐次变换矩阵的描述"></a>齐次变换矩阵的描述</h2><ul><li>坐标系的描述<br>$_B^A{T}$表示$B$坐标系基于$A$坐标系的变换， $_B^A{R}$的各列是坐标系$B$主轴方向上的单位矢量，$^A{P}_{BORG}$确定$B$的原点。</li><li><p>变换映射（同一点相对于不同坐标系的描述）</p><script type="math/tex; mode=display">^A{P} = _B^A{T} ^B{P}</script><script type="math/tex; mode=display">\begin{bmatrix} ^A{P}\\1\end{bmatrix} =\begin{bmatrix} ^A_B{R} & ^A{P}_{BORG} \\ 0 & 1 \end{bmatrix} \begin{bmatrix} ^B{P}\\1\end{bmatrix}</script></li><li><p>变换算子（同一坐标系下，向量的旋转）</p><script type="math/tex; mode=display">^A{P}_2 = {T} ^A{P}_1</script><p>一个矢量在当前坐标系下的变化, 其中$T$为1到2的变化, 其中$T$可看作 $_2^1{T}$。</p></li></ul><h2 id="RPY和欧拉角的联系"><a href="#RPY和欧拉角的联系" class="headerlink" title="RPY和欧拉角的联系"></a>RPY和欧拉角的联系</h2><p>经过RPY旋转（定轴，外旋）可以到达另一个坐标系，等价于经过绕动轴ZYX旋转（内旋）到达另一个坐标系</p><script type="math/tex; mode=display">Eular_{zyx} = (yaw, pitch, roll)</script><h2 id="四元数定义"><a href="#四元数定义" class="headerlink" title="四元数定义"></a>四元数定义</h2><p>首先，定义一个你需要做的旋转。旋转轴为向量$v=(vx,vy,vz)$，旋转角度为$\theta$（右手法则的旋转）</p><p><img src="/images/posts/robot/quaternion/quaternion.jpg" alt=""></p><p>图中$v=(\frac{1}{\sqrt{14}}, \frac{2}{\sqrt{14}}, \frac{3}{\sqrt{14}}), \theta = \frac{\pi}{3}$</p><p>那么与此相对应的四元数（下三行式子都是一个意思，只是不同的表达形式）</p><ul><li><script type="math/tex; mode=display">q=(\cos(\frac{\theta}{2}), \sin(\frac{\theta}{2})*vx,\sin(\frac{\theta}{2})*vy,\sin(\frac{\theta}{2})*vz</script></li><li><script type="math/tex; mode=display">q=(\cos(\frac{\\pi}{6}), \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}},sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}}, \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})</script></li><li><script type="math/tex; mode=display">q=(\cos(\frac{\\pi}{6}) + \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}} i + sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}} j +  \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)</script></li></ul><p>它的共轭</p><ul><li><script type="math/tex; mode=display">q^{-1}=(\cos(\frac{\theta}{2}), -\sin(\frac{\theta}{2})*vx,-\sin(\frac{\theta}{2})*vy,-\sin(\frac{\theta}{2})*vz</script></li><li><script type="math/tex; mode=display">q^{-1}=(\cos(\frac{\\pi}{6}), -\sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}}, - sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}}, -\sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})</script></li><li><script type="math/tex; mode=display">q^{-1}=(\cos(\frac{\\pi}{6}) - \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}} i - sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}} j - \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)</script></li></ul><h2 id="旋转矢量和四元数的联系"><a href="#旋转矢量和四元数的联系" class="headerlink" title="旋转矢量和四元数的联系"></a>旋转矢量和四元数的联系</h2><p>四元数由4个值组成， 可以通过旋转矢量中的3个量表示。方法是通过定轴旋转可得到四元数中的<br>轴$v=(vx,vy,vz)$以及角$\theta$。</p><script type="math/tex; mode=display">RotateVector = \theta*v=\theta*(vx,vy,vz)</script><h2 id="四元数运算"><a href="#四元数运算" class="headerlink" title="四元数运算"></a>四元数运算</h2><p>求$w=(wx,wy,wz)$在旋转下的新的坐标$w’$</p><ul><li>定义纯四元数<script type="math/tex; mode=display">qw=(0,wx,wy,wz) =0+ wx*i+ wy*j+wz*k</script></li><li>进行四元数运算<script type="math/tex; mode=display">qw'=q*qw*q^{-1}</script></li><li>产生的$qw’$一定是四元数，即第一项为0<script type="math/tex; mode=display">qw‘=(0,wx‘,wy’,wz‘) =0+ wx’*i+ wy‘*j+wz’*k</script></li><li>$qw’$的后三项$(wx’,wt’,wz’)$就是$w’$<script type="math/tex; mode=display">w'=(wx',wy',wx')</script></li></ul><p>这样就完成了四元数的一次转换</p><h2 id="四元数求夹角"><a href="#四元数求夹角" class="headerlink" title="四元数求夹角"></a>四元数求夹角</h2><p>已知两个四元数$q_0$和$q_1$, 求两个相对旋转的夹角</p><ul><li><p>假设已知$\Delta q$:</p><p>  $\Delta q q_0 = q_1$</p><p>  $\Delta q q_0 q_0^{-1}= q_1 q_0^{-1}$</p><p>  $\Delta q = q_1 q_0^{-1}$</p></li><li><p>假设两个四元数为单位四元数 $q^{-1} = q^*$，</p><p>  $\Delta q=q_1 q_0^{*}$</p></li><li><p>一个单位四元数的 $t$ 次幂等同于将它的旋转角度缩放至 $t$ 倍，并且不会改变它的旋转轴</p></li></ul><h2 id="3D空间旋转变化量-vs-四元数4D向量空间夹角"><a href="#3D空间旋转变化量-vs-四元数4D向量空间夹角" class="headerlink" title="3D空间旋转变化量 vs 四元数4D向量空间夹角"></a>3D空间旋转变化量 vs 四元数4D向量空间夹角</h2><ul><li><p>四元数作为四维空间中的向量，表示为</p><script type="math/tex; mode=display">q_0=\begin{bmatrix}\cos(\theta_0) \\w_{x0}\sin(\theta_0) \\w_{y0}\sin(\theta_0) \\w_{z0}\sin(\theta_0) \\\end{bmatrix}， q_1=\begin{bmatrix}\cos(\theta_1) \\w_{x1}\sin(\theta_1) \\w_{y1}\sin(\theta_1) \\w_{z1}\sin(\theta_1) \\\end{bmatrix}</script></li><li>根据向量点乘关系$q_0 \cdot q_1 =|q_0|\cdot |q_1|\cos(\theta)$, 假定单位四元数， <script type="math/tex; mode=display">q_0 \cdot q_1 =\cos(\theta)</script></li><li><p><strong>NOTE</strong> 上面的东西正好为$\Delta q$ 的实部</p><p>这也就是说，$q_0$ 与 $q_1$ 作为向量在 4D 四元数空间中的夹角 $\theta$，正好被它们旋转变化量 $∆q$ 所平分，四元数定义</p><p><strong>$\Delta q$ 可作为$q_0$ 与 $q_1$ 的中间插值</strong></p></li></ul><h2 id="理解四元数"><a href="#理解四元数" class="headerlink" title="理解四元数"></a>理解四元数</h2><ul><li>性质<ul><li>运算产生的结果也要是三维向量</li><li>存在一个元运算，任何三维向量进行元运算的结果就是其本身</li><li>对于任何一个运算，都存在一个逆运算，这两个运算的积是元运算</li><li>运算满足结合律</li></ul></li><li>解释<ul><li>四元数不是简单的映射关系，而是一个群！（后来我们知道四元数所在群为S3，而四元数所代表的三维旋转是SO(3)，前者是后者的两倍覆盖</li><li>为什么公式里面是$\frac{\theta}{2}$而不是$\theta$,因为$w$不为零,结果就不与我们最初的点在同一三维空间。为了解决这个问题，所以先只旋转一半，再用逆反过来旋转另一半，这样正好将第一次旋转产生的第四维变为0，这样就能正确地映射到三维超平面。<br> <img src="/images/posts/robot/quaternion/three_dim.jpg" alt=""></li></ul></li></ul><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接:"></a>参考链接:</h2><p><a href="https://zhuanlan.zhihu.com/p/87418561" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/87418561</a></p><p><a href="https://krasjet.github.io/quaternion/quaternion.pdf" target="_blank" rel="noopener">https://krasjet.github.io/quaternion/quaternion.pdf</a></p><h2 id="code链接"><a href="#code链接" class="headerlink" title="code链接:"></a>code链接:</h2><p><a href="https://github.com/tsinghua-rll/UR5_Controller/blob/master/RTIF/LowLevel/quaternion.py">https://github.com/tsinghua-rll/UR5_Controller/blob/master/RTIF/LowLevel/quaternion.py</a></p>]]></content>
+    <content type="html"><![CDATA[<p>对于坐标的变换，旋转和平移是基本的两步，平移可以是一个标量， 旋转有多种形式可以表示，（RPY， 欧拉角， 四元数， 旋转矢量， 旋转矩阵）</p><h2 id="RPY"><a href="#RPY" class="headerlink" title="RPY"></a>RPY</h2><p>固定（参考）坐标系 A 旋转：假设开始两个坐标系重合，先将 B 绕 A 的 X 轴旋转$\alpha$，然后绕 A 的 Y 轴旋转 $\beta$，最后绕 A 的 Z 轴旋转 $\gamma$，就能旋转到当前姿态。可以称其(Roll, Pitch, Yaw)。由于是绕固定坐标系旋转，则旋转矩阵为：</p><script type="math/tex; mode=display">R_{XYZ}​(\alpha,\beta,\gamma)=R_Z​(\gamma)R_Y​(\beta)R_X(\alpha)</script><h2 id="欧拉角"><a href="#欧拉角" class="headerlink" title="欧拉角"></a>欧拉角</h2><p><img src="/images/posts/robot/quaternion/eular.gif" alt=""></p><p>图中演示的就是用 $(z, x,z^{‘})$ 方法表示方向的过程。在此过程中，有如下图展示的 $(\alpha, \beta,\gamma)$三个角，分别绕着原坐标z轴(蓝)，一次旋转以后的x轴(绿)以及两次旋转以后的z轴(红)旋转，最终产生的红色坐标系即表示出目标方向。</p><p>绕自身坐标轴 B 旋转：假设开始两个坐标系重合，先将 B 绕自身的 Z 轴旋转 $\gamma$，然后绕 Y 轴旋转 $\beta$，最后绕 X 轴旋转 $\alpha$，就能旋转到当前姿态。称其为Z-Y-X欧拉角，由于是绕自身坐标轴进行旋转，则旋转矩阵为:</p><script type="math/tex; mode=display">R_{X^{'}Y^{'}Z^{'}}​(\alpha,\beta,\gamma)=R_{Z^{'}}​(\gamma)R_{Y^{'}}​(\beta)R_{X^{'}}(\alpha)</script><h2 id="旋转矩阵"><a href="#旋转矩阵" class="headerlink" title="旋转矩阵"></a>旋转矩阵</h2><p>  坐标系B由坐标系A旋转得到，$^A_BR$为坐标系B的各轴单位向量在坐标系A中的投影</p><script type="math/tex; mode=display">^A_BR = \begin{bmatrix} ^A\hat{X}_B & ^A\hat{X}_B & ^A\hat{X}_B  \end{bmatrix}</script><h2 id="旋转矩阵的左乘和右乘"><a href="#旋转矩阵的左乘和右乘" class="headerlink" title="旋转矩阵的左乘和右乘"></a>旋转矩阵的左乘和右乘</h2><p>  如上面 RPY 和欧拉角绕轴旋转得到 $R_Z$、$R_Y$、$R_Z$乘法顺序rpy绕定轴旋转是左乘，欧拉角绕自身坐标系即动轴旋转是右乘</p><ul><li>这里的左右乘指的并不是某一向量左乘或者右乘旋转矩阵，而是多个旋转矩阵的组合方式是左乘还是右乘。</li><li>这句话还遗漏了一个相当重要的信息，绕固定坐标系旋转讨论的是向量的旋转，绕自身坐标系旋转讨论的是坐标变换！这是完全不一样的两种功能，</li></ul><h2 id="齐次变换矩阵的描述"><a href="#齐次变换矩阵的描述" class="headerlink" title="齐次变换矩阵的描述"></a>齐次变换矩阵的描述</h2><ul><li>坐标系的描述<br>$_B^A{T}$表示$B$坐标系基于$A$坐标系的变换， $_B^A{R}$的各列是坐标系$B$主轴方向上的单位矢量，$^A{P}_{BORG}$确定$B$的原点。</li><li><p>变换映射（同一点相对于不同坐标系的描述）</p><script type="math/tex; mode=display">^A{P} = _B^A{T} ^B{P}</script><script type="math/tex; mode=display">\begin{bmatrix} ^A{P}\\1\end{bmatrix} =\begin{bmatrix} ^A_B{R} & ^A{P}_{BORG} \\ 0 & 1 \end{bmatrix} \begin{bmatrix} ^B{P}\\1\end{bmatrix}</script></li><li><p>变换算子（同一坐标系下，向量的旋转）</p><script type="math/tex; mode=display">^A{P}_2 = {T} ^A{P}_1</script><p>一个矢量在当前坐标系下的变化, 其中$T$为1到2的变化, 其中$T$可看作 $_2^1{T}$。</p></li></ul><h2 id="RPY和欧拉角的联系"><a href="#RPY和欧拉角的联系" class="headerlink" title="RPY和欧拉角的联系"></a>RPY和欧拉角的联系</h2><p>经过RPY旋转（定轴，外旋）可以到达另一个坐标系，等价于经过绕动轴ZYX旋转（内旋）到达另一个坐标系</p><script type="math/tex; mode=display">Eular_{zyx} = (yaw, pitch, roll)</script><h2 id="四元数定义"><a href="#四元数定义" class="headerlink" title="四元数定义"></a>四元数定义</h2><p>首先，定义一个你需要做的旋转。旋转轴为向量$v=(vx,vy,vz)$，旋转角度为$\theta$（右手法则的旋转）</p><p><img src="/images/posts/robot/quaternion/quaternion.jpg" alt=""></p><p>图中$v=(\frac{1}{\sqrt{14}}, \frac{2}{\sqrt{14}}, \frac{3}{\sqrt{14}}), \theta = \frac{\pi}{3}$</p><p>那么与此相对应的四元数（下三行式子都是一个意思，只是不同的表达形式）</p><ul><li><script type="math/tex; mode=display">q=(\cos(\frac{\theta}{2}), \sin(\frac{\theta}{2})*vx,\sin(\frac{\theta}{2})*vy,\sin(\frac{\theta}{2})*vz</script></li><li><script type="math/tex; mode=display">q=(\cos(\frac{\\pi}{6}), \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}},sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}}, \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})</script></li><li><script type="math/tex; mode=display">q=(\cos(\frac{\\pi}{6}) + \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}} i + sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}} j +  \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)</script></li></ul><p>它的共轭</p><ul><li><script type="math/tex; mode=display">q^{-1}=(\cos(\frac{\theta}{2}), -\sin(\frac{\theta}{2})*vx,-\sin(\frac{\theta}{2})*vy,-\sin(\frac{\theta}{2})*vz</script></li><li><script type="math/tex; mode=display">q^{-1}=(\cos(\frac{\\pi}{6}), -\sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}}, - sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}}, -\sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})</script></li><li><script type="math/tex; mode=display">q^{-1}=(\cos(\frac{\\pi}{6}) - \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}} i - sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}} j - \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)</script></li></ul><h2 id="旋转矢量和四元数的联系"><a href="#旋转矢量和四元数的联系" class="headerlink" title="旋转矢量和四元数的联系"></a>旋转矢量和四元数的联系</h2><p>四元数由4个值组成， 可以通过旋转矢量中的3个量表示。方法是通过定轴旋转可得到四元数中的<br>轴$v=(vx,vy,vz)$以及角$\theta$。</p><script type="math/tex; mode=display">RotateVector = \theta*v=\theta*(vx,vy,vz)</script><h2 id="四元数运算"><a href="#四元数运算" class="headerlink" title="四元数运算"></a>四元数运算</h2><p>求$w=(wx,wy,wz)$在旋转下的新的坐标$w’$</p><ul><li>定义纯四元数<script type="math/tex; mode=display">qw=(0,wx,wy,wz) =0+ wx*i+ wy*j+wz*k</script></li><li>进行四元数运算<script type="math/tex; mode=display">qw'=q*qw*q^{-1}</script></li><li>产生的$qw’$一定是四元数，即第一项为0<script type="math/tex; mode=display">qw‘=(0,wx‘,wy’,wz‘) =0+ wx’*i+ wy‘*j+wz’*k</script></li><li>$qw’$的后三项$(wx’,wt’,wz’)$就是$w’$<script type="math/tex; mode=display">w'=(wx',wy',wx')</script></li></ul><p>这样就完成了四元数的一次转换</p><h2 id="四元数求夹角"><a href="#四元数求夹角" class="headerlink" title="四元数求夹角"></a>四元数求夹角</h2><p>已知两个四元数$q_0$和$q_1$, 求两个相对旋转的夹角</p><ul><li><p>假设已知$\Delta q$:</p><p>  $\Delta q q_0 = q_1$</p><p>  $\Delta q q_0 q_0^{-1}= q_1 q_0^{-1}$</p><p>  $\Delta q = q_1 q_0^{-1}$</p></li><li><p>假设两个四元数为单位四元数 $q^{-1} = q^*$，</p><p>  $\Delta q=q_1 q_0^{*}$</p></li><li><p>一个单位四元数的 $t$ 次幂等同于将它的旋转角度缩放至 $t$ 倍，并且不会改变它的旋转轴</p></li></ul><h2 id="3D空间旋转变化量-vs-四元数4D向量空间夹角"><a href="#3D空间旋转变化量-vs-四元数4D向量空间夹角" class="headerlink" title="3D空间旋转变化量 vs 四元数4D向量空间夹角"></a>3D空间旋转变化量 vs 四元数4D向量空间夹角</h2><ul><li><p>四元数作为四维空间中的向量，表示为</p><script type="math/tex; mode=display">q_0=\begin{bmatrix}\cos(\theta_0) \\w_{x0}\sin(\theta_0) \\w_{y0}\sin(\theta_0) \\w_{z0}\sin(\theta_0) \\\end{bmatrix}， q_1=\begin{bmatrix}\cos(\theta_1) \\w_{x1}\sin(\theta_1) \\w_{y1}\sin(\theta_1) \\w_{z1}\sin(\theta_1) \\\end{bmatrix}</script></li><li>根据向量点乘关系$q_0 \cdot q_1 =|q_0|\cdot |q_1|\cos(\theta)$, 假定单位四元数， <script type="math/tex; mode=display">q_0 \cdot q_1 =\cos(\theta)</script></li><li><p><strong>NOTE</strong> 上面的东西正好为$\Delta q$ 的实部</p><p>这也就是说，$q_0$ 与 $q_1$ 作为向量在 4D 四元数空间中的夹角 $\theta$，正好被它们旋转变化量 $∆q$ 所平分，四元数定义</p><p><strong>$\Delta q$ 可作为$q_0$ 与 $q_1$ 的中间插值</strong></p></li></ul><h2 id="理解四元数"><a href="#理解四元数" class="headerlink" title="理解四元数"></a>理解四元数</h2><ul><li>性质<ul><li>运算产生的结果也要是三维向量</li><li>存在一个元运算，任何三维向量进行元运算的结果就是其本身</li><li>对于任何一个运算，都存在一个逆运算，这两个运算的积是元运算</li><li>运算满足结合律</li></ul></li><li>解释<ul><li>四元数不是简单的映射关系，而是一个群！（后来我们知道四元数所在群为S3，而四元数所代表的三维旋转是SO(3)，前者是后者的两倍覆盖</li><li>为什么公式里面是$\frac{\theta}{2}$而不是$\theta$,因为$w$不为零,结果就不与我们最初的点在同一三维空间。为了解决这个问题，所以先只旋转一半，再用逆反过来旋转另一半，这样正好将第一次旋转产生的第四维变为0，这样就能正确地映射到三维超平面。<br> <img src="/images/posts/robot/quaternion/three_dim.jpg" alt=""></li></ul></li></ul><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接:"></a>参考链接:</h2><p><a href="https://zhuanlan.zhihu.com/p/87418561" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/87418561</a></p><p><a href="https://krasjet.github.io/quaternion/quaternion.pdf" target="_blank" rel="noopener">https://krasjet.github.io/quaternion/quaternion.pdf</a></p><h2 id="code链接"><a href="#code链接" class="headerlink" title="code链接:"></a>code链接:</h2><p><a href="https://github.com/tsinghua-rll/UR5_Controller/blob/master/RTIF/LowLevel/quaternion.py" target="_blank" rel="noopener">https://github.com/tsinghua-rll/UR5_Controller/blob/master/RTIF/LowLevel/quaternion.py</a></p>]]></content>
     
     <summary type="html">
     
@@ -235,19 +235,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
-      <category term="Robot" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="http://yoursite.com/tags/Robot/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】2. Markov Decision Processes</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_mdp/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_mdp/</id>
+    <link href="http://yoursite.com/2020/05/29/rl/rl_note_mdp/"/>
+    <id>http://yoursite.com/2020/05/29/rl/rl_note_mdp/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.259Z</updated>
     
@@ -265,19 +265,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="RL" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/RL/"/>
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
-      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】3. model-free Prediction And Control</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_model_free/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_model_free/</id>
+    <link href="http://yoursite.com/2020/05/29/rl/rl_note_model_free/"/>
+    <id>http://yoursite.com/2020/05/29/rl/rl_note_model_free/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.259Z</updated>
     
@@ -293,19 +293,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="RL" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/RL/"/>
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
-      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】1. Overview</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_overview/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_overview/</id>
+    <link href="http://yoursite.com/2020/05/29/rl/rl_note_overview/"/>
+    <id>http://yoursite.com/2020/05/29/rl/rl_note_overview/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.259Z</updated>
     
@@ -321,47 +321,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="RL" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/RL/"/>
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
-      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【rl_note】4. Value Function Approximation</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_value_function_approximation/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_value_function_approximation/</id>
-    <published>2020-05-29T03:51:55.000Z</published>
-    <updated>2022-02-26T07:02:52.260Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Challenges-with-large-MDPs"><a href="#Challenges-with-large-MDPs" class="headerlink" title="Challenges with large MDPs:"></a>Challenges with large MDPs:</h2><ul><li>too many states or actions to store in memory</li><li>too slow to learn the value of each state individually</li></ul><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul><li>为了避免通过查表的方式表示Value function, state-action function，Policy</li><li><p>Estimate with function approximation</p><ul><li>$\hat{v} (s, \mathbf{\omega}) \approx  v^π (s)$</li><li>$\hat{q}(s, a, \mathbf{\omega}) \approx  q^π (s, a)$</li><li>$\hat{\pi}(a, s, \mathbf{\omega}) \approx  π(a \mid s)$</li></ul></li><li><p>Linear VFA often works well given the right set of features, But it requires manual designing of the feature set</p></li><li>Alternative is to use a much richer function approximator that is able to directly learn from states without requiring the feature design</li><li>Nonlinear function approximator: Deep neural networks</li></ul><h2 id="Value-Function-Approximation-with-an-Oracle"><a href="#Value-Function-Approximation-with-an-Oracle" class="headerlink" title="Value Function Approximation with an Oracle"></a>Value Function Approximation with an Oracle</h2><ul><li>We assume that we have the oracle for knowing the true value for<br>$v^π (s)$ for any given state $s$</li><li>Then the objective is to find the best approximate representation of $v^π (s)$</li><li>Thus use the <strong>mean squared error</strong> and define the loss function as<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_π [(v^π (s) − \hat{v}(s, w))^2]</script></li><li>Follow the gradient descend to find a local minimum<script type="math/tex; mode=display">\Delta \omega = − {1 \over 2} \alpha ∇_\omega J(\omega)</script><script type="math/tex; mode=display">\omega_{t+1} = \omega_t + \Delta \omega</script></li></ul><h2 id="Linear-Value-Function-Approximation"><a href="#Linear-Value-Function-Approximation" class="headerlink" title="Linear Value Function Approximation"></a>Linear Value Function Approximation</h2><ul><li>Represent value function by a linear combination of features, s is feature vector<script type="math/tex; mode=display">\hat{v}(s,\omega) = x(s)^T \omega = \sum_{j=1}^n x_j(s)\omega_j</script></li><li>The objective function is quadratic in parameter $\omega$<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_\pi[v^\pi(s) − x(s)^T \omega]^2</script></li><li>Thus the update rule is as simple as<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{v^\pi(s)} − \hat{v}(s, \omega))x(s)</script><script type="math/tex; mode=display">Update = StepSize × PredictionError × FeatureValue</script></li><li>Stochastic gradient descent converges to global optimum. Because in the linear case, there is only one optimum, thus local optimum is automatically converge to or near the global optimum.</li><li><p>Special case</p><ul><li>Table lookup is a special case of linear value function approximation</li><li><p>Table lookup feature is one-hot vector <strong>(只有一个元素为1)</strong> as follows</p><script type="math/tex; mode=display">x^{table}(s) = [0(s = s_1 ), ..., 1(s = s_n )]^T</script></li><li><p>Then we can see that each element on the parameter vector $w$ indicates the value of each individual state</p><script type="math/tex; mode=display">\hat{v}(s, \omega) = [0(s = s_1 ), ..., 1(s = s_n)] [w_1 , ..., w_n]^T</script></li><li><p>Thus we have（对于的权重就是对应k的权重） </p><script type="math/tex; mode=display">\hat{v}(s_k , \omega) = \omega_k</script></li></ul></li></ul><h2 id="No-Oracle"><a href="#No-Oracle" class="headerlink" title="No Oracle"></a>No Oracle</h2><ul><li><p>For MC, the target is the actual return $G_t$</p><script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{v}(s_t , \omega) ∇\omega \hat{v}(s_t , \omega)</script><p>  <strong>$G_t$</strong> 因为是采样，所以这儿是无偏的估计， 但是会有噪声</p></li><li>For TD(0), the target is the TD target $R_{t+1} + \gamma \hat{v}(s_{t+1} , \mathbf{\omega})$<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{v} (s_{t+1} , \omega)} − \hat{v}(s_t , \omega) ∇ \omega\hat{v} (s_t , \omega)</script>  <strong>TD target</strong> 有偏估计， 因为用到了旧时刻的 $\omega$</li></ul><p>Generalized policy iteration<br><img src="/images/posts/rl/value_function_approximation/policy_iteration.png" alt=""></p><h3 id="同理-v-s-可替换为-q-s-a"><a href="#同理-v-s-可替换为-q-s-a" class="headerlink" title="同理 $v(s)$ 可替换为 $q(s,a)$"></a>同理 $v(s)$ 可替换为 $q(s,a)$</h3><ul><li><p>MC</p><script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{q}(s_t ,a_t, \omega) ∇\omega \hat{q}(s_t ,a_t, \omega)</script></li><li><p>sarsa</p><script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{q} (s_{t+1} ,a_{t+1}, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script><p>  <strong>Note:</strong> 训练困难</p><ul><li>在优化过程中，即近似 <strong>Bellman backup</strong> 又近似 <strong>value function</strong>, </li><li>off-policy control: <strong>behavior policy</strong> and <strong>target policy</strong> </li></ul></li><li><p>q-learning</p><script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \max_a \hat{q}(s_{t+1} ,a, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script></li></ul><p><img src="/images/posts/rl/value_function_approximation/sarsa_semi_gradient.png" alt=""></p><h3 id="Deadly-Triad"><a href="#Deadly-Triad" class="headerlink" title="Deadly Triad"></a>Deadly Triad</h3><ul><li>Function approximation: 利用函数估计会有误差</li><li>Bootstrapping: 主要影响 TD 和 MP</li><li>Off-policy training:  <strong>behavior policy</strong> and <strong>target policy</strong> </li></ul><h2 id="Convergence"><a href="#Convergence" class="headerlink" title="Convergence"></a>Convergence</h2><p><img src="/images/posts/rl/value_function_approximation/convergence.png" alt=""></p><hr><p><img src="/images/posts/rl/value_function_approximation/convergence_al.png" alt=""></p><h2 id="DQN"><a href="#DQN" class="headerlink" title="DQN"></a>DQN</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Challenges-with-large-MDPs&quot;&gt;&lt;a href=&quot;#Challenges-with-large-MDPs&quot; class=&quot;headerlink&quot; title=&quot;Challenges with large MDPs:&quot;&gt;&lt;/a&gt;Challen
-      
-    
-    </summary>
-    
-    
-      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
-    
-    
-      <category term="RL" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/RL/"/>
-    
-      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】5. Policy Gradent(AC, TRPO, PPO)</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_policy_gradent/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/05/29/rl/rl_note_policy_gradent/</id>
+    <link href="http://yoursite.com/2020/05/29/rl/rl_note_policy_gradent/"/>
+    <id>http://yoursite.com/2020/05/29/rl/rl_note_policy_gradent/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.260Z</updated>
     
@@ -377,19 +349,47 @@
     </summary>
     
     
-      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="RL" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/RL/"/>
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
-      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【rl_note】4. Value Function Approximation</title>
+    <link href="http://yoursite.com/2020/05/29/rl/rl_note_value_function_approximation/"/>
+    <id>http://yoursite.com/2020/05/29/rl/rl_note_value_function_approximation/</id>
+    <published>2020-05-29T03:51:55.000Z</published>
+    <updated>2022-02-26T07:02:52.260Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Challenges-with-large-MDPs"><a href="#Challenges-with-large-MDPs" class="headerlink" title="Challenges with large MDPs:"></a>Challenges with large MDPs:</h2><ul><li>too many states or actions to store in memory</li><li>too slow to learn the value of each state individually</li></ul><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul><li>为了避免通过查表的方式表示Value function, state-action function，Policy</li><li><p>Estimate with function approximation</p><ul><li>$\hat{v} (s, \mathbf{\omega}) \approx  v^π (s)$</li><li>$\hat{q}(s, a, \mathbf{\omega}) \approx  q^π (s, a)$</li><li>$\hat{\pi}(a, s, \mathbf{\omega}) \approx  π(a \mid s)$</li></ul></li><li><p>Linear VFA often works well given the right set of features, But it requires manual designing of the feature set</p></li><li>Alternative is to use a much richer function approximator that is able to directly learn from states without requiring the feature design</li><li>Nonlinear function approximator: Deep neural networks</li></ul><h2 id="Value-Function-Approximation-with-an-Oracle"><a href="#Value-Function-Approximation-with-an-Oracle" class="headerlink" title="Value Function Approximation with an Oracle"></a>Value Function Approximation with an Oracle</h2><ul><li>We assume that we have the oracle for knowing the true value for<br>$v^π (s)$ for any given state $s$</li><li>Then the objective is to find the best approximate representation of $v^π (s)$</li><li>Thus use the <strong>mean squared error</strong> and define the loss function as<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_π [(v^π (s) − \hat{v}(s, w))^2]</script></li><li>Follow the gradient descend to find a local minimum<script type="math/tex; mode=display">\Delta \omega = − {1 \over 2} \alpha ∇_\omega J(\omega)</script><script type="math/tex; mode=display">\omega_{t+1} = \omega_t + \Delta \omega</script></li></ul><h2 id="Linear-Value-Function-Approximation"><a href="#Linear-Value-Function-Approximation" class="headerlink" title="Linear Value Function Approximation"></a>Linear Value Function Approximation</h2><ul><li>Represent value function by a linear combination of features, s is feature vector<script type="math/tex; mode=display">\hat{v}(s,\omega) = x(s)^T \omega = \sum_{j=1}^n x_j(s)\omega_j</script></li><li>The objective function is quadratic in parameter $\omega$<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_\pi[v^\pi(s) − x(s)^T \omega]^2</script></li><li>Thus the update rule is as simple as<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{v^\pi(s)} − \hat{v}(s, \omega))x(s)</script><script type="math/tex; mode=display">Update = StepSize × PredictionError × FeatureValue</script></li><li>Stochastic gradient descent converges to global optimum. Because in the linear case, there is only one optimum, thus local optimum is automatically converge to or near the global optimum.</li><li><p>Special case</p><ul><li>Table lookup is a special case of linear value function approximation</li><li><p>Table lookup feature is one-hot vector <strong>(只有一个元素为1)</strong> as follows</p><script type="math/tex; mode=display">x^{table}(s) = [0(s = s_1 ), ..., 1(s = s_n )]^T</script></li><li><p>Then we can see that each element on the parameter vector $w$ indicates the value of each individual state</p><script type="math/tex; mode=display">\hat{v}(s, \omega) = [0(s = s_1 ), ..., 1(s = s_n)] [w_1 , ..., w_n]^T</script></li><li><p>Thus we have（对于的权重就是对应k的权重） </p><script type="math/tex; mode=display">\hat{v}(s_k , \omega) = \omega_k</script></li></ul></li></ul><h2 id="No-Oracle"><a href="#No-Oracle" class="headerlink" title="No Oracle"></a>No Oracle</h2><ul><li><p>For MC, the target is the actual return $G_t$</p><script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{v}(s_t , \omega) ∇\omega \hat{v}(s_t , \omega)</script><p>  <strong>$G_t$</strong> 因为是采样，所以这儿是无偏的估计， 但是会有噪声</p></li><li>For TD(0), the target is the TD target $R_{t+1} + \gamma \hat{v}(s_{t+1} , \mathbf{\omega})$<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{v} (s_{t+1} , \omega)} − \hat{v}(s_t , \omega) ∇ \omega\hat{v} (s_t , \omega)</script>  <strong>TD target</strong> 有偏估计， 因为用到了旧时刻的 $\omega$</li></ul><p>Generalized policy iteration<br><img src="/images/posts/rl/value_function_approximation/policy_iteration.png" alt=""></p><h3 id="同理-v-s-可替换为-q-s-a"><a href="#同理-v-s-可替换为-q-s-a" class="headerlink" title="同理 $v(s)$ 可替换为 $q(s,a)$"></a>同理 $v(s)$ 可替换为 $q(s,a)$</h3><ul><li><p>MC</p><script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{q}(s_t ,a_t, \omega) ∇\omega \hat{q}(s_t ,a_t, \omega)</script></li><li><p>sarsa</p><script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{q} (s_{t+1} ,a_{t+1}, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script><p>  <strong>Note:</strong> 训练困难</p><ul><li>在优化过程中，即近似 <strong>Bellman backup</strong> 又近似 <strong>value function</strong>, </li><li>off-policy control: <strong>behavior policy</strong> and <strong>target policy</strong> </li></ul></li><li><p>q-learning</p><script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \max_a \hat{q}(s_{t+1} ,a, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script></li></ul><p><img src="/images/posts/rl/value_function_approximation/sarsa_semi_gradient.png" alt=""></p><h3 id="Deadly-Triad"><a href="#Deadly-Triad" class="headerlink" title="Deadly Triad"></a>Deadly Triad</h3><ul><li>Function approximation: 利用函数估计会有误差</li><li>Bootstrapping: 主要影响 TD 和 MP</li><li>Off-policy training:  <strong>behavior policy</strong> and <strong>target policy</strong> </li></ul><h2 id="Convergence"><a href="#Convergence" class="headerlink" title="Convergence"></a>Convergence</h2><p><img src="/images/posts/rl/value_function_approximation/convergence.png" alt=""></p><hr><p><img src="/images/posts/rl/value_function_approximation/convergence_al.png" alt=""></p><h2 id="DQN"><a href="#DQN" class="headerlink" title="DQN"></a>DQN</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Challenges-with-large-MDPs&quot;&gt;&lt;a href=&quot;#Challenges-with-large-MDPs&quot; class=&quot;headerlink&quot; title=&quot;Challenges with large MDPs:&quot;&gt;&lt;/a&gt;Challen
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+    
+      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
     
   </entry>
   
   <entry>
     <title>【dl】 神经网络中参数量和计算量</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/04/24/dl/net_param_calculate/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/04/24/dl/net_param_calculate/</id>
+    <link href="http://yoursite.com/2020/04/24/dl/net_param_calculate/"/>
+    <id>http://yoursite.com/2020/04/24/dl/net_param_calculate/</id>
     <published>2020-04-24T04:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.257Z</updated>
     
@@ -406,17 +406,17 @@
     </summary>
     
     
-      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="DL，Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/DL%EF%BC%8CNote/"/>
+      <category term="DL，Note" scheme="http://yoursite.com/tags/DL%EF%BC%8CNote/"/>
     
   </entry>
   
   <entry>
     <title>【dl】 GAN_公式推导</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/03/24/dl/GAN/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/03/24/dl/GAN/</id>
+    <link href="http://yoursite.com/2020/03/24/dl/GAN/"/>
+    <id>http://yoursite.com/2020/03/24/dl/GAN/</id>
     <published>2020-03-24T04:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.257Z</updated>
     
@@ -432,21 +432,21 @@
     </summary>
     
     
-      <category term="学术" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="RL" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/RL/"/>
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
-      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
     
-      <category term="GAN" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/GAN/"/>
+      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
     
   </entry>
   
   <entry>
     <title>python中的tips</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/03/19/tips/python_tips/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/03/19/tips/python_tips/</id>
+    <link href="http://yoursite.com/2020/03/19/tips/python_tips/"/>
+    <id>http://yoursite.com/2020/03/19/tips/python_tips/</id>
     <published>2020-03-18T18:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.261Z</updated>
     
@@ -464,19 +464,19 @@
     </summary>
     
     
-      <category term="编程" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
-      <category term="python" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/python/"/>
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>【blog】 Hexo修改背景图片及主题透明</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/03/15/blog/blog_background/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/03/15/blog/blog_background/</id>
+    <link href="http://yoursite.com/2020/03/15/blog/blog_background/"/>
+    <id>http://yoursite.com/2020/03/15/blog/blog_background/</id>
     <published>2020-03-14T22:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.256Z</updated>
     
@@ -492,17 +492,17 @@
     </summary>
     
     
-      <category term="杂记" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="blog" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/blog/"/>
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>【blog】 Hexo迁移到vps</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/03/10/blog/vps_hexo/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/03/10/blog/vps_hexo/</id>
+    <link href="http://yoursite.com/2020/03/10/blog/vps_hexo/"/>
+    <id>http://yoursite.com/2020/03/10/blog/vps_hexo/</id>
     <published>2020-03-09T23:23:55.000Z</published>
     <updated>2022-02-26T07:02:52.257Z</updated>
     
@@ -519,21 +519,21 @@
     </summary>
     
     
-      <category term="杂记" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="blog" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/blog/"/>
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
     
-      <category term="vps" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/vps/"/>
+      <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
     
-      <category term="ubuntu" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/ubuntu/"/>
+      <category term="ubuntu" scheme="http://yoursite.com/tags/ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>trojan做点不一样的事</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/03/09/technology/trojan/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/03/09/technology/trojan/</id>
+    <link href="http://yoursite.com/2020/03/09/technology/trojan/"/>
+    <id>http://yoursite.com/2020/03/09/technology/trojan/</id>
     <published>2020-03-09T12:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.261Z</updated>
     
@@ -549,21 +549,21 @@
     </summary>
     
     
-      <category term="杂记" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="blog" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/blog/"/>
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
     
-      <category term="ubuntu" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/ubuntu/"/>
+      <category term="ubuntu" scheme="http://yoursite.com/tags/ubuntu/"/>
     
-      <category term="trojan" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/trojan/"/>
+      <category term="trojan" scheme="http://yoursite.com/tags/trojan/"/>
     
   </entry>
   
   <entry>
     <title>【go】 Go_并发</title>
-    <link href="https://github.com/ropo0107/ropo0107.github.io/2020/03/09/go/go_concurrency/"/>
-    <id>https://github.com/ropo0107/ropo0107.github.io/2020/03/09/go/go_concurrency/</id>
+    <link href="http://yoursite.com/2020/03/09/go/go_concurrency/"/>
+    <id>http://yoursite.com/2020/03/09/go/go_concurrency/</id>
     <published>2020-03-08T20:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.258Z</updated>
     
@@ -572,12 +572,12 @@
     </summary>
     
     
-      <category term="杂记" scheme="https://github.com/ropo0107/ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="Note" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Note/"/>
+      <category term="Go" scheme="http://yoursite.com/tags/Go/"/>
     
-      <category term="Go" scheme="https://github.com/ropo0107/ropo0107.github.io/tags/Go/"/>
+      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
     
   </entry>
   
