@@ -5,9 +5,9 @@
   <subtitle>Nothing can replace hard work!</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://ropo0107.github.io/"/>
   <updated>2022-02-26T07:02:52.261Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://ropo0107.github.io/</id>
   
   <author>
     <name>无恙</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>docker中的tips</title>
-    <link href="http://yoursite.com/2022/02/26/tips/docker/"/>
-    <id>http://yoursite.com/2022/02/26/tips/docker/</id>
+    <link href="https://ropo0107.github.io/2022/02/26/tips/docker/"/>
+    <id>https://ropo0107.github.io/2022/02/26/tips/docker/</id>
     <published>2022-02-26T07:02:52.261Z</published>
     <updated>2022-02-26T07:02:52.261Z</updated>
     
@@ -35,19 +35,19 @@
     </summary>
     
     
-      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="https://ropo0107.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
     
-      <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
+      <category term="docker" scheme="https://ropo0107.github.io/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>Machine Learning Base</title>
-    <link href="http://yoursite.com/2021/01/10/ml/ml_base/"/>
-    <id>http://yoursite.com/2021/01/10/ml/ml_base/</id>
+    <link href="https://ropo0107.github.io/2021/01/10/ml/ml_base/"/>
+    <id>https://ropo0107.github.io/2021/01/10/ml/ml_base/</id>
     <published>2021-01-10T08:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.259Z</updated>
     
@@ -64,19 +64,19 @@
     </summary>
     
     
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
     
-      <category term="ML" scheme="http://yoursite.com/tags/ML/"/>
+      <category term="ML" scheme="https://ropo0107.github.io/tags/ML/"/>
     
   </entry>
   
   <entry>
     <title>【gpd】复现GPD</title>
-    <link href="http://yoursite.com/2020/11/17/robot/gpd/"/>
-    <id>http://yoursite.com/2020/11/17/robot/gpd/</id>
+    <link href="https://ropo0107.github.io/2020/11/17/robot/gpd/"/>
+    <id>https://ropo0107.github.io/2020/11/17/robot/gpd/</id>
     <published>2020-11-17T15:34:55.000Z</published>
     <updated>2022-02-26T07:02:52.260Z</updated>
     
@@ -93,17 +93,17 @@
     </summary>
     
     
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Robot" scheme="http://yoursite.com/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
     
   </entry>
   
   <entry>
     <title>【robot】 机器人中的动力学</title>
-    <link href="http://yoursite.com/2020/11/03/robot/robot_dynamic/"/>
-    <id>http://yoursite.com/2020/11/03/robot/robot_dynamic/</id>
+    <link href="https://ropo0107.github.io/2020/11/03/robot/robot_dynamic/"/>
+    <id>https://ropo0107.github.io/2020/11/03/robot/robot_dynamic/</id>
     <published>2020-11-02T19:34:55.000Z</published>
     <updated>2022-02-26T07:02:52.261Z</updated>
     
@@ -119,17 +119,17 @@
     </summary>
     
     
-      <category term="工程" scheme="http://yoursite.com/categories/%E5%B7%A5%E7%A8%8B/"/>
+      <category term="工程" scheme="https://ropo0107.github.io/categories/%E5%B7%A5%E7%A8%8B/"/>
     
     
-      <category term="Robot" scheme="http://yoursite.com/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
     
   </entry>
   
   <entry>
     <title>【robot】 Kinect_dk 在Ubuntu16.04 下安装并配置ROS</title>
-    <link href="http://yoursite.com/2020/08/30/robot/kinect_dk/"/>
-    <id>http://yoursite.com/2020/08/30/robot/kinect_dk/</id>
+    <link href="https://ropo0107.github.io/2020/08/30/robot/kinect_dk/"/>
+    <id>https://ropo0107.github.io/2020/08/30/robot/kinect_dk/</id>
     <published>2020-08-30T15:34:55.000Z</published>
     <updated>2022-02-26T07:02:52.260Z</updated>
     
@@ -145,19 +145,19 @@
     </summary>
     
     
-      <category term="工程" scheme="http://yoursite.com/categories/%E5%B7%A5%E7%A8%8B/"/>
+      <category term="工程" scheme="https://ropo0107.github.io/categories/%E5%B7%A5%E7%A8%8B/"/>
     
     
-      <category term="Robot" scheme="http://yoursite.com/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
     
-      <category term="ROS" scheme="http://yoursite.com/tags/ROS/"/>
+      <category term="ROS" scheme="https://ropo0107.github.io/tags/ROS/"/>
     
   </entry>
   
   <entry>
     <title>【ros】 编译时的问题</title>
-    <link href="http://yoursite.com/2020/07/19/robot/ros_error/"/>
-    <id>http://yoursite.com/2020/07/19/robot/ros_error/</id>
+    <link href="https://ropo0107.github.io/2020/07/19/robot/ros_error/"/>
+    <id>https://ropo0107.github.io/2020/07/19/robot/ros_error/</id>
     <published>2020-07-19T15:34:55.000Z</published>
     <updated>2022-02-26T07:02:52.261Z</updated>
     
@@ -173,21 +173,21 @@
     </summary>
     
     
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
     
-      <category term="Robot" scheme="http://yoursite.com/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
     
-      <category term="Ros" scheme="http://yoursite.com/tags/Ros/"/>
+      <category term="Ros" scheme="https://ropo0107.github.io/tags/Ros/"/>
     
   </entry>
   
   <entry>
     <title>【ros】 workspace and namespace</title>
-    <link href="http://yoursite.com/2020/07/19/robot/ros_workspace/"/>
-    <id>http://yoursite.com/2020/07/19/robot/ros_workspace/</id>
+    <link href="https://ropo0107.github.io/2020/07/19/robot/ros_workspace/"/>
+    <id>https://ropo0107.github.io/2020/07/19/robot/ros_workspace/</id>
     <published>2020-07-19T15:34:55.000Z</published>
     <updated>2022-02-26T07:02:52.261Z</updated>
     
@@ -204,21 +204,21 @@
     </summary>
     
     
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
     
-      <category term="Robot" scheme="http://yoursite.com/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
     
-      <category term="Ros" scheme="http://yoursite.com/tags/Ros/"/>
+      <category term="Ros" scheme="https://ropo0107.github.io/tags/Ros/"/>
     
   </entry>
   
   <entry>
     <title>【robot】 quaternion</title>
-    <link href="http://yoursite.com/2020/07/11/robot/quaternion/"/>
-    <id>http://yoursite.com/2020/07/11/robot/quaternion/</id>
+    <link href="https://ropo0107.github.io/2020/07/11/robot/quaternion/"/>
+    <id>https://ropo0107.github.io/2020/07/11/robot/quaternion/</id>
     <published>2020-07-11T15:34:55.000Z</published>
     <updated>2022-02-26T07:02:52.260Z</updated>
     
@@ -235,19 +235,19 @@
     </summary>
     
     
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
     
-      <category term="Robot" scheme="http://yoursite.com/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】2. Markov Decision Processes</title>
-    <link href="http://yoursite.com/2020/05/29/rl/rl_note_mdp/"/>
-    <id>http://yoursite.com/2020/05/29/rl/rl_note_mdp/</id>
+    <link href="https://ropo0107.github.io/2020/05/29/rl/rl_note_mdp/"/>
+    <id>https://ropo0107.github.io/2020/05/29/rl/rl_note_mdp/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.259Z</updated>
     
@@ -265,19 +265,19 @@
     </summary>
     
     
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
     
-      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】3. model-free Prediction And Control</title>
-    <link href="http://yoursite.com/2020/05/29/rl/rl_note_model_free/"/>
-    <id>http://yoursite.com/2020/05/29/rl/rl_note_model_free/</id>
+    <link href="https://ropo0107.github.io/2020/05/29/rl/rl_note_model_free/"/>
+    <id>https://ropo0107.github.io/2020/05/29/rl/rl_note_model_free/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.259Z</updated>
     
@@ -293,19 +293,19 @@
     </summary>
     
     
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
     
-      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】1. Overview</title>
-    <link href="http://yoursite.com/2020/05/29/rl/rl_note_overview/"/>
-    <id>http://yoursite.com/2020/05/29/rl/rl_note_overview/</id>
+    <link href="https://ropo0107.github.io/2020/05/29/rl/rl_note_overview/"/>
+    <id>https://ropo0107.github.io/2020/05/29/rl/rl_note_overview/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.259Z</updated>
     
@@ -321,47 +321,19 @@
     </summary>
     
     
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
     
-      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【rl_note】5. Policy Gradent(AC, TRPO, PPO)</title>
-    <link href="http://yoursite.com/2020/05/29/rl/rl_note_policy_gradent/"/>
-    <id>http://yoursite.com/2020/05/29/rl/rl_note_policy_gradent/</id>
-    <published>2020-05-29T03:51:55.000Z</published>
-    <updated>2022-02-26T07:02:52.260Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Policy-Gradent"><a href="#Policy-Gradent" class="headerlink" title="Policy Gradent"></a>Policy Gradent</h1><h2 id="Value-based-RL-vs-Policy-based-RL"><a href="#Value-based-RL-vs-Policy-based-RL" class="headerlink" title="Value-based RL vs Policy-based RL"></a>Value-based RL vs Policy-based RL</h2><ul><li>value base 主要是学习一个value function 的近似，然后通过贪心的方法得到最优策略<script type="math/tex; mode=display">a_t=\arg \max_aQ(a,st)</script></li><li>policy base 直接学习策略$\pi_\theta(a|s)$, 学习参数$\theta$<ul><li>Advantages:<ul><li>better convergence properties: we are guaranteed to converge on a local optimum (worst case) or global optimum (best case)</li><li>Policy gradient is more effective in high-dimensional action space</li><li>Policy gradient can learn stochastic policies, while value function can’t</li></ul></li><li>Disadvantages:<ul><li>局部最忧</li><li>方差大</li></ul></li><li>Deterministic: given a state, the policy returns a certain action to take</li><li>Stochastic:<ul><li>probability distribution of distribute actions</li><li>a certain Gaussian distribution for continuous action</li></ul></li></ul></li></ul><h2 id="Policy-Gradent-for-Multi-step-MDPs"><a href="#Policy-Gradent-for-Multi-step-MDPs" class="headerlink" title="Policy Gradent for Multi-step MDPs"></a>Policy Gradent for Multi-step MDPs</h2><ul><li><p>轨迹序列:</p><script type="math/tex; mode=display">\tau = (s_0, a_0, r_0, ... ,s_{T-1}, a_{T-1},r_{T-1},s_T, r_T) \sim (\pi_\theta, P(s_{t+1} | s_t, a_t))</script></li><li><p>轨迹概率:</p><script type="math/tex; mode=display">P(\tau;\theta) = \mu(s_0) \prod\limits_{t=0}^{T-1}\pi_\theta(a_t|s_t)p(s_{t+1}|s_t, a_t)</script><p>  $\pi_\theta(a_t|s_t)$ 仅该项和 Policy 有关</p><p>  $p(s_{t+1}|s_t, a_t)$ 其为动力学模型， 仅与环境有关</p></li><li><p>累计回报:</p><script type="math/tex; mode=display">R(\tau) = \sum\limits_{t=0}^T r_t</script></li><li>优化目标:<script type="math/tex; mode=display">J(\theta) = \sum\limits_\tau R(\tau) P(\tau;\theta)</script>  对轨迹$\tau$进行累加</li><li><p>Goal</p><ul><li><p>goal:</p><script type="math/tex; mode=display">\theta^* = \arg\max\limits_\theta J(\theta) = \arg\max\limits_\theta \sum\limits_\tau R(\tau) P(\tau;\theta)</script></li><li><p>gradient:</p><script type="math/tex; mode=display">\nabla_\theta Ja(\theta) =\nabla_\theta \sum\limits_\tau R(\tau) P(\tau;\theta)</script><script type="math/tex; mode=display">=\sum\limits_\tau R(\tau)  P(\tau;\theta) \nabla_\theta logP(\tau;\theta)</script></li><li><p>Monte carlo:</p><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m R(\tau_i) \nabla_\theta logP(\tau_i ;\theta)</script><p>采样后轨迹概率 $P(\tau;\theta)$ 变为采样的加和</p></li><li><p>分解 $\nabla_\theta logP(\tau_i ;\theta)$:</p><script type="math/tex; mode=display">\nabla_\theta logP(\tau_i ;\theta) = \nabla_\theta log[\mu(s_0) \prod\limits_{t=0}^{T-1}\pi_\theta(a_t|s_t)p(s_{t+1}|s_t, a_t)]</script><script type="math/tex; mode=display">=\nabla_\theta[log(\mu(s_0)) + \sum\limits_{t=0}^{T-1} (\log \pi_\theta(a_t|s_t) + \log p(s_{t+1}|s_t, a_t)))]</script><script type="math/tex; mode=display">=\sum\limits_{t=0}^{T-1} \nabla_\theta \log \pi_\theta(a_t|s_t)</script><p>$\theta$仅与policy有关  </p></li><li><p>Finaly:</p><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m [R(\tau_i) \sum\limits_{t=0}^{T-1} \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)]</script><p>$\nabla_\theta \log\pi_\theta(a_t^i|s_t^i)$作为<strong>score function</strong>代表梯度更新方向</p><p>$R(\tau_i)$表示更新方向上的权重， 偏向于好的轨迹</p></li></ul></li></ul><h2 id="Comparison-to-Maximum-Likelihood"><a href="#Comparison-to-Maximum-Likelihood" class="headerlink" title="Comparison to Maximum Likelihood"></a>Comparison to Maximum Likelihood</h2><ul><li>PG<script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{M} \sum\limits_{m=1}^M (\sum\limits_{t=1}^{T} \nabla_\theta \log \pi_\theta(a_t^m|s_t^m)) (\sum\limits_{t=1}^{T}r(s_t^m, a_t^m))</script></li><li>Maximum Likelihood<script type="math/tex; mode=display">\nabla_\theta J_{ML}(\theta) \approx \frac{1}{M} \sum\limits_{m=1}^M (\sum\limits_{t=1}^{T} \nabla_\theta \log \pi_\theta(a_t^m|s_t^m))</script></li><li><p>往更好的轨迹偏移</p><p>  <img src="/images/posts/rl/policy_gradent/pg_ml.png" alt=""></p></li></ul><h2 id="Reduce-Variance"><a href="#Reduce-Variance" class="headerlink" title="Reduce Variance"></a>Reduce Variance</h2><ul><li>temporal causality<ul><li>利用当前时刻后的奖励而不用整条轨迹的奖励 $G_t^i = \sum\limits_{t’=t}^{T-1}r_{t’}^i$</li><li><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m \sum\limits_{t=0}^{T-1} G_t^i \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)</script></li><li></li><li>REINFORCE:<br>  <img src="/images/posts/rl/policy_gradent/reinforence.png" alt=""></li><li>n-step<script type="math/tex; mode=display">G_t^{(1)} = r_{t+1} + \gamma v(s_{t+1})</script><script type="math/tex; mode=display">G_t^{(2)} = r_{t+1} + \gamma r_{t+2} + \gamma^2 v(s_{t+2})</script><script type="math/tex; mode=display">G_t^{(\infty)} = r_{t+1} + \gamma r_{t+2} + ... +\gamma^{T-t-1}r_T</script></li></ul></li><li>add baseline<ul><li>利用当前时刻后的奖励 - 平均奖励，而不用整条轨迹的奖励$G_t^i -b^i(s_t)$</li><li><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m \sum\limits_{t=0}^{T-1} (G_t^i-b^i(s_t)) \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)</script><h2 id="PG-Algorithm"><a href="#PG-Algorithm" class="headerlink" title="PG Algorithm"></a>PG Algorithm</h2></li></ul></li></ul><p><img src="/images/posts/rl/policy_gradent/pg_al.png" alt=""></p><h1 id="Problem-of-PG"><a href="#Problem-of-PG" class="headerlink" title="Problem of PG"></a>Problem of PG</h1><ul><li>训练不稳定<ul><li>Trust region (TRPO, PPO)</li><li>natural policy gradient (二阶优化方法)</li></ul></li><li>如何离线化训练 <strong>off-policy</strong><ul><li>Importance sampling（将分布转换到已知的分布）</li></ul></li></ul><h1 id="Advantage-Actor-Critic"><a href="#Advantage-Actor-Critic" class="headerlink" title="Advantage Actor-Critic"></a>Advantage Actor-Critic</h1><ul><li>利用当前状态的<strong>Advantage function</strong>作为权重 ，而不用整条轨迹的奖励<br>  一般通过参数 $w$ 来拟合<script type="math/tex; mode=display">A(s_t^i, a_t^i) = Q(s_t^i, a_t^i) - V(s_t^i)</script></li><li><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m \sum\limits_{t=0}^{T-1} A_w(s_t^i,a_t^i) \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)</script></li><li><p>n step</p><script type="math/tex; mode=display">\hat{A}_t^{(1)} = r_{t+1} + \gamma v(s_{t+1})- v(s_t)</script><script type="math/tex; mode=display">\hat{A}_t^{(2)} = r_{t+1} + \gamma r_{t+2} + \gamma^2 v(s_{t+2})- v(s_t)</script><script type="math/tex; mode=display">\hat{A}_t^{(\infty)} = r_{t+1} + \gamma r_{t+2} + ... +\gamma^{T-t-1}r_T- v(s_t)</script><p>$\hat{A}_t^{(1)}$ low variance ,high bias</p><p>$\hat{A}_t^{(\infty)}$ high variance ,low bias</p></li></ul><h1 id="TRPO"><a href="#TRPO" class="headerlink" title="TRPO"></a>TRPO</h1><p>PG + off-policy + constrain</p><ul><li>步长的重要性<ul><li>状态和回报在改变统计特性, 优化过程中很难确定更新步长</li><li>policy 经常会过早陷入次忧的几乎确定的策略中</li><li>TRPO 通过置信域的方式保证步长为单调不减</li><li><img src="/images/posts/rl/policy_gradent/trust_region.png" alt=""></li></ul></li><li><p>目标函数(带有折扣的奖励最大)：</p><ul><li><script type="math/tex; mode=display">\eta(\tilde{\pi}) =\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^{\infty} \gamma r(s_t)]</script></li><li><p>新策略下的期望回报 = 旧策略下的期望回报 + 新旧策略期望回报的差</p><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\mathbb{E}_{\tau|\tilde{\pi}}[\sum\limits_{t=0}^\infty \gamma^t A_\pi(s_t,a_t)]</script><p>  $\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t A_\pi(s_t,a_t)]$</p><p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t [Q_\pi(s_t,a_t)-V_\pi(s_t)]$</p><p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t [r(s_t)+ \gamma V_\pi(s_{t+1})-V_\pi(s_t)]$</p><p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t r(s_t)+ \sum\limits_{t=0}^\infty (\gamma V_\pi(s_{t+1})-V_\pi(s_t))]$</p><p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t r(s_t)] + \mathbb{E}_{s_0}[-V_\pi(s_0)]$求和展开前后相消</p><p>  $= \eta(\tilde{\pi}) - \eta(\pi)$</p></li></ul></li><li><p>对于上式展开 </p><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\mathbb{E}_{\tau|\tilde{\pi}}[\sum\limits_{t=0}^\infty \gamma^t A_\pi(s_t,a_t)]</script><script type="math/tex; mode=display">\rho_\pi(s) = P(s_0=s) + \gamma P(s_1=s) + \gamma^2P(s_2=s) + ... = \sum\limits_{t=0}^\infty \gamma^t P(s_t=s|\tilde{\pi} )</script><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\sum_{t=0}^\infty \sum\limits_{s} P(s_t = s|\tilde{\pi})\sum\limits_a \tilde{\pi}(a|s) \gamma^t A_\pi(s,a)</script><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\sum\limits_{s} \rho_{\tilde{\pi}}(s) \sum\limits_a \tilde{\pi}(a|s) A_\pi(s,a)</script><p>  这是状态分布由新的策略$\tilde{\pi}$， 严重依赖新的状态分布</p></li><li><p>two trick</p><ul><li>忽略状态分布的变化， 假定  <script type="math/tex; mode=display">\rho_{\tilde{\pi}}(s)\sim\rho_\pi(s)</script></li><li><p>重要性采样，</p><ul><li><img src="/images/posts/rl/policy_gradent/importance.png" alt=""></li><li><script type="math/tex; mode=display">\sum\limits_a \tilde{\pi_\theta}(a|s) A_{\theta_{old}}(s,a) = \mathbb{E}_{a\sim\pi_{old}} [\frac{\tilde{\pi_\theta}(a|s_n)}{\pi_{\theta_{old}}(a|s_n)}A_{\theta_{old}}(s,a)]</script></li></ul></li><li><p>原目标：</p><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\sum\limits_{s} \rho_{\tilde{\pi}}(s) \sum\limits_a \tilde{\pi}(a|s) A_\pi(s,a)</script></li><li><p>新目标：</p><script type="math/tex; mode=display">L_{\pi_{\theta_{old}}} (\tilde{\pi})= \eta(\pi) + \mathbb{E}_{s\sim \rho_{\theta {old}}, a\sim\pi_{\theta {old}}} [\frac{\tilde{\pi_\theta}(a|s_n)}{\pi_{\theta_{old}}(a|s_n)}A_{\theta_{old}}(s,a)]</script></li></ul></li><li><p>梯度更新方向， 梯度优化本身就是一阶优化，</p><ul><li>在$\theta_{old}$ 处, 一阶凸优化方法中，完全一致，一阶导数一致， <script type="math/tex; mode=display">\nabla_\theta \eta (\pi_{\theta_{old}}) = \nabla_\theta L_{\pi_{\theta_{old}}} (\pi_{\theta_{old}})</script></li><li><img src="/images/posts/rl/policy_gradent/one.png" alt=""></li></ul></li><li><p>梯度更新步长</p><ul><li><script type="math/tex; mode=display">\eta(\tilde{\pi}) \geqslant L_\pi(\tilde{\pi}) - CD_{KL}^{MAX} (\pi, \tilde{\pi})</script><p>  $where , C = \frac{2\epsilon\gamma}{(1-\gamma)^2}$</p></li><li><p>令 $M_{i}(\pi)  = L_{\pi_{i}}(\pi) - CD_{KL}^{MAX} (\pi_i, \pi)$</p><p>  $\eta (\pi_{i+1}) \geqslant M_i(\pi_{i+1})$</p><p>  等效于上面不等式</p><p>  $\eta (\pi_{i}) = M_i(\pi_{i})$</p><p>  将$\pi_i$带入不等式，两分布相同，$D_{KL}$为0</p><p>  $\eta (\pi_{i+1}) - \eta (\pi_{i}) \geqslant M_i(\pi_{i+1}) -M_i(\pi_{i})$</p><p>  即最大化$M_i$, 可保证更新步长单调不减</p></li></ul></li><li><p>Finally:</p><ul><li>$\max_\theta {mize}[ L_{\pi}(\tilde{\pi}) - CD_{KL}^{MAX} (\pi, \tilde{\pi})]$</li><li><p>$\max_\theta {mize} L_{\theta_{old}}(\theta)$</p><p>  subject to : $D_{KL}^{MAX} (\theta_{old}, \theta) \leqslant \delta$</p><p>  subject to : $\bar{D}_{KL}^{\rho_{\theta_{old}}} (\theta_{old}, \theta) \leqslant \delta$</p></li><li><p>线性化逼近， 二次逼近后:</p><p>  $\max_\theta {mize}[\nabla_\theta L_{\theta_{old}}(\theta)|_{\theta = \theta_{old}} \cdot (\theta-\theta_{old})]$gradent/ppo_clip.png)</p><p>  subject to : $\frac{1}{2} \left | \theta- \theta_{old} \right |^2 \leqslant \delta$</p></li></ul></li></ul><h1 id="PPO"><a href="#PPO" class="headerlink" title="PPO"></a>PPO</h1><p>想比于TRPO的变化就是</p><ul><li>TRPO 用KL作为一个约束， 而 PPO 则一快和$\theta$进行优化</li><li><strong>Note:</strong> KL 为输出$a$的距离，而不是参数$\theta$ 的距离</li><li>$\max_\theta {mize}[ L_{\pi}(\tilde{\pi}) -\beta KL(\pi, \tilde{\pi})]$<ul><li>If $𝐾𝐿(\theta, \theta_i) &gt; KL_{max}$,  increase $\beta$</li><li>If $𝐾𝐿(\theta, \theta_i) &lt; KL_{min}$,  decrease $\beta$</li></ul></li><li><p>优化目标：</p><ul><li><script type="math/tex; mode=display">L(\theta) = \mathbb{E}_{\tau \sim \pi_{old}}[\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}A_{\theta_{old}}(s,a) - \beta KL(\pi_{old}, \pi)]</script></li><li><script type="math/tex; mode=display">L(\theta) = \mathbb{E}_{\tau \sim \pi_{old}}[min(\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}A_{\theta_{old}}(s,a), clip(\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)},1-\epsilon, 1+\epsilon)A_{\theta_{old}}(s,a))]</script><p>  <img src="/images/posts/rl/policy_gradent/ppo_clip.png" alt=""></p></li></ul></li></ul><h1 id="DDPG"><a href="#DDPG" class="headerlink" title="DDPG"></a>DDPG</h1><ul><li>目的： 让DQN应用于连续的动作空间</li><li></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Policy-Gradent&quot;&gt;&lt;a href=&quot;#Policy-Gradent&quot; class=&quot;headerlink&quot; title=&quot;Policy Gradent&quot;&gt;&lt;/a&gt;Policy Gradent&lt;/h1&gt;&lt;h2 id=&quot;Value-based-RL-vs
-      
-    
-    </summary>
-    
-    
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
-    
-    
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
-    
-      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】4. Value Function Approximation</title>
-    <link href="http://yoursite.com/2020/05/29/rl/rl_note_value_function_approximation/"/>
-    <id>http://yoursite.com/2020/05/29/rl/rl_note_value_function_approximation/</id>
+    <link href="https://ropo0107.github.io/2020/05/29/rl/rl_note_value_function_approximation/"/>
+    <id>https://ropo0107.github.io/2020/05/29/rl/rl_note_value_function_approximation/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.260Z</updated>
     
@@ -377,19 +349,47 @@
     </summary>
     
     
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
     
-      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【rl_note】5. Policy Gradent(AC, TRPO, PPO)</title>
+    <link href="https://ropo0107.github.io/2020/05/29/rl/rl_note_policy_gradent/"/>
+    <id>https://ropo0107.github.io/2020/05/29/rl/rl_note_policy_gradent/</id>
+    <published>2020-05-29T03:51:55.000Z</published>
+    <updated>2022-02-26T07:02:52.260Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Policy-Gradent"><a href="#Policy-Gradent" class="headerlink" title="Policy Gradent"></a>Policy Gradent</h1><h2 id="Value-based-RL-vs-Policy-based-RL"><a href="#Value-based-RL-vs-Policy-based-RL" class="headerlink" title="Value-based RL vs Policy-based RL"></a>Value-based RL vs Policy-based RL</h2><ul><li>value base 主要是学习一个value function 的近似，然后通过贪心的方法得到最优策略<script type="math/tex; mode=display">a_t=\arg \max_aQ(a,st)</script></li><li>policy base 直接学习策略$\pi_\theta(a|s)$, 学习参数$\theta$<ul><li>Advantages:<ul><li>better convergence properties: we are guaranteed to converge on a local optimum (worst case) or global optimum (best case)</li><li>Policy gradient is more effective in high-dimensional action space</li><li>Policy gradient can learn stochastic policies, while value function can’t</li></ul></li><li>Disadvantages:<ul><li>局部最忧</li><li>方差大</li></ul></li><li>Deterministic: given a state, the policy returns a certain action to take</li><li>Stochastic:<ul><li>probability distribution of distribute actions</li><li>a certain Gaussian distribution for continuous action</li></ul></li></ul></li></ul><h2 id="Policy-Gradent-for-Multi-step-MDPs"><a href="#Policy-Gradent-for-Multi-step-MDPs" class="headerlink" title="Policy Gradent for Multi-step MDPs"></a>Policy Gradent for Multi-step MDPs</h2><ul><li><p>轨迹序列:</p><script type="math/tex; mode=display">\tau = (s_0, a_0, r_0, ... ,s_{T-1}, a_{T-1},r_{T-1},s_T, r_T) \sim (\pi_\theta, P(s_{t+1} | s_t, a_t))</script></li><li><p>轨迹概率:</p><script type="math/tex; mode=display">P(\tau;\theta) = \mu(s_0) \prod\limits_{t=0}^{T-1}\pi_\theta(a_t|s_t)p(s_{t+1}|s_t, a_t)</script><p>  $\pi_\theta(a_t|s_t)$ 仅该项和 Policy 有关</p><p>  $p(s_{t+1}|s_t, a_t)$ 其为动力学模型， 仅与环境有关</p></li><li><p>累计回报:</p><script type="math/tex; mode=display">R(\tau) = \sum\limits_{t=0}^T r_t</script></li><li>优化目标:<script type="math/tex; mode=display">J(\theta) = \sum\limits_\tau R(\tau) P(\tau;\theta)</script>  对轨迹$\tau$进行累加</li><li><p>Goal</p><ul><li><p>goal:</p><script type="math/tex; mode=display">\theta^* = \arg\max\limits_\theta J(\theta) = \arg\max\limits_\theta \sum\limits_\tau R(\tau) P(\tau;\theta)</script></li><li><p>gradient:</p><script type="math/tex; mode=display">\nabla_\theta Ja(\theta) =\nabla_\theta \sum\limits_\tau R(\tau) P(\tau;\theta)</script><script type="math/tex; mode=display">=\sum\limits_\tau R(\tau)  P(\tau;\theta) \nabla_\theta logP(\tau;\theta)</script></li><li><p>Monte carlo:</p><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m R(\tau_i) \nabla_\theta logP(\tau_i ;\theta)</script><p>采样后轨迹概率 $P(\tau;\theta)$ 变为采样的加和</p></li><li><p>分解 $\nabla_\theta logP(\tau_i ;\theta)$:</p><script type="math/tex; mode=display">\nabla_\theta logP(\tau_i ;\theta) = \nabla_\theta log[\mu(s_0) \prod\limits_{t=0}^{T-1}\pi_\theta(a_t|s_t)p(s_{t+1}|s_t, a_t)]</script><script type="math/tex; mode=display">=\nabla_\theta[log(\mu(s_0)) + \sum\limits_{t=0}^{T-1} (\log \pi_\theta(a_t|s_t) + \log p(s_{t+1}|s_t, a_t)))]</script><script type="math/tex; mode=display">=\sum\limits_{t=0}^{T-1} \nabla_\theta \log \pi_\theta(a_t|s_t)</script><p>$\theta$仅与policy有关  </p></li><li><p>Finaly:</p><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m [R(\tau_i) \sum\limits_{t=0}^{T-1} \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)]</script><p>$\nabla_\theta \log\pi_\theta(a_t^i|s_t^i)$作为<strong>score function</strong>代表梯度更新方向</p><p>$R(\tau_i)$表示更新方向上的权重， 偏向于好的轨迹</p></li></ul></li></ul><h2 id="Comparison-to-Maximum-Likelihood"><a href="#Comparison-to-Maximum-Likelihood" class="headerlink" title="Comparison to Maximum Likelihood"></a>Comparison to Maximum Likelihood</h2><ul><li>PG<script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{M} \sum\limits_{m=1}^M (\sum\limits_{t=1}^{T} \nabla_\theta \log \pi_\theta(a_t^m|s_t^m)) (\sum\limits_{t=1}^{T}r(s_t^m, a_t^m))</script></li><li>Maximum Likelihood<script type="math/tex; mode=display">\nabla_\theta J_{ML}(\theta) \approx \frac{1}{M} \sum\limits_{m=1}^M (\sum\limits_{t=1}^{T} \nabla_\theta \log \pi_\theta(a_t^m|s_t^m))</script></li><li><p>往更好的轨迹偏移</p><p>  <img src="/images/posts/rl/policy_gradent/pg_ml.png" alt=""></p></li></ul><h2 id="Reduce-Variance"><a href="#Reduce-Variance" class="headerlink" title="Reduce Variance"></a>Reduce Variance</h2><ul><li>temporal causality<ul><li>利用当前时刻后的奖励而不用整条轨迹的奖励 $G_t^i = \sum\limits_{t’=t}^{T-1}r_{t’}^i$</li><li><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m \sum\limits_{t=0}^{T-1} G_t^i \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)</script></li><li></li><li>REINFORCE:<br>  <img src="/images/posts/rl/policy_gradent/reinforence.png" alt=""></li><li>n-step<script type="math/tex; mode=display">G_t^{(1)} = r_{t+1} + \gamma v(s_{t+1})</script><script type="math/tex; mode=display">G_t^{(2)} = r_{t+1} + \gamma r_{t+2} + \gamma^2 v(s_{t+2})</script><script type="math/tex; mode=display">G_t^{(\infty)} = r_{t+1} + \gamma r_{t+2} + ... +\gamma^{T-t-1}r_T</script></li></ul></li><li>add baseline<ul><li>利用当前时刻后的奖励 - 平均奖励，而不用整条轨迹的奖励$G_t^i -b^i(s_t)$</li><li><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m \sum\limits_{t=0}^{T-1} (G_t^i-b^i(s_t)) \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)</script><h2 id="PG-Algorithm"><a href="#PG-Algorithm" class="headerlink" title="PG Algorithm"></a>PG Algorithm</h2></li></ul></li></ul><p><img src="/images/posts/rl/policy_gradent/pg_al.png" alt=""></p><h1 id="Problem-of-PG"><a href="#Problem-of-PG" class="headerlink" title="Problem of PG"></a>Problem of PG</h1><ul><li>训练不稳定<ul><li>Trust region (TRPO, PPO)</li><li>natural policy gradient (二阶优化方法)</li></ul></li><li>如何离线化训练 <strong>off-policy</strong><ul><li>Importance sampling（将分布转换到已知的分布）</li></ul></li></ul><h1 id="Advantage-Actor-Critic"><a href="#Advantage-Actor-Critic" class="headerlink" title="Advantage Actor-Critic"></a>Advantage Actor-Critic</h1><ul><li>利用当前状态的<strong>Advantage function</strong>作为权重 ，而不用整条轨迹的奖励<br>  一般通过参数 $w$ 来拟合<script type="math/tex; mode=display">A(s_t^i, a_t^i) = Q(s_t^i, a_t^i) - V(s_t^i)</script></li><li><script type="math/tex; mode=display">\nabla_\theta J(\theta) \approx \frac{1}{m} \sum\limits_{i=1}^m \sum\limits_{t=0}^{T-1} A_w(s_t^i,a_t^i) \nabla_\theta \log \pi_\theta(a_t^i|s_t^i)</script></li><li><p>n step</p><script type="math/tex; mode=display">\hat{A}_t^{(1)} = r_{t+1} + \gamma v(s_{t+1})- v(s_t)</script><script type="math/tex; mode=display">\hat{A}_t^{(2)} = r_{t+1} + \gamma r_{t+2} + \gamma^2 v(s_{t+2})- v(s_t)</script><script type="math/tex; mode=display">\hat{A}_t^{(\infty)} = r_{t+1} + \gamma r_{t+2} + ... +\gamma^{T-t-1}r_T- v(s_t)</script><p>$\hat{A}_t^{(1)}$ low variance ,high bias</p><p>$\hat{A}_t^{(\infty)}$ high variance ,low bias</p></li></ul><h1 id="TRPO"><a href="#TRPO" class="headerlink" title="TRPO"></a>TRPO</h1><p>PG + off-policy + constrain</p><ul><li>步长的重要性<ul><li>状态和回报在改变统计特性, 优化过程中很难确定更新步长</li><li>policy 经常会过早陷入次忧的几乎确定的策略中</li><li>TRPO 通过置信域的方式保证步长为单调不减</li><li><img src="/images/posts/rl/policy_gradent/trust_region.png" alt=""></li></ul></li><li><p>目标函数(带有折扣的奖励最大)：</p><ul><li><script type="math/tex; mode=display">\eta(\tilde{\pi}) =\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^{\infty} \gamma r(s_t)]</script></li><li><p>新策略下的期望回报 = 旧策略下的期望回报 + 新旧策略期望回报的差</p><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\mathbb{E}_{\tau|\tilde{\pi}}[\sum\limits_{t=0}^\infty \gamma^t A_\pi(s_t,a_t)]</script><p>  $\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t A_\pi(s_t,a_t)]$</p><p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t [Q_\pi(s_t,a_t)-V_\pi(s_t)]$</p><p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t [r(s_t)+ \gamma V_\pi(s_{t+1})-V_\pi(s_t)]$</p><p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t r(s_t)+ \sum\limits_{t=0}^\infty (\gamma V_\pi(s_{t+1})-V_\pi(s_t))]$</p><p>  $=\mathbb{E}_{\tau|\tilde{\pi}} [\sum\limits_{t=0}^\infty \gamma^t r(s_t)] + \mathbb{E}_{s_0}[-V_\pi(s_0)]$求和展开前后相消</p><p>  $= \eta(\tilde{\pi}) - \eta(\pi)$</p></li></ul></li><li><p>对于上式展开 </p><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\mathbb{E}_{\tau|\tilde{\pi}}[\sum\limits_{t=0}^\infty \gamma^t A_\pi(s_t,a_t)]</script><script type="math/tex; mode=display">\rho_\pi(s) = P(s_0=s) + \gamma P(s_1=s) + \gamma^2P(s_2=s) + ... = \sum\limits_{t=0}^\infty \gamma^t P(s_t=s|\tilde{\pi} )</script><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\sum_{t=0}^\infty \sum\limits_{s} P(s_t = s|\tilde{\pi})\sum\limits_a \tilde{\pi}(a|s) \gamma^t A_\pi(s,a)</script><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\sum\limits_{s} \rho_{\tilde{\pi}}(s) \sum\limits_a \tilde{\pi}(a|s) A_\pi(s,a)</script><p>  这是状态分布由新的策略$\tilde{\pi}$， 严重依赖新的状态分布</p></li><li><p>two trick</p><ul><li>忽略状态分布的变化， 假定  <script type="math/tex; mode=display">\rho_{\tilde{\pi}}(s)\sim\rho_\pi(s)</script></li><li><p>重要性采样，</p><ul><li><img src="/images/posts/rl/policy_gradent/importance.png" alt=""></li><li><script type="math/tex; mode=display">\sum\limits_a \tilde{\pi_\theta}(a|s) A_{\theta_{old}}(s,a) = \mathbb{E}_{a\sim\pi_{old}} [\frac{\tilde{\pi_\theta}(a|s_n)}{\pi_{\theta_{old}}(a|s_n)}A_{\theta_{old}}(s,a)]</script></li></ul></li><li><p>原目标：</p><script type="math/tex; mode=display">\eta(\tilde{\pi}) = \eta(\pi) +\sum\limits_{s} \rho_{\tilde{\pi}}(s) \sum\limits_a \tilde{\pi}(a|s) A_\pi(s,a)</script></li><li><p>新目标：</p><script type="math/tex; mode=display">L_{\pi_{\theta_{old}}} (\tilde{\pi})= \eta(\pi) + \mathbb{E}_{s\sim \rho_{\theta {old}}, a\sim\pi_{\theta {old}}} [\frac{\tilde{\pi_\theta}(a|s_n)}{\pi_{\theta_{old}}(a|s_n)}A_{\theta_{old}}(s,a)]</script></li></ul></li><li><p>梯度更新方向， 梯度优化本身就是一阶优化，</p><ul><li>在$\theta_{old}$ 处, 一阶凸优化方法中，完全一致，一阶导数一致， <script type="math/tex; mode=display">\nabla_\theta \eta (\pi_{\theta_{old}}) = \nabla_\theta L_{\pi_{\theta_{old}}} (\pi_{\theta_{old}})</script></li><li><img src="/images/posts/rl/policy_gradent/one.png" alt=""></li></ul></li><li><p>梯度更新步长</p><ul><li><script type="math/tex; mode=display">\eta(\tilde{\pi}) \geqslant L_\pi(\tilde{\pi}) - CD_{KL}^{MAX} (\pi, \tilde{\pi})</script><p>  $where , C = \frac{2\epsilon\gamma}{(1-\gamma)^2}$</p></li><li><p>令 $M_{i}(\pi)  = L_{\pi_{i}}(\pi) - CD_{KL}^{MAX} (\pi_i, \pi)$</p><p>  $\eta (\pi_{i+1}) \geqslant M_i(\pi_{i+1})$</p><p>  等效于上面不等式</p><p>  $\eta (\pi_{i}) = M_i(\pi_{i})$</p><p>  将$\pi_i$带入不等式，两分布相同，$D_{KL}$为0</p><p>  $\eta (\pi_{i+1}) - \eta (\pi_{i}) \geqslant M_i(\pi_{i+1}) -M_i(\pi_{i})$</p><p>  即最大化$M_i$, 可保证更新步长单调不减</p></li></ul></li><li><p>Finally:</p><ul><li>$\max_\theta {mize}[ L_{\pi}(\tilde{\pi}) - CD_{KL}^{MAX} (\pi, \tilde{\pi})]$</li><li><p>$\max_\theta {mize} L_{\theta_{old}}(\theta)$</p><p>  subject to : $D_{KL}^{MAX} (\theta_{old}, \theta) \leqslant \delta$</p><p>  subject to : $\bar{D}_{KL}^{\rho_{\theta_{old}}} (\theta_{old}, \theta) \leqslant \delta$</p></li><li><p>线性化逼近， 二次逼近后:</p><p>  $\max_\theta {mize}[\nabla_\theta L_{\theta_{old}}(\theta)|_{\theta = \theta_{old}} \cdot (\theta-\theta_{old})]$gradent/ppo_clip.png)</p><p>  subject to : $\frac{1}{2} \left | \theta- \theta_{old} \right |^2 \leqslant \delta$</p></li></ul></li></ul><h1 id="PPO"><a href="#PPO" class="headerlink" title="PPO"></a>PPO</h1><p>想比于TRPO的变化就是</p><ul><li>TRPO 用KL作为一个约束， 而 PPO 则一快和$\theta$进行优化</li><li><strong>Note:</strong> KL 为输出$a$的距离，而不是参数$\theta$ 的距离</li><li>$\max_\theta {mize}[ L_{\pi}(\tilde{\pi}) -\beta KL(\pi, \tilde{\pi})]$<ul><li>If $𝐾𝐿(\theta, \theta_i) &gt; KL_{max}$,  increase $\beta$</li><li>If $𝐾𝐿(\theta, \theta_i) &lt; KL_{min}$,  decrease $\beta$</li></ul></li><li><p>优化目标：</p><ul><li><script type="math/tex; mode=display">L(\theta) = \mathbb{E}_{\tau \sim \pi_{old}}[\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}A_{\theta_{old}}(s,a) - \beta KL(\pi_{old}, \pi)]</script></li><li><script type="math/tex; mode=display">L(\theta) = \mathbb{E}_{\tau \sim \pi_{old}}[min(\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}A_{\theta_{old}}(s,a), clip(\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)},1-\epsilon, 1+\epsilon)A_{\theta_{old}}(s,a))]</script><p>  <img src="/images/posts/rl/policy_gradent/ppo_clip.png" alt=""></p></li></ul></li></ul><h1 id="DDPG"><a href="#DDPG" class="headerlink" title="DDPG"></a>DDPG</h1><ul><li>目的： 让DQN应用于连续的动作空间</li><li></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Policy-Gradent&quot;&gt;&lt;a href=&quot;#Policy-Gradent&quot; class=&quot;headerlink&quot; title=&quot;Policy Gradent&quot;&gt;&lt;/a&gt;Policy Gradent&lt;/h1&gt;&lt;h2 id=&quot;Value-based-RL-vs
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+    
+      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
     
   </entry>
   
   <entry>
     <title>【dl】 神经网络中参数量和计算量</title>
-    <link href="http://yoursite.com/2020/04/24/dl/net_param_calculate/"/>
-    <id>http://yoursite.com/2020/04/24/dl/net_param_calculate/</id>
+    <link href="https://ropo0107.github.io/2020/04/24/dl/net_param_calculate/"/>
+    <id>https://ropo0107.github.io/2020/04/24/dl/net_param_calculate/</id>
     <published>2020-04-24T04:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.257Z</updated>
     
@@ -406,17 +406,17 @@
     </summary>
     
     
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="DL，Note" scheme="http://yoursite.com/tags/DL%EF%BC%8CNote/"/>
+      <category term="DL，Note" scheme="https://ropo0107.github.io/tags/DL%EF%BC%8CNote/"/>
     
   </entry>
   
   <entry>
     <title>【dl】 GAN_公式推导</title>
-    <link href="http://yoursite.com/2020/03/24/dl/GAN/"/>
-    <id>http://yoursite.com/2020/03/24/dl/GAN/</id>
+    <link href="https://ropo0107.github.io/2020/03/24/dl/GAN/"/>
+    <id>https://ropo0107.github.io/2020/03/24/dl/GAN/</id>
     <published>2020-03-24T04:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.257Z</updated>
     
@@ -432,21 +432,21 @@
     </summary>
     
     
-      <category term="学术" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
     
-      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
     
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
+      <category term="GAN" scheme="https://ropo0107.github.io/tags/GAN/"/>
     
   </entry>
   
   <entry>
     <title>python中的tips</title>
-    <link href="http://yoursite.com/2020/03/19/tips/python_tips/"/>
-    <id>http://yoursite.com/2020/03/19/tips/python_tips/</id>
+    <link href="https://ropo0107.github.io/2020/03/19/tips/python_tips/"/>
+    <id>https://ropo0107.github.io/2020/03/19/tips/python_tips/</id>
     <published>2020-03-18T18:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.261Z</updated>
     
@@ -464,19 +464,19 @@
     </summary>
     
     
-      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="https://ropo0107.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
     
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+      <category term="python" scheme="https://ropo0107.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>【blog】 Hexo修改背景图片及主题透明</title>
-    <link href="http://yoursite.com/2020/03/15/blog/blog_background/"/>
-    <id>http://yoursite.com/2020/03/15/blog/blog_background/</id>
+    <link href="https://ropo0107.github.io/2020/03/15/blog/blog_background/"/>
+    <id>https://ropo0107.github.io/2020/03/15/blog/blog_background/</id>
     <published>2020-03-14T22:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.256Z</updated>
     
@@ -492,17 +492,17 @@
     </summary>
     
     
-      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="https://ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+      <category term="blog" scheme="https://ropo0107.github.io/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>【blog】 Hexo迁移到vps</title>
-    <link href="http://yoursite.com/2020/03/10/blog/vps_hexo/"/>
-    <id>http://yoursite.com/2020/03/10/blog/vps_hexo/</id>
+    <link href="https://ropo0107.github.io/2020/03/10/blog/vps_hexo/"/>
+    <id>https://ropo0107.github.io/2020/03/10/blog/vps_hexo/</id>
     <published>2020-03-09T23:23:55.000Z</published>
     <updated>2022-02-26T07:02:52.257Z</updated>
     
@@ -519,21 +519,21 @@
     </summary>
     
     
-      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="https://ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+      <category term="blog" scheme="https://ropo0107.github.io/tags/blog/"/>
     
-      <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
+      <category term="vps" scheme="https://ropo0107.github.io/tags/vps/"/>
     
-      <category term="ubuntu" scheme="http://yoursite.com/tags/ubuntu/"/>
+      <category term="ubuntu" scheme="https://ropo0107.github.io/tags/ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>trojan做点不一样的事</title>
-    <link href="http://yoursite.com/2020/03/09/technology/trojan/"/>
-    <id>http://yoursite.com/2020/03/09/technology/trojan/</id>
+    <link href="https://ropo0107.github.io/2020/03/09/technology/trojan/"/>
+    <id>https://ropo0107.github.io/2020/03/09/technology/trojan/</id>
     <published>2020-03-09T12:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.261Z</updated>
     
@@ -549,35 +549,42 @@
     </summary>
     
     
-      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="https://ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+      <category term="blog" scheme="https://ropo0107.github.io/tags/blog/"/>
     
-      <category term="ubuntu" scheme="http://yoursite.com/tags/ubuntu/"/>
+      <category term="ubuntu" scheme="https://ropo0107.github.io/tags/ubuntu/"/>
     
-      <category term="trojan" scheme="http://yoursite.com/tags/trojan/"/>
+      <category term="trojan" scheme="https://ropo0107.github.io/tags/trojan/"/>
     
   </entry>
   
   <entry>
-    <title>【go】 Go_并发</title>
-    <link href="http://yoursite.com/2020/03/09/go/go_concurrency/"/>
-    <id>http://yoursite.com/2020/03/09/go/go_concurrency/</id>
+    <title>【go】 Go_接口</title>
+    <link href="https://ropo0107.github.io/2020/03/09/go/go_interface/"/>
+    <id>https://ropo0107.github.io/2020/03/09/go/go_interface/</id>
     <published>2020-03-08T20:51:55.000Z</published>
     <updated>2022-02-26T07:02:52.258Z</updated>
     
+    <content type="html"><![CDATA[<h2 id="go语言接口"><a href="#go语言接口" class="headerlink" title="go语言接口"></a>go语言接口</h2><p>在Go语言中接口（interface）是一种<strong>类型</strong>，一种抽象的类型。</p><p>interface是一组method的集合，接口做的事情就像是定义一个协议（规则），不关心属性（数据），只关心行为（方法）。</p><h3 id="接口的定义"><a href="#接口的定义" class="headerlink" title="接口的定义"></a>接口的定义</h3><p>Go语言提倡面向接口编程。</p><p>每个接口由数个方法组成，接口的定义格式如下：</p><pre><code>type 接口类型名 interface{    方法名1( 参数列表1 ) 返回值列表1    方法名2( 参数列表2 ) 返回值列表2    …}</code></pre><ul><li>接口名：使用type将接口定义为自定义的类型名。接口名最好要能突出该接口的类型含义。</li><li>方法名：当方法名首字母是大写且这个接口类型名首字母也是大写时，这个方法可以被接口所在的包（package）之外的代码访问。</li><li>参数列表、返回值列表：参数列表和返回值列表中的参数变量名可以省略。</li></ul><pre><code>    type writer interface{        Write([]byte) error    }</code></pre><h3 id="实现接口的条件"><a href="#实现接口的条件" class="headerlink" title="实现接口的条件"></a>实现接口的条件</h3><p>一个对象只要全部实现了接口中的方法，那么就实现了这个接口。换句话说，接口就是一个需要实现的方法列表。</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Sayer 接口</span></span><br><span class="line"><span class="keyword">type</span> Sayer <span class="keyword">interface</span> &#123;</span><br><span class="line">say()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义dog和cat两个结构体：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> dog <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> cat <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line"><span class="comment">//因为Sayer接口里只有一个say方法，所以我们只需要给dog和cat 分别实现say方法就可以实现Sayer接口了。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// dog实现了Sayer接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d dog)</span> <span class="title">say</span><span class="params">()</span></span> &#123;</span><br><span class="line">fmt.Println(<span class="string">"汪汪汪"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// cat实现了Sayer接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c cat)</span> <span class="title">say</span><span class="params">()</span></span> &#123;</span><br><span class="line">fmt.Println(<span class="string">"喵喵喵"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>接口的实现就是这么简单，只要实现了接口中的所有方法，就实现了这个接口。</p><h3 id="接口类型变量"><a href="#接口类型变量" class="headerlink" title="接口类型变量"></a>接口类型变量</h3><p>接口类型变量能够存储所有实现了该接口的实例。 例如上面的示例中，Sayer类型的变量能够存储dog和cat类型的变量。</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"><span class="keyword">var</span> x Sayer <span class="comment">// 声明一个Sayer类型的变量x</span></span><br><span class="line">a := cat&#123;&#125;  <span class="comment">// 实例化一个cat</span></span><br><span class="line">b := dog&#123;&#125;  <span class="comment">// 实例化一个dog</span></span><br><span class="line">x = a       <span class="comment">// 可以把cat实例直接赋值给x</span></span><br><span class="line">x.say()     <span class="comment">// 喵喵喵</span></span><br><span class="line">x = b       <span class="comment">// 可以把dog实例直接赋值给x</span></span><br><span class="line">x.say()     <span class="comment">// 汪汪汪</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="值接收者和指针接收者实现接口的区别"><a href="#值接收者和指针接收者实现接口的区别" class="headerlink" title="值接收者和指针接收者实现接口的区别"></a>值接收者和指针接收者实现接口的区别</h3><p>使用值接收者实现接口和使用指针接收者实现接口有什么区别呢？</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//我们有一个Mover接口和一个dog结构体。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Mover <span class="keyword">interface</span> &#123;</span><br><span class="line">move()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> dog <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//值接收者实现接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d dog)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">fmt.Println(<span class="string">"狗会动"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//此时实现接口的是dog类型：</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"><span class="keyword">var</span> x Mover</span><br><span class="line"><span class="keyword">var</span> wangcai = dog&#123;&#125; <span class="comment">// 旺财是dog类型</span></span><br><span class="line">x = wangcai         <span class="comment">// x可以接收dog类型</span></span><br><span class="line"><span class="keyword">var</span> fugui = &amp;dog&#123;&#125;  <span class="comment">// 富贵是*dog类型</span></span><br><span class="line">x = fugui           <span class="comment">// x可以接收*dog类型</span></span><br><span class="line">x.move()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>从上面的代码中我们可以发现，使用值接收者实现接口之后，不管是dog结构体还是结构体指针<em>dog类型的变量都可以赋值给该接口变量。因为Go语言中有对指针类型变量求值的语法糖，dog指针fugui内部会自动求值</em>fugui。</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//指针接收者实现接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d *dog)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">fmt.Println(<span class="string">"狗会动"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"><span class="keyword">var</span> x Mover</span><br><span class="line"><span class="keyword">var</span> wangcai = dog&#123;&#125; <span class="comment">// 旺财是dog类型</span></span><br><span class="line">x = wangcai         <span class="comment">// x不可以接收dog类型</span></span><br><span class="line"><span class="keyword">var</span> fugui = &amp;dog&#123;&#125;  <span class="comment">// 富贵是*dog类型</span></span><br><span class="line">x = fugui           <span class="comment">// x可以接收*dog类型</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>此时实现Mover接口的是<em>dog类型，所以不能给x传入dog类型的wangcai，此时x只能存储</em>dog类型的值。</p><p>样例:</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> People <span class="keyword">interface</span> &#123;</span><br><span class="line">Speak(<span class="keyword">string</span>) <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Student <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(stu *Student)</span> <span class="title">Speak</span><span class="params">(think <span class="keyword">string</span>)</span> <span class="params">(talk <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line"><span class="keyword">if</span> think == <span class="string">"sb"</span> &#123;</span><br><span class="line">talk = <span class="string">"你是个大帅比"</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">talk = <span class="string">"您好"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"><span class="comment">//wrong</span></span><br><span class="line"><span class="comment">//var peo People = Student&#123;&#125;</span></span><br><span class="line"><span class="comment">//true</span></span><br><span class="line"><span class="keyword">var</span> peo People = &amp;Student&#123;&#125;</span><br><span class="line"></span><br><span class="line">think := <span class="string">"bitch"</span></span><br><span class="line">fmt.Println(peo.Speak(think))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="类型与接口的关系"><a href="#类型与接口的关系" class="headerlink" title="类型与接口的关系"></a>类型与接口的关系</h3><ul><li><p>一个类型可以同时实现多个接口，而接口间彼此独立，不知道对方的实现。 例如，狗可以叫，也可以动。我们就分别定义Sayer接口和Mover接口，如下： Mover接口。</p>  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Sayer 接口</span></span><br><span class="line"><span class="keyword">type</span> Sayer <span class="keyword">interface</span> &#123;</span><br><span class="line">    say()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Mover 接口</span></span><br><span class="line"><span class="keyword">type</span> Mover <span class="keyword">interface</span> &#123;</span><br><span class="line">    move()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//dog既可以实现Sayer接口，也可以实现Mover接口。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> dog <span class="keyword">struct</span> &#123;</span><br><span class="line">    name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现Sayer接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d dog)</span> <span class="title">say</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"%s会叫汪汪汪\n"</span>, d.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现Mover接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d dog)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"%s会动\n"</span>, d.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x Sayer</span><br><span class="line">    <span class="keyword">var</span> y Mover</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a = dog&#123;name: <span class="string">"旺财"</span>&#125;</span><br><span class="line">    x = a</span><br><span class="line">    y = a</span><br><span class="line">    x.say()</span><br><span class="line">    y.move()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>多个类型实现同一接口, Go语言中不同的类型还可以实现同一接口 首先我们定义一个Mover接口，它要求必须由一个move方法。</p>  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Mover 接口</span></span><br><span class="line"><span class="keyword">type</span> Mover <span class="keyword">interface</span> &#123;</span><br><span class="line">    move()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//例如狗可以动，汽车也可以动，可以使用如下代码实现这个关系：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> dog <span class="keyword">struct</span> &#123;</span><br><span class="line">    name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> car <span class="keyword">struct</span> &#123;</span><br><span class="line">    brand <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// dog类型实现Mover接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d dog)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"%s会跑\n"</span>, d.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// car类型实现Mover接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c car)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"%s速度70迈\n"</span>, c.brand)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//这个时候我们在代码中就可以把狗和汽车当成一个会动的物体来处理了，不再需要关注它们具体是什么，只需要调用它们的move方法就可以了。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x Mover</span><br><span class="line">    <span class="keyword">var</span> a = dog&#123;name: <span class="string">"旺财"</span>&#125;</span><br><span class="line">    <span class="keyword">var</span> b = car&#123;brand: <span class="string">"保时捷"</span>&#125;</span><br><span class="line">    x = a</span><br><span class="line">    x.move()</span><br><span class="line">    x = b</span><br><span class="line">    x.move()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>  执行结果：</p><pre><code>  旺财会跑    保时捷速度70迈</code></pre></li></ul><h3 id="接口嵌套"><a href="#接口嵌套" class="headerlink" title="接口嵌套"></a>接口嵌套</h3><p>接口与接口间可以通过嵌套创造出新的接口。<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Sayer 接口</span></span><br><span class="line"><span class="keyword">type</span> Sayer <span class="keyword">interface</span> &#123;</span><br><span class="line">say()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Mover 接口</span></span><br><span class="line"><span class="keyword">type</span> Mover <span class="keyword">interface</span> &#123;</span><br><span class="line">move()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接口嵌套</span></span><br><span class="line"><span class="keyword">type</span> animal <span class="keyword">interface</span> &#123;</span><br><span class="line">Sayer</span><br><span class="line">Mover</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//嵌套得到的接口的使用与普通接口一样，这里我们让cat实现animal接口：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> cat <span class="keyword">struct</span> &#123;</span><br><span class="line">name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c cat)</span> <span class="title">say</span><span class="params">()</span></span> &#123;</span><br><span class="line">fmt.Println(<span class="string">"喵喵喵"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c cat)</span> <span class="title">move</span><span class="params">()</span></span> &#123;</span><br><span class="line">fmt.Println(<span class="string">"猫会动"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"><span class="keyword">var</span> x animal</span><br><span class="line">x = cat&#123;name: <span class="string">"花花"</span>&#125;</span><br><span class="line">x.move()</span><br><span class="line">x.say()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="空接口"><a href="#空接口" class="headerlink" title="空接口"></a>空接口</h3><p>空接口是指没有定义任何方法的接口。因此任何类型都实现了空接口。</p><ul><li><p>空接口类型的变量可以存储任意类型的变量。</p>  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 定义一个空接口x</span></span><br><span class="line">    <span class="keyword">var</span> x <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">    s := <span class="string">"Hello"</span></span><br><span class="line">    x = s</span><br><span class="line">    fmt.Printf(<span class="string">"type:%T value:%v\n"</span>, x, x)</span><br><span class="line">    i := <span class="number">100</span></span><br><span class="line">    x = i</span><br><span class="line">    fmt.Printf(<span class="string">"type:%T value:%v\n"</span>, x, x)</span><br><span class="line">    b := <span class="literal">true</span></span><br><span class="line">    x = b</span><br><span class="line">    fmt.Printf(<span class="string">"type:%T value:%v\n"</span>, x, x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>空接口作为函数的参数,使用空接口实现可以接收任意类型的函数参数。</p>  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 空接口作为函数参数</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">show</span><span class="params">(a <span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"type:%T value:%v\n"</span>, a, a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>空接口作为map的值，使用空接口实现可以保存任意值的字典。  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 空接口作为map值</span></span><br><span class="line">    <span class="keyword">var</span> studentInfo = <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;)</span><br><span class="line">    studentInfo[<span class="string">"name"</span>] = <span class="string">"无恙"</span></span><br><span class="line">    studentInfo[<span class="string">"age"</span>] = <span class="number">18</span></span><br><span class="line">    studentInfo[<span class="string">"married"</span>] = <span class="literal">false</span></span><br><span class="line">    fmt.Println(studentInfo)</span><br></pre></td></tr></table></figure></li></ul><h3 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h3><p>空接口可以存储任意类型的值，那我们如何获取其存储的具体数据呢？</p><pre><code>一个接口的值（简称接口值）是由 **一个具体类型** 和 **具体类型的值** 两部分组成的。这两部分分别称为接口的 **动态类型** 和 **动态值**。</code></pre><p>想要判断空接口中的值这个时候就可以使用类型断言，其语法格式：</p><pre><code>x.(T)</code></pre><p>其中：</p><pre><code>x：表示类型为interface{}的变量T：表示断言x可能是的类型。该语法返回两个参数，第一个参数是x转化为T类型后的变量，第二个值是一个布尔值，若为true则表示断言成功，为false则表示断言失败。</code></pre><p>样例:<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"><span class="keyword">var</span> x <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">x = <span class="string">"Hello"</span></span><br><span class="line">    <span class="comment">//wrong</span></span><br><span class="line">    <span class="comment">//v, ok := x.(int)</span></span><br><span class="line">    <span class="comment">//true</span></span><br><span class="line">    v, ok := x.(<span class="keyword">string</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ok &#123;</span><br><span class="line">fmt.Println(v)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">fmt.Println(<span class="string">"类型断言失败"</span>)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>上面的示例中如果要断言多次就需要写多个if判断，这个时候我们可以使用switch语句来实现：</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">justifyType</span><span class="params">(x <span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line"><span class="keyword">switch</span> v := x.(<span class="keyword">type</span>) &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">string</span>:</span><br><span class="line">fmt.Printf(<span class="string">"x is a string，value is %v\n"</span>, v)</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">int</span>:</span><br><span class="line">fmt.Printf(<span class="string">"x is a int is %v\n"</span>, v)</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">bool</span>:</span><br><span class="line">fmt.Printf(<span class="string">"x is a bool is %v\n"</span>, v)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">fmt.Println(<span class="string">"unsupport type！"</span>)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>因为空接口可以存储任意类型值的特点，所以空接口在Go语言中的使用十分广泛。</p>]]></content>
+    
     <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;go语言接口&quot;&gt;&lt;a href=&quot;#go语言接口&quot; class=&quot;headerlink&quot; title=&quot;go语言接口&quot;&gt;&lt;/a&gt;go语言接口&lt;/h2&gt;&lt;p&gt;在Go语言中接口（interface）是一种&lt;strong&gt;类型&lt;/strong&gt;，一种抽象的类型。&lt;/p&gt;
+      
     
     </summary>
     
     
-      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="https://ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="Go" scheme="http://yoursite.com/tags/Go/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
     
-      <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+      <category term="Go" scheme="https://ropo0107.github.io/tags/Go/"/>
     
   </entry>
   

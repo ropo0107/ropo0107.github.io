@@ -691,6 +691,88 @@ w_{z1}\sin(\theta_1) \\
       </tags>
   </entry>
   <entry>
+    <title>【rl_note】4. Value Function Approximation</title>
+    <url>/2020/05/29/rl/rl_note_value_function_approximation/</url>
+    <content><![CDATA[<h2 id="Challenges-with-large-MDPs"><a href="#Challenges-with-large-MDPs" class="headerlink" title="Challenges with large MDPs:"></a>Challenges with large MDPs:</h2><ul>
+<li>too many states or actions to store in memory</li>
+<li>too slow to learn the value of each state individually</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>为了避免通过查表的方式表示Value function, state-action function，Policy</li>
+<li><p>Estimate with function approximation</p>
+<ul>
+<li>$\hat{v} (s, \mathbf{\omega}) \approx  v^π (s)$</li>
+<li>$\hat{q}(s, a, \mathbf{\omega}) \approx  q^π (s, a)$</li>
+<li>$\hat{\pi}(a, s, \mathbf{\omega}) \approx  π(a \mid s)$</li>
+</ul>
+</li>
+<li><p>Linear VFA often works well given the right set of features, But it requires manual designing of the feature set</p>
+</li>
+<li>Alternative is to use a much richer function approximator that is able to directly learn from states without requiring the feature design</li>
+<li>Nonlinear function approximator: Deep neural networks</li>
+</ul>
+<h2 id="Value-Function-Approximation-with-an-Oracle"><a href="#Value-Function-Approximation-with-an-Oracle" class="headerlink" title="Value Function Approximation with an Oracle"></a>Value Function Approximation with an Oracle</h2><ul>
+<li>We assume that we have the oracle for knowing the true value for<br>$v^π (s)$ for any given state $s$</li>
+<li>Then the objective is to find the best approximate representation of $v^π (s)$</li>
+<li>Thus use the <strong>mean squared error</strong> and define the loss function as<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_π [(v^π (s) − \hat{v}(s, w))^2]</script></li>
+<li>Follow the gradient descend to find a local minimum<script type="math/tex; mode=display">\Delta \omega = − {1 \over 2} \alpha ∇_\omega J(\omega)</script><script type="math/tex; mode=display">\omega_{t+1} = \omega_t + \Delta \omega</script></li>
+</ul>
+<h2 id="Linear-Value-Function-Approximation"><a href="#Linear-Value-Function-Approximation" class="headerlink" title="Linear Value Function Approximation"></a>Linear Value Function Approximation</h2><ul>
+<li>Represent value function by a linear combination of features, s is feature vector<script type="math/tex; mode=display">\hat{v}(s,\omega) = x(s)^T \omega = \sum_{j=1}^n x_j(s)\omega_j</script></li>
+<li>The objective function is quadratic in parameter $\omega$<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_\pi[v^\pi(s) − x(s)^T \omega]^2</script></li>
+<li>Thus the update rule is as simple as<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{v^\pi(s)} − \hat{v}(s, \omega))x(s)</script><script type="math/tex; mode=display">Update = StepSize × PredictionError × FeatureValue</script></li>
+<li>Stochastic gradient descent converges to global optimum. Because in the linear case, there is only one optimum, thus local optimum is automatically converge to or near the global optimum.</li>
+<li><p>Special case</p>
+<ul>
+<li>Table lookup is a special case of linear value function approximation</li>
+<li><p>Table lookup feature is one-hot vector <strong>(只有一个元素为1)</strong> as follows</p>
+<script type="math/tex; mode=display">x^{table}(s) = [0(s = s_1 ), ..., 1(s = s_n )]^T</script></li>
+<li><p>Then we can see that each element on the parameter vector $w$ indicates the value of each individual state</p>
+<script type="math/tex; mode=display">\hat{v}(s, \omega) = [0(s = s_1 ), ..., 1(s = s_n)] [w_1 , ..., w_n]^T</script></li>
+<li><p>Thus we have（对于的权重就是对应k的权重） </p>
+<script type="math/tex; mode=display">\hat{v}(s_k , \omega) = \omega_k</script></li>
+</ul>
+</li>
+</ul>
+<h2 id="No-Oracle"><a href="#No-Oracle" class="headerlink" title="No Oracle"></a>No Oracle</h2><ul>
+<li><p>For MC, the target is the actual return $G_t$</p>
+<script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{v}(s_t , \omega) ∇\omega \hat{v}(s_t , \omega)</script><p>  <strong>$G_t$</strong> 因为是采样，所以这儿是无偏的估计， 但是会有噪声</p>
+</li>
+<li>For TD(0), the target is the TD target $R_{t+1} + \gamma \hat{v}(s_{t+1} , \mathbf{\omega})$<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{v} (s_{t+1} , \omega)} − \hat{v}(s_t , \omega) ∇ \omega\hat{v} (s_t , \omega)</script>  <strong>TD target</strong> 有偏估计， 因为用到了旧时刻的 $\omega$</li>
+</ul>
+<p>Generalized policy iteration<br><img src="/images/posts/rl/value_function_approximation/policy_iteration.png" alt=""></p>
+<h3 id="同理-v-s-可替换为-q-s-a"><a href="#同理-v-s-可替换为-q-s-a" class="headerlink" title="同理 $v(s)$ 可替换为 $q(s,a)$"></a>同理 $v(s)$ 可替换为 $q(s,a)$</h3><ul>
+<li><p>MC</p>
+<script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{q}(s_t ,a_t, \omega) ∇\omega \hat{q}(s_t ,a_t, \omega)</script></li>
+<li><p>sarsa</p>
+<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{q} (s_{t+1} ,a_{t+1}, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script><p>  <strong>Note:</strong> 训练困难</p>
+<ul>
+<li>在优化过程中，即近似 <strong>Bellman backup</strong> 又近似 <strong>value function</strong>, </li>
+<li>off-policy control: <strong>behavior policy</strong> and <strong>target policy</strong> </li>
+</ul>
+</li>
+<li><p>q-learning</p>
+<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \max_a \hat{q}(s_{t+1} ,a, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script></li>
+</ul>
+<p><img src="/images/posts/rl/value_function_approximation/sarsa_semi_gradient.png" alt=""></p>
+<h3 id="Deadly-Triad"><a href="#Deadly-Triad" class="headerlink" title="Deadly Triad"></a>Deadly Triad</h3><ul>
+<li>Function approximation: 利用函数估计会有误差</li>
+<li>Bootstrapping: 主要影响 TD 和 MP</li>
+<li>Off-policy training:  <strong>behavior policy</strong> and <strong>target policy</strong> </li>
+</ul>
+<h2 id="Convergence"><a href="#Convergence" class="headerlink" title="Convergence"></a>Convergence</h2><p><img src="/images/posts/rl/value_function_approximation/convergence.png" alt=""></p>
+<hr>
+<p><img src="/images/posts/rl/value_function_approximation/convergence_al.png" alt=""></p>
+<h2 id="DQN"><a href="#DQN" class="headerlink" title="DQN"></a>DQN</h2>]]></content>
+      <categories>
+        <category>学术</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>RL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【rl_note】5. Policy Gradent(AC, TRPO, PPO)</title>
     <url>/2020/05/29/rl/rl_note_policy_gradent/</url>
     <content><![CDATA[<h1 id="Policy-Gradent"><a href="#Policy-Gradent" class="headerlink" title="Policy Gradent"></a>Policy Gradent</h1><h2 id="Value-based-RL-vs-Policy-based-RL"><a href="#Value-based-RL-vs-Policy-based-RL" class="headerlink" title="Value-based RL vs Policy-based RL"></a>Value-based RL vs Policy-based RL</h2><ul>
@@ -883,88 +965,6 @@ w_{z1}\sin(\theta_1) \\
 <li></li>
 </ul>
 ]]></content>
-      <categories>
-        <category>学术</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>RL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【rl_note】4. Value Function Approximation</title>
-    <url>/2020/05/29/rl/rl_note_value_function_approximation/</url>
-    <content><![CDATA[<h2 id="Challenges-with-large-MDPs"><a href="#Challenges-with-large-MDPs" class="headerlink" title="Challenges with large MDPs:"></a>Challenges with large MDPs:</h2><ul>
-<li>too many states or actions to store in memory</li>
-<li>too slow to learn the value of each state individually</li>
-</ul>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
-<li>为了避免通过查表的方式表示Value function, state-action function，Policy</li>
-<li><p>Estimate with function approximation</p>
-<ul>
-<li>$\hat{v} (s, \mathbf{\omega}) \approx  v^π (s)$</li>
-<li>$\hat{q}(s, a, \mathbf{\omega}) \approx  q^π (s, a)$</li>
-<li>$\hat{\pi}(a, s, \mathbf{\omega}) \approx  π(a \mid s)$</li>
-</ul>
-</li>
-<li><p>Linear VFA often works well given the right set of features, But it requires manual designing of the feature set</p>
-</li>
-<li>Alternative is to use a much richer function approximator that is able to directly learn from states without requiring the feature design</li>
-<li>Nonlinear function approximator: Deep neural networks</li>
-</ul>
-<h2 id="Value-Function-Approximation-with-an-Oracle"><a href="#Value-Function-Approximation-with-an-Oracle" class="headerlink" title="Value Function Approximation with an Oracle"></a>Value Function Approximation with an Oracle</h2><ul>
-<li>We assume that we have the oracle for knowing the true value for<br>$v^π (s)$ for any given state $s$</li>
-<li>Then the objective is to find the best approximate representation of $v^π (s)$</li>
-<li>Thus use the <strong>mean squared error</strong> and define the loss function as<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_π [(v^π (s) − \hat{v}(s, w))^2]</script></li>
-<li>Follow the gradient descend to find a local minimum<script type="math/tex; mode=display">\Delta \omega = − {1 \over 2} \alpha ∇_\omega J(\omega)</script><script type="math/tex; mode=display">\omega_{t+1} = \omega_t + \Delta \omega</script></li>
-</ul>
-<h2 id="Linear-Value-Function-Approximation"><a href="#Linear-Value-Function-Approximation" class="headerlink" title="Linear Value Function Approximation"></a>Linear Value Function Approximation</h2><ul>
-<li>Represent value function by a linear combination of features, s is feature vector<script type="math/tex; mode=display">\hat{v}(s,\omega) = x(s)^T \omega = \sum_{j=1}^n x_j(s)\omega_j</script></li>
-<li>The objective function is quadratic in parameter $\omega$<script type="math/tex; mode=display">J(\omega) = \mathbb{E}_\pi[v^\pi(s) − x(s)^T \omega]^2</script></li>
-<li>Thus the update rule is as simple as<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{v^\pi(s)} − \hat{v}(s, \omega))x(s)</script><script type="math/tex; mode=display">Update = StepSize × PredictionError × FeatureValue</script></li>
-<li>Stochastic gradient descent converges to global optimum. Because in the linear case, there is only one optimum, thus local optimum is automatically converge to or near the global optimum.</li>
-<li><p>Special case</p>
-<ul>
-<li>Table lookup is a special case of linear value function approximation</li>
-<li><p>Table lookup feature is one-hot vector <strong>(只有一个元素为1)</strong> as follows</p>
-<script type="math/tex; mode=display">x^{table}(s) = [0(s = s_1 ), ..., 1(s = s_n )]^T</script></li>
-<li><p>Then we can see that each element on the parameter vector $w$ indicates the value of each individual state</p>
-<script type="math/tex; mode=display">\hat{v}(s, \omega) = [0(s = s_1 ), ..., 1(s = s_n)] [w_1 , ..., w_n]^T</script></li>
-<li><p>Thus we have（对于的权重就是对应k的权重） </p>
-<script type="math/tex; mode=display">\hat{v}(s_k , \omega) = \omega_k</script></li>
-</ul>
-</li>
-</ul>
-<h2 id="No-Oracle"><a href="#No-Oracle" class="headerlink" title="No Oracle"></a>No Oracle</h2><ul>
-<li><p>For MC, the target is the actual return $G_t$</p>
-<script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{v}(s_t , \omega) ∇\omega \hat{v}(s_t , \omega)</script><p>  <strong>$G_t$</strong> 因为是采样，所以这儿是无偏的估计， 但是会有噪声</p>
-</li>
-<li>For TD(0), the target is the TD target $R_{t+1} + \gamma \hat{v}(s_{t+1} , \mathbf{\omega})$<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{v} (s_{t+1} , \omega)} − \hat{v}(s_t , \omega) ∇ \omega\hat{v} (s_t , \omega)</script>  <strong>TD target</strong> 有偏估计， 因为用到了旧时刻的 $\omega$</li>
-</ul>
-<p>Generalized policy iteration<br><img src="/images/posts/rl/value_function_approximation/policy_iteration.png" alt=""></p>
-<h3 id="同理-v-s-可替换为-q-s-a"><a href="#同理-v-s-可替换为-q-s-a" class="headerlink" title="同理 $v(s)$ 可替换为 $q(s,a)$"></a>同理 $v(s)$ 可替换为 $q(s,a)$</h3><ul>
-<li><p>MC</p>
-<script type="math/tex; mode=display">\Delta\omega = \alpha (\mathbf{G_t} − \hat{q}(s_t ,a_t, \omega) ∇\omega \hat{q}(s_t ,a_t, \omega)</script></li>
-<li><p>sarsa</p>
-<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \hat{q} (s_{t+1} ,a_{t+1}, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script><p>  <strong>Note:</strong> 训练困难</p>
-<ul>
-<li>在优化过程中，即近似 <strong>Bellman backup</strong> 又近似 <strong>value function</strong>, </li>
-<li>off-policy control: <strong>behavior policy</strong> and <strong>target policy</strong> </li>
-</ul>
-</li>
-<li><p>q-learning</p>
-<script type="math/tex; mode=display">\Delta\omega = \alpha(\mathbf{R_{t+1} +\gamma \max_a \hat{q}(s_{t+1} ,a, \omega)} − \hat{q}(s_t,a_t,\omega) ∇ \omega\hat{q} (s_t, a_t, \omega)</script></li>
-</ul>
-<p><img src="/images/posts/rl/value_function_approximation/sarsa_semi_gradient.png" alt=""></p>
-<h3 id="Deadly-Triad"><a href="#Deadly-Triad" class="headerlink" title="Deadly Triad"></a>Deadly Triad</h3><ul>
-<li>Function approximation: 利用函数估计会有误差</li>
-<li>Bootstrapping: 主要影响 TD 和 MP</li>
-<li>Off-policy training:  <strong>behavior policy</strong> and <strong>target policy</strong> </li>
-</ul>
-<h2 id="Convergence"><a href="#Convergence" class="headerlink" title="Convergence"></a>Convergence</h2><p><img src="/images/posts/rl/value_function_approximation/convergence.png" alt=""></p>
-<hr>
-<p><img src="/images/posts/rl/value_function_approximation/convergence_al.png" alt=""></p>
-<h2 id="DQN"><a href="#DQN" class="headerlink" title="DQN"></a>DQN</h2>]]></content>
       <categories>
         <category>学术</category>
       </categories>
@@ -1380,18 +1380,6 @@ margin-bottom: 45px;
       </tags>
   </entry>
   <entry>
-    <title>【go】 Go_并发</title>
-    <url>/2020/03/09/go/go_concurrency/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>Go</tag>
-        <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【go】 Go_接口</title>
     <url>/2020/03/09/go/go_interface/</url>
     <content><![CDATA[<h2 id="go语言接口"><a href="#go语言接口" class="headerlink" title="go语言接口"></a>go语言接口</h2><p>在Go语言中接口（interface）是一种<strong>类型</strong>，一种抽象的类型。</p>
@@ -1463,8 +1451,20 @@ T：表示断言x可能是的类型。
         <category>杂记</category>
       </categories>
       <tags>
-        <tag>Go</tag>
         <tag>Note</tag>
+        <tag>Go</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【go】 Go_并发</title>
+    <url>/2020/03/09/go/go_concurrency/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Go</tag>
       </tags>
   </entry>
   <entry>
@@ -1554,6 +1554,17 @@ T：表示断言x可能是的类型。
       </tags>
   </entry>
   <entry>
+    <title>贪心</title>
+    <url>/2020/03/05/leetcode/leetcode_greedy/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>动态规划</title>
     <url>/2020/03/05/leetcode/leetcode_dp/</url>
     <content><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p>
@@ -1564,17 +1575,6 @@ T：表示断言x可能是的类型。
 <li>状态转移方差</li>
 </ul>
 ]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>贪心</title>
-    <url>/2020/03/05/leetcode/leetcode_greedy/</url>
-    <content><![CDATA[]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -1793,8 +1793,8 @@ $ youdao-dict
         <category>学术</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>DL</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -2577,8 +2577,8 @@ countryCapitalMap := map[string]string{&quot;France&quot;: &quot;Paris&quot;, &q
         <category>杂记</category>
       </categories>
       <tags>
-        <tag>Go</tag>
         <tag>Note</tag>
+        <tag>Go</tag>
       </tags>
   </entry>
 </search>
