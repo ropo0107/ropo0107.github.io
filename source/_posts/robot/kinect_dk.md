@@ -29,7 +29,7 @@ https://github.com/ropo0107/kinect_dk
 - sudo apt-get install gcc-4.9
 - sudo apt-get upgrade libstdc++6
 
-### cmske -v 大于 3.9
+### cmake -v 大于 3.9
 
 ### build
 - cd build

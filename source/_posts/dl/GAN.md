@@ -35,7 +35,7 @@ $$x=G (z;\theta_g)$$
 
 $$D (x;\theta_d)$$
 
-$x$ 可以来着 $P_{data}$ 或者 生成器 $G$ 
+$x$ 可以来自 $P_{data}$ 或者 生成器 $G$ 
 
 
 

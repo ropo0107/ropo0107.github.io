@@ -213,7 +213,7 @@ xvfb-run --auto-servernum --server-num=1 c-s "-screen 0 640x480x24" cmd
 ```
 
 ## visudo 权限修改
-在 Ubuntu 下新建用户 需要付予用户权限， 
+在 Ubuntu 下新建用户 需要赋予用户权限， 
 修改文件是 /etc/sudoers
 - 比较笨的方法，容易出问题
     - 添加用户
