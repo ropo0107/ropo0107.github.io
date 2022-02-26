@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>docker中的tips</title>
-    <url>/ropo0107.github.io/2022/02/26/tips/docker/</url>
+    <url>/2022/02/26/tips/docker/</url>
     <content><![CDATA[<h1 id="docker-中添加串口设备"><a href="#docker-中添加串口设备" class="headerlink" title="docker 中添加串口设备"></a>docker 中添加串口设备</h1><h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><pre><code>--device /dev/ttyUSB0:/dev/ttyUSB0
 --cap-add 
 一般这种方式没有权限， 加cap-add添加权限
@@ -20,7 +20,7 @@
   </entry>
   <entry>
     <title>【robot】相机标定机器人TCP</title>
-    <url>/ropo0107.github.io/2021/11/16/robot/tcp_calibration/</url>
+    <url>/2021/11/16/robot/tcp_calibration/</url>
     <content><![CDATA[<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>标定机器人末端的TCP</p>
 <h1 id="标定过程"><a href="#标定过程" class="headerlink" title="标定过程"></a>标定过程</h1><h2 id="标定中的坐标系变换"><a href="#标定中的坐标系变换" class="headerlink" title="标定中的坐标系变换"></a>标定中的坐标系变换</h2><p>建立几个坐标系：</p>
 <ul>
@@ -96,7 +96,7 @@
   </entry>
   <entry>
     <title>【robot】优化空间中点的圆心</title>
-    <url>/ropo0107.github.io/2021/11/16/robot/optimize_circle_center/</url>
+    <url>/2021/11/16/robot/optimize_circle_center/</url>
     <content><![CDATA[<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>在空间中取得一堆点集， 已知它们在空间中是一条弧线，通过观测到的点的坐标，找到点集的圆心。</p>
 <h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><ul>
 <li>点集在空间中是共面的。</li>
@@ -171,7 +171,7 @@ B^TL_2 \\
   </entry>
   <entry>
     <title>Machine Learning Base</title>
-    <url>/ropo0107.github.io/2021/01/10/ml/ml_base/</url>
+    <url>/2021/01/10/ml/ml_base/</url>
     <content><![CDATA[<p>最近懒了， 错过了好多机会， 值得庆幸的是终于知道自己想要什么，来的有点晚，<br>把该补的坑补上</p>
 <h2 id="Liner-Regression"><a href="#Liner-Regression" class="headerlink" title="Liner Regression"></a>Liner Regression</h2><ul>
 <li>定义系统:<script type="math/tex; mode=display">y^{*}= \omega^T x + b</script><ul>
@@ -208,7 +208,7 @@ B^TL_2 \\
   </entry>
   <entry>
     <title>【gpd】复现GPD</title>
-    <url>/ropo0107.github.io/2020/11/17/robot/gpd/</url>
+    <url>/2020/11/17/robot/gpd/</url>
     <content><![CDATA[<h1 id="environment"><a href="#environment" class="headerlink" title="environment"></a>environment</h1><p>源码编译opencv3.4.0， 和pcl1.9.1</p>
 <h2 id="error1"><a href="#error1" class="headerlink" title="error1"></a>error1</h2><p>错误描述:</p>
 <pre><code>./detect_grasps error while loading shared libraries: libopencv_highgui.so.3.4: cannot open shared object file: No such file or directory
@@ -229,7 +229,7 @@ B^TL_2 \\
   </entry>
   <entry>
     <title>【robot】 Kinect_dk 在Ubuntu16.04 下安装并配置ROS</title>
-    <url>/ropo0107.github.io/2020/08/30/robot/kinect_dk/</url>
+    <url>/2020/08/30/robot/kinect_dk/</url>
     <content><![CDATA[<h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>最近手头拿到了 Kinect dk 相机， 苦于自己的电脑是16.04， 于是根据网上资料自己配置了一下， 发现有许多坑， 并没有说到， 自己边安装，边记录下内容吧。默认不支持16.04</p>
 <p><a href="https://github.com/ropo0107/kinect_dk" target="_blank" rel="noopener">https://github.com/ropo0107/kinect_dk</a></p>
 <p>放上自己的工程目录， 可以自取</p>
@@ -312,7 +312,7 @@ B^TL_2 \\
   </entry>
   <entry>
     <title>【ros】 编译时的问题</title>
-    <url>/ropo0107.github.io/2020/07/19/robot/ros_error/</url>
+    <url>/2020/07/19/robot/ros_error/</url>
     <content><![CDATA[<p>ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/build.make:62: recipe for target ‘ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/src/main.cpp.o’ failed<br>make[2]: <em>*</em> [ros_ethercat/ros_ethercat_loop/CMakeFiles/ros_ethercat_loop.dir/src/main.cpp.o] Error 1</p>
 <p>set(CMAKE_CXX_FLAGS “${CMAKE_CXX_FLAGS} -std=c++11”)</p>
 <p>The kinematics plugin (rh_first_finger) failed to load. Error: Failed to load library /home/sunshine/ros/shadow_demo/base/devel/lib//libhand_kinematics.so. Make sure that yo<br>u are calling the PLUGINLIB_EXPORT_CLASS macro in the library code, and that names are consistent between this macro and your XML. Error string: Could not load library (Poco exception = libmoveit_kinematic<br>s_base.so.0.9.15: cannot open shared object file: No such file or directory)</p>
@@ -329,7 +329,7 @@ B^TL_2 \\
   </entry>
   <entry>
     <title>【ros】 workspace and namespace</title>
-    <url>/ropo0107.github.io/2020/07/19/robot/ros_workspace/</url>
+    <url>/2020/07/19/robot/ros_workspace/</url>
     <content><![CDATA[<p>一直想把之前ros的坑给补上， 最近终于有机会了</p>
 <h1 id="工作空间"><a href="#工作空间" class="headerlink" title="工作空间"></a>工作空间</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>工作空间(workspace)是存放工程开发相关文件的文件夹。现ROS默认使用Catkin编译系统。<br>典型的工作空间包括四部分：</p>
 <ul>
@@ -387,7 +387,7 @@ B^TL_2 \\
   </entry>
   <entry>
     <title>【robot】 quaternion</title>
-    <url>/ropo0107.github.io/2020/07/11/robot/quaternion/</url>
+    <url>/2020/07/11/robot/quaternion/</url>
     <content><![CDATA[<p>对于坐标的变换，旋转和平移是基本的两步，平移可以是一个标量， 旋转有多种形式可以表示，（RPY， 欧拉角， 四元数， 旋转矢量， 旋转矩阵）</p>
 <h2 id="RPY"><a href="#RPY" class="headerlink" title="RPY"></a>RPY</h2><p>固定（参考）坐标系 A 旋转：假设开始两个坐标系重合，先将 B 绕 A 的 X 轴旋转$\alpha$，然后绕 A 的 Y 轴旋转 $\beta$，最后绕 A 的 Z 轴旋转 $\gamma$，就能旋转到当前姿态。可以称其(Roll, Pitch, Yaw)。由于是绕固定坐标系旋转，则旋转矩阵为：</p>
 <script type="math/tex; mode=display">R_{XYZ}​(\alpha,\beta,\gamma)=R_Z​(\gamma)R_Y​(\beta)R_X(\alpha)</script><h2 id="欧拉角"><a href="#欧拉角" class="headerlink" title="欧拉角"></a>欧拉角</h2><p><img src="/images/posts/robot/quaternion/eular.gif" alt=""></p>
@@ -493,99 +493,8 @@ w_{z1}\sin(\theta_1) \\
       </tags>
   </entry>
   <entry>
-    <title>【rl_note】2. Markov Decision Processes</title>
-    <url>/ropo0107.github.io/2020/05/29/rl/rl_note_2_mdp/</url>
-    <content><![CDATA[<h2 id="overview"><a href="#overview" class="headerlink" title="overview"></a>overview</h2><ul>
-<li>Markov Processes</li>
-<li>Markov Reward Processes(MRPs)</li>
-<li>Markov Decision Processes (MDPs)</li>
-<li>v(s)，q(s,a) transform</li>
-<li>policy iteration</li>
-<li>value iteration</li>
-</ul>
-<h2 id="Markov"><a href="#Markov" class="headerlink" title="Markov"></a>Markov</h2><h3 id="MP-S-P"><a href="#MP-S-P" class="headerlink" title="MP (S,P)"></a>MP (S,P)</h3><p>The future is independent of the past given the present</p>
-<ul>
-<li>history state $h_t = {s_1,s_2,s_3…,s_t}$</li>
-<li>$P(s_{t+1}\mid s_t) = P(s_{t+1}\mid h_t)$</li>
-<li>$P(s_{t+1}\mid s_t, a_t) = P(s_{t+1}\mid h_t, a_t)$</li>
-<li>State transition matrix P specifies <script type="math/tex; mode=display">p(s_{t+1} = s' |s_t = s)</script></li>
-</ul>
-<h3 id="MRP-S-P-R-gamma"><a href="#MRP-S-P-R-gamma" class="headerlink" title="MRP (S,P,R, $\gamma$)"></a>MRP (S,P,R, $\gamma$)</h3><ul>
-<li>Markov Chain + reward</li>
-<li>Definition of Markov Reward Process (MRP)<ul>
-<li>$S$ is a (finite) set of states ($s ∈ S$)</li>
-<li>P is dynamics/transition model that specifies <script type="math/tex; mode=display">P(S_{t+1} = s' |s_t = s)</script></li>
-<li>R is a reward function <script type="math/tex; mode=display">R(s_t = s) = \mathbb{E}[r_t \mid s_t = s]</script></li>
-<li>Discount factor $\gamma \in [0,1]$</li>
-</ul>
-</li>
-<li><p>Value Function</p>
-<ul>
-<li><script type="math/tex; mode=display">G_t = R_{t+1}+\gamma R_{t+2}+ ... = \sum\gamma^kR_{t+k+1}</script><script type="math/tex; mode=display">V_\pi(s) = \mathbb{E}_\pi[G_t\mid S_t=s]</script><ul>
-<li><p><strong>Bellman equation</strong></p>
-<script type="math/tex; mode=display">V_\pi(s) = R_{t+1} + \gamma\sum P(s'\mid s)V(s')</script></li>
-<li><script type="math/tex; mode=display">V = R + \gamma P V</script><script type="math/tex; mode=display">V = (1-\gamma P)^{-1}R</script> <strong>Note</strong>Matrix inverse takes the complexity $O(N^3 )$ for N states</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="MDP-S-P-A-R-gamma"><a href="#MDP-S-P-A-R-gamma" class="headerlink" title="MDP (S,P,A,R, $\gamma$)"></a>MDP (S,P,A,R, $\gamma$)</h3><ul>
-<li>MRP + decisions $A$.</li>
-<li>Definaation<ul>
-<li>$S$ is a finite set of states</li>
-<li>$A$ is a finite set of actions</li>
-<li>$P^a$ is dynamics/transition model for each action<br>  $$P(s_{t+1} = s’ |s_t = s, a_t = a)</li>
-<li></li>
-<li>$R$ is a reward function<br>  $$R(s_t = s, a_t = a) = \mathbb{E}[r_t \mid s_t = s, a_t = a]</li>
-<li></li>
-<li>Discount factor $\gamma \in [0, 1]$</li>
-</ul>
-</li>
-<li><p>Policy in MDP</p>
-<ul>
-<li>$\pi(a|s) = P(a_t = a|s_t = s)$</li>
-<li><p>$P_\pi(s’|s) = \sum\limits_{a \in A}\pi(a|s)P(s‘|s, a) 　　　a\in A$  </p>
-</li>
-<li><p>$R(s) = \sum\limits_{a \in A} (a|s)R(s,a)$</p>
-</li>
-</ul>
-</li>
-<li><p>Value Function</p>
-<ul>
-<li><p>state value function</p>
-<p>  用来衡量当前状态的价值</p>
-<script type="math/tex; mode=display">V^\pi = \mathbb{E}_\pi[G_t \mid s_t = s]</script></li>
-<li><p>action value function</p>
-<p>  用来衡量状态s下a的价值</p>
-<script type="math/tex; mode=display">q^\pi(s,a) = \mathbb{E}_\pi[G_t \mid s_t =s, a_t = a]</script></li>
-<li><p>$v^\pi(s) \And q^\pi(s,a)$</p>
-<script type="math/tex; mode=display">v^\pi(s) = \sum\limits_{a\in A} \pi(a | s)q^\pi(s,a)</script></li>
-<li><p>状态s 和 动作 a 之间的转换<br>  <img src="/images/posts/rl/mdp/compare_mp_mdp.png" alt=""><br>  <img src="/images/posts/rl/mdp/one.png" alt=""><br>  <img src="/images/posts/rl/mdp/two.png" alt=""></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="v-s-q-s-a"><a href="#v-s-q-s-a" class="headerlink" title="v(s),q(s,a)"></a>v(s),q(s,a)</h2><p><strong>NOTE:</strong> MRP 对应 V(s), MDP 对应 Q(s,a)</p>
-<h2 id="Dynamic-Programming"><a href="#Dynamic-Programming" class="headerlink" title="Dynamic Programming"></a>Dynamic Programming</h2><p>已知MDP过程，<strong>转移矩阵</strong> 和 <strong>奖励函数</strong> 都是已知的</p>
-<h3 id="Policy-Iteration"><a href="#Policy-Iteration" class="headerlink" title="Policy Iteration"></a>Policy Iteration</h3><p>Bellman Expectation Equation<br><img src="/images/posts/rl/mdp/policy_iteration.png" alt=""></p>
-<h4 id="policy-evaluation"><a href="#policy-evaluation" class="headerlink" title="policy evaluation"></a>policy evaluation</h4><p>iteration on the Bellman expectation backup</p>
-<script type="math/tex; mode=display">V_i(s) = \sum\limits_{a \in A} \pi(a|s)(R(a,s) + \sum\limits_{s' \in S}P(s'|s,a)v_{i-1}(s'))</script><h4 id="policy-improvement"><a href="#policy-improvement" class="headerlink" title="policy improvement"></a>policy improvement</h4><p>greedy on action-value function q</p>
-<script type="math/tex; mode=display">q_{\pi_i}(s,a) = R(s,a)+\gamma\sum\limits_{s\in S}P(s'|s,a) V_{\pi_i}(s')</script><script type="math/tex; mode=display">\pi_{i+1}(s) =  arg \max\limits_a q_{\pi_i}(s,a)</script><h3 id="Value-Iteration"><a href="#Value-Iteration" class="headerlink" title="Value Iteration"></a>Value Iteration</h3><p>Bellman Optimality Equation</p>
-<p>整个过程没有策略的引入</p>
-<h4 id="iteration-on-the-Bellman-optimality-backup"><a href="#iteration-on-the-Bellman-optimality-backup" class="headerlink" title="iteration on the Bellman optimality backup"></a>iteration on the Bellman optimality backup</h4><script type="math/tex; mode=display">v_{i+1}(s) \larr \max\limits_{a\in A}R(s,a) + \gamma\sum\limits_{s'\in S}P(s'|s,a)v_i(s')</script><h4 id="retrieve-the-optimal-policy-after-the-value-iteration"><a href="#retrieve-the-optimal-policy-after-the-value-iteration" class="headerlink" title="retrieve the optimal policy after the value iteration"></a>retrieve the optimal policy after the value iteration</h4><p>在前面迭代收敛后再，根据 $v_{end}(s)$ 选取策略</p>
-<script type="math/tex; mode=display">\pi^*(s) \larr \argmax\limits_a R(s,a) + \gamma\sum\limits_{s'\in S}P(s'|s,a)v_{end}(s')</script>]]></content>
-      <categories>
-        <category>学术</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>RL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【rl_note】1. Overview</title>
-    <url>/ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/</url>
+    <url>/2020/05/29/rl/rl_note_1_overview/</url>
     <content><![CDATA[<h2 id="Difference-between-Reinforcement-Learning-and-Supervised-Learning"><a href="#Difference-between-Reinforcement-Learning-and-Supervised-Learning" class="headerlink" title="Difference between Reinforcement Learning and Supervised Learning"></a>Difference between Reinforcement Learning and Supervised Learning</h2><ul>
 <li><p>Sequential data as input (not i.i.d)</p>
 </li>
@@ -728,13 +637,104 @@ w_{z1}\sin(\theta_1) \\
         <category>学术</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>RL</tag>
+        <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【rl_note】2. Markov Decision Processes</title>
+    <url>/2020/05/29/rl/rl_note_2_mdp/</url>
+    <content><![CDATA[<h2 id="overview"><a href="#overview" class="headerlink" title="overview"></a>overview</h2><ul>
+<li>Markov Processes</li>
+<li>Markov Reward Processes(MRPs)</li>
+<li>Markov Decision Processes (MDPs)</li>
+<li>v(s)，q(s,a) transform</li>
+<li>policy iteration</li>
+<li>value iteration</li>
+</ul>
+<h2 id="Markov"><a href="#Markov" class="headerlink" title="Markov"></a>Markov</h2><h3 id="MP-S-P"><a href="#MP-S-P" class="headerlink" title="MP (S,P)"></a>MP (S,P)</h3><p>The future is independent of the past given the present</p>
+<ul>
+<li>history state $h_t = {s_1,s_2,s_3…,s_t}$</li>
+<li>$P(s_{t+1}\mid s_t) = P(s_{t+1}\mid h_t)$</li>
+<li>$P(s_{t+1}\mid s_t, a_t) = P(s_{t+1}\mid h_t, a_t)$</li>
+<li>State transition matrix P specifies <script type="math/tex; mode=display">p(s_{t+1} = s' |s_t = s)</script></li>
+</ul>
+<h3 id="MRP-S-P-R-gamma"><a href="#MRP-S-P-R-gamma" class="headerlink" title="MRP (S,P,R, $\gamma$)"></a>MRP (S,P,R, $\gamma$)</h3><ul>
+<li>Markov Chain + reward</li>
+<li>Definition of Markov Reward Process (MRP)<ul>
+<li>$S$ is a (finite) set of states ($s ∈ S$)</li>
+<li>P is dynamics/transition model that specifies <script type="math/tex; mode=display">P(S_{t+1} = s' |s_t = s)</script></li>
+<li>R is a reward function <script type="math/tex; mode=display">R(s_t = s) = \mathbb{E}[r_t \mid s_t = s]</script></li>
+<li>Discount factor $\gamma \in [0,1]$</li>
+</ul>
+</li>
+<li><p>Value Function</p>
+<ul>
+<li><script type="math/tex; mode=display">G_t = R_{t+1}+\gamma R_{t+2}+ ... = \sum\gamma^kR_{t+k+1}</script><script type="math/tex; mode=display">V_\pi(s) = \mathbb{E}_\pi[G_t\mid S_t=s]</script><ul>
+<li><p><strong>Bellman equation</strong></p>
+<script type="math/tex; mode=display">V_\pi(s) = R_{t+1} + \gamma\sum P(s'\mid s)V(s')</script></li>
+<li><script type="math/tex; mode=display">V = R + \gamma P V</script><script type="math/tex; mode=display">V = (1-\gamma P)^{-1}R</script> <strong>Note</strong>Matrix inverse takes the complexity $O(N^3 )$ for N states</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="MDP-S-P-A-R-gamma"><a href="#MDP-S-P-A-R-gamma" class="headerlink" title="MDP (S,P,A,R, $\gamma$)"></a>MDP (S,P,A,R, $\gamma$)</h3><ul>
+<li>MRP + decisions $A$.</li>
+<li>Definaation<ul>
+<li>$S$ is a finite set of states</li>
+<li>$A$ is a finite set of actions</li>
+<li>$P^a$ is dynamics/transition model for each action<br>  $$P(s_{t+1} = s’ |s_t = s, a_t = a)</li>
+<li></li>
+<li>$R$ is a reward function<br>  $$R(s_t = s, a_t = a) = \mathbb{E}[r_t \mid s_t = s, a_t = a]</li>
+<li></li>
+<li>Discount factor $\gamma \in [0, 1]$</li>
+</ul>
+</li>
+<li><p>Policy in MDP</p>
+<ul>
+<li>$\pi(a|s) = P(a_t = a|s_t = s)$</li>
+<li><p>$P_\pi(s’|s) = \sum\limits_{a \in A}\pi(a|s)P(s‘|s, a) 　　　a\in A$  </p>
+</li>
+<li><p>$R(s) = \sum\limits_{a \in A} (a|s)R(s,a)$</p>
+</li>
+</ul>
+</li>
+<li><p>Value Function</p>
+<ul>
+<li><p>state value function</p>
+<p>  用来衡量当前状态的价值</p>
+<script type="math/tex; mode=display">V^\pi = \mathbb{E}_\pi[G_t \mid s_t = s]</script></li>
+<li><p>action value function</p>
+<p>  用来衡量状态s下a的价值</p>
+<script type="math/tex; mode=display">q^\pi(s,a) = \mathbb{E}_\pi[G_t \mid s_t =s, a_t = a]</script></li>
+<li><p>$v^\pi(s) \And q^\pi(s,a)$</p>
+<script type="math/tex; mode=display">v^\pi(s) = \sum\limits_{a\in A} \pi(a | s)q^\pi(s,a)</script></li>
+<li><p>状态s 和 动作 a 之间的转换<br>  <img src="/images/posts/rl/mdp/compare_mp_mdp.png" alt=""><br>  <img src="/images/posts/rl/mdp/one.png" alt=""><br>  <img src="/images/posts/rl/mdp/two.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="v-s-q-s-a"><a href="#v-s-q-s-a" class="headerlink" title="v(s),q(s,a)"></a>v(s),q(s,a)</h2><p><strong>NOTE:</strong> MRP 对应 V(s), MDP 对应 Q(s,a)</p>
+<h2 id="Dynamic-Programming"><a href="#Dynamic-Programming" class="headerlink" title="Dynamic Programming"></a>Dynamic Programming</h2><p>已知MDP过程，<strong>转移矩阵</strong> 和 <strong>奖励函数</strong> 都是已知的</p>
+<h3 id="Policy-Iteration"><a href="#Policy-Iteration" class="headerlink" title="Policy Iteration"></a>Policy Iteration</h3><p>Bellman Expectation Equation<br><img src="/images/posts/rl/mdp/policy_iteration.png" alt=""></p>
+<h4 id="policy-evaluation"><a href="#policy-evaluation" class="headerlink" title="policy evaluation"></a>policy evaluation</h4><p>iteration on the Bellman expectation backup</p>
+<script type="math/tex; mode=display">V_i(s) = \sum\limits_{a \in A} \pi(a|s)(R(a,s) + \sum\limits_{s' \in S}P(s'|s,a)v_{i-1}(s'))</script><h4 id="policy-improvement"><a href="#policy-improvement" class="headerlink" title="policy improvement"></a>policy improvement</h4><p>greedy on action-value function q</p>
+<script type="math/tex; mode=display">q_{\pi_i}(s,a) = R(s,a)+\gamma\sum\limits_{s\in S}P(s'|s,a) V_{\pi_i}(s')</script><script type="math/tex; mode=display">\pi_{i+1}(s) =  arg \max\limits_a q_{\pi_i}(s,a)</script><h3 id="Value-Iteration"><a href="#Value-Iteration" class="headerlink" title="Value Iteration"></a>Value Iteration</h3><p>Bellman Optimality Equation</p>
+<p>整个过程没有策略的引入</p>
+<h4 id="iteration-on-the-Bellman-optimality-backup"><a href="#iteration-on-the-Bellman-optimality-backup" class="headerlink" title="iteration on the Bellman optimality backup"></a>iteration on the Bellman optimality backup</h4><script type="math/tex; mode=display">v_{i+1}(s) \larr \max\limits_{a\in A}R(s,a) + \gamma\sum\limits_{s'\in S}P(s'|s,a)v_i(s')</script><h4 id="retrieve-the-optimal-policy-after-the-value-iteration"><a href="#retrieve-the-optimal-policy-after-the-value-iteration" class="headerlink" title="retrieve the optimal policy after the value iteration"></a>retrieve the optimal policy after the value iteration</h4><p>在前面迭代收敛后再，根据 $v_{end}(s)$ 选取策略</p>
+<script type="math/tex; mode=display">\pi^*(s) \larr \argmax\limits_a R(s,a) + \gamma\sum\limits_{s'\in S}P(s'|s,a)v_{end}(s')</script>]]></content>
+      <categories>
+        <category>学术</category>
+      </categories>
+      <tags>
+        <tag>RL</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
     <title>【rl_note】3. model-free Prediction And Control</title>
-    <url>/ropo0107.github.io/2020/05/29/rl/rl_note_3_model_free/</url>
+    <url>/2020/05/29/rl/rl_note_3_model_free/</url>
     <content><![CDATA[<h2 id="prediction"><a href="#prediction" class="headerlink" title="prediction"></a>prediction</h2><p>Evaluate the state value without knowing the MDP model, by only interacting with the environment</p>
 <h3 id="MC"><a href="#MC" class="headerlink" title="MC"></a>MC</h3><h4 id="traditional"><a href="#traditional" class="headerlink" title="traditional"></a>traditional</h4><ul>
 <li><p>value state of v(s) $t$ is time  that state $s_i$ is visited in an episode</p>
@@ -826,13 +826,13 @@ w_{z1}\sin(\theta_1) \\
         <category>学术</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>RL</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
     <title>【rl_note】4. Value Function Approximation</title>
-    <url>/ropo0107.github.io/2020/05/29/rl/rl_note_4_value_function_approximation/</url>
+    <url>/2020/05/29/rl/rl_note_4_value_function_approximation/</url>
     <content><![CDATA[<h2 id="Challenges-with-large-MDPs"><a href="#Challenges-with-large-MDPs" class="headerlink" title="Challenges with large MDPs:"></a>Challenges with large MDPs:</h2><ul>
 <li>too many states or actions to store in memory</li>
 <li>too slow to learn the value of each state individually</li>
@@ -908,13 +908,13 @@ w_{z1}\sin(\theta_1) \\
         <category>学术</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>RL</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
     <title>【rl_note】5. Policy Gradent(AC, TRPO, PPO)</title>
-    <url>/ropo0107.github.io/2020/05/29/rl/rl_note_5_policy_gradent/</url>
+    <url>/2020/05/29/rl/rl_note_5_policy_gradent/</url>
     <content><![CDATA[<h1 id="Policy-Gradent"><a href="#Policy-Gradent" class="headerlink" title="Policy Gradent"></a>Policy Gradent</h1><h2 id="Value-based-RL-vs-Policy-based-RL"><a href="#Value-based-RL-vs-Policy-based-RL" class="headerlink" title="Value-based RL vs Policy-based RL"></a>Value-based RL vs Policy-based RL</h2><ul>
 <li>value base 主要是学习一个value function 的近似，然后通过贪心的方法得到最优策略<script type="math/tex; mode=display">a_t=\arg \max_aQ(a,st)</script></li>
 <li>policy base 直接学习策略$\pi_\theta(a|s)$, 学习参数$\theta$<ul>
@@ -1109,13 +1109,13 @@ w_{z1}\sin(\theta_1) \\
         <category>学术</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>RL</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
     <title>【dl】 神经网络中参数量和计算量</title>
-    <url>/ropo0107.github.io/2020/04/24/dl/net_param_calculate/</url>
+    <url>/2020/04/24/dl/net_param_calculate/</url>
     <content><![CDATA[<h1 id="参数量"><a href="#参数量" class="headerlink" title="参数量"></a>参数量</h1><p><img src="/images/posts/dl/leNet_param.png" alt="LeNet"></p>
 <h2 id="MLP"><a href="#MLP" class="headerlink" title="MLP"></a>MLP</h2><p>假设输入神经元数为M，输出神经元数为N，则</p>
 <ul>
@@ -1201,7 +1201,7 @@ w_{z1}\sin(\theta_1) \\
   </entry>
   <entry>
     <title>【dl】 GAN_公式推导</title>
-    <url>/ropo0107.github.io/2020/03/24/dl/GAN/</url>
+    <url>/2020/03/24/dl/GAN/</url>
     <content><![CDATA[<h1 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h1><h2 id="GAN数学描述"><a href="#GAN数学描述" class="headerlink" title="GAN数学描述"></a>GAN数学描述</h2><p><strong>目标:</strong> 以假乱真的生成器</p>
 <ul>
 <li>高水平的鉴赏家</li>
@@ -1276,14 +1276,14 @@ w_{z1}\sin(\theta_1) \\
         <category>学术</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>RL</tag>
+        <tag>Note</tag>
         <tag>GAN</tag>
       </tags>
   </entry>
   <entry>
     <title>python中的tips</title>
-    <url>/ropo0107.github.io/2020/03/19/tips/python_tips/</url>
+    <url>/2020/03/19/tips/python_tips/</url>
     <content><![CDATA[<h2 id="Python中读写pkl文件"><a href="#Python中读写pkl文件" class="headerlink" title="Python中读写pkl文件"></a>Python中读写pkl文件</h2><ul>
 <li><p>不采用压缩方式</p>
   <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line"><span class="comment">#write</span></span><br><span class="line">pack = <span class="string">"xxx"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"demo.pkl"</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        pickle.dump(pack,f)</span><br><span class="line"></span><br><span class="line"><span class="comment">#read</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"demo.pkl"</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        data = pickle.load(f)</span><br></pre></td></tr></table></figure>
@@ -1309,7 +1309,7 @@ w_{z1}\sin(\theta_1) \\
   </entry>
   <entry>
     <title>【blog】 Hexo修改背景图片及主题透明</title>
-    <url>/ropo0107.github.io/2020/03/15/blog/blog_background/</url>
+    <url>/2020/03/15/blog/blog_background/</url>
     <content><![CDATA[<h1 id="背景图片的更改"><a href="#背景图片的更改" class="headerlink" title="背景图片的更改"></a>背景图片的更改</h1><h2 id="背景背景图片添加"><a href="#背景背景图片添加" class="headerlink" title="背景背景图片添加"></a>背景背景图片添加</h2><ul>
 <li><p>首先将已选定的背景图片放到博客根目录下的\source\images下</p>
 <pre><code>  Blog\source\images\background.jpg
@@ -1407,7 +1407,7 @@ margin-bottom: 45px;
   </entry>
   <entry>
     <title>【blog】 Hexo迁移到vps</title>
-    <url>/ropo0107.github.io/2020/03/10/blog/vps_hexo/</url>
+    <url>/2020/03/10/blog/vps_hexo/</url>
     <content><![CDATA[<p>搭建完 <strong>trojan</strong> 后把域名和 <strong>vps</strong> 绑定后想把 <strong>blog</strong> 迁移到 <strong>vps</strong> 上</p>
 <h2 id="安装必要工具"><a href="#安装必要工具" class="headerlink" title="安装必要工具"></a>安装必要工具</h2><ul>
 <li><p>配置SSH<br> 避免每次登录都需要密码</p>
@@ -1485,7 +1485,7 @@ margin-bottom: 45px;
   </entry>
   <entry>
     <title>trojan做点不一样的事</title>
-    <url>/ropo0107.github.io/2020/03/09/technology/trojan/</url>
+    <url>/2020/03/09/technology/trojan/</url>
     <content><![CDATA[<h1 id="trojan-安装和使用"><a href="#trojan-安装和使用" class="headerlink" title="trojan 安装和使用"></a>trojan 安装和使用</h1><p>最近墙越来越高了,开始的ssr,在后来的V2ray,没办法,干就完事了</p>
 <p>折腾了好久终于搞好了,记录一下</p>
 <h2 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h2><h3 id="搭建vps"><a href="#搭建vps" class="headerlink" title="搭建vps"></a>搭建vps</h3><p>个人用的 <strong>digitalocean</strong>
@@ -1521,7 +1521,7 @@ margin-bottom: 45px;
   </entry>
   <entry>
     <title>【go】 Go_接口</title>
-    <url>/ropo0107.github.io/2020/03/09/go/go_interface/</url>
+    <url>/2020/03/09/go/go_interface/</url>
     <content><![CDATA[<h2 id="go语言接口"><a href="#go语言接口" class="headerlink" title="go语言接口"></a>go语言接口</h2><p>在Go语言中接口（interface）是一种<strong>类型</strong>，一种抽象的类型。</p>
 <p>interface是一组method的集合，接口做的事情就像是定义一个协议（规则），不关心属性（数据），只关心行为（方法）。</p>
 <h3 id="接口的定义"><a href="#接口的定义" class="headerlink" title="接口的定义"></a>接口的定义</h3><p>Go语言提倡面向接口编程。</p>
@@ -1597,7 +1597,7 @@ T：表示断言x可能是的类型。
   </entry>
   <entry>
     <title>【blog】 HEXO添加自定义HTML静态网页</title>
-    <url>/ropo0107.github.io/2020/03/08/blog/blog_add_custom_html/</url>
+    <url>/2020/03/08/blog/blog_add_custom_html/</url>
     <content><![CDATA[<h2 id="添加自定义HTML静态网页"><a href="#添加自定义HTML静态网页" class="headerlink" title="添加自定义HTML静态网页"></a>添加自定义HTML静态网页</h2><p>今天发现一个好玩的毒鸡汤界面,打开了新世界的大门.</p>
 <h2 id="新建个page"><a href="#新建个page" class="headerlink" title="新建个page"></a>新建个page</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page soup</span><br></pre></td></tr></table></figure>
 <p>在source 会生成一个</p>
@@ -1629,7 +1629,7 @@ T：表示断言x可能是的类型。
   </entry>
   <entry>
     <title>【blog】 Hexo添加网页音乐播放器功能</title>
-    <url>/ropo0107.github.io/2020/03/08/blog/music/</url>
+    <url>/2020/03/08/blog/music/</url>
     <content><![CDATA[<p><span><br><a id="more"></a><br>效果图：   </p>
 <p><img src="https://yfzhou.oss-cn-beijing.aliyuncs.com/blog/img/music01.png" alt=""></p>
 <h1 id="download"><a href="#download" class="headerlink" title="download"></a><a href="#download" title="download"></a>download</h1><p>点击访问Aplayer源码：<a href="https://github.com/MoePlayer/APlayer" target="_blank" rel="noopener">GitHub Aplayer</a>。下载到本地，解压后将<code>dist</code>文件夹复制到<code>themes\next\source</code>文件夹下。</p>
@@ -1650,7 +1650,7 @@ T：表示断言x可能是的类型。
   </entry>
   <entry>
     <title>动态规划</title>
-    <url>/ropo0107.github.io/2020/03/05/leetcode/leetcode_dp/</url>
+    <url>/2020/03/05/leetcode/leetcode_dp/</url>
     <content><![CDATA[<p>动态规划 属于运筹学分支，求解决策过程最优化的数学方法。利用各阶段的关系，逐个求解，最终求得全局最优解。</p>
 <ul>
 <li>原问题与子问题</li>
@@ -1668,7 +1668,7 @@ T：表示断言x可能是的类型。
   </entry>
   <entry>
     <title>排序</title>
-    <url>/ropo0107.github.io/2020/03/05/leetcode/leetcode_sort/</url>
+    <url>/2020/03/05/leetcode/leetcode_sort/</url>
     <content><![CDATA[<p>leetcode中的排序问题</p>
 <h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><p>冒泡排序要对一个列表多次重复遍历。它要比较相邻的两项，并且交换顺序排错的项。每对 列表实行一次遍历，就有一个最大项排在了正确的位置。大体上讲，列表的每一个数据项都会在 其相应的位置 “冒泡”。如果列表有 n 项，第一次遍历就要比较 n-1 对数据。需要注意，一旦列 表中最大(按照规定的原则定义大小)的数据是所比较的数据对中的一个，它就会沿着列表一直 后移，直到这次遍历结束。</p>
 <h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p><img src="https://pic4.zhimg.com/v2-33a947c71ad62b254cab62e5364d2813_b.webp" alt="冒泡"></p>
@@ -1708,7 +1708,7 @@ T：表示断言x可能是的类型。
   </entry>
   <entry>
     <title>LeetCode的笔记</title>
-    <url>/ropo0107.github.io/2020/03/04/leetcode/leetcode_note/</url>
+    <url>/2020/03/04/leetcode/leetcode_note/</url>
     <content><![CDATA[<h1 id="菜鸡刷leetcode"><a href="#菜鸡刷leetcode" class="headerlink" title="菜鸡刷leetcode"></a>菜鸡刷leetcode</h1><p>用来记录一些好的点子</p>
 <h2 id="面试题57-II-和为s的连续正数序列"><a href="#面试题57-II-和为s的连续正数序列" class="headerlink" title="面试题57 - II. 和为s的连续正数序列"></a>面试题57 - II. 和为s的连续正数序列</h2><p> 输入一个正整数 target ，输出所有和为 target 的连续正整数序列（至少含有两个数）。序列内的数字由小到大排列，不同序列按照首个数字从小到大排列。</p>
 <p>示例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：target &#x3D; 9</span><br><span class="line">输出：[[2,3,4],[4,5]]</span><br><span class="line">示例 2：</span><br><span class="line"></span><br><span class="line">输入：target &#x3D; 15</span><br><span class="line">输出：[[1,2,3,4,5],[4,5,6],[7,8]]</span><br></pre></td></tr></table></figure></p>
@@ -1746,7 +1746,7 @@ T：表示断言x可能是的类型。
   </entry>
   <entry>
     <title>使用ubuntu的小tips</title>
-    <url>/ropo0107.github.io/2020/03/04/tips/ubuntu_tips/</url>
+    <url>/2020/03/04/tips/ubuntu_tips/</url>
     <content><![CDATA[<h1 id="常用的-linux-配置"><a href="#常用的-linux-配置" class="headerlink" title="常用的 linux 配置"></a>常用的 linux 配置</h1><h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;</span><br><span class="line"></span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions</span><br></pre></td></tr></table></figure>
 <h2 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h2><h1 id="常用的-linux-命令"><a href="#常用的-linux-命令" class="headerlink" title="常用的 linux 命令"></a>常用的 linux 命令</h1><h2 id="后台运行命令"><a href="#后台运行命令" class="headerlink" title="后台运行命令"></a>后台运行命令</h2><ul>
 <li><p>第一种 &amp;</p>
@@ -1843,7 +1843,7 @@ $ youdao-dict
   </entry>
   <entry>
     <title>【dl】 深度学习_Tips</title>
-    <url>/ropo0107.github.io/2020/03/03/dl/dl_tips/</url>
+    <url>/2020/03/03/dl/dl_tips/</url>
     <content><![CDATA[<h2 id="归纳偏置-Inductive-bias"><a href="#归纳偏置-Inductive-bias" class="headerlink" title="归纳偏置(Inductive bias)"></a>归纳偏置(Inductive bias)</h2><p><a href="https://www.zhihu.com/question/264264203/answer/830077823" target="_blank" rel="noopener">转载</a></p>
 <p>归纳偏置在机器学习中是一种很微妙的概念：在机器学习中，很多学习算法经常会对学习的问题做一些假设，这些假设就称为归纳偏置(Inductive Bias)。归纳偏置这个译名可能不能很好地帮助理解，不妨拆解开来看：归纳(Induction)是自然科学中常用的两大方法之一(归纳与演绎, induction and deduction)，指的是从一些例子中寻找共性、泛化，形成一个比较通用的规则的过程；偏置(Bias)是指我们对模型的偏好。</p>
 <p>因此，归纳偏置可以理解为，从现实生活中观察到的现象中归纳出一定的规则(heuristics)，然后对模型做一定的约束，从而可以起到“模型选择”的作用，即从假设空间中选择出更符合现实规则的模型。其实，贝叶斯学习中的“先验(Prior)”这个叫法，可能比“归纳偏置”更直观一些。</p>
@@ -1877,13 +1877,13 @@ $ youdao-dict
         <category>学术</category>
       </categories>
       <tags>
-        <tag>DL</tag>
         <tag>Note</tag>
+        <tag>DL</tag>
       </tags>
   </entry>
   <entry>
     <title>Reinforencement Learning</title>
-    <url>/ropo0107.github.io/2020/03/03/rl/reinforencement-learning/</url>
+    <url>/2020/03/03/rl/reinforencement-learning/</url>
     <content><![CDATA[<a id="more"></a>
 <p>本文用来记录自己关于强化学习的<strong>note</strong> 和<strong>tips</strong></p>
 <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>该部分参考侯博士的文章 <a href="https://zhuanlan.zhihu.com/p/41369224" target="_blank" rel="noopener">链接</a></p>
@@ -1935,13 +1935,13 @@ $ youdao-dict
         <category>学术</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>RL</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
     <title>【blog】 搭建我的博客</title>
-    <url>/ropo0107.github.io/2020/03/03/blog/build_my_blog/</url>
+    <url>/2020/03/03/blog/build_my_blog/</url>
     <content><![CDATA[<p> 自己瞎折腾的博客</p>
 <h2 id="本地安装Hexo出现的一些问题"><a href="#本地安装Hexo出现的一些问题" class="headerlink" title="本地安装Hexo出现的一些问题"></a>本地安装Hexo出现的一些问题</h2><h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><p>安装了node后，执行npm run xxx的命令的时候，报错，提示如下：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;bin&#x2F;env: node: No such file or directory</span><br></pre></td></tr></table></figure>
@@ -1969,7 +1969,7 @@ $ youdao-dict
   </entry>
   <entry>
     <title>【go】Go_基础</title>
-    <url>/ropo0107.github.io/2020/03/03/go/go/</url>
+    <url>/2020/03/03/go/go/</url>
     <content><![CDATA[<p>go语言知识点<br>看到一个比较好的在线教程网站<a href="https://tour.go-zh.org/basics" target="_blank" rel="noopener">地址</a></p>
 <h2 id="go语言结构"><a href="#go语言结构" class="headerlink" title="go语言结构"></a>go语言结构</h2><p>Go 语言的基础组成有以下几个部分：</p>
 <ul>
