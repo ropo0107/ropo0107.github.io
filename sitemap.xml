@@ -65,14 +65,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
+    <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2022-02-26T07:02:52.262Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/about/index.html</loc>
+    <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2022-02-26T07:02:52.262Z</lastmod>
     
@@ -128,6 +128,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2020/03/03/blog/build_my_blog/</loc>
+    
+    <lastmod>2021-08-19T09:03:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/03/15/blog/blog_background/</loc>
     
     <lastmod>2021-08-19T09:03:04.000Z</lastmod>
@@ -142,42 +149,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/03/blog/build_my_blog/</loc>
-    
-    <lastmod>2021-08-19T09:03:04.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2020/03/10/blog/vps_hexo/</loc>
-    
-    <lastmod>2021-08-19T09:03:04.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/03/dl/dl_tips/</loc>
-    
-    <lastmod>2021-08-19T09:03:04.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/05/leetcode/leetcode_dp/</loc>
-    
-    <lastmod>2021-08-19T09:03:04.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/09/go/go_interface/</loc>
-    
-    <lastmod>2021-08-19T09:03:04.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/04/24/dl/net_param_calculate/</loc>
     
     <lastmod>2021-08-19T09:03:04.000Z</lastmod>
     
@@ -191,7 +163,28 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/04/leetcode/leetcode_note/</loc>
+    <loc>http://yoursite.com/2020/03/03/dl/dl_tips/</loc>
+    
+    <lastmod>2021-08-19T09:03:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/09/go/go_interface/</loc>
+    
+    <lastmod>2021-08-19T09:03:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/05/leetcode/leetcode_dp/</loc>
+    
+    <lastmod>2021-08-19T09:03:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/04/24/dl/net_param_calculate/</loc>
     
     <lastmod>2021-08-19T09:03:04.000Z</lastmod>
     
@@ -199,6 +192,13 @@
   
   <url>
     <loc>http://yoursite.com/2020/03/05/leetcode/leetcode_sort/</loc>
+    
+    <lastmod>2021-08-19T09:03:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/04/leetcode/leetcode_note/</loc>
     
     <lastmod>2021-08-19T09:03:04.000Z</lastmod>
     
@@ -219,14 +219,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/07/19/robot/ros_workspace/</loc>
+    <loc>http://yoursite.com/2020/07/19/robot/ros_error/</loc>
     
     <lastmod>2021-08-19T09:03:04.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/07/19/robot/ros_error/</loc>
+    <loc>http://yoursite.com/2020/07/19/robot/ros_workspace/</loc>
     
     <lastmod>2021-08-19T09:03:04.000Z</lastmod>
     
