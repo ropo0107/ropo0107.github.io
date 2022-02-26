@@ -1591,8 +1591,8 @@ T：表示断言x可能是的类型。
         <category>杂记</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>Go</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -1877,8 +1877,8 @@ $ youdao-dict
         <category>学术</category>
       </categories>
       <tags>
-        <tag>DL</tag>
         <tag>Note</tag>
+        <tag>DL</tag>
       </tags>
   </entry>
   <entry>
@@ -2661,8 +2661,8 @@ countryCapitalMap := map[string]string{&quot;France&quot;: &quot;Paris&quot;, &q
         <category>杂记</category>
       </categories>
       <tags>
-        <tag>Note</tag>
         <tag>Go</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
 </search>
