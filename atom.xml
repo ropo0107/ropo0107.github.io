@@ -3,11 +3,11 @@
   <title>无恙の博客</title>
   
   <subtitle>Nothing can replace hard work!</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/ropo0107/ropo0107.github.io/atom.xml" rel="self"/>
   
-  <link href="https://ropo0107.github.io/"/>
+  <link href="https://ropo0107.github.io/ropo0107.github.io/"/>
   <updated>2021-08-19T09:03:04.000Z</updated>
-  <id>https://ropo0107.github.io/</id>
+  <id>https://ropo0107.github.io/ropo0107.github.io/</id>
   
   <author>
     <name>无恙</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>docker中的tips</title>
-    <link href="https://ropo0107.github.io/2022/02/26/tips/docker/"/>
-    <id>https://ropo0107.github.io/2022/02/26/tips/docker/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2022/02/26/tips/docker/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2022/02/26/tips/docker/</id>
     <published>2022-02-26T07:02:52.261Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -35,19 +35,19 @@
     </summary>
     
     
-      <category term="编程" scheme="https://ropo0107.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
-      <category term="docker" scheme="https://ropo0107.github.io/tags/docker/"/>
+      <category term="docker" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>【robot】相机标定机器人TCP</title>
-    <link href="https://ropo0107.github.io/2021/11/16/robot/tcp_calibration/"/>
-    <id>https://ropo0107.github.io/2021/11/16/robot/tcp_calibration/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2021/11/16/robot/tcp_calibration/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2021/11/16/robot/tcp_calibration/</id>
     <published>2021-11-16T09:30:00.000Z</published>
     <updated>2021-11-17T02:52:46.000Z</updated>
     
@@ -64,17 +64,17 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Robot/"/>
     
   </entry>
   
   <entry>
     <title>【robot】优化空间中点的圆心</title>
-    <link href="https://ropo0107.github.io/2021/11/16/robot/optimize_circle_center/"/>
-    <id>https://ropo0107.github.io/2021/11/16/robot/optimize_circle_center/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2021/11/16/robot/optimize_circle_center/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2021/11/16/robot/optimize_circle_center/</id>
     <published>2021-11-16T07:30:00.000Z</published>
     <updated>2021-11-16T09:02:18.000Z</updated>
     
@@ -91,17 +91,17 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Robot/"/>
     
   </entry>
   
   <entry>
     <title>Machine Learning Base</title>
-    <link href="https://ropo0107.github.io/2021/01/10/ml/ml_base/"/>
-    <id>https://ropo0107.github.io/2021/01/10/ml/ml_base/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2021/01/10/ml/ml_base/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2021/01/10/ml/ml_base/</id>
     <published>2021-01-10T08:51:55.000Z</published>
     <updated>2021-11-11T08:35:20.000Z</updated>
     
@@ -118,19 +118,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
-      <category term="ML" scheme="https://ropo0107.github.io/tags/ML/"/>
+      <category term="ML" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/ML/"/>
     
   </entry>
   
   <entry>
     <title>【gpd】复现GPD</title>
-    <link href="https://ropo0107.github.io/2020/11/17/robot/gpd/"/>
-    <id>https://ropo0107.github.io/2020/11/17/robot/gpd/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/11/17/robot/gpd/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/11/17/robot/gpd/</id>
     <published>2020-11-17T15:34:55.000Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -147,17 +147,17 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Robot/"/>
     
   </entry>
   
   <entry>
     <title>【robot】 Kinect_dk 在Ubuntu16.04 下安装并配置ROS</title>
-    <link href="https://ropo0107.github.io/2020/08/30/robot/kinect_dk/"/>
-    <id>https://ropo0107.github.io/2020/08/30/robot/kinect_dk/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/08/30/robot/kinect_dk/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/08/30/robot/kinect_dk/</id>
     <published>2020-08-30T15:34:55.000Z</published>
     <updated>2022-02-26T07:58:04.145Z</updated>
     
@@ -173,19 +173,19 @@
     </summary>
     
     
-      <category term="工程" scheme="https://ropo0107.github.io/categories/%E5%B7%A5%E7%A8%8B/"/>
+      <category term="工程" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%B7%A5%E7%A8%8B/"/>
     
     
-      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Robot/"/>
     
-      <category term="ROS" scheme="https://ropo0107.github.io/tags/ROS/"/>
+      <category term="ROS" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/ROS/"/>
     
   </entry>
   
   <entry>
     <title>【ros】 编译时的问题</title>
-    <link href="https://ropo0107.github.io/2020/07/19/robot/ros_error/"/>
-    <id>https://ropo0107.github.io/2020/07/19/robot/ros_error/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/07/19/robot/ros_error/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/07/19/robot/ros_error/</id>
     <published>2020-07-19T15:34:55.000Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -201,21 +201,21 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
-      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Robot/"/>
     
-      <category term="Ros" scheme="https://ropo0107.github.io/tags/Ros/"/>
+      <category term="Ros" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Ros/"/>
     
   </entry>
   
   <entry>
     <title>【ros】 workspace and namespace</title>
-    <link href="https://ropo0107.github.io/2020/07/19/robot/ros_workspace/"/>
-    <id>https://ropo0107.github.io/2020/07/19/robot/ros_workspace/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/07/19/robot/ros_workspace/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/07/19/robot/ros_workspace/</id>
     <published>2020-07-19T15:34:55.000Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -232,21 +232,21 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
-      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Robot/"/>
     
-      <category term="Ros" scheme="https://ropo0107.github.io/tags/Ros/"/>
+      <category term="Ros" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Ros/"/>
     
   </entry>
   
   <entry>
     <title>【robot】 quaternion</title>
-    <link href="https://ropo0107.github.io/2020/07/11/robot/quaternion/"/>
-    <id>https://ropo0107.github.io/2020/07/11/robot/quaternion/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/07/11/robot/quaternion/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/07/11/robot/quaternion/</id>
     <published>2020-07-11T15:34:55.000Z</published>
     <updated>2021-11-11T07:24:02.000Z</updated>
     
@@ -263,19 +263,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
-      <category term="Robot" scheme="https://ropo0107.github.io/tags/Robot/"/>
+      <category term="Robot" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Robot/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】1. Overview</title>
-    <link href="https://ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/"/>
-    <id>https://ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:56:55.357Z</updated>
     
@@ -291,19 +291,47 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/RL/"/>
     
-      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【rl_note】3. model-free Prediction And Control</title>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_3_model_free/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_3_model_free/</id>
+    <published>2020-05-29T03:51:55.000Z</published>
+    <updated>2022-02-26T07:57:11.074Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="prediction"><a href="#prediction" class="headerlink" title="prediction"></a>prediction</h2><p>Evaluate the state value without knowing the MDP model, by only interacting with the environment</p><h3 id="MC"><a href="#MC" class="headerlink" title="MC"></a>MC</h3><h4 id="traditional"><a href="#traditional" class="headerlink" title="traditional"></a>traditional</h4><ul><li><p>value state of v(s) $t$ is time  that state $s_i$ is visited in an episode</p><p>  <strong>Note</strong> 在每个episode里面分为first-visit 和every-visit，代表每一条轨迹可能会重复出现状态$s$，是每一条轨迹只计算第一次出现，或者每次出现都会计算。</p></li><li>$N_0 = 0;S_0(s_i) = 0; G_0 = 0$</li><li>Increment counter  $N_t(s_i) ← N_{t-1}(s_i) + 1$</li><li>Increment total return $S_t(s_i) ← S_{t-1}(s_i) + G_t$</li><li>Value is estimated by mean return $v_t(s_i) = S_t(s_i)/N_t(s_i)$</li><li>By law of large numbers(大数定律), 　$v(s_i) → v_\pi(s_i)$ as　$N(s_i) → ∞$</li></ul><h4 id="incremental"><a href="#incremental" class="headerlink" title="incremental"></a>incremental</h4><ul><li>Collect one episode $(S_1 , A_1 , R_1 , …, S_t )$</li><li>For each state $s_i$ with computed return $G_t$</li><li>$N_0(s_i) = 0; G_0 = 0; v_0(s_i) = 0$</li><li>$N_t(s_i) \leftarrow N_{t-1}(s_i) + 1$</li><li>$v_t(s_i) \leftarrow v_{t-1}(s_i) + 1/N_t(G_t -v_{t-1}(s_i)))$<ul><li>$v_t(s_i) \leftarrow v_{t-1}(s_i) + \alpha(G_t -v_{t-1}(s_i)))$</li><li>$\alpha$ 也被叫做学习率， 区别于监督学习的 <strong>learning rate</strong></li></ul></li></ul><h2 id="TD-0"><a href="#TD-0" class="headerlink" title="TD(0)"></a>TD(0)</h2><p><strong>Objective:</strong> learn $v_\pi$ online from experience under policy $\pi$</p><ul><li><p>Update $v_t(s)$ toward estimated return $R + \gamma v_{t-1}(s’)$</p><p>  <strong>Note</strong> 这儿是 $R$ 是 $s\rightarrow s’$产生的奖励</p></li><li>$v_t(s) \leftarrow v_{t-1}(s) + \alpha (R + \gamma v_{t-1}(s’) − v_{t-1}(s))$</li><li><strong>TD target:</strong> $R + \gamma v_{t-1}(s’)$</li><li><p><strong>TD error:</strong> $\delta_t = R + \gamma v_{t-1}(s’) − v_{t-1}(s)$</p><ul><li>$v_\pi\doteq \mathbb{E}_\pi[G_t|S_t = s]$</li><li>$=\mathbb{E}_\pi[R_{t+1} + \gamma G_{t+1}|S_t = s]$</li><li>$=\mathbb{E}_\pi[R_{t+1} + \gamma v_\pi(S_{t+1})|S_t = s]$</li><li>MC将式一估计值作为目标, 之所以叫估计值， 是因为$G_t$ 的期望是未知的，需要在采样得到样本期望值</li><li>DP则是对式三值作为目标，之所以叫估计值， 不是因为期望的原因，会假定环境会完整的提供期望值， 这儿 $v_\pi(S_{t+1})$ 是未知的 需要用当前的 $V(S_{t+1})$</li><li>TD 也是估计值, 通过采样得到式三的期望 , 使用当前的估计值 $V$ 来代替真实值 $v_\pi$</li></ul></li></ul><p><strong>NOTE:</strong> TD error 是一种误差， 衡量 $s$ 的估计值与更好的估计值 $R + \gamma v_{t-1}(s’)$之间的差距。 因为用到了$v_{t-1}(s’)$了， 就涉及到 <strong>bootstrapping</strong> 的思想，即基于前一时刻的除本身要更新的 $v_{t-1}(s)$ 外的其他值，有点动态规划的味道</p><h3 id="compare-DP-MC-TD"><a href="#compare-DP-MC-TD" class="headerlink" title="compare DP MC TD"></a>compare DP MC TD</h3><p>结合上面TD error 的 Note</p><p><img src="/images/posts/rl/model_free/compare_dp_mc_td.png" alt=""></p><p><img src="/images/posts/rl/model_free/compare_dp_mc_td_1.png" alt=""></p><ul><li>MC does not bootstrap, DP TD  bootstraps</li><li>MC TD samples, DP does not sample</li><li>TD advantages over MC<ul><li>Lower variance</li><li>Online</li><li>Incomplete sequences</li></ul></li></ul><h2 id="control"><a href="#control" class="headerlink" title="control"></a>control</h2><h3 id="On-policy-Off-policy"><a href="#On-policy-Off-policy" class="headerlink" title="On-policy Off-policy"></a>On-policy Off-policy</h3><ul><li><p>On-policy learning</p><p>“Learn on the job”</p><p>Learn about policy π from experience sampled from π</p></li><li><p>Off-policy learning</p><p>“Look over someone’s shoulder”</p><p>Learn about policy π from experience sampled from μ</p></li></ul><h3 id="sarsa"><a href="#sarsa" class="headerlink" title="sarsa"></a>sarsa</h3><p><img src="/images/posts/rl/model_free/sarsa_control.png" alt=""></p><p><img src="/images/posts/rl/model_free/sarsa_al.png" alt=""></p><h3 id="q-learning"><a href="#q-learning" class="headerlink" title="q-learning"></a>q-learning</h3><p><img src="/images/posts/rl/model_free/q_learning_al.png" alt=""></p><h3 id="compare-sarsa-q-learning"><a href="#compare-sarsa-q-learning" class="headerlink" title="compare sarsa q-learning"></a>compare sarsa q-learning</h3><p><img src="/images/posts/rl/model_free/diagram_sarsa_qlearning.png" alt=""></p><p><strong>Sarsa:</strong> </p><ul><li>On-Policy TD control</li><li>Choose action $A_t$ from $S_t$ using policy derived from Q with $\epsilon$-greedy</li><li>Take action $A_t$ , observe $R_{t+1}$ and $S_{t+1}$</li><li>Choose action $A_{t+1}$ from $S_{t+1}$ using policy derived from Q with $\epsilon$-greedy</li><li>$Q(S_t,A_t) \leftarrow Q(S_t , A_t ) + \alpha[R_{t+1} + \gamma Q(S_{t+1} , A_{t+1}) − Q(S_t , A_t)]$</li><li><strong>note:</strong> $A$ and $A’$ are sampled from the same policy so it is on-policy</li></ul><p><strong>Q-Learning:</strong></p><ul><li>Off-Policy TD control</li><li>Choose action $A_t$ from $S_t$ using policy derived from Q with $\epsilon$-greedy</li><li>Take action $A_t$ , observe $R_{t+1}$ and $S_{t+1}$</li><li>Then ‘imagine’ $A_{t+1}$ as $argmax Q(S_{t+1} , a’ )$ in the update target </li><li>$Q(S_t , A_t ) \leftarrow Q(S_t , A_t ) + \alpha[R_{t+1} + \gamma \max\limits_a Q(S_{t+1} , a) − Q(S_t , A_t)]$</li><li><strong>note:</strong> In Q Learning, $A$ and $A’$ are from different policies, with $A$ being<br>more exploratory and $A’$ determined directly by the max operator</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;prediction&quot;&gt;&lt;a href=&quot;#prediction&quot; class=&quot;headerlink&quot; title=&quot;prediction&quot;&gt;&lt;/a&gt;prediction&lt;/h2&gt;&lt;p&gt;Evaluate the state value without knowi
+      
+    
+    </summary>
+    
+    
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+    
+    
+      <category term="RL" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/RL/"/>
+    
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】2. Markov Decision Processes</title>
-    <link href="https://ropo0107.github.io/2020/05/29/rl/rl_note_2_mdp/"/>
-    <id>https://ropo0107.github.io/2020/05/29/rl/rl_note_2_mdp/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_2_mdp/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_2_mdp/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:57:02.922Z</updated>
     
@@ -321,47 +349,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/RL/"/>
     
-      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【rl_note】3. model-free Prediction And Control</title>
-    <link href="https://ropo0107.github.io/2020/05/29/rl/rl_note_3_model_free/"/>
-    <id>https://ropo0107.github.io/2020/05/29/rl/rl_note_3_model_free/</id>
-    <published>2020-05-29T03:51:55.000Z</published>
-    <updated>2022-02-26T07:57:11.074Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="prediction"><a href="#prediction" class="headerlink" title="prediction"></a>prediction</h2><p>Evaluate the state value without knowing the MDP model, by only interacting with the environment</p><h3 id="MC"><a href="#MC" class="headerlink" title="MC"></a>MC</h3><h4 id="traditional"><a href="#traditional" class="headerlink" title="traditional"></a>traditional</h4><ul><li><p>value state of v(s) $t$ is time  that state $s_i$ is visited in an episode</p><p>  <strong>Note</strong> 在每个episode里面分为first-visit 和every-visit，代表每一条轨迹可能会重复出现状态$s$，是每一条轨迹只计算第一次出现，或者每次出现都会计算。</p></li><li>$N_0 = 0;S_0(s_i) = 0; G_0 = 0$</li><li>Increment counter  $N_t(s_i) ← N_{t-1}(s_i) + 1$</li><li>Increment total return $S_t(s_i) ← S_{t-1}(s_i) + G_t$</li><li>Value is estimated by mean return $v_t(s_i) = S_t(s_i)/N_t(s_i)$</li><li>By law of large numbers(大数定律), 　$v(s_i) → v_\pi(s_i)$ as　$N(s_i) → ∞$</li></ul><h4 id="incremental"><a href="#incremental" class="headerlink" title="incremental"></a>incremental</h4><ul><li>Collect one episode $(S_1 , A_1 , R_1 , …, S_t )$</li><li>For each state $s_i$ with computed return $G_t$</li><li>$N_0(s_i) = 0; G_0 = 0; v_0(s_i) = 0$</li><li>$N_t(s_i) \leftarrow N_{t-1}(s_i) + 1$</li><li>$v_t(s_i) \leftarrow v_{t-1}(s_i) + 1/N_t(G_t -v_{t-1}(s_i)))$<ul><li>$v_t(s_i) \leftarrow v_{t-1}(s_i) + \alpha(G_t -v_{t-1}(s_i)))$</li><li>$\alpha$ 也被叫做学习率， 区别于监督学习的 <strong>learning rate</strong></li></ul></li></ul><h2 id="TD-0"><a href="#TD-0" class="headerlink" title="TD(0)"></a>TD(0)</h2><p><strong>Objective:</strong> learn $v_\pi$ online from experience under policy $\pi$</p><ul><li><p>Update $v_t(s)$ toward estimated return $R + \gamma v_{t-1}(s’)$</p><p>  <strong>Note</strong> 这儿是 $R$ 是 $s\rightarrow s’$产生的奖励</p></li><li>$v_t(s) \leftarrow v_{t-1}(s) + \alpha (R + \gamma v_{t-1}(s’) − v_{t-1}(s))$</li><li><strong>TD target:</strong> $R + \gamma v_{t-1}(s’)$</li><li><p><strong>TD error:</strong> $\delta_t = R + \gamma v_{t-1}(s’) − v_{t-1}(s)$</p><ul><li>$v_\pi\doteq \mathbb{E}_\pi[G_t|S_t = s]$</li><li>$=\mathbb{E}_\pi[R_{t+1} + \gamma G_{t+1}|S_t = s]$</li><li>$=\mathbb{E}_\pi[R_{t+1} + \gamma v_\pi(S_{t+1})|S_t = s]$</li><li>MC将式一估计值作为目标, 之所以叫估计值， 是因为$G_t$ 的期望是未知的，需要在采样得到样本期望值</li><li>DP则是对式三值作为目标，之所以叫估计值， 不是因为期望的原因，会假定环境会完整的提供期望值， 这儿 $v_\pi(S_{t+1})$ 是未知的 需要用当前的 $V(S_{t+1})$</li><li>TD 也是估计值, 通过采样得到式三的期望 , 使用当前的估计值 $V$ 来代替真实值 $v_\pi$</li></ul></li></ul><p><strong>NOTE:</strong> TD error 是一种误差， 衡量 $s$ 的估计值与更好的估计值 $R + \gamma v_{t-1}(s’)$之间的差距。 因为用到了$v_{t-1}(s’)$了， 就涉及到 <strong>bootstrapping</strong> 的思想，即基于前一时刻的除本身要更新的 $v_{t-1}(s)$ 外的其他值，有点动态规划的味道</p><h3 id="compare-DP-MC-TD"><a href="#compare-DP-MC-TD" class="headerlink" title="compare DP MC TD"></a>compare DP MC TD</h3><p>结合上面TD error 的 Note</p><p><img src="/images/posts/rl/model_free/compare_dp_mc_td.png" alt=""></p><p><img src="/images/posts/rl/model_free/compare_dp_mc_td_1.png" alt=""></p><ul><li>MC does not bootstrap, DP TD  bootstraps</li><li>MC TD samples, DP does not sample</li><li>TD advantages over MC<ul><li>Lower variance</li><li>Online</li><li>Incomplete sequences</li></ul></li></ul><h2 id="control"><a href="#control" class="headerlink" title="control"></a>control</h2><h3 id="On-policy-Off-policy"><a href="#On-policy-Off-policy" class="headerlink" title="On-policy Off-policy"></a>On-policy Off-policy</h3><ul><li><p>On-policy learning</p><p>“Learn on the job”</p><p>Learn about policy π from experience sampled from π</p></li><li><p>Off-policy learning</p><p>“Look over someone’s shoulder”</p><p>Learn about policy π from experience sampled from μ</p></li></ul><h3 id="sarsa"><a href="#sarsa" class="headerlink" title="sarsa"></a>sarsa</h3><p><img src="/images/posts/rl/model_free/sarsa_control.png" alt=""></p><p><img src="/images/posts/rl/model_free/sarsa_al.png" alt=""></p><h3 id="q-learning"><a href="#q-learning" class="headerlink" title="q-learning"></a>q-learning</h3><p><img src="/images/posts/rl/model_free/q_learning_al.png" alt=""></p><h3 id="compare-sarsa-q-learning"><a href="#compare-sarsa-q-learning" class="headerlink" title="compare sarsa q-learning"></a>compare sarsa q-learning</h3><p><img src="/images/posts/rl/model_free/diagram_sarsa_qlearning.png" alt=""></p><p><strong>Sarsa:</strong> </p><ul><li>On-Policy TD control</li><li>Choose action $A_t$ from $S_t$ using policy derived from Q with $\epsilon$-greedy</li><li>Take action $A_t$ , observe $R_{t+1}$ and $S_{t+1}$</li><li>Choose action $A_{t+1}$ from $S_{t+1}$ using policy derived from Q with $\epsilon$-greedy</li><li>$Q(S_t,A_t) \leftarrow Q(S_t , A_t ) + \alpha[R_{t+1} + \gamma Q(S_{t+1} , A_{t+1}) − Q(S_t , A_t)]$</li><li><strong>note:</strong> $A$ and $A’$ are sampled from the same policy so it is on-policy</li></ul><p><strong>Q-Learning:</strong></p><ul><li>Off-Policy TD control</li><li>Choose action $A_t$ from $S_t$ using policy derived from Q with $\epsilon$-greedy</li><li>Take action $A_t$ , observe $R_{t+1}$ and $S_{t+1}$</li><li>Then ‘imagine’ $A_{t+1}$ as $argmax Q(S_{t+1} , a’ )$ in the update target </li><li>$Q(S_t , A_t ) \leftarrow Q(S_t , A_t ) + \alpha[R_{t+1} + \gamma \max\limits_a Q(S_{t+1} , a) − Q(S_t , A_t)]$</li><li><strong>note:</strong> In Q Learning, $A$ and $A’$ are from different policies, with $A$ being<br>more exploratory and $A’$ determined directly by the max operator</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;prediction&quot;&gt;&lt;a href=&quot;#prediction&quot; class=&quot;headerlink&quot; title=&quot;prediction&quot;&gt;&lt;/a&gt;prediction&lt;/h2&gt;&lt;p&gt;Evaluate the state value without knowi
-      
-    
-    </summary>
-    
-    
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
-    
-    
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
-    
-      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】4. Value Function Approximation</title>
-    <link href="https://ropo0107.github.io/2020/05/29/rl/rl_note_4_value_function_approximation/"/>
-    <id>https://ropo0107.github.io/2020/05/29/rl/rl_note_4_value_function_approximation/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_4_value_function_approximation/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_4_value_function_approximation/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:57:22.019Z</updated>
     
@@ -377,19 +377,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/RL/"/>
     
-      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
   </entry>
   
   <entry>
     <title>【rl_note】5. Policy Gradent(AC, TRPO, PPO)</title>
-    <link href="https://ropo0107.github.io/2020/05/29/rl/rl_note_5_policy_gradent/"/>
-    <id>https://ropo0107.github.io/2020/05/29/rl/rl_note_5_policy_gradent/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_5_policy_gradent/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/05/29/rl/rl_note_5_policy_gradent/</id>
     <published>2020-05-29T03:51:55.000Z</published>
     <updated>2022-02-26T07:57:29.395Z</updated>
     
@@ -405,19 +405,19 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/RL/"/>
     
-      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
   </entry>
   
   <entry>
     <title>【dl】 神经网络中参数量和计算量</title>
-    <link href="https://ropo0107.github.io/2020/04/24/dl/net_param_calculate/"/>
-    <id>https://ropo0107.github.io/2020/04/24/dl/net_param_calculate/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/04/24/dl/net_param_calculate/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/04/24/dl/net_param_calculate/</id>
     <published>2020-04-24T04:51:55.000Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -434,17 +434,17 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="DL，Note" scheme="https://ropo0107.github.io/tags/DL%EF%BC%8CNote/"/>
+      <category term="DL，Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/DL%EF%BC%8CNote/"/>
     
   </entry>
   
   <entry>
     <title>【dl】 GAN_公式推导</title>
-    <link href="https://ropo0107.github.io/2020/03/24/dl/GAN/"/>
-    <id>https://ropo0107.github.io/2020/03/24/dl/GAN/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/03/24/dl/GAN/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/03/24/dl/GAN/</id>
     <published>2020-03-24T04:51:55.000Z</published>
     <updated>2022-02-26T07:43:36.856Z</updated>
     
@@ -460,21 +460,21 @@
     </summary>
     
     
-      <category term="学术" scheme="https://ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+      <category term="学术" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="RL" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/RL/"/>
     
-      <category term="RL" scheme="https://ropo0107.github.io/tags/RL/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
-      <category term="GAN" scheme="https://ropo0107.github.io/tags/GAN/"/>
+      <category term="GAN" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/GAN/"/>
     
   </entry>
   
   <entry>
     <title>python中的tips</title>
-    <link href="https://ropo0107.github.io/2020/03/19/tips/python_tips/"/>
-    <id>https://ropo0107.github.io/2020/03/19/tips/python_tips/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/03/19/tips/python_tips/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/03/19/tips/python_tips/</id>
     <published>2020-03-18T18:51:55.000Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -492,19 +492,19 @@
     </summary>
     
     
-      <category term="编程" scheme="https://ropo0107.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Note" scheme="https://ropo0107.github.io/tags/Note/"/>
+      <category term="Note" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/Note/"/>
     
-      <category term="python" scheme="https://ropo0107.github.io/tags/python/"/>
+      <category term="python" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>【blog】 Hexo修改背景图片及主题透明</title>
-    <link href="https://ropo0107.github.io/2020/03/15/blog/blog_background/"/>
-    <id>https://ropo0107.github.io/2020/03/15/blog/blog_background/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/03/15/blog/blog_background/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/03/15/blog/blog_background/</id>
     <published>2020-03-14T22:51:55.000Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -520,17 +520,17 @@
     </summary>
     
     
-      <category term="杂记" scheme="https://ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="blog" scheme="https://ropo0107.github.io/tags/blog/"/>
+      <category term="blog" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>【blog】 Hexo迁移到vps</title>
-    <link href="https://ropo0107.github.io/2020/03/10/blog/vps_hexo/"/>
-    <id>https://ropo0107.github.io/2020/03/10/blog/vps_hexo/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/03/10/blog/vps_hexo/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/03/10/blog/vps_hexo/</id>
     <published>2020-03-09T23:23:55.000Z</published>
     <updated>2021-08-19T09:03:04.000Z</updated>
     
@@ -547,21 +547,21 @@
     </summary>
     
     
-      <category term="杂记" scheme="https://ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="blog" scheme="https://ropo0107.github.io/tags/blog/"/>
+      <category term="blog" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/blog/"/>
     
-      <category term="vps" scheme="https://ropo0107.github.io/tags/vps/"/>
+      <category term="vps" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/vps/"/>
     
-      <category term="ubuntu" scheme="https://ropo0107.github.io/tags/ubuntu/"/>
+      <category term="ubuntu" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>trojan做点不一样的事</title>
-    <link href="https://ropo0107.github.io/2020/03/09/technology/trojan/"/>
-    <id>https://ropo0107.github.io/2020/03/09/technology/trojan/</id>
+    <link href="https://ropo0107.github.io/ropo0107.github.io/2020/03/09/technology/trojan/"/>
+    <id>https://ropo0107.github.io/ropo0107.github.io/2020/03/09/technology/trojan/</id>
     <published>2020-03-09T12:51:55.000Z</published>
     <updated>2021-08-19T09:27:06.000Z</updated>
     
@@ -577,14 +577,14 @@
     </summary>
     
     
-      <category term="杂记" scheme="https://ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="https://ropo0107.github.io/ropo0107.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
-      <category term="blog" scheme="https://ropo0107.github.io/tags/blog/"/>
+      <category term="blog" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/blog/"/>
     
-      <category term="ubuntu" scheme="https://ropo0107.github.io/tags/ubuntu/"/>
+      <category term="ubuntu" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/ubuntu/"/>
     
-      <category term="trojan" scheme="https://ropo0107.github.io/tags/trojan/"/>
+      <category term="trojan" scheme="https://ropo0107.github.io/ropo0107.github.io/tags/trojan/"/>
     
   </entry>
   
