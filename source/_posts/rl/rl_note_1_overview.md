@@ -16,7 +16,7 @@ date: 2020-05-29 11:51:55
 
 - The learner is not told which actions to take, but instead must discover which actions yield the most reward by trying them.
   
-- Trial-and-error exploration (balance between exploration and
+- Trial-and-error exploration (balance between exploration and exploitation)
 
 - There is no supervisor, only a reward signal, which is also delayed
 
