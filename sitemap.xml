@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ropo0107.github.io/2022/10/24/robot/kalman_filter/</loc>
+    
+    <lastmod>2022-10-25T08:35:35.301Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/07/11/robot/quaternion/</loc>
+    
+    <lastmod>2022-03-01T05:19:43.638Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/</loc>
+    
+    <lastmod>2022-03-01T05:19:43.635Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2022/02/24/dl/ml_note_1_math_basis/</loc>
+    
+    <lastmod>2022-03-01T05:19:43.619Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ropo0107.github.io/2020/03/04/tips/ubuntu_tips/</loc>
     
     <lastmod>2022-02-26T08:00:29.246Z</lastmod>
@@ -40,13 +68,6 @@
     <loc>https://ropo0107.github.io/2020/05/29/rl/rl_note_2_mdp/</loc>
     
     <lastmod>2022-02-26T07:57:02.922Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/</loc>
-    
-    <lastmod>2022-02-26T07:56:55.357Z</lastmod>
     
   </url>
   
@@ -103,13 +124,6 @@
     <loc>https://ropo0107.github.io/2021/01/10/ml/ml_base/</loc>
     
     <lastmod>2021-11-11T08:35:20.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ropo0107.github.io/2020/07/11/robot/quaternion/</loc>
-    
-    <lastmod>2021-11-11T07:24:02.000Z</lastmod>
     
   </url>
   
@@ -206,13 +220,6 @@
   
   <url>
     <loc>https://ropo0107.github.io/2020/03/03/rl/reinforencement-learning/</loc>
-    
-    <lastmod>2021-08-19T09:03:04.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ropo0107.github.io/2020/11/17/robot/gpd/</loc>
     
     <lastmod>2021-08-19T09:03:04.000Z</lastmod>
     
