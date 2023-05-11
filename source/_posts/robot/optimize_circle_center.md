@@ -40,7 +40,7 @@ $$L_1 = \begin{bmatrix}
 1  \\
 \end{bmatrix}$$
 
-$$MA=1$$
+$$MA=L_1$$
 
 由最小二乘得到：
 
