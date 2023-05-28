@@ -68,7 +68,7 @@ $$ S_t = f(H_t)$$
   $$O_t = S^e_t = S^a_t$$
 
 - **Partial observability** : agent indirectly observes the environment, formally as partially observable Markov decision process (POMDP)
-  $$O_t \neq ^e_t \neq S^a_t$$
+  $$O_t \neq S^e_t \neq S^a_t$$
   
   
 

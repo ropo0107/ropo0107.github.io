@@ -2,6 +2,7 @@
 .deploy_git/
 .history
 .vs/
+.vscode/
 
 #cache use "hexo g " generate the cache
 public/

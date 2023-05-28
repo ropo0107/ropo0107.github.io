@@ -142,6 +142,8 @@ https://zhuanlan.zhihu.com/p/87418561
 
 https://krasjet.github.io/quaternion/quaternion.pdf
 
+https://graphics.stanford.edu/courses/cs348a-17-winter/Papers/quaternion.pdf
+
 ## code链接:
 
 https://github.com/tsinghua-rll/UR5_Controller/blob/master/RTIF/LowLevel/quaternion.py
