@@ -137,6 +137,12 @@ $$RotateVector = \theta*v=\theta*(vx,vy,vz)$$
         ![](/images/posts/robot/quaternion/three_dim.jpg)
 
 
+## screw
+
+## 对偶四元数(Dual Quaternion)
+
+
+
 ## 参考链接:
 https://zhuanlan.zhihu.com/p/87418561
 
