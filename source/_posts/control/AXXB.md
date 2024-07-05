@@ -658,4 +658,5 @@ logdq(const DualQuaternion<T> & dq)
 ```
 
 ## 引用
-《Hand-Eye Calibration Using Dual Quaternions》Konstantinos Daniilidis
+- 《Hand-Eye Calibration Using Dual Quaternions》Konstantinos Daniilidis
+- 链接：https://pan.baidu.com/s/1Kr-SI75duimNDI78NU37XQ?pwd=skm7 提取码：skm7
