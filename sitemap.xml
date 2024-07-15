@@ -2,275 +2,324 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2020/12/21/tips/docker/</loc>
+    <loc>https://ropo0107.github.io/2024/05/15/control/AXXB/</loc>
     
-    <lastmod>2020-12-21T07:36:34.490Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/08/30/robot/kinect_dk/</loc>
-    
-    <lastmod>2020-11-17T14:56:10.527Z</lastmod>
+    <lastmod>2024-07-15T14:16:20.967Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/11/17/robot/gpd/</loc>
+    <loc>https://ropo0107.github.io/2024/07/15/control/li_group/</loc>
     
-    <lastmod>2020-11-17T14:51:49.592Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/11/03/robot/robot_dynamic/</loc>
-    
-    <lastmod>2020-11-03T08:16:25.192Z</lastmod>
+    <lastmod>2024-07-15T14:16:20.967Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/11/03/robot/robot_base%20copy/</loc>
+    <loc>https://ropo0107.github.io/2024/05/15/control/lqr_mpc/</loc>
     
-    <lastmod>2020-11-03T08:16:13.031Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/07/11/robot/quaternion/</loc>
-    
-    <lastmod>2020-10-23T02:02:28.039Z</lastmod>
+    <lastmod>2024-07-15T14:16:20.967Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/07/19/robot/ros_error/</loc>
+    <loc>https://ropo0107.github.io/2024/05/15/control/obb/</loc>
     
-    <lastmod>2020-07-22T11:43:28.949Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/07/19/robot/ros_workspace/</loc>
-    
-    <lastmod>2020-07-19T13:58:11.929Z</lastmod>
+    <lastmod>2024-07-15T14:16:20.967Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/09/go/go_interface/</loc>
+    <loc>https://ropo0107.github.io/2024/03/26/control/impedance_admittance/</loc>
     
-    <lastmod>2020-07-14T17:35:57.483Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/09/go/go_concurrency/</loc>
-    
-    <lastmod>2020-07-14T17:35:50.035Z</lastmod>
+    <lastmod>2024-03-26T15:29:59.528Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/03/go/go/</loc>
+    <loc>https://ropo0107.github.io/2020/07/11/robot/quaternion/</loc>
     
-    <lastmod>2020-07-14T17:35:35.035Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/04/24/dl/net_param_calculate/</loc>
-    
-    <lastmod>2020-07-14T17:34:58.786Z</lastmod>
+    <lastmod>2024-03-26T14:57:22.146Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/24/dl/GAN/</loc>
+    <loc>https://ropo0107.github.io/2024/03/26/control/b_splie/</loc>
     
-    <lastmod>2020-07-14T17:34:53.869Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/03/dl/dl_tips/</loc>
-    
-    <lastmod>2020-07-14T17:34:33.769Z</lastmod>
+    <lastmod>2024-03-26T14:51:47.301Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/15/blog/blog_background/</loc>
+    <loc>https://ropo0107.github.io/2024/03/26/control/bizer/</loc>
     
-    <lastmod>2020-07-14T17:34:16.164Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/03/blog/build_my_blog/</loc>
-    
-    <lastmod>2020-07-14T17:34:08.296Z</lastmod>
+    <lastmod>2024-03-26T14:51:37.314Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/08/blog/music/</loc>
+    <loc>https://ropo0107.github.io/tags/index.html</loc>
     
-    <lastmod>2020-07-14T17:34:07.100Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/10/blog/vps_hexo/</loc>
-    
-    <lastmod>2020-07-14T17:34:03.380Z</lastmod>
+    <lastmod>2024-03-26T14:46:28.474Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/08/blog/blog_add_custom_html/</loc>
+    <loc>https://ropo0107.github.io/2020/03/09/technology/trojan/</loc>
     
-    <lastmod>2020-07-14T17:33:37.327Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/05/29/rl/rl_note_policy_gradent/</loc>
-    
-    <lastmod>2020-07-09T11:33:15.935Z</lastmod>
+    <lastmod>2024-03-26T14:46:28.402Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/05/29/rl/rl_note_value_function_approximation/</loc>
+    <loc>https://ropo0107.github.io/2024/03/26/tips/docker/</loc>
     
-    <lastmod>2020-07-08T02:07:22.582Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/05/29/rl/rl_note_model_free/</loc>
-    
-    <lastmod>2020-07-08T02:07:16.495Z</lastmod>
+    <lastmod>2024-03-26T14:46:28.402Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/05/29/rl/rl_note_mpc/</loc>
+    <loc>https://ropo0107.github.io/2020/03/19/tips/python_tips/</loc>
     
-    <lastmod>2020-07-08T02:07:04.655Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/05/29/rl/rl_note_overview/</loc>
-    
-    <lastmod>2020-07-08T02:06:50.259Z</lastmod>
+    <lastmod>2024-03-26T14:46:28.402Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
+    <loc>https://ropo0107.github.io/2020/03/04/tips/ubuntu_tips/</loc>
     
-    <lastmod>2020-06-09T18:52:20.098Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/05/leetcode/leetcode_Backtracking/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
+    <lastmod>2024-03-26T14:46:28.402Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/05/leetcode/leetcode_Branch_and_bound/</loc>
+    <loc>https://ropo0107.github.io/2020/07/19/robot/ros_error/</loc>
     
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/05/leetcode/leetcode_dp/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
+    <lastmod>2024-03-26T14:46:28.402Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/05/leetcode/leetcode_Divide_and_Conquer/</loc>
+    <loc>https://ropo0107.github.io/2020/07/19/robot/ros_workspace/</loc>
     
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/05/leetcode/leetcode_greedy/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
+    <lastmod>2024-03-26T14:46:28.402Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/04/leetcode/leetcode_note/</loc>
+    <loc>https://ropo0107.github.io/2021/11/16/robot/tcp_calibration/</loc>
     
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/05/leetcode/leetcode_sort/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
+    <lastmod>2024-03-26T14:46:28.402Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/03/rl/reinforencement-learning/</loc>
+    <loc>https://ropo0107.github.io/about/index.html</loc>
     
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/09/technology/trojan/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
+    <lastmod>2024-03-26T14:46:28.402Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/19/tips/python_tips/</loc>
+    <loc>https://ropo0107.github.io/categories/index.html</loc>
     
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/04/tips/ubuntu_tips/</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
+    <lastmod>2024-03-26T14:46:28.402Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/404.html</loc>
+    <loc>https://ropo0107.github.io/2020/03/03/go/go/</loc>
     
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
-    
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
+    <lastmod>2024-03-26T14:46:28.398Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/about/index.html</loc>
+    <loc>https://ropo0107.github.io/2020/03/09/go/go_interface/</loc>
     
-    <lastmod>2020-06-09T18:52:20.070Z</lastmod>
+    <lastmod>2024-03-26T14:46:28.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/03/05/leetcode/leetcode_dp/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/03/04/leetcode/leetcode_note/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/03/05/leetcode/leetcode_sort/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2021/01/10/ml/ml_base/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/03/03/rl/reinforencement-learning/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/05/29/rl/rl_note_2_mdp/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/05/29/rl/rl_note_3_model_free/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/05/29/rl/rl_note_5_policy_gradent/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/08/30/robot/kinect_dk/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2021/11/16/robot/optimize_circle_center/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/05/29/rl/rl_note_4_value_function_approximation/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2022/10/24/robot/kalman_filter/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/03/03/blog/build_my_blog/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.394Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/03/08/blog/blog_add_custom_html/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.394Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/03/08/blog/music/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.394Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/03/15/blog/blog_background/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.394Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/03/10/blog/vps_hexo/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.394Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2023/05/15/control/pid/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.394Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2024/03/26/control/pointsets_registration/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.394Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/03/03/dl/dl_tips/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.394Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2024/03/26/control/svd_resistration/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.394Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/04/24/dl/net_param_calculate/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.394Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2022/02/24/dl/ml_note_1_math_basis/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.394Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/2020/03/24/dl/GAN/</loc>
+    
+    <lastmod>2024-03-26T14:46:28.394Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ropo0107.github.io/404.html</loc>
+    
+    <lastmod>2024-03-26T14:46:28.390Z</lastmod>
     
   </url>
   

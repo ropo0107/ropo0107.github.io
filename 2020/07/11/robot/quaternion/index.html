@@ -79,23 +79,23 @@
 
 
 
-<meta name="description" content="对于坐标的变换，旋转和平移是基本的两步，平移可以是一个标量， 旋转有多种形式可以表示，（四元数， 欧拉角，旋转矩阵） 欧拉角 图中演示的就是用 $(z, x,z^{‘})$ 方法表示方向的过程。在此过程中，有如下图展示的 $(\alpha, \beta,\gamma)$三个角，分别绕着原坐标z轴(蓝)，一次旋转以后的x轴(绿)以及两次旋转以后的z轴(红)旋转，最终产生的红色坐标系即表示出目标方向。">
+<meta name="description" content="对于坐标的变换，旋转和平移是基本的两步，平移可以是一个标量， 旋转有多种形式可以表示，（RPY， 欧拉角， 四元数， 旋转矢量， 旋转矩阵） RPY固定（参考）坐标系 A 旋转：假设开始两个坐标系重合，先将 B 绕 A 的 X 轴旋转$\alpha$，然后绕 A 的 Y 轴旋转 $\beta$，最后绕 A 的 Z 轴旋转 $\gamma$，就能旋转到当前姿态。可以称其(Roll, Pitch, Y">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【robot】 quaternion">
-<meta property="og:url" content="http://yoursite.com/2020/07/11/robot/quaternion/index.html">
+<meta property="og:url" content="https://ropo0107.github.io/2020/07/11/robot/quaternion/index.html">
 <meta property="og:site_name" content="无恙の博客">
-<meta property="og:description" content="对于坐标的变换，旋转和平移是基本的两步，平移可以是一个标量， 旋转有多种形式可以表示，（四元数， 欧拉角，旋转矩阵） 欧拉角 图中演示的就是用 $(z, x,z^{‘})$ 方法表示方向的过程。在此过程中，有如下图展示的 $(\alpha, \beta,\gamma)$三个角，分别绕着原坐标z轴(蓝)，一次旋转以后的x轴(绿)以及两次旋转以后的z轴(红)旋转，最终产生的红色坐标系即表示出目标方向。">
+<meta property="og:description" content="对于坐标的变换，旋转和平移是基本的两步，平移可以是一个标量， 旋转有多种形式可以表示，（RPY， 欧拉角， 四元数， 旋转矢量， 旋转矩阵） RPY固定（参考）坐标系 A 旋转：假设开始两个坐标系重合，先将 B 绕 A 的 X 轴旋转$\alpha$，然后绕 A 的 Y 轴旋转 $\beta$，最后绕 A 的 Z 轴旋转 $\gamma$，就能旋转到当前姿态。可以称其(Roll, Pitch, Y">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/images/posts/robot/quaternion/eular.gif">
-<meta property="og:image" content="http://yoursite.com/images/posts/robot/quaternion/quaternion.jpg">
-<meta property="og:image" content="http://yoursite.com/images/posts/robot/quaternion/three_dim.jpg">
+<meta property="og:image" content="https://ropo0107.github.io/images/posts/robot/quaternion/eular.gif">
+<meta property="og:image" content="https://ropo0107.github.io/images/posts/robot/quaternion/quaternion.jpg">
+<meta property="og:image" content="https://ropo0107.github.io/images/posts/robot/quaternion/three_dim.jpg">
 <meta property="article:published_time" content="2020-07-11T15:34:55.000Z">
-<meta property="article:modified_time" content="2020-10-23T02:02:28.039Z">
+<meta property="article:modified_time" content="2024-03-26T14:57:22.146Z">
 <meta property="article:author" content="无恙">
 <meta property="article:tag" content="Note">
 <meta property="article:tag" content="Robot">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/posts/robot/quaternion/eular.gif">
+<meta name="twitter:image" content="https://ropo0107.github.io/images/posts/robot/quaternion/eular.gif">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/07/11/robot/quaternion/"/>
+  <link rel="canonical" href="https://ropo0107.github.io/2020/07/11/robot/quaternion/"/>
 
 
 
@@ -177,7 +177,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">Nothing can replace hard work!</p>
+        <p class="site-subtitle">幸得识卿桃花面，从此阡陌多暖春！</p>
       
   </div>
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/11/robot/quaternion/">
+    <link itemprop="mainEntityOfPage" href="https://ropo0107.github.io/2020/07/11/robot/quaternion/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="无恙">
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.1k
+                  1.8k
                 </span>
               
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  4
+                  7
                 </span>
               
             </div>
@@ -426,15 +426,32 @@
       
 
       
-        <p>对于坐标的变换，旋转和平移是基本的两步，平移可以是一个标量， 旋转有多种形式可以表示，（四元数， 欧拉角，旋转矩阵）</p>
-<h2 id="欧拉角"><a href="#欧拉角" class="headerlink" title="欧拉角"></a>欧拉角</h2><p><img src="/images/posts/robot/quaternion/eular.gif" alt=""></p>
+        <p>对于坐标的变换，旋转和平移是基本的两步，平移可以是一个标量， 旋转有多种形式可以表示，（RPY， 欧拉角， 四元数， 旋转矢量， 旋转矩阵）</p>
+<h2 id="RPY"><a href="#RPY" class="headerlink" title="RPY"></a>RPY</h2><p>固定（参考）坐标系 A 旋转：假设开始两个坐标系重合，先将 B 绕 A 的 X 轴旋转$\alpha$，然后绕 A 的 Y 轴旋转 $\beta$，最后绕 A 的 Z 轴旋转 $\gamma$，就能旋转到当前姿态。可以称其(Roll, Pitch, Yaw)。由于是绕固定坐标系旋转，则旋转矩阵为：</p>
+<script type="math/tex; mode=display">R_{XYZ}​(\alpha,\beta,\gamma)=R_Z​(\gamma)R_Y​(\beta)R_X(\alpha)</script><h2 id="欧拉角"><a href="#欧拉角" class="headerlink" title="欧拉角"></a>欧拉角</h2><p><img src="/images/posts/robot/quaternion/eular.gif" alt=""></p>
 <p>图中演示的就是用 $(z, x,z^{‘})$ 方法表示方向的过程。在此过程中，有如下图展示的 $(\alpha, \beta,\gamma)$三个角，分别绕着原坐标z轴(蓝)，一次旋转以后的x轴(绿)以及两次旋转以后的z轴(红)旋转，最终产生的红色坐标系即表示出目标方向。</p>
-<h2 id="四元数定义"><a href="#四元数定义" class="headerlink" title="四元数定义"></a>四元数定义</h2><p>首先，定义一个你需要做的旋转。旋转轴为向量$v=(vx,vy,vz)$，旋转角度为$\theta$（右手法则的旋转）</p>
+<p>绕自身坐标轴 B 旋转：假设开始两个坐标系重合，先将 B 绕自身的 Z 轴旋转 $\gamma$，然后绕 Y 轴旋转 $\beta$，最后绕 X 轴旋转 $\alpha$，就能旋转到当前姿态。称其为Z-Y-X欧拉角，由于是绕自身坐标轴进行旋转，则旋转矩阵为:</p>
+<script type="math/tex; mode=display">R_{X^{'}Y^{'}Z^{'}}​(\alpha,\beta,\gamma)=R_{Z^{'}}​(\gamma)R_{Y^{'}}​(\beta)R_{X^{'}}(\alpha)</script><h2 id="旋转矩阵"><a href="#旋转矩阵" class="headerlink" title="旋转矩阵"></a>旋转矩阵</h2><p>  坐标系B由坐标系A旋转得到，$^A_BR$为坐标系B的各轴单位向量在坐标系A中的投影</p>
+<script type="math/tex; mode=display">^A_BR = \begin{bmatrix} ^A\hat{X}_B & ^A\hat{X}_B & ^A\hat{X}_B  \end{bmatrix}</script><h2 id="旋转矩阵的左乘和右乘"><a href="#旋转矩阵的左乘和右乘" class="headerlink" title="旋转矩阵的左乘和右乘"></a>旋转矩阵的左乘和右乘</h2><p>  如上面 RPY 和欧拉角绕轴旋转得到 $R_Z$、$R_Y$、$R_Z$乘法顺序。其中rpy绕定轴旋转是左乘，欧拉角绕自身坐标系即动轴旋转是右乘</p>
+<ul>
+<li>这里的左右乘指的并不是某一向量左乘或者右乘旋转矩阵，而是多个旋转矩阵的组合方式是左乘还是右乘。</li>
+<li>这句话还遗漏了一个相当重要的信息，绕固定坐标系旋转讨论的是向量的旋转，绕自身坐标系旋转讨论的是坐标变换！这是完全不一样的两种功能，</li>
+</ul>
+<h2 id="齐次变换矩阵的描述"><a href="#齐次变换矩阵的描述" class="headerlink" title="齐次变换矩阵的描述"></a>齐次变换矩阵的描述</h2><ul>
+<li>坐标系的描述<br>$_B^A{T}$表示$B$坐标系基于$A$坐标系的变换， $_B^A{R}$的各列是坐标系$B$主轴方向上的单位矢量，$^A{P}_{BORG}$确定$B$的原点。</li>
+<li><p>变换映射（同一点相对于不同坐标系的描述）</p>
+<script type="math/tex; mode=display">^A{P} = _B^A{T} ^B{P}</script><script type="math/tex; mode=display">\begin{bmatrix} ^A{P}\\1\end{bmatrix} =\begin{bmatrix} ^A_B{R} & ^A{P}_{BORG} \\ 0 & 1 \end{bmatrix} \begin{bmatrix} ^B{P}\\1\end{bmatrix}</script></li>
+<li><p>变换算子（同一坐标系下，向量的旋转）</p>
+<script type="math/tex; mode=display">^A{P}_2 = {T} ^A{P}_1</script><p>一个矢量在当前坐标系下的变化, 其中$T$为1到2的变化, 其中$T$可看作 $_2^1{T}$。</p>
+</li>
+</ul>
+<h2 id="RPY和欧拉角的联系"><a href="#RPY和欧拉角的联系" class="headerlink" title="RPY和欧拉角的联系"></a>RPY和欧拉角的联系</h2><p>经过RPY旋转（定轴，外旋）可以到达另一个坐标系，等价于经过绕动轴ZYX旋转（内旋）到达另一个坐标系</p>
+<script type="math/tex; mode=display">Eular_{zyx} = (yaw, pitch, roll)</script><h2 id="四元数定义"><a href="#四元数定义" class="headerlink" title="四元数定义"></a>四元数定义</h2><p>首先，定义一个你需要做的旋转。旋转轴为向量$v=(vx,vy,vz)$，旋转角度为$\theta$（右手法则的旋转）</p>
 <p><img src="/images/posts/robot/quaternion/quaternion.jpg" alt=""></p>
 <p>图中$v=(\frac{1}{\sqrt{14}}, \frac{2}{\sqrt{14}}, \frac{3}{\sqrt{14}}), \theta = \frac{\pi}{3}$</p>
 <p>那么与此相对应的四元数（下三行式子都是一个意思，只是不同的表达形式）</p>
 <ul>
-<li><script type="math/tex; mode=display">q=(\cos(\frac{\theta}{2}), \sin(\frac{\theta}{2})*vx,\sin(\frac{\theta}{2})*vy,\sin(\frac{\theta}{2})*vz$$$</script></li>
+<li><script type="math/tex; mode=display">q=(\cos(\frac{\theta}{2}), \sin(\frac{\theta}{2})*vx,\sin(\frac{\theta}{2})*vy,\sin(\frac{\theta}{2})*vz</script></li>
 <li><script type="math/tex; mode=display">q=(\cos(\frac{\\pi}{6}), \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}},sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}}, \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})</script></li>
 <li><script type="math/tex; mode=display">q=(\cos(\frac{\\pi}{6}) + \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}} i + sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}} j +  \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)</script></li>
 </ul>
@@ -444,7 +461,8 @@
 <li><script type="math/tex; mode=display">q^{-1}=(\cos(\frac{\\pi}{6}), -\sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}}, - sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}}, -\sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}})</script></li>
 <li><script type="math/tex; mode=display">q^{-1}=(\cos(\frac{\\pi}{6}) - \sin(\frac{\pi}{6})*\frac{1}{\sqrt{14}} i - sin(\frac{\pi}{6})*\frac{2}{\sqrt{14}} j - \sin(\frac{\pi}{6})*\frac{3}{\sqrt{14}}k)</script></li>
 </ul>
-<h2 id="四元数运算"><a href="#四元数运算" class="headerlink" title="四元数运算"></a>四元数运算</h2><p>求$w=(wx,wy,wz)$在旋转下的新的坐标$w’$</p>
+<h2 id="旋转矢量和四元数的联系"><a href="#旋转矢量和四元数的联系" class="headerlink" title="旋转矢量和四元数的联系"></a>旋转矢量和四元数的联系</h2><p>四元数由4个值组成， 可以通过旋转矢量中的3个量表示。方法是通过定轴旋转可得到四元数中的<br>轴$v=(vx,vy,vz)$以及角$\theta$。</p>
+<script type="math/tex; mode=display">RotateVector = \theta*v=\theta*(vx,vy,vz)</script><h2 id="四元数运算"><a href="#四元数运算" class="headerlink" title="四元数运算"></a>四元数运算</h2><p>求$w=(wx,wy,wz)$在旋转下的新的坐标$w’$</p>
 <ul>
 <li>定义纯四元数<script type="math/tex; mode=display">qw=(0,wx,wy,wz) =0+ wx*i+ wy*j+wz*k</script></li>
 <li>进行四元数运算<script type="math/tex; mode=display">qw'=q*qw*q^{-1}</script></li>
@@ -460,7 +478,7 @@
 <p>  $\Delta q = q_1 q_0^{-1}$</p>
 </li>
 <li><p>假设两个四元数为单位四元数 $q^{-1} = q^*$，</p>
-<p>  $\Delta q=q_1 q_0^{×}$</p>
+<p>  $\Delta q=q_1 q_0^{*}$</p>
 </li>
 <li><p>一个单位四元数的 $t$ 次幂等同于将它的旋转角度缩放至 $t$ 倍，并且不会改变它的旋转轴</p>
 </li>
@@ -500,8 +518,9 @@ w_{z1}\sin(\theta_1) \\
 </ul>
 </li>
 </ul>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接:"></a>参考链接:</h2><p><a href="https://zhuanlan.zhihu.com/p/87418561" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/87418561</a></p>
+<h2 id="screw"><a href="#screw" class="headerlink" title="screw"></a>screw</h2><h2 id="对偶四元数-Dual-Quaternion"><a href="#对偶四元数-Dual-Quaternion" class="headerlink" title="对偶四元数(Dual Quaternion)"></a>对偶四元数(Dual Quaternion)</h2><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接:"></a>参考链接:</h2><p><a href="https://zhuanlan.zhihu.com/p/87418561" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/87418561</a></p>
 <p><a href="https://krasjet.github.io/quaternion/quaternion.pdf" target="_blank" rel="noopener">https://krasjet.github.io/quaternion/quaternion.pdf</a></p>
+<p><a href="https://graphics.stanford.edu/courses/cs348a-17-winter/Papers/quaternion.pdf" target="_blank" rel="noopener">https://graphics.stanford.edu/courses/cs348a-17-winter/Papers/quaternion.pdf</a></p>
 <h2 id="code链接"><a href="#code链接" class="headerlink" title="code链接:"></a>code链接:</h2><p><a href="https://github.com/tsinghua-rll/UR5_Controller/blob/master/RTIF/LowLevel/quaternion.py" target="_blank" rel="noopener">https://github.com/tsinghua-rll/UR5_Controller/blob/master/RTIF/LowLevel/quaternion.py</a></p>
 
       
@@ -564,8 +583,8 @@ w_{z1}\sin(\theta_1) \\
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/29/rl/rl_note_mpc/" rel="next" title="【rl_note】2. Markov Decision Processes">
-                <i class="fa fa-chevron-left"></i> 【rl_note】2. Markov Decision Processes
+              <a href="/2020/05/29/rl/rl_note_1_overview/" rel="next" title="【rl_note】1. Overview">
+                <i class="fa fa-chevron-left"></i> 【rl_note】1. Overview
               </a>
             
           </div>
@@ -574,8 +593,8 @@ w_{z1}\sin(\theta_1) \\
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/19/robot/ros_error/" rel="prev" title="【ros】 编译时的问题">
-                【ros】 编译时的问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/07/19/robot/ros_workspace/" rel="prev" title="【ros】 workspace and namespace">
+                【ros】 workspace and namespace <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -659,7 +678,7 @@ w_{z1}\sin(\theta_1) \\
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -670,7 +689,7 @@ w_{z1}\sin(\theta_1) \\
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -681,7 +700,7 @@ w_{z1}\sin(\theta_1) \\
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -748,7 +767,7 @@ w_{z1}\sin(\theta_1) \\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#欧拉角"><span class="nav-number">1.</span> <span class="nav-text">欧拉角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四元数定义"><span class="nav-number">2.</span> <span class="nav-text">四元数定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四元数运算"><span class="nav-number">3.</span> <span class="nav-text">四元数运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四元数求夹角"><span class="nav-number">4.</span> <span class="nav-text">四元数求夹角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3D空间旋转变化量-vs-四元数4D向量空间夹角"><span class="nav-number">5.</span> <span class="nav-text">3D空间旋转变化量 vs 四元数4D向量空间夹角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解四元数"><span class="nav-number">6.</span> <span class="nav-text">理解四元数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">7.</span> <span class="nav-text">参考链接:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#code链接"><span class="nav-number">8.</span> <span class="nav-text">code链接:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RPY"><span class="nav-number">1.</span> <span class="nav-text">RPY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#欧拉角"><span class="nav-number">2.</span> <span class="nav-text">欧拉角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#旋转矩阵"><span class="nav-number">3.</span> <span class="nav-text">旋转矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#旋转矩阵的左乘和右乘"><span class="nav-number">4.</span> <span class="nav-text">旋转矩阵的左乘和右乘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#齐次变换矩阵的描述"><span class="nav-number">5.</span> <span class="nav-text">齐次变换矩阵的描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RPY和欧拉角的联系"><span class="nav-number">6.</span> <span class="nav-text">RPY和欧拉角的联系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四元数定义"><span class="nav-number">7.</span> <span class="nav-text">四元数定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#旋转矢量和四元数的联系"><span class="nav-number">8.</span> <span class="nav-text">旋转矢量和四元数的联系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四元数运算"><span class="nav-number">9.</span> <span class="nav-text">四元数运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四元数求夹角"><span class="nav-number">10.</span> <span class="nav-text">四元数求夹角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3D空间旋转变化量-vs-四元数4D向量空间夹角"><span class="nav-number">11.</span> <span class="nav-text">3D空间旋转变化量 vs 四元数4D向量空间夹角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解四元数"><span class="nav-number">12.</span> <span class="nav-text">理解四元数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#screw"><span class="nav-number">13.</span> <span class="nav-text">screw</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对偶四元数-Dual-Quaternion"><span class="nav-number">14.</span> <span class="nav-text">对偶四元数(Dual Quaternion)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">15.</span> <span class="nav-text">参考链接:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#code链接"><span class="nav-number">16.</span> <span class="nav-text">code链接:</span></a></li></ol></div>
             
 
           </div>
@@ -787,7 +806,7 @@ w_{z1}\sin(\theta_1) \\
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; 2020 &mdash; <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -801,7 +820,7 @@ w_{z1}\sin(\theta_1) \\
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">27k</span>
+    <span title="Site words total count">36.4k</span>
   
 </div>
 
