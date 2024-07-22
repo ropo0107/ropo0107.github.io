@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.jpeg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.jpeg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.jpeg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.jpeg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Control," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="代码变换  图中 $θ$ 是旋转角， $a$ 是旋转轴    1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889">
+<meta property="og:type" content="article">
+<meta property="og:title" content="李群 &amp; 李代数">
+<meta property="og:url" content="https://ropo0107.github.io/2024/05/15/control/li_group/index.html">
+<meta property="og:site_name" content="无恙の博客">
+<meta property="og:description" content="代码变换  图中 $θ$ 是旋转角， $a$ 是旋转轴    1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ropo0107.github.io/images/posts/comtrol/trans.png">
+<meta property="article:published_time" content="2024-05-15T08:51:55.000Z">
+<meta property="article:modified_time" content="2024-07-22T01:38:28.831Z">
+<meta property="article:author" content="无恙">
+<meta property="article:tag" content="Control">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ropo0107.github.io/images/posts/comtrol/trans.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ropo0107.github.io/2024/05/15/control/li_group/"/>
+
+
+
+
+
+  <title>李群 & 李代数 | 无恙の博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?3740b075e17748c0bde2d912b5d8f093";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="无恙の博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">无恙の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">幸得识卿桃花面，从此阡陌多暖春！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ropo0107.github.io/2024/05/15/control/li_group/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="无恙">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="无恙の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">李群 & 李代数</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2024-05-15T16:51:55+08:00">
+                2024-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8E%A7%E5%88%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">控制</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="代码变换"><a href="#代码变换" class="headerlink" title="代码变换"></a>代码变换</h2><ul>
+<li><img src="/images/posts/comtrol/trans.png" alt=""><ul>
+<li>图中 $θ$ 是旋转角， $a$ 是旋转轴</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;eigen3&#x2F;Eigen&#x2F;Eigen&gt;</span><br><span class="line">#include &lt;sophus&#x2F;se3.hpp&gt;</span><br><span class="line">#include &lt;cmath&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Lie_group_algebra</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    Lie_group_algebra()&#123;&#125;</span><br><span class="line">    &#x2F;&#x2F;特殊正交群 R 到 Phi&#x3D;theta_n 的转换</span><br><span class="line">    void R_2_Phi(const Eigen::Matrix3d&amp; R, Eigen::Vector3d&amp; Phi);</span><br><span class="line">    &#x2F;&#x2F;李代数Phi&#x3D;theta_n 到特殊正交群R 的转换</span><br><span class="line">    void Phi_2_R(const Eigen::Vector3d&amp; Phi, Eigen::Matrix3d&amp; R);</span><br><span class="line">    &#x2F;&#x2F;特殊欧式群T 到 epsilon&#x3D;(p, Phi) 的转换</span><br><span class="line">    void T_2_epsilon(const Eigen::Isometry3d&amp; T, Eigen::Matrix&lt;double, 6, 1&gt;&amp; epsilon);</span><br><span class="line">    &#x2F;&#x2F;李代数epsilon&#x3D;(p, Phi) 到 特殊欧式群T 的转换</span><br><span class="line">    void epsilon_2_T(const Eigen::Matrix&lt;double,6,1&gt;&amp; epsilon, Eigen::Isometry3d&amp; T);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main(int argc, char** argv)</span><br><span class="line">&#123;</span><br><span class="line">    Lie_group_algebra Lie;</span><br><span class="line">    Eigen::Matrix3d R &#x3D; Eigen::AngleAxisd( - 12 * M_PI, Eigen::Vector3d(4, 5, 7).normalized()).toRotationMatrix();</span><br><span class="line">    Eigen::Vector3d t(11, 33, 99);</span><br><span class="line">    &#x2F;&#x2F;验证R 和 theta_n(Phi)之间的转换是否正确</span><br><span class="line">    cout &lt;&lt; &quot;验证R 和 theta_n(Phi)之间的转换是否正确\n&quot;;</span><br><span class="line">    cout &lt;&lt; &quot;原始R &#x3D; \n&quot; &lt;&lt; R &lt;&lt; endl;</span><br><span class="line">    Eigen::Vector3d Phi;</span><br><span class="line">    Lie.R_2_Phi(R, Phi);</span><br><span class="line">    cout &lt;&lt; &quot;计算Phi &#x3D; \n&quot; &lt;&lt; Phi &lt;&lt; endl;</span><br><span class="line">    Sophus::SO3d SO3_R(R);</span><br><span class="line">    Eigen::Vector3d so3_Phi &#x3D; SO3_R.log();</span><br><span class="line">    cout &lt;&lt; &quot;验证so3_Phi &#x3D; 利用Sophus的对数映射计算的, 理应等于Phi\n&quot; &lt;&lt; so3_Phi &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;------------&quot; &lt;&lt; endl;</span><br><span class="line">    Eigen::Matrix3d my_R;</span><br><span class="line">    Lie.Phi_2_R(Phi, my_R);</span><br><span class="line">    cout &lt;&lt; &quot;验证 my_R &#x3D; 理应等于R\n&quot; &lt;&lt; my_R &lt;&lt; endl;</span><br><span class="line">    Sophus::SO3d Sophus_R &#x3D; Sophus::SO3d::exp(Phi);</span><br><span class="line">    cout &lt;&lt; &quot;Sophus_R &#x3D; \n&quot; &lt;&lt; Sophus_R.matrix() &lt;&lt; endl;</span><br><span class="line">    &#x2F;&#x2F;确实相等，R - my_R &#x3D; 0</span><br><span class="line">    cout &lt;&lt; &quot;R - my_R &#x3D; 理应等于0矩阵\n&quot; &lt;&lt; R - my_R &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;验证T 和 (p,theta_n(Phi))之间的转换是否正确</span><br><span class="line">    cout &lt;&lt; &quot;\n----------------------------------------------------&quot;;</span><br><span class="line">    cout &lt;&lt; &quot;\n验证T 和 epsilon &#x3D; (p, theta_n(Phi))之间的转换是否正确\n\n&quot;;</span><br><span class="line">    Eigen::Isometry3d T(R);</span><br><span class="line">    T.pretranslate(t);</span><br><span class="line">    cout &lt;&lt; &quot;原始T &#x3D; \n&quot; &lt;&lt; T.matrix() &lt;&lt; endl;</span><br><span class="line">    Eigen::Matrix&lt;double,6,1&gt; epsilon;</span><br><span class="line">    Lie.T_2_epsilon(T, epsilon);</span><br><span class="line">    cout &lt;&lt; &quot;计算epsilon &#x3D; \n&quot; &lt;&lt; epsilon &lt;&lt; endl;</span><br><span class="line">    Sophus::SE3d SE3_T(R, t);</span><br><span class="line">    Eigen::Matrix&lt;double,6,1&gt; se3_epsilon &#x3D; SE3_T.log();</span><br><span class="line">    cout &lt;&lt; &quot;验证se3_epsilon &#x3D; 利用Sophus的对数映射计算的, 理应等于epsilon \n&quot; &lt;&lt; se3_epsilon &lt;&lt; endl;</span><br><span class="line">    Eigen::Isometry3d my_T &#x3D; Eigen::Isometry3d::Identity();</span><br><span class="line">    Lie.epsilon_2_T(epsilon, my_T);</span><br><span class="line">    cout &lt;&lt; &quot;验证 my_T &#x3D; 理应等于T \n&quot; &lt;&lt; my_T.matrix() &lt;&lt; endl;</span><br><span class="line">    Sophus::SE3d Sophus_T &#x3D; Sophus::SE3d::exp(epsilon);</span><br><span class="line">    cout &lt;&lt; &quot;Sophus_T &#x3D; \n&quot; &lt;&lt; Sophus_T.matrix() &lt;&lt; endl;</span><br><span class="line">    &#x2F;&#x2F;验证 my_T 是否等于 T</span><br><span class="line">    cout &lt;&lt; &quot;T - my_T &#x3D; 理应等于0矩阵 \n&quot; &lt;&lt; T.matrix() - my_T.matrix() &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;&#x2F; @brief 罗德里格斯公式的逆公式，对数映射，用 R 计算 Phi &#x3D; theta*n  </span><br><span class="line">&#x2F;&#x2F;&#x2F; 注意，当theta &#x3D; 0 或 PI 时， 当&#x3D;0时，R&#x3D;I,任意n都满足，旋转轴n不唯一。当&#x3D;PI时，</span><br><span class="line">&#x2F;&#x2F;&#x2F; @param R </span><br><span class="line">&#x2F;&#x2F;&#x2F; @param Phi </span><br><span class="line">void Lie_group_algebra::R_2_Phi(const Eigen::Matrix3d&amp; R, Eigen::Vector3d&amp; Phi)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;R &#x3D; cos(theta)I + (1-cos(theta))nnT + sin(theta)n^</span><br><span class="line">    &#x2F;&#x2F;trace(R) &#x3D; 3cos(theta) + 1 - cos(theta)</span><br><span class="line">    &#x2F;&#x2F;cos(theta) &#x3D; (trace(R) - 1) &#x2F; 2</span><br><span class="line">    double cos_theta &#x3D; (R.trace() - 1.0) &#x2F; 2;</span><br><span class="line">    &#x2F;&#x2F; 这样的话，theta一定在[0,PI]内了</span><br><span class="line">    double theta &#x3D; acos(cos_theta); </span><br><span class="line">    &#x2F;&#x2F;注意|cos_theta| &#x3D; 1的情况，此时sin_theta &#x3D; 0</span><br><span class="line">    double sin_theta &#x3D; sqrt(1.0 - cos_theta * cos_theta);</span><br><span class="line">    &#x2F;&#x2F;根据 n^ &#x3D; (R - RT) &#x2F; (2*sin(theta)) 求n; sin_theta &#x3D; 0时，不能这么求</span><br><span class="line">    if(fabs(cos_theta - 1.0) &lt; 0.000001) &#x2F;&#x2F;用&#x3D;&#x3D;1判断浮点数相等不太好</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; &quot;Situation: theta &#x3D; 0\n&quot;;</span><br><span class="line">        &#x2F;&#x2F;theta &#x3D; 0,n任意</span><br><span class="line">        Eigen::Vector3d n(1,0,0);</span><br><span class="line">        cout &lt;&lt; &quot;theta &#x3D; &quot; &lt;&lt; theta &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; &quot;n不唯一, 任意皆满足, 这里给n &#x3D; \n&quot; &lt;&lt; n &lt;&lt; endl;</span><br><span class="line">        Phi &#x3D; theta * n;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    else if(fabs(cos_theta + 1.0) &lt; 0.000001) &#x2F;&#x2F;&#x3D;&#x3D;-1</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; &quot;Situation: theta &#x3D; PI\n&quot;;</span><br><span class="line">        &#x2F;&#x2F;theta &#x3D; PI, R &#x3D; -I + 2 * n*nT, 这时候n和-n都满足，因为是旋转半圈，正负方向都对</span><br><span class="line">        &#x2F;&#x2F;根据Rn &#x3D; n, 求得的不是n就是-n</span><br><span class="line">        &#x2F;&#x2F;根据 Rn &#x3D; n 求n;</span><br><span class="line">        &#x2F;&#x2F;n为R特征值1对应的特征向量</span><br><span class="line">        Eigen::EigenSolver&lt;Eigen::Matrix3d&gt; es(R);</span><br><span class="line">        &#x2F;&#x2F;特征值</span><br><span class="line">        Eigen::Vector3d eigen_values &#x3D; es.pseudoEigenvalueMatrix().diagonal();</span><br><span class="line">        &#x2F;&#x2F; cout &lt;&lt; &quot;eigen_values &#x3D; \n&quot; &lt;&lt; eigen_values &lt;&lt; endl;</span><br><span class="line">        &#x2F;&#x2F;特征向量</span><br><span class="line">        Eigen::Matrix3d eigen_vectors &#x3D; es.pseudoEigenvectors();</span><br><span class="line">        &#x2F;&#x2F; cout &lt;&lt; &quot;eigen_vectors &#x3D; \n&quot; &lt;&lt; eigen_vectors &lt;&lt; endl;</span><br><span class="line">        &#x2F;&#x2F;特征值里等于1的位置设置为0,其他元素都大于0</span><br><span class="line">        Eigen::Vector3d is_one &#x3D; (eigen_values - Eigen::Vector3d::Ones()).cwiseAbs();</span><br><span class="line">        &#x2F;&#x2F; cout &lt;&lt; &quot;is_one &#x3D; \n&quot; &lt;&lt; is_one &lt;&lt; endl;</span><br><span class="line">        &#x2F;&#x2F;第k个特征值为1</span><br><span class="line">        Eigen::Vector3d::Index k;</span><br><span class="line">        is_one.minCoeff(&amp;k);</span><br><span class="line">        &#x2F;&#x2F; cout &lt;&lt; &quot;k &#x3D; &quot; &lt;&lt; k &lt;&lt; endl;</span><br><span class="line">        &#x2F;&#x2F;n 就是第k列特征向量</span><br><span class="line">        Eigen::Vector3d n &#x3D; eigen_vectors.block&lt;3,1&gt;(0,k);</span><br><span class="line">        n &#x3D; -n;  &#x2F;&#x2F;todo 这里要不要都可以，因为当theta&#x3D;PI时，n和-n都是对的旋转轴</span><br><span class="line">        cout &lt;&lt; &quot;theta &#x3D; &quot; &lt;&lt; theta &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; &quot;此时正负n皆可 n &#x3D; \n&quot; &lt;&lt; n &lt;&lt; endl;</span><br><span class="line">        n.normalize();</span><br><span class="line">        Phi &#x3D; theta * n;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;一般情况, 根据 n^ &#x3D; (R - RT) &#x2F; (2*sin(theta)) 求n</span><br><span class="line">        Eigen::Matrix3d n_hat &#x3D; (R - R.transpose()) &#x2F; (2 * sin_theta);</span><br><span class="line">        &#x2F;&#x2F; cout &lt;&lt; &quot;n_hat &#x3D; \n&quot; &lt;&lt; n_hat &lt;&lt; endl;</span><br><span class="line">        Eigen::Vector3d n(-n_hat(1,2), n_hat(0,2), -n_hat(0,1));</span><br><span class="line">        cout &lt;&lt; &quot;theta &#x3D; &quot; &lt;&lt; theta &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; &quot;n &#x3D; \n&quot; &lt;&lt; n &lt;&lt; endl;</span><br><span class="line">        Phi &#x3D; theta * n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;&#x2F; @brief 罗德里格斯公式，指数映射，R &#x3D; cos(theta)I + (1-cos(theta))nnT + sin(theta)n^</span><br><span class="line">&#x2F;&#x2F;&#x2F; @param Phi </span><br><span class="line">&#x2F;&#x2F;&#x2F; @param R </span><br><span class="line">void Lie_group_algebra::Phi_2_R(const Eigen::Vector3d&amp; Phi, Eigen::Matrix3d&amp; R)</span><br><span class="line">&#123;</span><br><span class="line">    double theta &#x3D; Phi.norm();</span><br><span class="line">    Eigen::Vector3d n &#x3D; Phi.normalized();</span><br><span class="line">    &#x2F;&#x2F;R &#x3D; cos(theta)I + (1-cos(theta))nnT + sin(theta)n^</span><br><span class="line">    R.setZero();</span><br><span class="line">    R(1,2) &#x3D; -n(0); R(0,2) &#x3D; n(1); R(0,1) &#x3D; -n(2);</span><br><span class="line">    R(2,1) &#x3D; n(0); R(2,0) &#x3D; -n(1); R(1,0) &#x3D; n(2);</span><br><span class="line">    &#x2F;&#x2F;sin(theta)n^</span><br><span class="line">    R &#x3D; R * sin(theta);</span><br><span class="line">    R &#x3D; R + cos(theta) * Eigen::Matrix3d::Identity() + (1.0 - cos(theta)) * n * n.transpose();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;&#x2F; @brief SE3 到 se3 的对数映射， T 到 epsilon</span><br><span class="line">&#x2F;&#x2F;&#x2F; @param T </span><br><span class="line">&#x2F;&#x2F;&#x2F; @param epsilon </span><br><span class="line">void Lie_group_algebra::T_2_epsilon(const Eigen::Isometry3d&amp; T, Eigen::Matrix&lt;double, 6, 1&gt;&amp; epsilon)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;epsilon &#x3D; (p, Phi)</span><br><span class="line">    &#x2F;&#x2F;t &#x3D; Jp  所以 p &#x3D; J.inverse() * t</span><br><span class="line">    &#x2F;&#x2F;J &#x3D; sin(theta)&#x2F;theta * I + (1 - sin(theta)&#x2F;theta) nnT + (1-cos(theta))&#x2F;theta * n^</span><br><span class="line">    Eigen::Matrix3d R &#x3D; T.rotation();</span><br><span class="line">    Eigen::Vector3d t &#x3D; T.translation();</span><br><span class="line">    Eigen::Vector3d Phi;</span><br><span class="line">    R_2_Phi(R, Phi);</span><br><span class="line">    double theta &#x3D; Phi.norm();</span><br><span class="line">    &#x2F;&#x2F;这里要注意 theta&#x3D;0 的情况</span><br><span class="line">    if(fabs(theta) &lt; 0.000001) &#x2F;&#x2F;theta &#x3D;&#x3D; 0</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;!!!怎么计算p</span><br><span class="line">        &#x2F;&#x2F;根据Sophus库来开，theta&#x3D;0时候,t&#x3D;p</span><br><span class="line">        Eigen::Vector3d p &#x3D; t;</span><br><span class="line">        epsilon.block&lt;3,1&gt;(0,0) &#x3D; p;</span><br><span class="line">        epsilon.block&lt;3,1&gt;(3,0) &#x3D; Phi;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    Eigen::Vector3d n &#x3D; Phi.normalized();</span><br><span class="line">    Eigen::Matrix3d J &#x3D; Eigen::Matrix3d::Zero();</span><br><span class="line">    J(1,2) &#x3D; -n(0); J(0,2) &#x3D; n(1); J(0,1) &#x3D; -n(2);</span><br><span class="line">    J(2,1) &#x3D; n(0); J(2,0) &#x3D; -n(1); J(1,0) &#x3D; n(2);</span><br><span class="line">    J &#x3D; J *(1.0 - cos(theta)) &#x2F; theta;</span><br><span class="line">    J &#x3D; J + Eigen::Matrix3d::Identity() * sin(theta) &#x2F; theta + (1.0 - sin(theta)&#x2F;theta) * n * n.transpose();</span><br><span class="line">    Eigen::Vector3d p &#x3D; J.inverse() * t;</span><br><span class="line">    epsilon.block&lt;3,1&gt;(0,0) &#x3D; p;</span><br><span class="line">    epsilon.block&lt;3,1&gt;(3,0) &#x3D; Phi;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;&#x2F; @brief 指数映射se3到SE3</span><br><span class="line">&#x2F;&#x2F;&#x2F; @param epsilon </span><br><span class="line">&#x2F;&#x2F;&#x2F; @param T </span><br><span class="line">void Lie_group_algebra::epsilon_2_T(const Eigen::Matrix&lt;double,6,1&gt;&amp; epsilon, Eigen::Isometry3d&amp; T)</span><br><span class="line">&#123;</span><br><span class="line">    Eigen::Vector3d p &#x3D; epsilon.block&lt;3,1&gt;(0,0);</span><br><span class="line">    Eigen::Vector3d Phi &#x3D; epsilon.block&lt;3,1&gt;(3,0);</span><br><span class="line">    double theta &#x3D; Phi.norm();</span><br><span class="line">    Eigen::Vector3d n &#x3D; Phi.normalized();</span><br><span class="line">    Eigen::Matrix3d R;</span><br><span class="line">    &#x2F;&#x2F;罗德里格斯公式</span><br><span class="line">    Phi_2_R(Phi, R);</span><br><span class="line">    &#x2F;&#x2F;t &#x3D; Jp</span><br><span class="line">    Eigen::Matrix3d J &#x3D; Eigen::Matrix3d::Zero();</span><br><span class="line">    &#x2F;&#x2F;!同样，当theta &#x3D; 0时， 怎么求J, 进而求t &#x3D; Jp</span><br><span class="line">    if(fabs(theta) &lt; 0.000001) &#x2F;&#x2F;theta &#x3D;&#x3D; 0</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;theta &#x3D; 0时, 怎么求J, t&#x3D;Jp</span><br><span class="line">        &#x2F;&#x2F;根据Sophus库来开，theta&#x3D;0时候,t&#x3D;p</span><br><span class="line">        Eigen::Vector3d t &#x3D; p;</span><br><span class="line">        T &#x3D; Eigen::Isometry3d::Identity();</span><br><span class="line">        T.rotate(R);</span><br><span class="line">        T.pretranslate(t);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    J(1,2) &#x3D; -n(0); J(0,2) &#x3D; n(1); J(0,1) &#x3D; -n(2);</span><br><span class="line">    J(2,1) &#x3D; n(0); J(2,0) &#x3D; -n(1); J(1,0) &#x3D; n(2);</span><br><span class="line">    J &#x3D; J *(1.0 - cos(theta)) &#x2F; theta;</span><br><span class="line">    J &#x3D; J + Eigen::Matrix3d::Identity() * sin(theta) &#x2F; theta + (1.0 - sin(theta)&#x2F;theta) * n * n.transpose();</span><br><span class="line">    Eigen::Vector3d t &#x3D; J * p;</span><br><span class="line">    T &#x3D; Eigen::Isometry3d::Identity();</span><br><span class="line">    T.rotate(R);</span><br><span class="line">    T.pretranslate(t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/358455662" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/358455662</a></li>
+<li><a href="https://blog.csdn.net/qq_41253960/article/details/129940463?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ECtr-1-129940463-blog-79644920.235%5Ev43%5Epc_blog_bottom_relevance_base4&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ECtr-1-129940463-blog-79644920.235%5Ev43%5Epc_blog_bottom_relevance_base4&amp;utm_relevant_index=1" target="_blank" rel="noopener">https://blog.csdn.net/qq_41253960/article/details/129940463?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ECtr-1-129940463-blog-79644920.235%5Ev43%5Epc_blog_bottom_relevance_base4&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ECtr-1-129940463-blog-79644920.235%5Ev43%5Epc_blog_bottom_relevance_base4&amp;utm_relevant_index=1</a></li>
+<li><a href="https://blog.csdn.net/weixin_45929038/article/details/122851697" target="_blank" rel="noopener">https://blog.csdn.net/weixin_45929038/article/details/122851697</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+  <div style="text-align:center;color: #ccc;font-size:14px;">
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpeg" alt="无恙 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpeg" alt="无恙 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Control/" rel="tag"><i class="fa fa-tag"></i> Control</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2024/05/15/control/lqr_mpc/" rel="next" title="LQR & MPC">
+                <i class="fa fa-chevron-left"></i> LQR & MPC
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2024/05/15/control/AXXB/" rel="prev" title="手眼标定">
+                手眼标定 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpeg"
+                alt="无恙" />
+            
+              <p class="site-author-name" itemprop="name">无恙</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ropo0107" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wangzongtao123@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="/soup/darksoup/" title="毒鸡汤" target="_blank">毒鸡汤</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="/soup/rainbow/" title="彩虹屁" target="_blank">彩虹屁</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码变换"><span class="nav-number">1.</span> <span class="nav-text">代码变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">2.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+    
+    <!--
+    <div id='music163player'>
+    -->
+      <!-- 网易云歌单-->
+      <!-- 好久不见-->
+      <!-- 
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=29095462&auto=1&height=66"></iframe>
+      -->
+      <!-- 我很快乐-->
+      <!--
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=255294&auto=1&height=66"></iframe>
+      -->
+      <!-- 爸爸妈妈-->
+    <!--
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1418319771&auto=1&height=66"></iframe>    
+    </div>
+    -->
+    
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2020 &mdash; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">无恙</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">39.7k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="footer-custom">时光如水，或踏浪而行，或逆流而上！！！</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
