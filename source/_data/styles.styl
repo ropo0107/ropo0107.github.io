@@ -1,0 +1,81 @@
+//background config
+body { 
+    background-image: url(/images/bc.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover；
+    
+    
+    //改变背景色和透明度
+    .main-inner {
+        background: #fff;
+        padding: 25px;
+        opacity: 0.75;
+        border-radius: 10px;
+    }
+
+    //文章内容的透明度设置
+    .content-wrap {
+        opacity: 0.9;
+    }
+    ​
+    //侧边框的透明度设置
+    .sidebar {
+        background-color: transparent;
+        opacity: 0.9;
+    }
+    ​
+    //菜单栏的透明度设置
+    .header-inner {
+        background: rgba(255,255,255,0.9);
+    }
+
+    
+    //修改头部导航栏显示宽度，透明度，位置等
+    #header {
+        padding: 5px 25px;
+        margin: 0 auto;
+        margin-top:15px;
+        width: 700px;
+        opacity: 0.8;
+        border-radius: 10px;
+        
+    }
+    
+    //修改底部展示信息显示宽度，透明度，位置等
+    #footer {
+        padding: 5px 25px;
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        width: 700px;
+        opacity: 0.8;
+        border-radius: 10px;
+    }
+}
+
+
+body .main {
+margin-bottom: 45px;
+}
+
+
+mjx-container.MathJax.CtxtMenu_Attached_0 {
+    min-width: auto !important;
+}
+
+// 主页文章添加阴影效果
+.post {
+   margin-top: 60px;
+   padding: 20px;
+   margin-bottom: 60px;
+   -webkit-box-shadow: 0 0 5px rgba(120, 128, 114, 1.5);
+   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);
+}
+
+.sidebar {
+    // 如果你想要使用图片作为背景，可以使用以下代码 
+    background-image: url(/images/sidebar_bc.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
