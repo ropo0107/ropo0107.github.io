@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ropo0107.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.22.0","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"slideLeftIn","sidebar":"slideDownBigOut"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="predictionEvaluate the state value without knowing the MDP model, by only interacting with the environment MCtraditional value state of v(s) $t$ is time  that state $s_i$ is visited in an episode   No">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【rl_note】3. model-free Prediction And Control">
+<meta property="og:url" content="https://ropo0107.github.io/2020/05/29/rl/rl_note_3_model_free/index.html">
+<meta property="og:site_name" content="无恙の博客">
+<meta property="og:description" content="predictionEvaluate the state value without knowing the MDP model, by only interacting with the environment MCtraditional value state of v(s) $t$ is time  that state $s_i$ is visited in an episode   No">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ropo0107.github.io/images/posts/rl/model_free/compare_dp_mc_td.png">
+<meta property="og:image" content="https://ropo0107.github.io/images/posts/rl/model_free/compare_dp_mc_td_1.png">
+<meta property="og:image" content="https://ropo0107.github.io/images/posts/rl/model_free/sarsa_control.png">
+<meta property="og:image" content="https://ropo0107.github.io/images/posts/rl/model_free/sarsa_al.png">
+<meta property="og:image" content="https://ropo0107.github.io/images/posts/rl/model_free/q_learning_al.png">
+<meta property="og:image" content="https://ropo0107.github.io/images/posts/rl/model_free/diagram_sarsa_qlearning.png">
+<meta property="article:published_time" content="2020-05-29T03:51:55.000Z">
+<meta property="article:modified_time" content="2025-01-02T14:55:25.973Z">
+<meta property="article:author" content="无恙">
+<meta property="article:tag" content="RL">
+<meta property="article:tag" content="Note">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ropo0107.github.io/images/posts/rl/model_free/compare_dp_mc_td.png">
+
+
+<link rel="canonical" href="https://ropo0107.github.io/2020/05/29/rl/rl_note_3_model_free/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ropo0107.github.io/2020/05/29/rl/rl_note_3_model_free/","path":"2020/05/29/rl/rl_note_3_model_free/","title":"【rl_note】3. model-free Prediction And Control"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【rl_note】3. model-free Prediction And Control | 无恙の博客</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?3740b075e17748c0bde2d912b5d8f093"></script>
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">无恙の博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">幸得识卿桃花面，从此阡陌多暖春！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#prediction"><span class="nav-number">1.</span> <span class="nav-text">prediction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MC"><span class="nav-number">1.1.</span> <span class="nav-text">MC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#traditional"><span class="nav-number">1.1.1.</span> <span class="nav-text">traditional</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#incremental"><span class="nav-number">1.1.2.</span> <span class="nav-text">incremental</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TD-0"><span class="nav-number">2.</span> <span class="nav-text">TD(0)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#compare-DP-MC-TD"><span class="nav-number">2.1.</span> <span class="nav-text">compare DP MC TD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#control"><span class="nav-number">3.</span> <span class="nav-text">control</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#On-policy-Off-policy"><span class="nav-number">3.1.</span> <span class="nav-text">On-policy Off-policy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sarsa"><span class="nav-number">3.2.</span> <span class="nav-text">sarsa</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-learning"><span class="nav-number">3.3.</span> <span class="nav-text">q-learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#compare-sarsa-q-learning"><span class="nav-number">3.4.</span> <span class="nav-text">compare sarsa q-learning</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="无恙"
+      src="/images/avatar.jpeg">
+  <p class="site-author-name" itemprop="name">无恙</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ropo0107" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ropo0107" rel="noopener me" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wangzongtao123@gmail.com" title="E-Mail → mailto:wangzongtao123@gmail.com" rel="noopener me" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="/soup/darksoup/" title="&#x2F;soup&#x2F;darksoup&#x2F;">毒鸡汤</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="/soup/rainbow/" title="&#x2F;soup&#x2F;rainbow&#x2F;">彩虹屁</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ropo0107.github.io/2020/05/29/rl/rl_note_3_model_free/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="无恙">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="无恙の博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【rl_note】3. model-free Prediction And Control | 无恙の博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【rl_note】3. model-free Prediction And Control
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-05-29 11:51:55" itemprop="dateCreated datePublished" datetime="2020-05-29T11:51:55+08:00">2020-05-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-01-02 22:55:25" itemprop="dateModified" datetime="2025-01-02T22:55:25+08:00">2025-01-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">学术</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="prediction"><a href="#prediction" class="headerlink" title="prediction"></a>prediction</h2><p>Evaluate the state value without knowing the MDP model, by only interacting with the environment</p>
+<h3 id="MC"><a href="#MC" class="headerlink" title="MC"></a>MC</h3><h4 id="traditional"><a href="#traditional" class="headerlink" title="traditional"></a>traditional</h4><ul>
+<li><p>value state of v(s) $t$ is time  that state $s_i$ is visited in an episode</p>
+<p>  <strong>Note</strong> 在每个episode里面分为first-visit 和every-visit，代表每一条轨迹可能会重复出现状态$s$，是每一条轨迹只计算第一次出现，或者每次出现都会计算。</p>
+</li>
+<li><p>$N_0 &#x3D; 0;S_0(s_i) &#x3D; 0; G_0 &#x3D; 0$</p>
+</li>
+<li><p>Increment counter  $N_t(s_i) ← N_{t-1}(s_i) + 1$</p>
+</li>
+<li><p>Increment total return $S_t(s_i) ← S_{t-1}(s_i) + G_t$</p>
+</li>
+<li><p>Value is estimated by mean return $v_t(s_i) &#x3D; S_t(s_i)&#x2F;N_t(s_i)$</p>
+</li>
+<li><p>By law of large numbers(大数定律), 　$v(s_i) → v_\pi(s_i)$ as　$N(s_i) → ∞$</p>
+</li>
+</ul>
+<h4 id="incremental"><a href="#incremental" class="headerlink" title="incremental"></a>incremental</h4><ul>
+<li>Collect one episode $(S_1 , A_1 , R_1 , …, S_t )$</li>
+<li>For each state $s_i$ with computed return $G_t$</li>
+<li>$N_0(s_i) &#x3D; 0; G_0 &#x3D; 0; v_0(s_i) &#x3D; 0$</li>
+<li>$N_t(s_i) \leftarrow N_{t-1}(s_i) + 1$</li>
+<li>$v_t(s_i) \leftarrow v_{t-1}(s_i) + 1&#x2F;N_t(G_t -v_{t-1}(s_i)))$<ul>
+<li>$v_t(s_i) \leftarrow v_{t-1}(s_i) + \alpha(G_t -v_{t-1}(s_i)))$</li>
+<li>$\alpha$ 也被叫做学习率， 区别于监督学习的 <strong>learning rate</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="TD-0"><a href="#TD-0" class="headerlink" title="TD(0)"></a>TD(0)</h2><p><strong>Objective:</strong> learn $v_\pi$ online from experience under policy $\pi$</p>
+<ul>
+<li><p>Update $v_t(s)$ toward estimated return $R + \gamma v_{t-1}(s’)$</p>
+<p>  <strong>Note</strong> 这儿是 $R$ 是 $s\rightarrow s’$产生的奖励</p>
+</li>
+<li><p>$v_t(s) \leftarrow v_{t-1}(s) + \alpha (R + \gamma v_{t-1}(s’) − v_{t-1}(s))$</p>
+</li>
+<li><p><strong>TD target:</strong> $R + \gamma v_{t-1}(s’)$</p>
+</li>
+<li><p><strong>TD error:</strong> $\delta_t &#x3D; R + \gamma v_{t-1}(s’) − v_{t-1}(s)$</p>
+<ul>
+<li>$v_\pi\doteq \mathbb{E}_\pi[G_t|S_t &#x3D; s]$</li>
+<li>$&#x3D;\mathbb{E}<em>\pi[R</em>{t+1} + \gamma G_{t+1}|S_t &#x3D; s]$</li>
+<li>$&#x3D;\mathbb{E}<em>\pi[R</em>{t+1} + \gamma v_\pi(S_{t+1})|S_t &#x3D; s]$</li>
+<li>MC将式一估计值作为目标, 之所以叫估计值， 是因为$G_t$ 的期望是未知的，需要在采样得到样本期望值</li>
+<li>DP则是对式三值作为目标，之所以叫估计值， 不是因为期望的原因，会假定环境会完整的提供期望值， 这儿 $v_\pi(S_{t+1})$ 是未知的 需要用当前的 $V(S_{t+1})$</li>
+<li>TD 也是估计值, 通过采样得到式三的期望 , 使用当前的估计值 $V$ 来代替真实值 $v_\pi$</li>
+</ul>
+</li>
+</ul>
+<p><strong>NOTE:</strong> TD error 是一种误差， 衡量 $s$ 的估计值与更好的估计值 $R + \gamma v_{t-1}(s’)$之间的差距。 因为用到了$v_{t-1}(s’)$了， 就涉及到 <strong>bootstrapping</strong> 的思想，即基于前一时刻的除本身要更新的 $v_{t-1}(s)$ 外的其他值，有点动态规划的味道</p>
+<h3 id="compare-DP-MC-TD"><a href="#compare-DP-MC-TD" class="headerlink" title="compare DP MC TD"></a>compare DP MC TD</h3><p>结合上面TD error 的 Note</p>
+<p><img src="/images/posts/rl/model_free/compare_dp_mc_td.png"></p>
+<p><img src="/images/posts/rl/model_free/compare_dp_mc_td_1.png"></p>
+<ul>
+<li>MC does not bootstrap, DP TD  bootstraps</li>
+<li>MC TD samples, DP does not sample</li>
+<li>TD advantages over MC<ul>
+<li>Lower variance</li>
+<li>Online</li>
+<li>Incomplete sequences</li>
+</ul>
+</li>
+</ul>
+<h2 id="control"><a href="#control" class="headerlink" title="control"></a>control</h2><h3 id="On-policy-Off-policy"><a href="#On-policy-Off-policy" class="headerlink" title="On-policy Off-policy"></a>On-policy Off-policy</h3><ul>
+<li><p>On-policy learning</p>
+<p>“Learn on the job”</p>
+<p>Learn about policy π from experience sampled from π</p>
+</li>
+<li><p>Off-policy learning</p>
+<p>“Look over someone’s shoulder”</p>
+<p>Learn about policy π from experience sampled from μ</p>
+</li>
+</ul>
+<h3 id="sarsa"><a href="#sarsa" class="headerlink" title="sarsa"></a>sarsa</h3><p><img src="/images/posts/rl/model_free/sarsa_control.png"></p>
+<p><img src="/images/posts/rl/model_free/sarsa_al.png"></p>
+<h3 id="q-learning"><a href="#q-learning" class="headerlink" title="q-learning"></a>q-learning</h3><p><img src="/images/posts/rl/model_free/q_learning_al.png"></p>
+<h3 id="compare-sarsa-q-learning"><a href="#compare-sarsa-q-learning" class="headerlink" title="compare sarsa q-learning"></a>compare sarsa q-learning</h3><p><img src="/images/posts/rl/model_free/diagram_sarsa_qlearning.png"></p>
+<p><strong>Sarsa:</strong> </p>
+<ul>
+<li>On-Policy TD control</li>
+<li>Choose action $A_t$ from $S_t$ using policy derived from Q with $\epsilon$-greedy</li>
+<li>Take action $A_t$ , observe $R_{t+1}$ and $S_{t+1}$</li>
+<li>Choose action $A_{t+1}$ from $S_{t+1}$ using policy derived from Q with $\epsilon$-greedy</li>
+<li>$Q(S_t,A_t) \leftarrow Q(S_t , A_t ) + \alpha[R_{t+1} + \gamma Q(S_{t+1} , A_{t+1}) − Q(S_t , A_t)]$</li>
+<li><strong>note:</strong> $A$ and $A’$ are sampled from the same policy so it is on-policy</li>
+</ul>
+<p><strong>Q-Learning:</strong></p>
+<ul>
+<li>Off-Policy TD control</li>
+<li>Choose action $A_t$ from $S_t$ using policy derived from Q with $\epsilon$-greedy</li>
+<li>Take action $A_t$ , observe $R_{t+1}$ and $S_{t+1}$</li>
+<li>Then ‘imagine’ $A_{t+1}$ as $argmax Q(S_{t+1} , a’ )$ in the update target </li>
+<li>$Q(S_t , A_t ) \leftarrow Q(S_t , A_t ) + \alpha[R_{t+1} + \gamma \max\limits_a Q(S_{t+1} , a) − Q(S_t , A_t)]$</li>
+<li><strong>note:</strong> In Q Learning, $A$ and $A’$ are from different policies, with $A$ being<br>more exploratory and $A’$ determined directly by the max operator</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/RL/" rel="tag"># RL</a>
+              <a href="/tags/Note/" rel="tag"># Note</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/05/29/rl/rl_note_4_value_function_approximation/" rel="prev" title="【rl_note】4. Value Function Approximation">
+                  <i class="fa fa-angle-left"></i> 【rl_note】4. Value Function Approximation
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/05/29/rl/rl_note_2_mdp/" rel="next" title="【rl_note】2. Markov Decision Processes">
+                  【rl_note】2. Markov Decision Processes <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2021 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">[object Object]</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":500},"mobile":{"show":true},"react":{"opacity":0.5}});</script></body>
+</html>

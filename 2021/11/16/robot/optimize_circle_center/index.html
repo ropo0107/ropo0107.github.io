@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ropo0107.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.22.0","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"slideLeftIn","sidebar":"slideDownBigOut"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="目的在空间中取得一堆点集， 已知它们在空间中是一条弧线，通过观测到的点的坐标，找到点集的圆心。 方法 点集在空间中是共面的。 圆心过圆上任意两点的公垂线  平面方程假设平面方程为：$$ax+by+cz&#x3D;1$$则：$$M&#x3D; \begin{bmatrix}x_1 &amp; y_1 &amp; z_1 \x_2 &amp; y_2 &amp; z_2 \\vdots &amp; \">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【robot】优化空间中点的圆心">
+<meta property="og:url" content="https://ropo0107.github.io/2021/11/16/robot/optimize_circle_center/index.html">
+<meta property="og:site_name" content="无恙の博客">
+<meta property="og:description" content="目的在空间中取得一堆点集， 已知它们在空间中是一条弧线，通过观测到的点的坐标，找到点集的圆心。 方法 点集在空间中是共面的。 圆心过圆上任意两点的公垂线  平面方程假设平面方程为：$$ax+by+cz&#x3D;1$$则：$$M&#x3D; \begin{bmatrix}x_1 &amp; y_1 &amp; z_1 \x_2 &amp; y_2 &amp; z_2 \\vdots &amp; \">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-16T07:30:00.000Z">
+<meta property="article:modified_time" content="2025-01-02T14:55:25.973Z">
+<meta property="article:author" content="无恙">
+<meta property="article:tag" content="Robot">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://ropo0107.github.io/2021/11/16/robot/optimize_circle_center/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ropo0107.github.io/2021/11/16/robot/optimize_circle_center/","path":"2021/11/16/robot/optimize_circle_center/","title":"【robot】优化空间中点的圆心"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【robot】优化空间中点的圆心 | 无恙の博客</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?3740b075e17748c0bde2d912b5d8f093"></script>
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">无恙の博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">幸得识卿桃花面，从此阡陌多暖春！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%AE%E7%9A%84"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E9%9D%A2%E6%96%B9%E7%A8%8B"><span class="nav-number">2.1.</span> <span class="nav-text">平面方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%82%E5%9C%86%E5%BF%83"><span class="nav-number">2.2.</span> <span class="nav-text">求圆心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">2.3.</span> <span class="nav-text">参考链接</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="无恙"
+      src="/images/avatar.jpeg">
+  <p class="site-author-name" itemprop="name">无恙</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ropo0107" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ropo0107" rel="noopener me" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wangzongtao123@gmail.com" title="E-Mail → mailto:wangzongtao123@gmail.com" rel="noopener me" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="/soup/darksoup/" title="&#x2F;soup&#x2F;darksoup&#x2F;">毒鸡汤</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="/soup/rainbow/" title="&#x2F;soup&#x2F;rainbow&#x2F;">彩虹屁</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ropo0107.github.io/2021/11/16/robot/optimize_circle_center/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="无恙">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="无恙の博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【robot】优化空间中点的圆心 | 无恙の博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【robot】优化空间中点的圆心
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-16 15:30:00" itemprop="dateCreated datePublished" datetime="2021-11-16T15:30:00+08:00">2021-11-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-01-02 22:55:25" itemprop="dateModified" datetime="2025-01-02T22:55:25+08:00">2025-01-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">学术</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>在空间中取得一堆点集， 已知它们在空间中是一条弧线，通过观测到的点的坐标，找到点集的圆心。</p>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><ul>
+<li>点集在空间中是共面的。</li>
+<li>圆心过圆上任意两点的公垂线</li>
+</ul>
+<h2 id="平面方程"><a href="#平面方程" class="headerlink" title="平面方程"></a>平面方程</h2><p>假设平面方程为：<br>$$ax+by+cz&#x3D;1$$<br>则：<br>$$M&#x3D; \begin{bmatrix}<br>x_1 &amp; y_1 &amp; z_1 \<br>x_2 &amp; y_2 &amp; z_2 \<br>\vdots &amp; \vdots  &amp; \vdots \<br>x_n &amp; y_n  &amp; z_n<br>\end{bmatrix}$$</p>
+<p>$$A &#x3D; \begin{bmatrix}<br>a  \<br>b  \<br>c  \<br>\end{bmatrix}$$</p>
+<p>$$L_1 &#x3D; \begin{bmatrix}<br>1  \<br>1  \<br>1  \<br>\end{bmatrix}$$</p>
+<p>$$MA&#x3D;L_1$$</p>
+<p>由最小二乘得到：</p>
+<p>$$A&#x3D;(M^TM)^{-1}M^TL_1$$</p>
+<h2 id="求圆心"><a href="#求圆心" class="headerlink" title="求圆心"></a>求圆心</h2><p>假定圆心$C &#x3D; (x_c, y_c, z_c)$, 任意两点是$P_1&#x3D;(x_1, y_1, z_1)$、$P_2&#x3D;(x_2, y_2, z_2)$。则：</p>
+<p>$$(x_2-x_1,y_2-y_1,z_2-z_1)(\frac{x_1+x_2}{2}-x_c,\frac{y_1+y_2}{2}-y_c, \frac{z_1+z_2}{2}-z_c) &#x3D; 0$$</p>
+<p>$$\Rightarrow \Delta x_{12} \cdot x_c + \Delta y_{12} \cdot y_c + \Delta z_{12} \cdot z_c -L_2 &#x3D; 0$$</p>
+<p>$$\begin{bmatrix}<br>x_{12} &amp; y_{12} &amp; z_{12} \<br>x_{13} &amp; y_{13} &amp; z_{13} \<br>\vdots &amp; \vdots  &amp; \vdots \<br>x_{(n-1)n} &amp; y_{(n-1)n}  &amp; z_{(n-1)n}<br>\end{bmatrix}<br>\begin{bmatrix}<br>x_c  \<br>y_c  \<br>z_c  \<br>\end{bmatrix}&#x3D;<br>\begin{bmatrix}<br>l_{12}  \<br>l_{13}  \<br>\vdots   \<br>l_{(n-1)n}  \<br>\end{bmatrix}<br>$$<br>其中<br>$$l_{(n-1)n} &#x3D; \frac{x_n^2+y_n^2+z_n^2-x_{n-1}^2-y_{n-1}^2-z_{n-1}^2} {2}$$</p>
+<p>即构建$A^TC&#x3D;1$约束下求$BC&#x3D;L_2$</p>
+<p>$$f(c) &#x3D; \left | BC-L_2 \right |^2 +\lambda(A^TC-1)$$</p>
+<p>其中，$\lambda$ 为拉格朗日乘子。对关于 $C$ 与 $\lambda$ 求导，并令导数值为0。</p>
+<p>$$<br>\begin{bmatrix}<br>B^TB &amp; A \<br>A^T &amp; 0 \<br>\end{bmatrix}<br>\begin{bmatrix}<br>C \<br>\lambda \<br>\end{bmatrix} &#x3D;<br>\begin{bmatrix}<br>B^TL_2 \<br>1 \<br>\end{bmatrix}<br>$$</p>
+<p>$$<br>\begin{bmatrix}<br>C \<br>\lambda \<br>\end{bmatrix}&#x3D;<br>\begin{bmatrix}<br>B^TB &amp; A \<br>A^T &amp; 0 \<br>\end{bmatrix}^{-1}<br>\begin{bmatrix}<br>B^TL_2 \<br>1 \<br>\end{bmatrix}<br>$$</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/154517678">https://zhuanlan.zhihu.com/p/154517678</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Robot/" rel="tag"># Robot</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/01/10/ml/ml_base/" rel="prev" title="Machine Learning Base">
+                  <i class="fa fa-angle-left"></i> Machine Learning Base
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/11/16/robot/tcp_calibration/" rel="next" title="【robot】相机标定机器人TCP">
+                  【robot】相机标定机器人TCP <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2021 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">[object Object]</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":500},"mobile":{"show":true},"react":{"opacity":0.5}});</script></body>
+</html>

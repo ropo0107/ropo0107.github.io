@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ropo0107.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.22.0","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"slideLeftIn","sidebar":"slideDownBigOut"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Difference between Reinforcement Learning and Supervised Learning Sequential data as input (not i.i.d)  The learner is not told which actions to take, but instead must discover which actions yield the">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【rl_note】1. Overview">
+<meta property="og:url" content="https://ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/index.html">
+<meta property="og:site_name" content="无恙の博客">
+<meta property="og:description" content="Difference between Reinforcement Learning and Supervised Learning Sequential data as input (not i.i.d)  The learner is not told which actions to take, but instead must discover which actions yield the">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-29T03:51:55.000Z">
+<meta property="article:modified_time" content="2025-01-02T14:55:25.973Z">
+<meta property="article:author" content="无恙">
+<meta property="article:tag" content="RL">
+<meta property="article:tag" content="Note">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/","path":"2020/05/29/rl/rl_note_1_overview/","title":"【rl_note】1. Overview"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【rl_note】1. Overview | 无恙の博客</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?3740b075e17748c0bde2d912b5d8f093"></script>
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">无恙の博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">幸得识卿桃花面，从此阡陌多暖春！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Difference-between-Reinforcement-Learning-and-Supervised-Learning"><span class="nav-number">1.</span> <span class="nav-text">Difference between Reinforcement Learning and Supervised Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Features-of-Reinforcement-Learning"><span class="nav-number">2.</span> <span class="nav-text">Features of Reinforcement Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction-to-Sequential-Decision-Making"><span class="nav-number">3.</span> <span class="nav-text">Introduction to Sequential Decision Making</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rewards"><span class="nav-number">3.1.</span> <span class="nav-text">Rewards</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequential-Decision-Making"><span class="nav-number">3.2.</span> <span class="nav-text">Sequential Decision Making</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequential-Decision-Making-1"><span class="nav-number">3.3.</span> <span class="nav-text">Sequential Decision Making</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequential-Decision-Making-2"><span class="nav-number">3.4.</span> <span class="nav-text">Sequential Decision Making</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Major-Components-of-an-RL-Agent"><span class="nav-number">4.</span> <span class="nav-text">Major Components of an RL Agent</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Policy"><span class="nav-number">4.1.</span> <span class="nav-text">Policy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Value-function"><span class="nav-number">4.2.</span> <span class="nav-text">Value function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model"><span class="nav-number">4.3.</span> <span class="nav-text">Model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Types-of-RL-Agents-based-on-What-the-Agent-Learns"><span class="nav-number">5.</span> <span class="nav-text">Types of RL Agents based on What the Agent Learns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Types-of-RL-Agents-on-if-there-is-model"><span class="nav-number">6.</span> <span class="nav-text">Types of RL Agents on if there is model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Two-Fundamental-Problems-in-Sequential-Decision-Making"><span class="nav-number">7.</span> <span class="nav-text">Two Fundamental Problems in Sequential Decision Making</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exploration-and-Exploitation"><span class="nav-number">8.</span> <span class="nav-text">Exploration and Exploitation</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="无恙"
+      src="/images/avatar.jpeg">
+  <p class="site-author-name" itemprop="name">无恙</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ropo0107" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ropo0107" rel="noopener me" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wangzongtao123@gmail.com" title="E-Mail → mailto:wangzongtao123@gmail.com" rel="noopener me" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="/soup/darksoup/" title="&#x2F;soup&#x2F;darksoup&#x2F;">毒鸡汤</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="/soup/rainbow/" title="&#x2F;soup&#x2F;rainbow&#x2F;">彩虹屁</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ropo0107.github.io/2020/05/29/rl/rl_note_1_overview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="无恙">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="无恙の博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【rl_note】1. Overview | 无恙の博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【rl_note】1. Overview
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-05-29 11:51:55" itemprop="dateCreated datePublished" datetime="2020-05-29T11:51:55+08:00">2020-05-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-01-02 22:55:25" itemprop="dateModified" datetime="2025-01-02T22:55:25+08:00">2025-01-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">学术</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="Difference-between-Reinforcement-Learning-and-Supervised-Learning"><a href="#Difference-between-Reinforcement-Learning-and-Supervised-Learning" class="headerlink" title="Difference between Reinforcement Learning and Supervised Learning"></a>Difference between Reinforcement Learning and Supervised Learning</h2><ul>
+<li><p>Sequential data as input (not i.i.d)</p>
+</li>
+<li><p>The learner is not told which actions to take, but instead must discover which actions yield the most reward by trying them.</p>
+</li>
+<li><p>Trial-and-error exploration (balance between exploration and exploitation)</p>
+</li>
+<li><p>There is no supervisor, only a reward signal, which is also delayed</p>
+</li>
+</ul>
+<h2 id="Features-of-Reinforcement-Learning"><a href="#Features-of-Reinforcement-Learning" class="headerlink" title="Features of Reinforcement Learning"></a>Features of Reinforcement Learning</h2><ul>
+<li>Trial-and-error exploration</li>
+<li>Delayed reward</li>
+<li>Time matters (sequential data, non i.i.d data)</li>
+<li>Agent’s actions affect the subsequent data it receives (agent’s action changes the environment)</li>
+</ul>
+<h2 id="Introduction-to-Sequential-Decision-Making"><a href="#Introduction-to-Sequential-Decision-Making" class="headerlink" title="Introduction to Sequential Decision Making"></a>Introduction to Sequential Decision Making</h2><h3 id="Rewards"><a href="#Rewards" class="headerlink" title="Rewards"></a>Rewards</h3><ul>
+<li>A reward is a scalar feedback signal</li>
+<li>Indicate how well agent is doing at step t</li>
+<li>Reinforcement Learning is based on the maximization of rewards:<br>All goals of the agent can be described by the maximization of expected<br>cumulative reward.</li>
+</ul>
+<h3 id="Sequential-Decision-Making"><a href="#Sequential-Decision-Making" class="headerlink" title="Sequential Decision Making"></a>Sequential Decision Making</h3><ul>
+<li>Objective of the agent: select a series of actions to maximize total<br>  future rewards</li>
+<li>Actions may have long term consequences</li>
+<li>Reward may be delayed</li>
+<li>Trade-off between immediate reward and long-term reward</li>
+</ul>
+<h3 id="Sequential-Decision-Making-1"><a href="#Sequential-Decision-Making-1" class="headerlink" title="Sequential Decision Making"></a>Sequential Decision Making</h3><ul>
+<li><p>The history is the sequence of observations, actions, rewards.<br>$$H_t &#x3D; O_1, R_1, A_1, …, A_{t-1}, O_t, R_t$$</p>
+</li>
+<li><p>What happens next depends on the history</p>
+</li>
+<li><p>State is the function used to determine what happens next<br>$$ S_t &#x3D; f(H_t)$$</p>
+</li>
+</ul>
+<h3 id="Sequential-Decision-Making-2"><a href="#Sequential-Decision-Making-2" class="headerlink" title="Sequential Decision Making"></a>Sequential Decision Making</h3><ul>
+<li><p>Environment state and agent state:<br>$$S^e_t &#x3D; f^e(H_t)$$<br>$$S^a_t &#x3D; f^a(H_t)$$</p>
+</li>
+<li><p><strong>Full observability</strong> : agent directly observes the environment state<br>$$O_t &#x3D; S^e_t &#x3D; S^a_t$$</p>
+</li>
+<li><p><strong>Partial observability</strong> : agent indirectly observes the environment, formally as partially observable Markov decision process (POMDP)<br>$$O_t \neq S^e_t \neq S^a_t$$</p>
+</li>
+</ul>
+<h2 id="Major-Components-of-an-RL-Agent"><a href="#Major-Components-of-an-RL-Agent" class="headerlink" title="Major Components of an RL Agent"></a>Major Components of an RL Agent</h2><ul>
+<li><p><strong>Policy</strong>:</p>
+<p>​    agent’s behavior function</p>
+</li>
+<li><p><strong>Value function</strong>: </p>
+<p>​    how good is each state or action</p>
+</li>
+<li><p><strong>Model</strong>:</p>
+<p>​    agent’s state representation of the environment</p>
+</li>
+</ul>
+<h3 id="Policy"><a href="#Policy" class="headerlink" title="Policy"></a>Policy</h3><ul>
+<li><p>A policy is the agent’s behavior model</p>
+</li>
+<li><p>It is a map function from state&#x2F;observation to action.</p>
+</li>
+<li><p>Stochastic policy: Probabilistic sample<br>$$\pi(a \mid s) &#x3D; P[A_t &#x3D; a\mid S_t &#x3D; s]$$</p>
+</li>
+<li><p>Deterministic policy:</p>
+<p>$$a^* &#x3D; \arg\max\limits_a \pi(a\mid s)$$</p>
+</li>
+</ul>
+<h3 id="Value-function"><a href="#Value-function" class="headerlink" title="Value function"></a>Value function</h3><ul>
+<li><p>Value function: expected discounted sum of future rewards under a<br>  particular policy $\pi$</p>
+</li>
+<li><p>Discount factor weights immediate vs future rewards</p>
+</li>
+<li><p>Used to quantify goodness&#x2F;badness of <strong>states</strong></p>
+<p>  $$G_t &#x3D; R_{t+1}+\gamma R_{t+2}+ … &#x3D; \sum\limits_{k&#x3D;0}<br>  ^\infty\gamma^kR_{t+k+1}$$<br>  <strong>$G_t$is the total step discounted reward from time step $t$.</strong><br>  $$V_\pi(s) &#x3D; \mathbb{E}_\pi[G_t\mid S_t&#x3D;s]$$</p>
+<p>  $$ &#x3D; \mathbb{E}<em>\pi[\sum\limits^\infty</em>{k&#x3D;0}\gamma^kR_{t+k+1}\mid S_t&#x3D;s]$$</p>
+</li>
+<li><p>Q-function at state $s$ and action $a$</p>
+<p>  $$Q_\pi(s,a) &#x3D; \mathbb{E}<em>\pi[G_t\mid S_t&#x3D;s, A_t &#x3D; a] &#x3D; \mathbb{E}</em>\pi[\sum\limits^\infty_{k&#x3D;0}\gamma^kR_{t+k+1}\mid S_t&#x3D;s, A_t&#x3D;a]$$</p>
+</li>
+</ul>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>A model predicts what the environment will do next</p>
+<ul>
+<li><p>Predict the next state:(转移概率)<br>$$P^a_{ss’} &#x3D; P[S_{t+1}&#x3D;s’ \mid S_t&#x3D;s, A_t&#x3D;a]$$</p>
+</li>
+<li><p>Predict the next reward:</p>
+<p>$$R^a_s &#x3D; P[R_{t+1} \mid S_t&#x3D;s, A_t&#x3D;a]$$</p>
+</li>
+</ul>
+<h2 id="Types-of-RL-Agents-based-on-What-the-Agent-Learns"><a href="#Types-of-RL-Agents-based-on-What-the-Agent-Learns" class="headerlink" title="Types of RL Agents based on What the Agent Learns"></a>Types of RL Agents based on What the Agent Learns</h2><ul>
+<li>Value-based agent:<ul>
+<li>Explicit: Value function</li>
+<li>Implicit: Policy (can derive a policy from value function)</li>
+</ul>
+</li>
+<li>Policy-based agent:<ul>
+<li>Explicit: policy</li>
+<li>No value function</li>
+</ul>
+</li>
+<li>Actor-Critic agent:<ul>
+<li>Explicit: policy and value function</li>
+</ul>
+</li>
+</ul>
+<h2 id="Types-of-RL-Agents-on-if-there-is-model"><a href="#Types-of-RL-Agents-on-if-there-is-model" class="headerlink" title="Types of RL Agents on if there is model"></a>Types of RL Agents on if there is model</h2><ul>
+<li>Model-based<ul>
+<li>Explicit: model</li>
+<li>May or may not have policy and&#x2F;or value function</li>
+</ul>
+</li>
+<li>Model-free<ul>
+<li>Explicit: value function and&#x2F;or policy function</li>
+<li>No model.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Two-Fundamental-Problems-in-Sequential-Decision-Making"><a href="#Two-Fundamental-Problems-in-Sequential-Decision-Making" class="headerlink" title="Two Fundamental Problems in Sequential Decision Making"></a>Two Fundamental Problems in Sequential Decision Making</h2><ul>
+<li><p>Planning</p>
+<ul>
+<li>Given model about how the environment works.</li>
+<li>Compute how to act to maximize expected reward without external interaction.</li>
+</ul>
+</li>
+<li><p>Reinforcement learning</p>
+<ul>
+<li>Agent doesn’t know how world works</li>
+<li>Interacts with world to implicitly learn how world works</li>
+<li>Agent improves policy (also involves planning)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Exploration-and-Exploitation"><a href="#Exploration-and-Exploitation" class="headerlink" title="Exploration and Exploitation"></a>Exploration and Exploitation</h2><ul>
+<li>Agent only experiences what happens for the actions it tries!</li>
+<li>How should an RL agent balance its actions?<ul>
+<li>Exploration: trying new things that might enable the agent to make better<br> decisions in the future</li>
+<li>Exploitation: choosing actions that are expected to yield good reward given<br> the past experience</li>
+</ul>
+</li>
+<li>Often there may be an exploration-exploitation trade-off<ul>
+<li>May have to sacrifice reward in order to explore &amp; learn about potentially<br> better policy</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/RL/" rel="tag"># RL</a>
+              <a href="/tags/Note/" rel="tag"># Note</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/05/29/rl/rl_note_2_mdp/" rel="prev" title="【rl_note】2. Markov Decision Processes">
+                  <i class="fa fa-angle-left"></i> 【rl_note】2. Markov Decision Processes
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/07/11/robot/quaternion/" rel="next" title="【robot】 quaternion">
+                  【robot】 quaternion <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2021 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">[object Object]</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":500},"mobile":{"show":true},"react":{"opacity":0.5}});</script></body>
+</html>
